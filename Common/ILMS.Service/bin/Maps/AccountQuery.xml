@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="accountCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+		<select id="account.LOGIN_SELECT_A" parameterClass="Hashtable" resultClass="user">
+			EXEC USP_LOGIN_SELECT 'A', #UserNo#, #UserID#, #Password#
+		</select>
+		
+		<!--<select id="account.LOGIN_SELECT_B" parameterClass="Hashtable" resultClass="user">
+			EXEC USP_LOGIN_SELECT 'B', #UserNo#, #UserID#, #Password#
+		</select>-->
+		
+		<select id="account.LOGIN_SELECT_C" parameterClass="Hashtable" resultClass="user">
+			EXEC USP_LOGIN_SELECT 'C', #UserNo#, #UserID#, #Password#
+		</select>
+
+		<update id="account.LOGIN_SAVE_A" parameterClass="Hashtable" resultClass="user">
+			EXEC USP_LOGIN_SAVE 'A', #LoginNo#, #UserNo#, #IPAddress#, #ConnectGubun#, #UserAgent#
+		</update>
+
+		<update id="account.LOGIN_SAVE_B" parameterClass="Hashtable" resultClass="user">
+			EXEC USP_LOGIN_SAVE 'B', #LoginNo#, #UserNo#, #IPAddress#, #ConnectGubun#, #UserAgent#
+		</update>
+
+		<update id="account.LOGIN_SAVE_C" parameterClass="Hashtable" resultClass="user">
+			EXEC USP_LOGIN_SAVE 'C', #LoginNo#, #UserNo#, #IPAddress#, #ConnectGubun#, #UserAgent#
+		</update>
+
+		<update id="account.LOGIN_SAVE_P" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_LOGIN_SAVE 'P', #LoginNo#, #UserNo#, #IPAddress#, #ConnectGubun#, #UserAgent#,#UserID#
+		</update>
+		
+
+		<select id="account.USER_SELECT_S" parameterClass="Hashtable" resultClass="user">
+			EXEC USP_USER_SELECT 'S', #UserNo#, #SearchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo# ,#HangulName#
+		</select>
+		
+		<select id="account.USER_SELECT_L" parameterClass="Hashtable" resultClass="user">
+			<!--EXEC USP_USER_SELECT 'L', NULL, #SerchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo#-->
+			EXEC USP_USER_SELECT 'L',#UserNo#, #SearchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo# ,#HangulName#
+		</select>
+		
+		<select id="account.USER_SELECT_C" parameterClass="Hashtable" resultClass="user">
+			EXEC USP_USER_SELECT 'C', #UserNo#, #SearchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo# ,#HangulName#
+		</select>
+		
+		<select id="account.USER_SELECT_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_USER_SELECT 'A', #UserNo#, #SearchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo# ,#HangulName#
+		</select>
+		
+		<select id="account.USER_SELECT_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_USER_SELECT 'B', #UserNo#, #SearchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo# ,#HangulName#
+		</select>
+
+		<select id="account.USER_SELECT_D" parameterClass="user" resultClass="user">
+			EXEC USP_USER_SELECT 'D', #UserNo#, #SearchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo# ,#HangulName#
+		</select>
+
+		<select id="account.USER_SELECT_E" parameterClass="user" resultClass="user">
+			EXEC USP_USER_SELECT 'E', #UserNo#, #SearchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo# ,#HangulName#
+		</select>
+
+		<select id="account.USER_SELECT_F" parameterClass="Hashtable" resultClass="Hashtable">
+			EXEC USP_USER_SELECT 'F', #UserNo#, #SearchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo# ,#HangulName#
+		</select>
+
+		<select id="account.USER_SELECT_G" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_USER_SELECT 'G', #UserNo#, #SearchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo# ,#HangulName#, #Password#
+		</select>
+
+		<select id="account.USER_SELECT_H" parameterClass="Hashtable" resultClass="assignhierarchy">
+			EXEC USP_USER_SELECT 'H', #UserNo#, #SearchGbn#, #SearchText#, #UserID#, #Email#, #UseYesNo#, #IsGeneral#, #ApprovalGubun#, #FirstIndex#, #LastIndex#, #UserType#, #UserGubun#, #AssignNo# ,#HangulName#
+		</select>
+
+		<select id="account.USER_SELECT_I" parameterClass="Hashtable" resultClass="user">
+			EXEC USP_USER_SELECT 'I', #UserNo#
+		</select>
+		
+		<select id="account.USER_SAVE_C" parameterClass="user" resultClass="int">
+			EXEC USP_USER_SAVE 'C',#ApprovalGubun#,#AssignNo#,#DeleteYesNo#,#Email#,#EmailOpenYesNo#, #HouseZipCode#, #HouseAddress1#, #HouseAddress2# ,#HangulName#,#HouseAddressOpenYesNo#,#HousePhoneOpenYesNo#,#IsGeneral#,#AssignText#,#ManagerYesNo#,#Mobile#,#MobileOpenYesNo#,#OfficeAddressOpenYesNo#,#OfficePhoneOpenYesNo#,#Password#,#StudentYesNo#,#UniversityCode#, #UseYesNo#,#UserID#,#UserType#, #SexGubun#, #ResidentNo#, #CreateUserNo#, #UpdateUserNo#, NULL, NULL, NULL, #GeneralUserCode#
+		</select>
+
+		<update id="account.USER_SAVE_E" parameterClass="user">
+			EXEC USP_USER_SAVE 'E' ,#ApprovalGubun#, #AssignNo#, #DeleteYesNo#, #Email#, #EmailOpenYesNo#, #HouseZipCode#, #HouseAddress1#, #HouseAddress2#, #HangulName#, #HouseAddressOpenYesNo#, #HousePhoneOpenYesNo#, #IsGeneral#, #AssignText#, #ManagerYesNo#
+			, #Mobile#, #MobileOpenYesNo#, #OfficeAddressOpenYesNo#, #OfficePhoneOpenYesNo#, #Password#, #StudentYesNo#, #UniversityCode#, #UseYesNo#, #UserID#, #UserType#
+			, #SexGubun#, #ResidentNo#, #CreateUserNo#, #UpdateUserNo#, #UserNo#, #AType#, #AData#
+		</update>
+		
+		<update id="account.USER_SAVE_F" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_USER_SAVE 'F' ,#ApprovalGubun#, #AssignNo#, #DeleteYesNo#, #Email#, #EmailOpenYesNo#, #HouseZipCode#, #HouseAddress1#, #HouseAddress2#, #HangulName#, #HouseAddressOpenYesNo#, #HousePhoneOpenYesNo#, #IsGeneral#, #AssignText#, #ManagerYesNo#
+			, #Mobile#, #MobileOpenYesNo#, #OfficeAddressOpenYesNo#, #OfficePhoneOpenYesNo#, #Password#, #StudentYesNo#, #UniversityCode#, #UseYesNo#, #UserID#, #UserType#
+			, #SexGubun#, #ResidentNo#, #CreateUserNo#, #UpdateUserNo#, #UserNo#, #AType#, #AData#
+		</update>
+
+		<update id="account.USER_SAVE_U" parameterClass="user" resultClass="user">
+			EXEC USP_USER_SAVE 'U',#ApprovalGubun#,#AssignNo#,#DeleteYesNo#,#Email#,#EmailOpenYesNo#, #HouseZipCode#, #HouseAddress1#, #HouseAddress2# ,#HangulName#,#HouseAddressOpenYesNo#,#HousePhoneOpenYesNo#,#IsGeneral#,#AssignText#,#ManagerYesNo#,#Mobile#,#MobileOpenYesNo#,#OfficeAddressOpenYesNo#,#OfficePhoneOpenYesNo#,#Password#,#StudentYesNo#,#UniversityCode#, #UseYesNo#,#UserID#,#UserType#, #SexGubun#, #ResidentNo#, #CreateUserNo#, #UpdateUserNo#, #UserNo#, #AType#, #AData#
+		</update>
+		
+		<update id="account.USER_SAVE_D" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_USER_SAVE 'D',#ApprovalGubun#,#AssignNo#,#DeleteYesNo#,#Email#,#EmailOpenYesNo#, #HouseZipCode#, #HouseAddress1#, #HouseAddress2# ,#HangulName#,#HouseAddressOpenYesNo#,#HousePhoneOpenYesNo#,#IsGeneral#,#AssignText#,#ManagerYesNo#,#Mobile#,#MobileOpenYesNo#,#OfficeAddressOpenYesNo#,#OfficePhoneOpenYesNo#,#Password#,#StudentYesNo#,#UniversityCode#, #UseYesNo#,#UserID#,#UserType#, #SexGubun#, #ResidentNo#, #CreateUserNo#, #UpdateUserNo#, #UserNo#, #AType#, #AData#
+		</update>
+
+		<update id="account.USER_SAVE_B" parameterClass="user">
+			EXEC USP_USER_SAVE 'B' ,#ApprovalGubun#, #AssignNo#, #DeleteYesNo#, #Email#, #EmailOpenYesNo#, #HouseZipCode#, #HouseAddress1#, #HouseAddress2#, #HangulName#, #HouseAddressOpenYesNo#, #HousePhoneOpenYesNo#, #IsGeneral#, #AssignText#, #ManagerYesNo#
+			, #Mobile#, #MobileOpenYesNo#, #OfficeAddressOpenYesNo#, #OfficePhoneOpenYesNo#, #Password#, #StudentYesNo#, #UniversityCode#, #UseYesNo#, #UserID#, #UserType#
+			, #SexGubun#, #ResidentNo#, #CreateUserNo#, #UpdateUserNo#, #UserNo#, #AType#, #AData#
+		</update>
+
+		<update id="account.USER_SAVE_G" parameterClass="user">
+			EXEC USP_USER_SAVE 'G' ,#ApprovalGubun#, #AssignNo#, #DeleteYesNo#, #Email#, #EmailOpenYesNo#, #HouseZipCode#, #HouseAddress1#, #HouseAddress2#, #HangulName#, #HouseAddressOpenYesNo#, #HousePhoneOpenYesNo#, #IsGeneral#, #AssignText#, #ManagerYesNo#
+			, #Mobile#, #MobileOpenYesNo#, #OfficeAddressOpenYesNo#, #OfficePhoneOpenYesNo#, #Password#, #StudentYesNo#, #UniversityCode#, #UseYesNo#, #UserID#, #UserType#
+			, #SexGubun#, #ResidentNo#, #CreateUserNo#, #UpdateUserNo#, #UserNo#, #AType#, #AData#
+		</update>
+
+		
+
+		<update id="account.USER_IMPORT_SAVE_MEMBER" parameterClass="Hashtable" resultClass="int">
+			USP_IMPORT_SAVE 'MEMBER',#IOTYPE#,#UpdateUserNo#,#PARAM1#,#PARAM2#
+		</update>
+		
+		
+		
+
+	</statements>
+</sqlMap>

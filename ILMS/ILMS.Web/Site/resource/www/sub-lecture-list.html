@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+	<div class="container">
+		<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+	</div>
+</div>
+	
+<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">menu A-1</a>
+								<a class="dropdown-item active" href="#">menu A-2</a>
+								<a class="dropdown-item" href="#">menu A-3</a>
+								<a class="dropdown-item" href="#">menu A-4</a>
+							</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+</div>
+	
+<div class="sub-container container">
+	<div class="row">
+		<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>LMS</span></div>
+					<ul class="snb-list">
+						<li class="active"><a href="#">menu A</a>
+							<ul>
+									<li class="active"><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu B</a>
+							<ul>
+									<li><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu C</a></li>
+						<li><a href="#">menu D</a></li>
+					</ul>
+				</div>
+		</div>
+		<div class="col-xl-9">
+			<h2 class="title02">강의실</h2>
+			
+			<div id="content">
+        <div class="row no-gutters align-items-center mt-4">
+					<div class="col">
+						<span class="text-muted font-size-14 d-block d-md-inline"><strong class="w-6rem d-sm-inline-block d-md-inline"><i class="bi bi-dot"></i>최근 접속일</strong> : 2021-08-20</span>
+						<span class="text-muted font-size-14 "><strong class="w-6rem d-sm-inline-block d-md-inline"><i class="bi bi-dot"></i>접속 IP </strong> :  192.168.20.119</span>
+					</div>
+					<div class="col-auto text-right">
+						<a href="#" class="btn btn-dark">강의실 나가기</a>
+					</div>
+				</div>
+
+        <ul class="nav nav-tabs mt-4" role="tablist">
+					<li class="nav-item" role="presentation">
+						<a class="nav-link active show" data-toggle="tab" href="#tabs1-1" role="tab" aria-controls="tabs1-1" aria-selected="true">개인별 평가현황</a>
+					</li>
+					<li class="nav-item" role="presentation">
+						<a class="nav-link" data-toggle="tab" href="#tabs1-2" role="tab" aria-controls="tabs1-2" aria-selected="false">수강한 강좌</a>
+					</li>
+					<li class="nav-item" role="presentation">
+						<a class="nav-link" data-toggle="tab" href="#tabs1-3" role="tab" aria-controls="tabs1-3" aria-selected="false">수강예정인 강좌</a>
+					</li>
+        </ul>
+
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="tabs1-1" role="tabpanel" aria-labelledby="tabs1-1-tab">
+						<h3 class="title03 sr-only">개인별 평가현황</h3>
+
+            <div class="mt-4 mb-1">
+							<span class="badge badge-regular">정규 교육과정</span>
+							<span class="badge badge-irregular">비정규 교육과정</span>
+						</div>
+            <div class="row">
+							<div class="col-md-6">
+								<div class="card card-style02 regular">
+									<div class="card-header">
+										<div>
+											<span class="badge badge-regular">정규</span>
+											<span class="badge badge-1">전공필수</span>
+										</div>
+										<a href="#" class="card-title01 text-dark">고객 여정 관리의 미래</a>
+									</div>
+									<div class="card-body">
+										
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>학습기간</dt>
+											<dd class="col-sm">2021-08-09 ~ 2021-08-13</dd>
+										</dl>
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>담당교수</dt>
+											<dd class="col">황연*</dd>
+										</dl>
+
+									</div><!-- card-body -->
+									<div class="card-footer">
+										<div class="text-right">
+											<a class="btn btn-sm btn-point" href="#">강의실 입장</a>
+										</div>
+									</div>
+								</div><!-- card -->
+							</div>
+							<div class="col-md-6">
+								<div class="card card-style02 regular">
+									<div class="card-header">
+										<div>
+											<span class="badge badge-regular">정규</span>
+											<span class="badge badge-1-light">전공선택</span>
+										</div>
+										<a href="#" class="card-title01 text-dark">고객 여정 관리의 미래</a>
+									</div>
+									<div class="card-body">
+										
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>학습기간</dt>
+											<dd class="col-sm">2021-08-09 ~ 2021-08-13</dd>
+										</dl>
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>담당교수</dt>
+											<dd class="col">황연*</dd>
+										</dl>
+
+									</div><!-- card-body -->
+									<div class="card-footer">
+										<div class="text-right">
+											<a class="btn btn-sm btn-point" href="#">강의실 입장</a>
+										</div>
+									</div>
+								</div><!-- card -->
+							</div>
+							<div class="col-md-6">
+								<div class="card card-style02 regular">
+									<div class="card-header">
+										<div>
+											<span class="badge badge-regular">정규</span>
+											<span class="badge badge-2">교양필수</span>
+										</div>
+										<a href="#" class="card-title01 text-dark">고객 여정 관리의 미래</a>
+									</div>
+									<div class="card-body">										
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>학습기간</dt>
+											<dd class="col-sm">2021-08-09 ~ 2021-08-13</dd>
+										</dl>
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>담당교수</dt>
+											<dd class="col">황연*</dd>
+										</dl>
+
+									</div><!-- card-body -->
+									<div class="card-footer">
+										<div class="text-right">
+											<a class="btn btn-sm btn-point" href="#">강의실 입장</a>
+										</div>
+									</div>
+								</div><!-- card -->
+							</div>
+							<div class="col-md-6">
+								<div class="card card-style02 regular">
+									<div class="card-header">
+										<div>
+											<span class="badge badge-regular">정규</span>
+											<span class="badge badge-2-light">교양선택</span>
+										</div>
+										<a href="#" class="card-title01 text-dark">고객 여정 관리의 미래</a>
+									</div>
+									<div class="card-body">
+										
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>학습기간</dt>
+											<dd class="col-sm">2021-08-09 ~ 2021-08-13</dd>
+										</dl>
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>담당교수</dt>
+											<dd class="col">황연*</dd>
+										</dl>
+
+									</div><!-- card-body -->
+									<div class="card-footer">
+										<div class="text-right">
+											<a class="btn btn-sm btn-point" href="#">강의실 입장</a>
+										</div>
+									</div>
+								</div><!-- card -->
+							</div>
+							<div class="col-md-6">
+								<div class="card card-style02 irregular">
+									<div class="card-header">
+										<div>
+											<span class="badge badge-irregular">비정규</span>
+											<span class="badge badge-3">취업진로</span>
+										</div>
+										<a href="#" class="card-title01 text-dark">고객 여정 관리의 미래</a>
+									</div>
+									<div class="card-body">
+										
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>학습기간</dt>
+											<dd class="col-sm">2021-08-09 ~ 2021-08-13</dd>
+										</dl>
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>담당교수</dt>
+											<dd class="col">황연*</dd>
+										</dl>
+
+									</div><!-- card-body -->
+									<div class="card-footer">
+										<div class="text-right">
+											<a class="btn btn-sm btn-primary" href="#">수강취소</a>
+											<a class="btn btn-sm btn-point" href="#">강의실 입장</a>
+										</div>
+									</div>
+								</div><!-- card -->
+							</div>
+							<div class="col-md-6">
+								<div class="card card-style02 irregular">
+									<div class="card-header">
+										<div>
+											<span class="badge badge-irregular">비정규</span>
+											<span class="badge badge-4">교수학습</span>
+										</div>
+										<a href="#" class="card-title01 text-dark">고객 여정 관리의 미래</a>
+									</div>
+									<div class="card-body">
+										
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>학습기간</dt>
+											<dd class="col-sm">2021-08-09 ~ 2021-08-13</dd>
+										</dl>
+										<dl class="row dl-style02">
+											<dt class="col-auto w-5rem text-dark"><i class="bi bi-dot"></i>담당교수</dt>
+											<dd class="col">황연*</dd>
+										</dl>
+
+									</div><!-- card-body -->
+									<div class="card-footer">
+										<div class="text-right">
+											<a class="btn btn-sm btn-primary" href="#">수강취소</a>
+											<a class="btn btn-sm btn-point" href="#">강의실 입장</a>
+										</div>
+									</div>
+								</div><!-- card -->
+							</div>
+						</div>
+
+            <div class="row mt-4">
+							<div class="col-md-6">
+								<div class="row mt-4">
+									<div class="col">
+										<h3 class="title03">공지사항</h3>
+									</div>
+									<div class="col-auto">
+										<button type="button" class="btn px-2">
+											<i class="bi bi-pencil-fill">
+												<span class="sr-only">신규등록</span>
+											</i>
+										</button>
+										<button type="button" class="btn px-2">
+											<i class="bi bi-archive">
+												<span class="sr-only">더 보기</span>
+											</i>
+										</button>
+									</div>
+								</div>
+								<ul class="board-extract mt-2">
+									<li class="row">
+										<div class="col-12 category"><strong class="font-size-14">ERP 회계원리</strong></div>
+										<div class="col-8 col-sm-9 col-md-9 col-lg-9">
+											<a href="#" class="board-title">
+												<span class="text-truncate">공지사항 글 제목이 길어지면 몇 글자까지 글자까지 글자까지 들어갈까요?</span>
+												<span class="icon new"><span class="sr-only">새 글</span></span>
+											</a>
+										</div>
+										<div class="text-right">2021-09-15</div>
+									</li>
+									<li class="row">
+										<div class="col-12 category"><strong class="font-size-14">ERP 회계원리</strong></div>
+										<div class="col-8 col-sm-9 col-md-9 col-lg-9">
+											<a href="#" class="board-title">
+												<span class="text-truncate">공지사항 글 제목이 길어지면 몇 글자까지 글자까지 글자까지 들어갈까요?</span>
+												<span class="icon new"><span class="sr-only">새 글</span></span>
+											</a>
+										</div>
+										<div class="text-right">2021-09-15</div>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<div class="row mt-4">
+									<div class="col">
+										<h3 class="title03">강의실 Q&amp;A</h3>
+									</div>
+									<div class="col-auto">
+										<button type="button" class="btn px-2">
+											<i class="bi bi-archive">
+												<span class="sr-only">더 보기</span>
+											</i>
+										</button>
+									</div>
+								</div>
+								<ul class="board-extract mt-2">
+									<li class="row">
+										<div class="col-12 category"><strong class="font-size-14">ERP 회계원리</strong></div>
+										<div class="col-8 col-sm-9 col-md-9 col-lg-9">
+											<a href="#" class="board-title">
+												<span class="text-truncate">공지사항 글 제목이 길어지면 몇 글자까지 글자까지 글자까지 들어갈까요?</span>
+												<span class="icon new"><span class="sr-only">새 글</span></span>
+											</a>
+										</div>
+										<div class="text-right">2021-09-15</div>
+									</li>
+									<li class="row">
+										<div class="col-12 category"><strong class="font-size-14">ERP 회계원리</strong></div>
+										<div class="col-8 col-sm-9 col-md-9 col-lg-9">
+											<a href="#" class="board-title">
+												<span class="text-truncate">공지사항 글 제목이 길어지면 몇 글자까지 글자까지 글자까지 들어갈까요?</span>
+												<span class="icon new"><span class="sr-only">새 글</span></span>
+											</a>
+										</div>
+										<div class="text-right">2021-09-15</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+          </div><!-- tab -->
+          <div class="tab-pane fade" id="tabs1-2" role="tabpanel" aria-labelledby="tabs1-2-tab">
+						<h3 class="title03 sr-only">수강한 강좌</h3>
+            <div class="mt-4">
+              <p class="">준비중</p>
+            </div>
+          </div><!-- tab -->
+          <div class="tab-pane fade" id="tabs1-3" role="tabpanel" aria-labelledby="tabs1-3-tab">
+						<h3 class="title03 sr-only">수강예정인 강좌</h3>
+            <div class="mt-4">
+              <p class="">준비중</p>
+            </div>
+          </div><!-- tab -->
+        </div><!-- tab-content -->
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+	
+<div id="footer"></div>
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+<script>
+	$.ajax({
+		method: 'GET',
+		url: 'header.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#header').append(html);
+	});
+	$.ajax({
+		method: 'GET',
+		url: 'footer.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#footer').append(html);
+	});
+
+	$(document).ready(function() {
+			$(".dropdown-toggle").dropdown();
+	});
+</script>
+</body>
+</html>

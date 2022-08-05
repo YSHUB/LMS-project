@@ -1,0 +1,11 @@
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\bin\Data\SqlMap.config
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\bin\ILMS.Design.dll
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\bin\ILMS.Design.pdb
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\bin\ILMS.Core.dll
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\bin\System.Web.Mvc.dll
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\bin\ILMS.Core.pdb
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\obj\Debug\ILMS.Design.csprojAssemblyReference.cache
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\obj\Debug\ILMS.Design.csproj.CoreCompileInputs.cache
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\obj\Debug\ILMS.Design.csproj.CopyComplete
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\obj\Debug\ILMS.Design.dll
+D:\프로젝트\LMS2021\IDINO.LMS2021\Common\ILMS.Design\obj\Debug\ILMS.Design.pdb

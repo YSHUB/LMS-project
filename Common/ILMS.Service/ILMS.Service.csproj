@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3511A6DF-58C1-48ED-AAEB-A6C436F48C22}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ILMS.Service</RootNamespace>
+    <AssemblyName>ILMS.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IBatisNet.DataMapper, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AccountService.cs" />
+    <Compile Include="Board\BoardService.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Common\CommonService.cs" />
+    <Compile Include="Message\MessageService.cs" />
+    <Compile Include="Discussion\DiscussionService.cs" />
+    <Compile Include="Exam\ExamService.cs" />
+    <Compile Include="Homework\HomeworkService.cs" />
+    <Compile Include="Course\CourseService.cs" />
+    <Compile Include="LecInfo\LecInfoService.cs" />
+    <Compile Include="Note\NoteService.cs" />
+    <Compile Include="Ocw\OcwService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionBank\QuestionBankService.cs" />
+    <Compile Include="System\SystemService.cs" />
+    <Compile Include="Study\StudyService.cs" />
+    <Compile Include="Team\TeamService.cs" />
+    <Compile Include="TeamProject\TeamProjectService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ILMS.Core\ILMS.Core.csproj">
+      <Project>{46bda7d8-3cc6-42ef-b8a6-d6da0278ae0d}</Project>
+      <Name>ILMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ILMS.Data\ILMS.Data.csproj">
+      <Project>{baa43f31-5c27-43bd-82d0-1b050c90a4db}</Project>
+      <Name>ILMS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ILMS.Design\ILMS.Design.csproj">
+      <Project>{8a3503d1-6021-4b0b-bca3-a4eb41eb6384}</Project>
+      <Name>ILMS.Design</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

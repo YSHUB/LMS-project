@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="contentCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+	<!-- BANNER 시작 -->		
+		
+		<!-- SELECT -->
+		<select id="content.BANNER_SELECT_L" parameterClass="Hashtable" resultClass="banner">
+			EXEC USP_BANNER_SELECT "L", #BannerNo#, #DisplayDay#, #DeleteYesNo#, #OutputYesNo#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="content.BANNER_SELECT_S" parameterClass="Hashtable" resultClass="banner">
+			EXEC USP_BANNER_SELECT "S", #BannerNo#, #DisplayDay#, #DeleteYesNo#, #OutputYesNo#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<!-- SAVE -->
+		<update id="content.BANNER_SAVE_U"  parameterClass="Hashtable" resultClass="banner">
+			EXEC USP_BANNER_SAVE "U", #BannerNo#, #BannerExplain#, #LinkType#, #LinkUrl#, #BannerType#, #StartDay#, #EndDay#, #SortNo#, #CreateUserNo#
+							   , #UpdateUserNo#, #FileGroupNo#, #CreateDateTime#, #UpdateDateTime#, #OutputYesNo#, #DeleteYesNo#
+		</update>
+		
+		<update id ="content.BANNER_SAVE_C" parameterClass="Hashtable" resultClass="banner">
+			EXEC USP_BANNER_SAVE "C", #BannerNo#, #BannerExplain#, #LinkType#, #LinkUrl#, #BannerType#, #StartDay#, #EndDay#, #SortNo#, #CreateUserNo#
+							   , #UpdateUserNo#, #FileGroupNo#, #CreateDateTime#, #UpdateDateTime#, #OutputYesNo#, #DeleteYesNo#
+		</update>
+		
+		<!--DELETE -->
+		<update id="content.BANNER_SAVE_D" parameterClass="banner" >
+			EXEC USP_BANNER_SAVE "D", #BannerNo#, #BannerExplain#, #LinkType#, #LinkUrl#, #BannerType#, #StartDay#, #EndDay#, #SortNo#, #CreateUserNo#
+			, #UpdateUserNo#, #FileGroupNo#, #CreateDateTime#, #UpdateDateTime#, #OutputYesNo#, #DeleteYesNo#
+		</update>
+		
+	<!-- BANNER 끝-->
+		
+	<!-- POPUP 시작-->
+		<!-- SELECT -->
+		<select id="content.POPUP_SELECT_L" parameterClass="Hashtable" resultClass="popup">
+			EXEC USP_POPUP_SELECT "L", #PopupNo#, #DisplayDay#, #DeleteYesNo#, #OutputYesNo#, #FirstIndex#, #LastIndex#
+		</select>
+		<select id="content.POPUP_SELECT_S" parameterClass="Hashtable" resultClass="popup">
+			EXEC USP_POPUP_SELECT "S", #PopupNo#, #DisplayDay#, #DeleteYesNo#, #OutputYesNo#, #FirstIndex#, #LastIndex#
+		</select>
+		
+		<!--SAVE-->
+		<update id="content.POPUP_SAVE_U" parameterClass="popup" resultClass="popup">
+			EXEC USP_POPUP_SAVE "U", #PopupNo#, #PopupTitle#, #LinkUrl#, #PopupContents#, #Contents#, #StartDay#, #EndDay#, #WidthSize#, #HeightSize#, #LeftMargin#
+			, #TopMargin#, #UpdateUserNo#, #CreateUserNo#, #FileGroupNo#, #PopupGubun#, #OutputYesNo#, #DeleteYesNo#
+		</update>
+		<update id="content.POPUP_SAVE_C" parameterClass="popup" resultClass="popup">
+			EXEC USP_POPUP_SAVE "C", #PopupNo#, #PopupTitle#, #LinkUrl#, #PopupContents#, #Contents#, #StartDay#, #EndDay#, #WidthSize#, #HeightSize#, #LeftMargin#
+			, #TopMargin#, #UpdateUserNo#, #CreateUserNo#, #FileGroupNo#, #PopupGubun#, #OutputYesNo#, #DeleteYesNo#
+		</update>
+
+		<!--DELETE -->
+		<update id="content.POPUP_SAVE_D" parameterClass="Hashtable" resultClass="popup">
+      EXEC USP_POPUP_SAVE "D", #PopupNo#, #PopupTitle#, #LinkUrl#, #PopupContents#, #Contents#, #StartDay#, #EndDay#, #WidthSize#, #HeightSize#, #LeftMargin#
+      , #TopMargin#, #UpdateUserNo#, #CreateUserNo#, #FileGroupNo#, #PopupGubun#, #OutputYesNo#, #DeleteYesNo#
+    </update>
+
+	<!-- POPUP 끝-->
+
+	<!-- 관련사이트 시작-->
+		<!-- SELECT -->
+		<select id="content.FAMILYSITE_SELECT_A" parameterClass="Hashtable" resultClass="familySite">
+			EXEC USP_FAMILYSITE_SELECT "A", #SiteNo#
+		</select>
+		<select id="content.FAMILYSITE_SELECT_S" parameterClass="Hashtable" resultClass="familySite">
+			EXEC USP_FAMILYSITE_SELECT "S", #SiteNo#
+		</select>
+		
+		<!--SAVE-->
+		<update id="content.FAMILYSITE_SAVE_U" parameterClass="Hashtable" resultClass="familySite">
+			EXEC USP_FAMILYSITE_SAVE  "U", #QuickName#, #Url#, #DisplayOrder#, #QuickNo#, #FileGroupNo#, #CreateUserNo#, #UpdateUserNo#		
+																	 , #CreateDateTime#, #UpdateDateTime#, #DeleteYesNo#, #OutputYesNo#		
+		</update>
+		
+		<update id="content.FAMILYSITE_SAVE_C" parameterClass="Hashtable" resultClass="familySite">
+      EXEC USP_FAMILYSITE_SAVE  "C", #QuickName#, #Url#, #DisplayOrder#, #QuickNo#, #FileGroupNo#, #CreateUserNo#, #UpdateUserNo#
+																	 , #CreateDateTime#, #UpdateDateTime#, #DeleteYesNo#, #OutputYesNo#
+    </update>
+		
+		<!--DELETE -->
+		<update id="content.FAMILYSITE_SAVE_D" parameterClass="Hashtable" resultClass="familySite">
+      EXEC USP_FAMILYSITE_SAVE  "D", #QuickName#, #Url#, #DisplayOrder#, #QuickNo#, #FileGroupNo#, #CreateUserNo#, #UpdateUserNo#
+																	 , #CreateDateTime#, #UpdateDateTime#, #DeleteYesNo#, #OutputYesNo#
+    </update>
+
+		<!-- 관련사이트 끝-->
+		
+	<!-- 퀵링크 시작-->
+		<!-- SELECT -->
+		<select id="content.QUICKLINK_SELECT_L" parameterClass="Hashtable" resultClass="quickLink">
+			EXEC USP_QUICKLINK_SELECT "L"
+		</select>
+		
+		<select id="content.QUICKLINK_SELECT_S" parameterClass="Hashtable" resultClass="quickLink">
+			EXEC USP_QUICKLINK_SELECT "S", #QuickNo#
+		</select>
+		
+		<!-- SAVE -->
+		<update id="content.QUICKLINK_SAVE_C" parameterClass="Hashtable" resultClass="quickLink">
+			EXEC USP_QUICKLINK_SAVE "C", #QuickNo#, #QuickName#, #Url#, #DeleteYesNo#, #CreateUserNo#, NULL, #FileGroupNo#, #DisplayOrder#, #OutputYesNo#
+		</update>
+
+		<update id="content.QUICKLINK_SAVE_U" parameterClass="Hashtable" resultClass="quickLink">
+			EXEC USP_QUICKLINK_SAVE "U", #QuickNo#, #QuickName#, #Url#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#, #DisplayOrder#, #OutputYesNo#
+		</update>
+
+		<update id="content.QUICKLINK_SAVE_D" parameterClass="Hashtable" resultClass="quickLink">
+			EXEC USP_QUICKLINK_SAVE "D", #QuickNo#, #QuickName#, #Url#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#, #DisplayOrder#, #OutputYesNo#
+		</update>
+		
+	<!-- 퀵링크 끝 -->
+	</statements>
+</sqlMap>

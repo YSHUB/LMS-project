@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="General.master.cs" Inherits="IDINO_UIS.Message.master.General" %>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%=ConfigurationManager.AppSettings["SystemName"].ToString() %></title>
+    <!-- polyfill -->
+    <%--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>--%>
+    <script src="/Message/scripts/es5/polyfill/Symbol-es6.js"></script>
+    <script src="/Message/scripts/es5/polyfill/Array.prototype.find.js"></script>
+    <script src="/Message/scripts/es5/polyfill/Array.prototype.findIndex.js"></script>
+    <script src="/Message/scripts/es5/polyfill/Array.prototype.includes.js"></script>
+    <!-- bootstrap css -->
+    <script src="/Message/scripts/jquery.min.js"></script>
+    <script src="/Message/scripts/bootstrap.bundle.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/Message/scripts/common.css">
+    <link rel="stylesheet" href="/Message/scripts/react-datepicker.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link href="/Message/scripts/common/css/icommon.css" rel="stylesheet">
+    <link href="/Message/scripts/common/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="/Message/scripts/www/css/style.css" rel="stylesheet">
+    <%--<script type="text/javascript" src="/Message/controls/Editor/cheditor.js"></script>--%>
+    <asp:ContentPlaceHolder ID="headContent" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        .table > tbody > tr.active > td {
+            background-color: #faf2d5;
+        }
+
+        .table-filter {
+            background: #f3f3f4;
+            border: #e0e0e0 solid 1px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            padding: 5px 10px 5px 10px;
+            margin: 0 0 10px 0;
+        }
+               
+        .form-group label, .control-label {
+            font-size: 13px;
+            font-family: 'Nanum Gothic Bold';
+            font-weight: 600;
+            margin-top: inherit;
+        }
+
+        .ui-datepicker-trigger {
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6)
+        }
+
+        .ui-datepicker-trigger {
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background-color: #a1bac5;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            width: 33px;
+            height: 26px;
+            border: none;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body id="page_top" style="padding: 0px">
+     <script>
+         <% /* 스피너 표시 */%>
+         if (parent.startSpin) {
+             parent.startSpin();
+         }
+     </script>
+
+    <div class="container-fluid" style="margin-left: 0; margin-right: 0">
+        <div id="content">
+            <div id="app" class="mt-2">
+                <div>
+                    <div id="bodyContent">
+                        <h3>메세지전송</h3>
+                        <asp:ContentPlaceHolder ID="BodyContent" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Message/scripts/bluebird.min.js"></script>
+    <script src="/Message/scripts/common/js/jquery-3.3.1.min.js"></script>
+    <script src="/Message/scripts/common/js/jquery-ui-1.12.1.min.js"></script>
+    <script src="/Message/scripts/common/js/ibootstrap.min.js"></script>
+    <script src="/Message/scripts/common/js/owl.carousel.min.js"></script>
+    <script src="/Message/scripts/moment.min.js"></script>
+    <script src="/Message/scripts/common/js/lnb.js"></script>
+    <script src="/Message/scripts/www/js/script.js"></script>
+    <script src="/Message/scripts/common.js"></script>
+
+    <script src="/Message/scripts/master.js?ver=<%=DateTime.Now.ToString()%>"></script>
+    <script src="/Message/scripts/es5/message.es5.util.js?ver=<%=DateTime.Now.ToString()%>"></script>
+    <script src="/Message/scripts/es5/message.es5.api.js?ver=<%=DateTime.Now.ToString()%>"></script>
+
+    <script>
+
+        $(document.body).resize(function () {
+            window.parent.resizeTabPanel({
+                'width': $(this).width() - 288,
+                //'height': $(document).height()
+                'height': $(this).height()
+            });
+        });
+
+        $(document).ready(function () {
+
+            $('.datepicker').on('focusin', function (e) {
+                $(this).datepicker();
+                $(this).datepicker('show');
+            });
+
+            $(window).resize(function () {
+                window.parent.resizeTabPanel({
+                    'width': $(this).width() - 288,
+                    //'height': $(document).height()
+                    'height': $(this).height()
+                });
+            });
+                       
+            createDefaultAuthUser(function (user) {
+
+                if (parent.stopSpin) {
+                    parent.stopSpin();
+                }
+            });
+
+            if (parent.stopSpin) {
+                parent.stopSpin();
+            }
+
+            if (window.parent && window.parent.resizeTabPanel) {
+
+                var height_form = $(document).height();
+
+                window.parent.resizeTabPanel({
+                    'width': $(document).width() - 288,
+                    //'height': $(document).height()
+                    'height': height_form
+                });
+            }
+        });
+
+
+
+    </script>
+    <asp:ContentPlaceHolder ID="scripts" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

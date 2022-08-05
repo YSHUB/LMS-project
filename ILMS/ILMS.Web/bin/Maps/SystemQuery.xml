@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="systemCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+		<select id="system.MENU_SELECT_L" parameterClass="menu" resultClass="menu">
+			EXEC USP_MENU_SELECT 'L', NULL, NULL, #UpperMenuCode#
+		</select>
+
+		<select id="system.MENU_SELECT_S" parameterClass="menu" resultClass="menu">
+			EXEC USP_MENU_SELECT 'S', NULL, NULL, NULL, #MenuCode#
+		</select>
+		
+		<select id="system.MENU_SELECT_A" parameterClass="Hashtable" resultClass="menu">
+			EXEC USP_MENU_SELECT 'A', #UserType#, #MenuUrl#, NULL, NULL, #GroupNo#
+		</select>
+
+		<select id="system.MENU_SELECT_B" parameterClass="menu" resultClass="menu">
+			EXEC USP_MENU_SELECT 'B', #UserType#, #MenuUrl#
+		</select>
+
+		<select id="system.MENU_SELECT_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_MENU_SELECT 'C', NULL, #MenuUrl#
+		</select>
+
+		<update id="system.MENU_SAVE_C" parameterClass="menu" resultClass="int">
+			EXEC USP_MENU_SAVE 'C', NULL, #UpperMenuCode#, #MenuName#, #MenuUrl#, #LinkTarget#, #SortNo#, #MenuType#, #VisibleYesNo#, #UseYesNo#, #PopupYesNo#, #PopupWidth#, #PopupHeight#, #MenuExplain#, #UserNo#
+		</update>
+
+		<update id="system.MENU_SAVE_U" parameterClass="menu" resultClass="int">
+			EXEC USP_MENU_SAVE 'U', #MenuCode#, #UpperMenuCode#, #MenuName#, #MenuUrl#, #LinkTarget#, #SortNo#, #MenuType#, #VisibleYesNo#, #UseYesNo#, #PopupYesNo#, #PopupWidth#, #PopupHeight#, #MenuExplain#, #UserNo#
+		</update>
+
+		<update id="system.MENU_SAVE_D" parameterClass="menu" resultClass="int">
+			EXEC USP_MENU_SAVE 'D', #MenuCode#, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, #UserNo#
+		</update>
+
+		<select id="system.AUTHORITY_GROUP_SELECT_L" parameterClass="authorityGroup" resultClass="authorityGroup">
+			EXEC USP_AUTHORITY_GROUP_SELECT 'L'
+		</select>
+
+		<select id="system.AUTHORITY_GROUP_SELECT_S" parameterClass="authorityGroup" resultClass="authorityGroup">
+			EXEC USP_AUTHORITY_GROUP_SELECT 'S', #GroupNo#
+		</select>
+
+		<update id="system.AUTHORITY_GROUP_SAVE_C" parameterClass="authorityGroup" resultClass="int">
+			EXEC USP_AUTHORITY_GROUP_SAVE 'C', NULL, #AuthorityGroupName#, #Remark#, #UseYesNo#, #UserNo#, #UserTypeArray#
+		</update>
+
+		<update id="system.AUTHORITY_GROUP_SAVE_U" parameterClass="authorityGroup" resultClass="int">
+			EXEC USP_AUTHORITY_GROUP_SAVE 'U', #GroupNo#, #AuthorityGroupName#, #Remark#, #UseYesNo#, #UserNo#, #UserTypeArray#
+		</update>
+
+		<update id="system.AUTHORITY_GROUP_SAVE_D" parameterClass="authorityGroup" resultClass="int">
+			EXEC USP_AUTHORITY_GROUP_SAVE 'D', #GroupNo#, NULL, NULL, NULL, #UserNo#
+		</update>
+
+		<update id="system.AUTHORITY_USER_SAVE_CU" parameterClass="userAuthority" resultClass="int">
+			EXEC USP_AUTHORITY_USER_SAVE 'C', #GroupNo#, #UserType#, #UserNo#
+		</update>
+
+		<update id="system.AUTHORITY_USER_SAVE_D" parameterClass="userAuthority" resultClass="int">
+			EXEC USP_AUTHORITY_USER_SAVE 'D', #GroupNo#, #UserType#, #UserNo#
+		</update>
+
+		<select id="system.AUTHORITY_MENU_SELECT_L" parameterClass="menuAuthority" resultClass="menuAuthority">
+			EXEC USP_AUTHORITY_MENU_SELECT 'L', #GroupNo#
+		</select>
+
+		<select id="system.AUTHORITY_MENU_SELECT_S" parameterClass="menuAuthority" resultClass="menuAuthority">
+			EXEC USP_AUTHORITY_MENU_SELECT 'S', #GroupNo#
+		</select>
+
+		<update id="system.AUTHORITY_MENU_SAVE_CU" parameterClass="menuAuthority" resultClass="int">
+			EXEC USP_AUTHORITY_MENU_SAVE 'C', #GroupNo#, #MenuCode#, #IncludeYN#, #UserNo#
+		</update>
+
+		<update id="system.AUTHORITY_MENU_SAVE_D" parameterClass="menuAuthority" resultClass="int">
+			EXEC USP_AUTHORITY_MENU_SAVE 'D', #GroupNo#, #MenuCode#, #IncludeYN#, #UserNo#
+		</update>
+		
+		<select id="system.FAMILYSITE_SELECT_L" parameterClass="familySite" resultClass="familySite">
+			EXEC USP_FAMILYSITE_SELECT 'L', #SiteNo#
+		</select>
+
+		<select id="system.CLASSCODE_SELECT_L" parameterClass="Hashtable" resultClass="code">
+			EXEC USP_CLASSCODE_SELECT 'L', #ClassCode#, #DeleteYesNo#, #UseYesNo#
+		</select>
+
+		<select id="system.CLASSCODE_SELECT_S" parameterClass="Hashtable" resultClass="code">
+			EXEC USP_CLASSCODE_SELECT 'S', #ClassCode#, #DeleteYesNo#, #UseYesNo#
+		</select>
+
+		<update id="system.CLASSCODE_SAVE_C" parameterClass="Hashtable" resultClass="code">
+			EXEC USP_CLASSCODE_SAVE 'C', #ClassCode#, #ClassName#, #Remark#, #SortNo#, #CreateUserNo#, #UpdateUserNo#, #UseYesNo#, #DeleteYesNo#
+		</update>
+
+		<update id="system.CLASSCODE_SAVE_U" parameterClass="Hashtable" resultClass="code">
+			EXEC USP_CLASSCODE_SAVE 'U', #ClassCode#, #ClassName#, #Remark#, #SortNo#, #CreateUserNo#, #UpdateUserNo#, #UseYesNo#, #DeleteYesNo#
+		</update>
+
+		<update id="system.DETAILCODE_SAVE_C" parameterClass="Hashtable" resultClass="code">
+			EXEC USP_DETAILCODE_SAVE 'C', #ClassCode#, #CodeName#, #CodeValue#, #Remark#, #SortNo#, #UseYesNo#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#
+		</update>
+
+		<update id="system.DETAILCODE_SAVE_U" parameterClass="Hashtable" resultClass="code">
+			EXEC USP_DETAILCODE_SAVE 'U', #ClassCode#, #CodeName#, #CodeValue#, #Remark#, #SortNo#, #UseYesNo#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#
+		</update>
+
+		<select id="system.BOARD_AUTHORITY_SELECT_L" parameterClass="Hashtable" resultClass="boardAuthority">
+			EXEC USP_BOARD_AUTHORITY_SELECT 'L', #BoardMasterNo#
+		</select>
+
+		<update id="system.BOARD_AUTHORITY_SAVE_CU" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_BOARD_AUTHORITY_SAVE 'C', #BoardMasterNo#, #AuthorityGroupNo#, #IsRead#, #IsWrite#, #UserNo#
+		</update>
+		
+	</statements>
+</sqlMap>

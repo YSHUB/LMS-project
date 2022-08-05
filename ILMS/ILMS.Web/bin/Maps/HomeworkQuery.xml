@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="homeworkCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+		<select id="homework.HOMEWORK_SELECT_L" parameterClass="homework" resultClass="homework">
+			EXEC USP_HOMEWORK_SELECT 'L', #CourseNo#, #TermNo#, #HomeworkNo#, #UserNo#, #ProgramNo#, #TermGubun#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="homework.HOMEWORK_SELECT_S" parameterClass="homework" resultClass="homework">
+			EXEC USP_HOMEWORK_SELECT 'S', #CourseNo#, #TermNo#, #HomeworkNo#, #UserNo#, #ProgramNo#, #TermGubun#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="homework.HOMEWORK_SELECT_A" parameterClass="homework" resultClass="homework">
+			EXEC USP_HOMEWORK_SELECT #RowState#, #CourseNo#, #TermNo#, #HomeworkNo#, #UserNo#, #ProgramNo#, #TermGubun#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="homework.HOMEWORK_SELECT_B" parameterClass="homework" resultClass="homework">
+			EXEC USP_HOMEWORK_SELECT #RowState#, #CourseNo#, #TermNo#, #HomeworkNo#, #UserNo#, #ProgramNo#, #TermGubun#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="homework.HOMEWORK_SELECT_C" parameterClass="homework" resultClass="homework">
+			EXEC USP_HOMEWORK_SELECT #RowState#, #CourseNo#, #TermNo#, #HomeworkNo#, #UserNo#, #ProgramNo#, #TermGubun#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+		
+		<select id="homework.HOMEWORK_SELECT_EXCEL_D" parameterClass="Hashtable" resultClass="Hashtable">
+			EXEC USP_HOMEWORK_SELECT #RowState#, #CourseNo#, #TermNo#, #HomeworkNo#, #UserNo#, #ProgramNo#, #TermGubun#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="homework.HOMEWORK_SELECT_EXCEL_E" parameterClass="Hashtable" resultClass="Hashtable">
+			EXEC USP_HOMEWORK_SELECT #RowState#, #CourseNo#, #TermNo#, #HomeworkNo#, #UserNo#, #ProgramNo#, #TermGubun#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="homework.HOMEWORK_SUBMIT_SELECT_L" parameterClass="homeworksubmit" resultClass="homeworksubmit">
+			EXEC USP_HOMEWORK_SUBMIT_SELECT #RowState#, #CourseNo#, #HomeworkNo#, #UserNo#, #InningNo#, #Week#, #ExamItem#
+		</select>
+
+		<select id="homework.HOMEWORK_SUBMIT_SELECT_S" parameterClass="homeworksubmit" resultClass="homeworksubmit">
+			EXEC USP_HOMEWORK_SUBMIT_SELECT #RowState#, #CourseNo#, #HomeworkNo#, #UserNo#, #InningNo#, #Week#, #ExamItem#
+		</select>
+
+		<select id="homework.HOMEWORK_SUBMIT_SELECT_A" parameterClass="homeworksubmit" resultClass="homeworksubmit">
+			EXEC USP_HOMEWORK_SUBMIT_SELECT #RowState#, #CourseNo#, #HomeworkNo#, #UserNo#, #InningNo#, #Week#, #ExamItem#
+		</select>
+
+		<select id="homework.HOMEWORK_SAVE_C" parameterClass="homework" resultClass="int">
+			EXEC USP_HOMEWORK_SAVE #RowState#, #CourseNo#, #OrgGroupNo#, #GroupNo#, #TeamNo#, #NewTeamNo#, #CreateUserNo#, #HomeworkKind#, #HomeworkType#, #SubmitType#, #Weighting#, #InningNo#, #SubmitStartDay#, #SubmitEndDay#, #AddSubmitStartDay#, #AddSubmitEndDay#, #OpenYesNo#, #HomeworkTitle#, #HomeworkContents#, #AddSubmitPeriodUseYesNo#, #DeleteYesNo#, #FileGroupNo#, #ExamKind#, #EstimationOpenYesNo#, #IsOutput#, #UpdateUserNo#, #HomeworkNo#, #OrgHomeworkNo#
+		</select>
+
+		<select id="homework.HOMEWORK_SAVE_A" parameterClass="homework" resultClass="int">
+			EXEC USP_HOMEWORK_SAVE #RowState#, #CourseNo#, #OrgGroupNo#, #GroupNo#, #TeamNo#, #NewTeamNo#, #CreateUserNo#, #HomeworkKind#, #HomeworkType#, #SubmitType#, #Weighting#, #InningNo#, #SubmitStartDay#, #SubmitEndDay#, #AddSubmitStartDay#, #AddSubmitEndDay#, #OpenYesNo#, #HomeworkTitle#, #HomeworkContents#, #AddSubmitPeriodUseYesNo#, #DeleteYesNo#, #FileGroupNo#, #ExamKind#, #EstimationOpenYesNo#, #IsOutput#, #UpdateUserNo#, #HomeworkNo#, #OrgHomeworkNo#
+		</select>
+
+		<update id="homework.HOMEWORK_SAVE_B" parameterClass="homework">
+			EXEC USP_HOMEWORK_SAVE #RowState#, #CourseNo#, #OrgGroupNo#, #GroupNo#, #TeamNo#, #NewTeamNo#, #CreateUserNo#, #HomeworkKind#, #HomeworkType#, #SubmitType#, #Weighting#, #InningNo#, #SubmitStartDay#, #SubmitEndDay#, #AddSubmitStartDay#, #AddSubmitEndDay#, #OpenYesNo#, #HomeworkTitle#, #HomeworkContents#, #AddSubmitPeriodUseYesNo#, #DeleteYesNo#, #FileGroupNo#, #ExamKind#, #EstimationOpenYesNo#, #IsOutput#, #UpdateUserNo#, #HomeworkNo#, #OrgHomeworkNo#
+		</update>
+
+		<update id="homework.HOMEWORK_SUBMIT_SAVE_C" parameterClass="homeworksubmit">
+			EXEC USP_HOMEWORK_SUBMIT_SAVE #RowState#, #CourseNo#, #OrgGroupNo#, #GroupNo#, #TeamNo#, #NewTeamNo#, #CreateUserNo#, #HomeworkKind#, #HomeworkType#, #SubmitType#, #Weighting#, #InningNo#, #OpenYesNo#, #HomeworkTitle#, #HomeworkContents#, #AddSubmitPeriodUseYesNo#, #DeleteYesNo#, #FileGroupNo#, #ExamKind#, #EstimationOpenYesNo#, #IsOutput#, #UpdateUserNo#, #HomeworkNo#, #SubmitUserNo#, #SubmitContents#, #Score#, #Feedback#, #TargetYesNo#, #SubmitNo#, #IsGood#
+		</update>
+
+		<update id="homework.HOMEWORK_SAVE_U" parameterClass="homework">
+			EXEC USP_HOMEWORK_SAVE #RowState#, #CourseNo#, #OrgGroupNo#, #GroupNo#, #TeamNo#, #NewTeamNo#, #CreateUserNo#, #HomeworkKind#, #HomeworkType#, #SubmitType#, #Weighting#, #InningNo#, #SubmitStartDay#, #SubmitEndDay#, #AddSubmitStartDay#, #AddSubmitEndDay#, #OpenYesNo#, #HomeworkTitle#, #HomeworkContents#, #AddSubmitPeriodUseYesNo#, #DeleteYesNo#, #FileGroupNo#, #ExamKind#, #EstimationOpenYesNo#, #IsOutput#, #UpdateUserNo#, #HomeworkNo#, #OrgHomeworkNo#
+		</update>
+
+		<update id="homework.HOMEWORK_SAVE_D" parameterClass="homework">
+			EXEC USP_HOMEWORK_SAVE #RowState#, #CourseNo#, #OrgGroupNo#, #GroupNo#, #TeamNo#, #NewTeamNo#, #CreateUserNo#, #HomeworkKind#, #HomeworkType#, #SubmitType#, #Weighting#, #InningNo#, #SubmitStartDay#, #SubmitEndDay#, #AddSubmitStartDay#, #AddSubmitEndDay#, #OpenYesNo#, #HomeworkTitle#, #HomeworkContents#, #AddSubmitPeriodUseYesNo#, #DeleteYesNo#, #FileGroupNo#, #ExamKind#, #EstimationOpenYesNo#, #IsOutput#, #UpdateUserNo#, #HomeworkNo#, #OrgHomeworkNo#
+		</update>
+
+		<update id="homework.HOMEWORK_SUBMIT_SAVE_U" parameterClass="homeworksubmit">
+			EXEC USP_HOMEWORK_SUBMIT_SAVE #RowState#, #CourseNo#, #OrgGroupNo#, #GroupNo#, #TeamNo#, #NewTeamNo#, #CreateUserNo#, #HomeworkKind#, #HomeworkType#, #SubmitType#, #Weighting#, #InningNo#, #OpenYesNo#, #HomeworkTitle#, #HomeworkContents#, #AddSubmitPeriodUseYesNo#, #DeleteYesNo#, #FileGroupNo#, #ExamKind#, #EstimationOpenYesNo#, #IsOutput#, #UpdateUserNo#, #HomeworkNo#, #SubmitUserNo#, #SubmitContents#, #Score#, #Feedback#, #TargetYesNo#, #SubmitNo#, #IsGood#
+		</update>
+
+		<update id="homework.HOMEWORK_SUBMIT_SAVE_A" parameterClass="homeworksubmit">
+			EXEC USP_HOMEWORK_SUBMIT_SAVE #RowState#, #CourseNo#, #OrgGroupNo#, #GroupNo#, #TeamNo#, #NewTeamNo#, #CreateUserNo#, #HomeworkKind#, #HomeworkType#, #SubmitType#, #Weighting#, #InningNo#, #OpenYesNo#, #HomeworkTitle#, #HomeworkContents#, #AddSubmitPeriodUseYesNo#, #DeleteYesNo#, #FileGroupNo#, #ExamKind#, #EstimationOpenYesNo#, #IsOutput#, #UpdateUserNo#, #HomeworkNo#, #SubmitUserNo#, #SubmitContents#, #Score#, #Feedback#, #TargetYesNo#, #SubmitNo#, #IsGood#
+		</update>
+
+		<update id="homework.HOMEWORK_SUBMIT_SAVE_B" parameterClass="homeworksubmit">
+			EXEC USP_HOMEWORK_SUBMIT_SAVE #RowState#, #CourseNo#, #OrgGroupNo#, #GroupNo#, #TeamNo#, #NewTeamNo#, #CreateUserNo#, #HomeworkKind#, #HomeworkType#, #SubmitType#, #Weighting#, #InningNo#, #OpenYesNo#, #HomeworkTitle#, #HomeworkContents#, #AddSubmitPeriodUseYesNo#, #DeleteYesNo#, #FileGroupNo#, #ExamKind#, #EstimationOpenYesNo#, #IsOutput#, #UpdateUserNo#, #HomeworkNo#, #SubmitUserNo#, #SubmitContents#, #Score#, #Feedback#, #TargetYesNo#, #SubmitNo#, #IsGood#
+		</update>
+
+		<select id="homework.CERTIFICATE_SELECT_L" parameterClass="license" resultClass="license">
+			EXEC USP_CERTIFICATE_SELECT #RowState#, #CourseNo#, #HomeworkNo#, #UserNo#, #ClassNo#, #TermNo#, #SubjectName#, #AssignNo#, #ProgramNo#, #CertCode#, #HangulName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="homework.CERTIFICATE_SELECT_S" parameterClass="license" resultClass="license">
+			EXEC USP_CERTIFICATE_SELECT #RowState#, #CourseNo#, #HomeworkNo#, #UserNo#, #ClassNo#, #TermNo#, #SubjectName#, #AssignNo#, #ProgramNo#, #CertCode#, #HangulName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="homework.CERTIFICATE_SELECT_A" parameterClass="license" resultClass="license">
+			EXEC USP_CERTIFICATE_SELECT 'A', #CourseNo#, #HomeworkNo#, #UserNo#, #ClassNo#, #TermNo#, #SubjectName#, #AssignNo#, #ProgramNo#, #CertCode#, #HangulName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<update id="homework.CERTIFICATE_SAVE_C" parameterClass="license">
+			EXEC USP_CERTIFICATE_SAVE #RowState#, #CourseNo#, #UserNo#, #CertCode#, #CertDate#, #FileGroupNo#, #CreateUserNo#, #UpdateCertCode#
+		</update>
+
+		<update id="homework.CERTIFICATE_SAVE_D" parameterClass="license">
+			EXEC USP_CERTIFICATE_SAVE #RowState#, #CourseNo#, #UserNo#, #CertCode#, #CertDate#, #FileGroupNo#, #CreateUserNo#
+		</update>
+
+		<select id="homework.OUTPUT_SELECT_L" parameterClass="output" resultClass="output">
+			EXEC USP_OUTPUT_SELECT #RowState#, #CourseNo#, #UserNo#
+		</select>
+
+		<select id="homework.GROUP_SAVE_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_SAVE #ROWSTATE#, #GroupNo#, #CourseNo#, #GroupName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#, #GroupType#
+		</select>
+
+		<select id="homework.GROUP_TEAM_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_SAVE #ROWSTATE#, #TeamNo#, #GroupNo#, #CourseNo#, #TeamName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#
+		</select>
+
+		<update id="homework.GROUP_TEAM_MEMBER_SAVE_B" parameterClass="Hashtable">
+			EXEC USP_GROUP_TEAM_MEMBER_SAVE #ROWSTATE#, #TeamMemberNo#, #TeamMemberUserNo#, #TeamNo#, #GroupNo#, #CourseNo#, #TeamLeaderYesNo#
+		</update>
+
+		<select id="homework.GROUP_TEAM_SELECT_A" parameterClass="Hashtable" resultClass="groupTeam">
+			EXEC USP_GROUP_TEAM_SELECT #ROWSTATE#, #GroupNo#, #CourseNo#
+		</select>
+
+		<select id="homework.PROGRAM_SELECT_L" parameterClass="Hashtable" resultClass="homework">
+			EXEC USP_PROGRAM_SELECT #ROWSTATE#
+		</select>		
+		
+	</statements>
+
+</sqlMap>

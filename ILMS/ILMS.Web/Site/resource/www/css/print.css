@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+
+@page {
+		size: auto A4 landscape;
+		margin: 0;
+}
+
+@media print {
+		.printBody {
+				margin: 0;
+				padding: 0;
+				background: #fff;
+		}
+		body {
+				min-width: 21cm !important;
+		}
+		.print {
+				background: #fff;
+		}
+		.print .wrap {
+				margin: 0;
+				border: none;
+				border-radius: initial;
+				width: initial;
+				min-height: initial;
+				box-shadow: initial;
+				page-break-after: always;
+		}
+}
+.print {
+		margin: 0;
+		padding: 0;
+		font-size: 9pt !important;
+		background: #f5f5f5;
+		font-weight: 400 !important;
+		color: #000;
+}
+.wrap {
+		width: 21cm;
+		margin: 1cm auto;
+		min-height: 29.7cm;
+		padding: 0;
+		border: solid 1px #eee;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+p {
+		margin: 0;
+		padding: 0;
+}
+* {
+		margin: 0;
+		padding: 0;
+}
+body {
+		padding: 0 !important;
+		margin: 0 !important;
+		background: #f5f5f5;
+		font-family: "바탕체", "돋움";
+		vertical-align: top !important;
+}
+p.certi-num {
+		font-size: 19px;
+}
+.wrap {
+		background: #fff url(/site/resource/www/Images/print-bg.jpg) no-repeat center;
+		background-size: contain;
+		-webkit-print-color-adjust:exact;
+}
+.box {
+		border: none;
+		padding: 4cm 3cm 3.5cm 3cm;
+		position: relative;
+}
+.sign {
+		position: relative;
+		margin-top: 60px;
+}
+h1 {
+		font-size: 57px;
+		text-align: center;
+		margin: 0;
+		padding: 60px 0 0 0;
+}
+.sign p.name {
+		font-size: 30px;
+		text-align: center;
+		font-weight: bold;
+		padding: 45px 0;
+		letter-spacing: 0.04em;
+		background: url(/site/resource/www/Images/print-sign.jpg) no-repeat top right;
+		background-size: 120px;
+}
+p.info {
+		font-size: 18px;
+		line-height: 1.5em;
+		text-align: left;
+		font-weight: 400;
+		padding: 74px 0 0 0px;
+		letter-spacing: -0.02em;
+}
+p.year {
+		font-size: 18px;
+		text-align: center;
+		padding: 80px 0 0px 0;
+}
+p.copy {
+		letter-spacing: -0.05em;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 1.7em;
+		text-align: justify;
+		font-weight: bold;
+		padding: 55px 0 0 0;
+		/* word-break: keep-all; */
+}

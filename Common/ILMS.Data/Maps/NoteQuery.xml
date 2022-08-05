@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="noteCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+		<!--SELECT-->
+		<select id="note.NOTE_SELECT_L" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SELECT 'L', #ReceiveUserNo#, #SendUserNo#, #NoteNo#, #NoteTitle#, #NoteContents#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="note.NOTE_SELECT_A" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SELECT 'A', #ReceiveUserNo#, #SendUserNo#, #NoteNo#, #NoteTitle#, #NoteContents#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="note.NOTE_SELECT_B" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SELECT 'B', #ReceiveUserNo#, #SendUserNo#, #NoteNo#, #NoteTitle#, #NoteContents#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="note.NOTE_SELECT_C" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SELECT 'C', #ReceiveUserNo#, #SendUserNo#, #NoteNo#, #NoteTitle#, #NoteContents#, #FirstIndex#, #LastIndex#
+		</select>
+		
+		<select id="note.NOTE_SELECT_D" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SELECT 'D', #ReceiveUserNo#, #SendUserNo#, #NoteNo#, #NoteTitle#, #NoteContents#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="note.NOTE_SELECT_E" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SELECT 'E', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+		</select>
+
+		<select id="note.NOTE_SELECT_F" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SELECT 'F', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+		</select>
+
+		<select id="note.NOTE_SELECT_G" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SELECT 'G', NULL, #SendUserNo#, NULL, NULL, NULL, NULL, NULL, #TermNo#, #CourseNo#
+		</select>
+
+		<select id="note.NOTE_SELECT_H" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SELECT 'H', NULL, #SendUserNo#, NULL, NULL, NULL, NULL, NULL, #TermNo#, #CourseNo#
+		</select>
+
+		<!--UPDATE-->
+		<update id="note.NOTE_SAVE_A" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SAVE 'A', #NoteNo#
+		</update>
+		
+		<update id="note.NOTE_SAVE_C" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SAVE 'C', NULL, #NoteTitle#, #NoteContents#, #ReceiveUserNo#, #SendUserNo#, #FileGroupNo#
+		</update>
+		
+		<update id="note.NOTE_SAVE_D" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SAVE 'D', #NoteNo#
+		</update>
+		
+		<update id="note.NOTE_SAVE_U" parameterClass="Hashtable" resultClass="note">
+			EXEC USP_NOTE_SAVE 'U', #NoteNo#
+		</update>
+
+	</statements>
+</sqlMap>

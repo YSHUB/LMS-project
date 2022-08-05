@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="termCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+	
+	<statements>
+		<select id="term.TERM_SELECT_L" parameterClass="Hashtable" resultClass="term">
+			EXEC USP_TERM_SELECT	'L'
+		</select>
+		
+		<select id="term.TERM_SELECT_S" parameterClass="Hashtable" resultClass="term">
+			EXEC USP_TERM_SELECT	'S', #TermNo#
+		</select>
+
+		<select id="term.TERM_SELECT_A" parameterClass="Hashtable" resultClass="term">
+			EXEC USP_TERM_SELECT	'A'
+		</select>
+
+		<select id="term.TERM_SELECT_B" parameterClass="Hashtable" resultClass="term">
+			EXEC USP_TERM_SELECT	'B', #TermNo#, #CourseNo#
+		</select>
+
+		<select id="term.TERM_SELECT_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_TERM_SELECT	'C'
+		</select>
+    
+		<select id="term.TERM_SELECT_D" parameterClass="Hashtable" resultClass="term">
+      EXEC USP_TERM_SELECT	'D', #TermNo#, #CourseNo#
+    </select>
+
+		<select id="term.TERM_WEEK_SELECT_L" parameterClass="Hashtable" resultClass="termweek">
+			EXEC USP_TERM_WEEK_SELECT #RowState#, #TermNo#
+		</select>
+
+		<update id ="term.TERM_SAVE_U" parameterClass="Hashtable" resultClass="term">
+			EXEC USP_TERM_SAVE #RowState#, #TermNo#, #TermGubun#, #TermYear#, #TermQuarter#, #TermStartDay#, #TermEndDay#, #LectureRequestStartDay#, #LectureRequestEndDay#
+			, #LectureStartDay#, #LectureEndDay#, #LatenessSetupDay# , #AccessRestrictionName# , #AccessRestrictionStartDay#, #AccessRestrictionEndDay#,#UseYesNo#,  #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #TermRound#
+		</update>
+
+		<update id ="term.TERM_SAVE_C" parameterClass="Hashtable" resultClass="term">
+			EXEC USP_TERM_SAVE #RowState#, NULL , #TermGubun#, #TermYear#, #TermQuarter#, #TermStartDay#, #TermEndDay#, #LectureRequestStartDay#, #LectureRequestEndDay#
+			, #LectureStartDay#, #LectureEndDay#, #LatenessSetupDay#, #AccessRestrictionName# , #AccessRestrictionStartDay#, #AccessRestrictionEndDay#,#UseYesNo#,  #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #TermRound#
+		</update>
+		
+		<update id ="term.TERM_WEEK_SAVE_C" parameterClass="Hashtable" resultClass="termweek">
+			EXEC USP_TERM_WEEK_SAVE #RowState#, #TermNo#, #Week#, #WeekStartDay#, #WeekEndDay# ,#CreateUserNo#,	#UpdateUserNo#,	#UseYesNo#
+		</update>
+	
+		<update id ="term.TERM_WEEK_SAVE_U" parameterClass="Hashtable" resultClass="termweek">
+			EXEC USP_TERM_WEEK_SAVE #RowState#, #TermNo#, #Week#, #WeekStartDay#, #WeekEndDay# ,#CreateUserNo#,	#UpdateUserNo#,	#UseYesNo#
+		</update>
+	</statements>
+</sqlMap>

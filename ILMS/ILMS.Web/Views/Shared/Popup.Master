@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title><%:ConfigurationManager.AppSettings["SystemName"].ToString() %></title>
+	<link rel="shortcut icon" href="/site/resource/www/images/favicon.ico">
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/common/jquery.ui/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+
+	<script src="/common/js/jquery-3.3.1.min.js"></script>
+	<script src="/common/jquery.ui/jquery-1.12.4.js"></script>
+	<script src="/common/jquery.ui/ui/1.12.1/jquery-ui.js"></script>
+	<asp:ContentPlaceHolder ID="CssBlock" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body class="popup">
+	<div class="bg-primary p-3">
+        <h1 class="title01 mb-0"><asp:ContentPlaceHolder ID="Title" runat="server"><%:ViewBag.CurrentMenuTitle %></asp:ContentPlaceHolder></h1>
+    </div>
+	
+	<asp:ContentPlaceHolder ID="ContentBlock" runat="server" />
+	
+	<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <script src="/common/js/bootbox.js"></script>
+	<script src="/site/resource/www/js/script.js"></script>
+
+	<script src="/Common/js/common.js"></script>
+	<script src="/Common/js/util.js"></script>
+	<script src="/common/js/file.js"></script> 
+
+	<script>
+		$(document).ready(function () {
+			if ('<%=ViewBag.InfoMessage.ToString() %>' != "") {
+				alert('<%=ViewBag.InfoMessage.ToString() %>');
+			}
+		});
+	</script>
+
+	<asp:ContentPlaceHolder ID="ScriptBlock" runat="server" />
+</body>
+</html>

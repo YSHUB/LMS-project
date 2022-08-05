@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+
+</head>
+<body class="popup">
+<div class="bg-primary p-3">
+  <h1 class="title01 mb-0">퀴즈 - 문제 선택</h1>
+</div>
+
+<form action="/QuestionBankPopup/QuestionBankList" name="mainForm" id="mainForm" method="post">
+  <input type="hidden" name="ID" id="h_id" value="MJTP001">
+  <input type="hidden" name="GubunNo" id="h_GubunNo" value="0">
+  <div class="row no-gutters">
+    <div class="col-xl-3 bg-point-light p-4">
+
+      <div class="row align-items-center my-2">
+        <div class="col">
+          <h2 class="title03">문제폴더</h3>
+        </div>
+        <div class="col-auto text-right d-xl-none">
+          <button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+            <span class="sr-only">더 보기</span>
+          </button>
+        </div>
+      </div>
+      <div class="collapse d-xl-block" id="collapseExample1">
+        <div id="categoryLayer" class="overflow-auto bg-white px-2 q-folder overflow-md overflow-xl">
+          <div>
+            <div class="depth1-item">
+                <input type="text" value="1주차 퀴즈" name="GubunNos" readonly="readonly" id="GB_11" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item">
+                <input type="text" value="2주차 퀴즈 테스트" name="GubunNos" readonly="readonly" id="GB_70" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item">
+                <input type="text" value="3주차 퀴즈" name="GubunNos" readonly="readonly" id="GB_86" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item has-child">
+              <div class="row no-gutters align-items-center">
+                <div class="col-auto w-2rem">
+                  <i class="bi bi-arrow-return-right"></i>
+                </div>
+                <div class="col">
+                  <input type="text" value="3주차 자식폴더" name="GubunNos" readonly="readonly" id="GB_148" class="form-control-plaintext">
+                </div>
+              </div>
+            </div>
+            <div class="depth1-item has-child">
+              <div class="row no-gutters align-items-center">
+                <div class="col-auto w-2rem">
+                  <i class="bi bi-arrow-return-right"></i>
+                </div>
+                <div class="col">
+                  <input type="text" value="3주차 자식폴더" name="GubunNos" readonly="readonly" id="GB_148" class="form-control-plaintext">
+                </div>
+              </div>
+            </div>
+            <div class="depth1-item">
+                <input type="text" value="4주차 퀴즈" name="GubunNos" readonly="readonly" id="GB_89" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item">
+                <input type="text" value="5주차퀴즈" name="GubunNos" readonly="readonly" id="GB_95" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item">
+                <input type="text" value="6주차퀴즈" name="GubunNos" readonly="readonly" id="GB_96" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item">
+                <input type="text" value="7주차퀴즈" name="GubunNos" readonly="readonly" id="GB_97" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item">
+                <input type="text" value="8주차퀴즈" name="GubunNos" readonly="readonly" id="GB_98" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item">
+                <input type="text" value="지식_1주차 퀴즈" name="GubunNos" readonly="readonly" id="GB_130" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item">
+                <input type="text" value="지식_2주차 퀴즈" name="GubunNos" readonly="readonly" id="GB_136" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item">
+                <input type="text" value="지식_3주차 퀴즈" name="GubunNos" readonly="readonly" id="GB_140" class="form-control-plaintext">
+            </div>
+            <div class="depth1-item has-child">
+              <div class="row no-gutters align-items-center">
+                <div class="col-auto w-2rem">
+                  <i class="bi bi-arrow-return-right"></i>
+                </div>
+                <div class="col">
+                  <input type="text" value="3주차 자식폴더" name="GubunNos" readonly="readonly" id="GB_148" class="form-control-plaintext">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="active selectRow">
+              <div class="depth1-item">
+                  <input type="text" value="지식_4주차 퀴즈" name="GubunNos" readonly="readonly" id="GB_156" class="form-control-plaintext" class="selectRow">
+              </div>
+              <div class="depth1-item">
+                  <input type="text" value="지식_5주차 퀴즈" name="GubunNos" readonly="readonly" id="GB_157" class="form-control-plaintext">
+              </div>
+              <div class="depth1-item">
+                  <input type="text" value="지식_6주차 퀴즈" name="GubunNos" readonly="readonly" id="GB_163" class="form-control-plaintext">
+              </div>
+          </div>
+          
+        </div><!-- category -->
+      </div>
+
+    </div>
+    <div class="col-xl-9 p-4">
+
+      <p class="font-size-14 font-weight-bold mb-1">
+        <i class="bi bi-info-circle-fill"></i> 
+        문제은행 관리에서 등록된 문제를 선택하여 출제할 수 있습니다.
+      </p>
+      <p class="font-size-14 font-weight-bold">
+        <i class="bi bi-info-circle-fill"></i> 
+        문제 추가등록 또는 수정, 삭제는 문제은행 관리에서 해야 합니다.
+      </p>
+
+      <div class="card card-style01">
+        <div class="card-header">
+          <div class="text-right">
+            <button type="button" class="btn btn-sm btn-primary" id="btn_confirm" onclick="javascript:void(0);">선택문제 출제</button>
+            <button type="button" class="btn btn-sm btn-secondary" id="btn_cancel" onclick="window.close()">닫기</button>
+          </div>
+        </div>
+
+        <div class="card-body py-0">
+          <div class="table-responsive overflow-auto " style="height: 400px;">
+          <table class="table table-sm table-hover" cellspacing="0" summary="">
+            <colgroup>
+              <col style="width: 5%">
+              <col style="width: 5%">
+              <col style="width: 40%">
+              <col style="width: 10%">
+              <col style="width: 10%">
+              <col style="width: 10%">
+              <col style="width: 10%">
+              <col style="width: 10%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"><input id="allCheck" name="allCheck" class="checkbox" value="" type="checkbox"></th>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">유형</th>
+                <th scope="col">주차</th>
+                <th scope="col" class="text-nowrap">등록일</th>
+                <th scope="col" class="text-nowrap">사용횟수</th>
+                <th scope="col" class="text-nowrap">사용유무</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><input name="QuestionBankNo" class="checkbox" value="138" type="checkbox"></th>
+                <th scope="row">1</th>
+                <td class="text-left">ROI 공식은?</td>
+                <td>다중선택</td>
+                <td>5주차</td>
+                <td class="text-nowrap">2019-03-04</td>
+                <td>30</td>
+                <td>사용</td>
+              </tr>
+              <tr>
+                <th scope="row"><input name="QuestionBankNo" class="checkbox" value="140" type="checkbox"></th>
+                <th scope="row">2</th>
+                <td class="text-left">B2B기업을 개선하기 위한 핵심전략은 무엇인가?</td>
+                <td>단일선택</td>
+                <td>2주차</td>
+                <td class="text-nowrap">2019-03-04</td>
+                <td>26</td>
+                <td>미사용</td>
+              </tr>
+              <tr>
+                <th scope="row"><input name="QuestionBankNo" class="checkbox" value="142" type="checkbox"></th>
+                <th scope="row">3</th>
+                <td class="text-left">지난 2주간 퀴즈에서 작성하신 내용을 토대로 고민해봅시다. 여러분이 불편을 겪는 문제를 상세하게 적어서 제출하면 개선사항을 다음 학기에 반영하겠습니다.</td>
+                <td>서술형</td>
+                <td>2주차</td>
+                <td class="text-nowrap">2019-03-04</td>
+                <td>26</td>
+                <td>미사용</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-right">
+            <button type="button" class="btn btn-sm btn-primary" id="btn_confirm_twin" onclick="javascript:void(0);">선택문제 출제</button>
+            <button type="button" class="btn btn-sm btn-secondary" id="btn_cancel_twin" onclick="window.close()">닫기</button>
+          </div>
+        </div>
+
+      </div><!-- sec -->
+    </div>
+  </div>
+  
+</form><!-- form -->
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+<script>
+	$(document).ready(function() {
+			$(".dropdown-toggle").dropdown();
+	});
+</script>
+</body>
+</html>

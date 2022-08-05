@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+	<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+		<div class="container">
+			<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+		</div>
+	</div>
+
+	<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu A-1</a>
+							<a class="dropdown-item active" href="#">menu A-2</a>
+							<a class="dropdown-item" href="#">menu A-3</a>
+							<a class="dropdown-item" href="#">menu A-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<div class="sub-container container">
+		<div class="row">
+			<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>LMS</span></div>
+					<ul class="snb-list">
+						<li class="active">
+							<a href="#">menu A</a>
+							<ul>
+								<li class="active"><a href="#">menu A-1</a></li>
+								<li><a href="#">menu A-2</a></li>
+								<li><a href="#">menu A-3</a></li>
+								<li><a href="#">menu A-4</a></li>
+								<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">menu B</a>
+							<ul>
+								<li><a href="#">menu A-1</a></li>
+								<li><a href="#">menu A-2</a></li>
+								<li><a href="#">menu A-3</a></li>
+								<li><a href="#">menu A-4</a></li>
+								<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu C</a></li>
+						<li><a href="#">menu D</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xl-9">
+				<h2 class="title02">팀프로젝트 결과</h2>
+
+				<div id="content">
+					<div class="row align-items-center mt-4">
+						<div class="col">
+							<h3 class="title03">강좌 바로가기</h3>
+						</div>
+						<div class="col-auto text-right d-md-none">
+							<button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+								<span class="sr-only">더 보기</span>
+							</button>
+						</div>
+					</div>
+					<div class="card collapse d-md-block" id="collapseExample1">
+						<div class="card-body pb-1">
+							<div class="form-row">
+								<div class="form-group col-md-4">
+									<label for="" class="form-label">학기 선택 <strong class="text-danger">*</strong></label>
+									<select id="tno" class="form-control">
+										<option value="10">2022년도 1학기</option>
+									</select>
+								</div>
+								<div class="form-group col-md-8">
+									<label for="" class="form-label">교과목 선택 <strong class="text-danger">*</strong></label>
+									<select class="form-control" id="roommastercourseselect" onchange="javascript:goRoomWithPage(this);">
+										<option value="">강의실을 선택해주세요.</option>
+										<option value="">지도교수세미나Ⅲ-Ⅰ(103)</option>
+										<option value="">하이테크지식경영(001)</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h3 class="title04">과제 정보</h3>
+					<div class="card card-style01">
+						<div class="card-header">
+							<div class="row no-gutters align-items-center">
+								<div class="col">
+									<div class="row">
+										<div class="col-md">
+											<div class="text-primary font-size-14">
+												<strong class="text-danger bar-vertical">진행중</strong>
+												<strong class="text-primary">팀장제출</strong>
+											</div>
+										</div>
+										<div class="col-md-auto text-right">
+											<dl class="row dl-style01">
+												<dt class="col-auto">제출인원</dt>
+												<dd class="col-auto">2명</dd>
+												<dt class="col-auto">평가인원</dt>
+												<dd class="col-auto">52명/52명</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+								<div class="col-auto text-right d-md-none">
+									<button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+										<span class="sr-only">더 보기</span>
+									</button>
+								</div>
+							</div>
+							<a href="project_detail.html" class="card-title01 text-dark">팀프로젝트제목은 유동적으로 입력됩니다.   </a>
+						</div>
+						<div class="card-body collapse d-md-block" id="collapseExample2">
+							<div class="row mt-2 align-items-end">
+								<div class="col-md">
+									<dl class="row dl-style02">
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 제출방식</dt>
+										<dd class="col-8 col-md">팀장 제출</dd>
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 평가공개여부</dt>
+										<dd class="col-8 col-md">비공개 <input type="button" class="btn btn-sm btn-outline-primary" value="공개로 변경" /></dd>
+									</dl>
+									<dl class="row dl-style02">
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 제출기간</dt>
+										<dd class="col-8 col-md">2021-09-01 00:00 ~ 2021-10-15 23:59</dd>
+									</dl>
+									<dl class="row dl-style02">
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 내용</dt>
+										<dd class="col">
+											신청까지 단 1분이면 돼요.
+											기본적인 정보만 입력해주세요.
+											세부등급을 몰라도 OK! 엔카가 찾아드립니다.
+											최고가를 위해 48시간 경쟁해요.
+											신청 후 48시간 내에 전국의 제휴 딜러들이
+											차량을 매입하기 위해 치열하게 경쟁합니다.
+											실시간 최고가 판매!
+											언제든 고객이 최고가 딜러를 선택하시면 직접 찾아갑니다.
+											몇개의 서류만 작성하면 끝! 내 차 팔기, 참 쉽죠?
+										</dd>
+									</dl>
+									<dl class="row dl-style02">
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 평가인원</dt>
+										<dd class="col-8 col-md">0명/50명</dd>
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 팀편성</dt>
+										<dd class="col-8 col-md">그룹테스트 <a title="팀원보기" class="text-primary font-size-20"><i class="bi bi bi-people-fill"></i></a></dd>
+									</dl>
+								</div>
+								<div class="col-md-auto mt-2 mt-md-0 text-right">
+									<div class="btn-group btn-group-lg">
+										<a class="btn btn-lg btn-outline-warning w-100 w-md-auto" href="discussion_detail.html">수정</a>
+										<a class="btn btn-lg btn-outline-danger w-100 w-md-auto" href="discussion_detail.html">삭제</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--학생 리스트-->
+					<div class="row">
+						<div class="col-12 mt-2">
+							<h3 class="title04">제출 대상 리스트<strong class="text-primary">(15건)</strong></h3>
+							<div class="alert bg-light alert-light rounded text-center mt-2"><i class="bi bi-info-circle-fill"></i> 제출 대상이 없습니다.</div>
+							<div class="card card-style01 mt-2">
+								<div class="card-header">
+									<div class="row justify-content-between">
+										<div class="col-auto">
+											<button type="button" class="btn btn-sm btn-secondary" id="btnSort">
+												학번순
+											</button>
+										</div>
+										<div class="col-auto text-right">
+											<div class="dropdown d-inline-block">
+												<button type="button" class="btn btn-sm btn-secondary dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													메세지발송
+												</button>
+												<ul class="dropdown-menu" aria-labelledby="dropdown1">
+													<li><button class="dropdown-item" type="button" onclick="javascript:LayerPopup('LayerMail');">메일발송</button></li>
+													<li><button class="dropdown-item" type="button" onclick="javascript:LayerPopup('LayerMessage');">쪽지발송</button></li>
+													<li><button class="dropdown-item" type="button" onclick="javascript:LayerPopup('LayerSMS');">SMS발송</button></li>
+												</ul>
+											</div>
+											<div class="dropdown d-inline-block">
+												<button type="button" class="btn btn-sm btn-point" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													팀프로젝트 평가
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card-body py-0">
+									<div class="table-responsive">
+										<table class="table" id="personalTable">
+											<caption>개인별 평가 현황 리스트</caption>
+											<thead>
+												<tr>
+													<th scope="row"><input type="checkbox" class="checkbox" id="check_select_all" onclick="selectAll(this)"></th>
+													<th scope="row">번호</th>
+													<th scope="row" class="d-none d-md-table-cell">상태</th>
+													<th scope="row" class="d-none d-md-table-cell">팀</th>
+													<th scope="row">성명</th>
+													<th scope="row">학번</th>
+													<th scope="row" class="d-none d-md-table-cell">학적</th>
+													<th scope="row" class="d-none d-md-table-cell">제출일시</th>
+													<th scope="row" class="text-nowrap">제출파일</th>
+													<th scope="row" class="text-nowrap">제출정보</th>
+													<th scope="row" class="text-nowrap">점수<span class="d-none d-md-inline">(100점 만점)</span></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="data NView">
+													<th scope="row">
+														<!--  문자 관련 소스  학생선택 -->
+														<input type="checkbox" name="ck_userid" id="ck_userid" value="26146" class="checkbox">
+														<input type="hidden" value="26146">
+														<input type="hidden" value="강민*(20181233)">
+														<input type="hidden" value="20181233">
+													</th>
+													<td>1</td>
+													<td class="d-none d-md-table-cell">-</td>
+													<td class="text-nowrap text-left d-none d-md-table-cell">3조</td>
+													<td>
+														<span class="text-nowrap text-dark d-block">강민*</span>
+													</td>
+													<td>
+														<span class="text-nowrap text-secondary font-size-15">20181233</span>
+													</td>
+													<td class="d-none d-md-table-cell">재학</td>
+													<td class="d-none d-md-table-cell">
+														-
+													</td>
+													<td><a href="#" class="font-size-20" title="제출파일 다운로드"><i class="bi bi-file-earmark-arrow-down"></i></a></td>
+													<td><a href="#" class="font-size-20" title="제출내용 상세보기" data-toggle="modal" data-target="#detail" role="button"><i class="bi bi-list"></i></a></td>
+													<td class="text-right">
+														<input type="text" class="form-control form-control-sm text-right" />
+													</td>
+													<td>
+													</td>
+												</tr>
+												<tr class="data NView">
+													<th scope="row">
+														<!--  문자 관련 소스  학생선택 -->
+														<input type="checkbox" name="ck_userid" id="ck_userid" value="26146" class="checkbox">
+														<input type="hidden" value="26146">
+														<input type="hidden" value="강민*(20181233)">
+														<input type="hidden" value="20181233">
+													</th>
+													<td>2</td>
+													<td class="d-none d-md-table-cell">-</td>
+													<td class="text-nowrap text-left d-none d-md-table-cell">5조</td>
+													<td>
+														<span class="text-nowrap text-dark d-block">강민*</span>
+													</td>
+													<td>
+														<span class="text-nowrap text-secondary font-size-15">20181233</span>
+													</td>
+													<td class="d-none d-md-table-cell">재학</td>
+													<td class="d-none d-md-table-cell">
+														<span class="text-nowrap text-dark d-block">2021-03-22</span>
+														<span class="text-nowrap text-secondary font-size-15">09:09:00</span>
+													</td>
+													<td><a href="#" class="font-size-20" title="제출파일 다운로드"><i class="bi bi-file-earmark-arrow-down"></i></a></td>
+													<td><a href="#" class="font-size-20" title="제출내용 상세보기" data-toggle="modal" data-target="#detail" role="button"><i class="bi bi-list"></i></a></td>
+													<td class="text-right">
+														<input type="text" class="form-control form-control-sm text-right" />
+													</td>
+												</tr>
+												<tr class="data NView">
+													<th scope="row">
+														<!--  문자 관련 소스  학생선택 -->
+														<input type="checkbox" name="ck_userid" id="ck_userid" value="26146" class="checkbox">
+														<input type="hidden" value="26146">
+														<input type="hidden" value="강민*(20181233)">
+														<input type="hidden" value="20181233">
+													</th>
+													<td>2</td>
+													<td class="d-none d-md-table-cell"><span class="text-primary">제출</span></td>
+													<td class="text-nowrap text-left d-none d-md-table-cell">7조</td>
+													<td>
+														<span class="text-nowrap text-dark d-block">강민* <i class="bi bi-patch-check-fill text-success" title="팀장"></i></span>
+													</td>
+													<td>
+														<span class="text-nowrap text-secondary font-size-15">20181233</span>
+													</td>
+													<td class="d-none d-md-table-cell">재학</td>
+													<td class="d-none d-md-table-cell">
+														<span class="text-nowrap text-dark d-block">2021-03-22</span>
+														<span class="text-nowrap text-secondary font-size-15">09:09:00</span>
+													</td>
+													<td><a href="#" class="font-size-20" title="제출파일 다운로드"><i class="bi bi-file-earmark-arrow-down"></i></a></td>
+													<td><a href="#" class="font-size-20" title="제출내용 상세보기" data-toggle="modal" data-target="#detail" role="button"><i class="bi bi-list"></i></a></td>
+													<td class="text-right">
+														<input type="text" class="form-control form-control-sm text-right" />
+													</td>
+												</tr>
+												<tr class="data NView">
+													<th scope="row">
+														<!--  문자 관련 소스  학생선택 -->
+														<input type="checkbox" name="ck_userid" id="ck_userid" value="26146" class="checkbox">
+														<input type="hidden" value="26146">
+														<input type="hidden" value="강민*(20181233)">
+														<input type="hidden" value="20181233">
+													</th>
+													<td>2</td>
+													<td class="d-none d-md-table-cell"><span class="text-danger">미제출</span></td>
+													<td class="text-nowrap text-left d-none d-md-table-cell">7조</td>
+													<td>
+														<span class="text-nowrap text-dark d-block">강민* <i class="bi bi-patch-check-fill text-success" title="팀장"></i></span>
+													</td>
+													<td>
+														<span class="text-nowrap text-secondary font-size-15">20181233</span>
+													</td>
+													<td class="d-none d-md-table-cell">재학</td>
+													<td class="d-none d-md-table-cell">
+														<span class="text-nowrap text-dark d-block">2021-03-22</span>
+														<span class="text-nowrap text-secondary font-size-15">09:09:00</span>
+													</td>
+													<td><a href="#" class="font-size-20" title="제출파일 다운로드"><i class="bi bi-file-earmark-arrow-down"></i></a></td>
+													<td><a href="#" class="font-size-20" title="제출내용 상세보기" data-toggle="modal" data-target="#detail" role="button"><i class="bi bi-list"></i></a></td>
+													<td class="text-right">
+														<input type="text" class="form-control form-control-sm text-right" />
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+						</div>
+						<div class="col-6">
+							<div class="text-right">
+								<a href="project.html" class="btn btn-primary">저장</a>
+								<a href="project.html" class="btn btn-primary">목록</a>
+							</div>
+						</div>
+					</div>
+					<div class="modal fade show" id="exampleModalLg" tabindex="-1" aria-labelledby="exampleModalLgLabel" aria-modal="true" role="dialog">
+						<div class="modal-dialog modal-md">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title h4" id="exampleModalLgLabel">일괄평가</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<p class="font-size-14 text-danger font-weight-bold mb-0"><i class="bi bi-info-circle-fill"></i> 선택된 학생에게 모두 동일한 점수가 부여됩니다.</p>
+									<div class="card">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-12">
+													<div class="form-row">
+														<div class="form-group col-8">
+															<label for="Exam_Week" class="form-label">평가점수 <strong class="text-danger">*</strong></label>
+															<div class="input-group">
+																<input type="text" class="form-control text-right" />
+																<div class="input-group-append">
+																	<div class="input-group-text">점/2점</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-row">
+														<div class="form-group col-12">
+															<label for="Exam_Week" class="form-label">코멘트 <strong class="text-danger">*</strong></label>
+															<div class="input-group">
+																<textarea class="form-control" rows="5"></textarea>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12 text-right">
+											<input type="button" class="btn btn-primary" value="저장" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal fade show" id="detail" tabindex="-1" aria-labelledby="exampleModalLgLabel" aria-modal="true" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title h4" id="exampleModalLgLabel">제출내용 상세보기</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>제출 상세정보가 표시되는 부분입니다.
+</p></div>
+		</div>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+
+	<script src="/common/js/jquery-3.3.1.min.js"></script>
+	<script src="/common/js/popper.js"></script>
+	<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+	<script src="/site/resource/www/js/script.js"></script>
+	<script>
+		$.ajax({
+			method: 'GET',
+			url: 'header.html',
+			async: false,
+			dataType: 'html'
+		}).done(function (html) {
+			$('#header').append(html);
+		});
+		$.ajax({
+			method: 'GET',
+			url: 'footer.html',
+			async: false,
+			dataType: 'html'
+		}).done(function (html) {
+			$('#footer').append(html);
+		});
+
+		$(document).ready(function () {
+			$(".dropdown-toggle").dropdown();
+		});
+	</script>
+</body>
+</html>

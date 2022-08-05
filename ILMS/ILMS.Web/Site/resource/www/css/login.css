@@ -1,0 +1,209 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('/common/fonts/notosanskr/NotoSansKR.css');
+
+html {
+	height: 100%;	
+}
+body.login {
+	min-width:320px;
+  font-family: 'Noto Sans', 'NotoSansKR', sans-serif;
+	font-weight: 400;
+	color: #333D4B;
+	
+	background-image: url(/site/resource/www/images/login_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;	
+	height: 100%;	
+}
+
+/* h1 logo */
+.site-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 2rem;
+}
+.site-logo {
+	display: block;
+	width: 128px;
+	height: 48px;
+	background-image: url(/common/images/kiria/logo-w.svg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 128px auto;
+	font-size: 0;
+	margin-right: 8px;
+}
+.sub-site-title {
+	font-weight: 400;
+	font-size: 1rem;
+	color: #E3E6EF;
+	padding-top: 10px;
+	padding-left: 12px;
+
+	position: relative;
+}
+.sub-site-title::before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	top: 13px;
+	left: 0;
+	width: 1px;
+	height: 14px;
+	background-color: #E3E6EF;
+}
+.sub-site-title a {
+	color: #E3E6EF;
+}
+
+@media(min-width: 768px) {
+	.site-logo {
+		width: 154px;
+		height: 48px;
+		background-size: 154px auto;
+		margin-right: 16px;
+	}
+	.sub-site-title {
+		font-size: 1.125rem;
+		padding-left: 16px;
+	}
+	.sub-site-title::before {
+		top: 14px;
+		height: 16px;
+	}
+}
+
+/* login-box */
+.login-box {
+	margin: 0 auto;
+	padding: 4rem 1rem 0;
+}
+.login-box > .container {
+	max-width: 560px;
+}
+@media (min-width: 768px) {
+	.login-box {
+		padding: 8rem 0 0;
+	}
+	.login-box > .container {
+		min-height: 560px;
+	}
+}
+
+/* signin-box */
+.signin-box {
+	background: #fff;
+	/* background: linear-gradient(#fff, #DFE9F3); */
+	padding: 2.5rem;
+	min-height: 400px;
+}
+@media (min-width: 768px) {
+	.signin-box {
+		padding: 4rem 7.5rem 5rem;
+		box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
+	}
+}
+
+.signin-box .title {
+	margin-bottom: 1rem;
+	padding-top: 5.5rem;
+
+	font-family: 'NotoSansKR', sans-serif;
+	font-size: 1.25rem;
+	font-weight: 700;
+	color:#094CB2;
+	text-align: center;
+
+	position: relative;
+}
+
+.signin-box .title::before {
+	position: absolute;
+	content: '\F4E1';
+	
+	display: inline-block;
+	font-family: bootstrap-icons !important;
+	font-style: normal;
+	font-weight: normal !important;
+	font-variant: normal;
+	text-transform: none;
+	vertical-align: -0.125em;
+	-webkit-font-smoothing: antialiased;
+	
+	line-height: 64px;
+	font-size: 2rem;
+
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);	
+	width: 64px;
+	height: 64px;
+	border-radius: 1000px;
+
+	background-color: #D0D4DB;
+	color: #fff;
+}
+.signin-box .text {
+	font-size: 1rem;
+	text-align: center;
+	margin: 1rem 0;
+
+	word-break: keep-all;
+}
+
+@media (min-width: 768px) {
+	.signin-box .title {
+		padding-bottom: 1rem;
+	}
+}
+
+/* form-control */
+.signin-box .form-control {
+	width: 100%;
+	height: 3rem;
+	border-radius: 0;
+	border: #DFE9F3 solid 1px;
+	background-color: #DFE9F3;
+	color: #a8aaaf;
+}
+.signin-box .form-control:focus {
+	color: #333D4B;
+}
+
+.signin-box .btn-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	margin-top: 1rem;
+}
+.signin-box .btn-group > a {
+	font-size: 0.875rem;
+}
+@media(min-width: 576px) {
+	.signin-box .btn-group > a {
+		font-size: 1rem;
+	}
+}
+
+.signin-box .btn {
+	width: 100%;
+	border-radius: 0;
+}
+.signin-box .btn-primary {
+	width: 100%;
+	background-color: #094CB2;
+	border-color: #094CB2;
+
+	font-size: 1.25rem;
+	height: 3rem;
+}
+
+.signin-box .btn-primary:hover,
+.signin-box .btn-primary:focus {
+	background-color: #2876ED;
+	border-color: #2876ED;
+}

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="messageCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+	
+	<statements>
+		<!-- 사용자 리스트 조회 -->
+		<select id="message.MESSAGE_SELECT_L" parameterClass="Hashtable" resultClass="student">
+			EXEC USP_MESSAGE_SELECT 'L', #SearchGbn#, #SearchText#, #AssignNo#
+		</select>
+
+		<!-- 선택한 수신인 리스트 조회 -->
+		<select id="message.MESSAGE_SELECT_A" parameterClass="Hashtable" resultClass="student">
+			EXEC USP_MESSAGE_SELECT 'A', #SearchGbn#, #SearchText#, #AssignNo#, #UserNo#
+		</select>
+
+		<!-- 메세지 발송내역 저장 -->
+		<select id="message.MESSAGE_SAVE_C" parameterClass="message" resultClass="int">
+			EXEC USP_MESSAGE_SAVE 'C', NULL, #SendUserNo#, #SendPhoneNo#, #SendContents#, #SendCount#, #CourseNo#, NULL, NULL, NULL
+		</select>
+
+		<!-- 메세지 발송내역 저장 (동주대) -->
+		<select id="message.MESSAGE_SAVE_A" parameterClass="message" resultClass="int">
+			EXEC USP_MESSAGE_SAVE 'A', NULL, #SendUserNo#, #SendPhoneNo#, #SendContents#, NULL, NULL, #Address#
+		</select>
+
+		<!-- 내부 로그기록 -->
+		<update id="message.MESSAGE_SAVE_B" parameterClass="message" resultClass="int">
+			EXEC USP_MESSAGE_SAVE "B", #SendNo#, NULL, NULL, NULL, NULL, NULL, NULL, #ReceiveUserNo#, #ReceivePhoneNo#
+		</update>
+
+		<!-- 관리자 로그인 시 선택한 과목의 수강생 -->
+		<select id="message.NOTE_SELECT_H" parameterClass="Hashtable" resultClass="message">
+			EXEC USP_NOTE_SELECT 'H', NULL, #SendUserNo#, NULL, NULL, NULL, NULL, NULL, #TermNo#, #CourseNo#
+		</select>
+		
+	</statements>
+</sqlMap>

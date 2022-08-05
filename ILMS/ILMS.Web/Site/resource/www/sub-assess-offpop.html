@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+
+</head>
+<body class="popup">
+  <div class="bg-primary p-3">
+    <h1 class="title01 mb-0">오프등록</h1>
+  </div>
+
+  <div class="p-4">
+    <h3 class="title03">학생정보</h3>
+    <div class="card">
+      <div class="card-body">
+        <ul class="list-inline-style03">
+          <li class="list-inline-item">
+            <strong class="pr-2">학번</strong>
+            <span>20181221</span>
+          </li>
+          <li class="list-inline-item bar-vertical"></li>
+          <li class="list-inline-item">
+            <strong class="pr-2">이름</strong>
+            <span>홍길*</span>
+          </li>
+          <li class="list-inline-item bar-vertical"></li>
+          <li class="list-inline-item">
+            <strong class="pr-2">학년</strong>
+            <span>2학년</span>
+          </li>
+          <li class="list-inline-item bar-vertical"></li>
+          <li class="list-inline-item">
+            <strong class="pr-2">소속</strong>
+            <span>e비즈니스학</span>
+          </li>
+        </ul>
+      </div>
+    </div><!-- card -->
+
+    <h3 class="title03 mt-4">평가</h3>
+    <div class="form-row align-items-end">
+      <div class="form-group col-md-10">
+        <label for="Exam_ExamContents" class="sr-only">평가내용</label>
+        <textarea id="Exam_ExamContents" name="Exam.ExamContents" rows="3" class="form-control" placeholder="평가 내용을 입력해 주세요"></textarea>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="TotalScore" class="form-label">점수 입력 <strong class="text-danger">*</strong></label>
+        <div class="input-group">
+          <input id="TotalScore" type="text" class="form-control" value="" placeholder="0">
+          <div class="input-group-append">
+            <span class="input-group-text">점</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col">
+        <label for="" class="form-label">첨부</label>
+        <div class="input-group">
+          <input class="form-control" name="ctl00$IContents$file_첨부파일" title="첨부파일" id="IContents_file_첨부파일" type="file">
+          <div class="input-group-append">
+            <button class="btn btn-primary rounded-right" id="IContents_btn파일추가" type="button">추가</button>
+            <button class="btn btn-secondary mx-1 rounded" id="IContents_btn파일삭제" type="button">삭제</button>
+            <button class="btn btn-dark rounded" id="IContents_btn본문삽입" type="button">등록</button>
+          </div>
+        </div>
+        <select size="1" name="ctl00$IContents$fu첨부파일$lstFile" multiple="multiple" title="선택된 첨부파일" class="form-control w-100 mt-2"></select>
+      </div>
+    </div><!-- form-row -->
+    <div class="p-4 bg-light rounded">
+      <p class="font-size-14 text-danger font-weight-bold mb-2"><i class="bi bi-info-circle-fill"></i> 과제용 첨부파일은 반드시 1개만 업로드할 수 있습니다.</p>
+      <p class="font-size-14 font-weight-bold mb-0">첨부파일 > 파일찾기를 이용해 첨부하고자하는 파일을 선택한 후 파일업로드의 complete 상태 표시창이 사라질 때까지 기다렸다가 제출할 과제 파일 목록이 나타날 때 제출 버튼을 클릭해야지만 과제가 정상적으로 제출됩니다.</p>
+    </div>
+
+    <div class="text-right mt-4">
+      <button type="button" class="btn btn-primary" onclick="javascript:void(0);">저장</button>
+      <button type="button" class="btn btn-secondary" onclick="javascript:void(0);">취소</button>
+    </div>
+
+  </div>
+
+	<script src="/common/js/jquery-3.3.1.min.js"></script>
+  <script src="/common/js/popper.js" ></script>
+	<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+	<script src="/site/resource/www/js/script.js"></script>
+	<script>  
+    $(document).ready(function() {
+        $(".dropdown-toggle").dropdown();
+    });
+	</script>
+</body>
+</html>

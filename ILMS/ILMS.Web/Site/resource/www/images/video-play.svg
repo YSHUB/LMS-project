@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="66" height="71.986" viewBox="0 0 66 71.986">
+  <defs>
+    <filter id="Path_4418" x="0" y="0" width="66" height="71.986" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.243"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="video-play" transform="translate(3 3.748)">
+    <g transform="matrix(1, 0, 0, 1, -3, -3.75)" filter="url(#Path_4418)">
+      <path id="Path_4418-2" data-name="Path 4418" d="M46.826,32.245,12,12.044V52.45Zm4.752-4.176a4.812,4.812,0,0,1,0,8.353L13.4,58.575A4.909,4.909,0,0,1,6,54.4V10.092a4.911,4.911,0,0,1,7.4-4.176L51.583,28.069Z" transform="translate(3 3.75)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

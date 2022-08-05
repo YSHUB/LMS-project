@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="teamCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+	
+	<statements>
+		<!-- 그룹 리스트 조회 -->
+		<select id="team.GROUP_SELECT_L" parameterClass="Hashtable" resultClass="group">
+			EXEC USP_GROUP_SELECT "L", #CourseNo#, #DeleteYesNo#, #GroupNo#
+		</select>
+
+		<!-- 그룹  상세 조회 -->
+		<select id="team.GROUP_SELECT_S" parameterClass="Hashtable" resultClass="group">
+			EXEC USP_GROUP_SELECT "S", #CourseNo#, #DeleteYesNo#, #GroupNo#
+		</select>
+
+		<!-- 팀편성 팀 조회 -->
+		<select id="team.GROUP_TEAM_SELECT_L" parameterClass="Hashtable" resultClass="groupTeam">
+			EXEC USP_GROUP_TEAM_SELECT "L", #GroupNo#, #CourseNo#
+		</select>
+
+		<!-- 팀편성 팀 멤버 조회 -->
+		<select id="team.GROUP_TEAM_MEMBER_SELECT_L" parameterClass="Hashtable" resultClass="groupTeamMember">
+			EXEC USP_GROUP_TEAM_MEMBER_SELECT "L", #TeamNo#, #GroupNo#, #CourseNo#
+		</select>
+
+		<!-- 팀편성 미배정 학생 조회 -->
+		<select id="team.GROUP_TEAM_MEMBER_SELECT_A" parameterClass="Hashtable" resultClass="groupTeamMember">
+			EXEC USP_GROUP_TEAM_MEMBER_SELECT "A", #TeamNo#, #GroupNo#, #CourseNo#
+		</select>
+
+		<!-- 해당 강좌 수강학생 조회 -->
+		<select id="team.COURSE_LECTURE_SELECT_D" parameterClass="Hashtable" resultClass="courseLecture">
+			EXEC USP_COURSE_LECTURE_SELECT "D", #CourseNo#, #UserNo#, #UnivYN#, #SearchText#, #ViewYesNo#, #MNos#, #SearchDate#, #GroupType#, #SortType#
+		</select>
+
+		<!-- 그룹 저장 -->
+		<select id="team.GROUP_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_SAVE "C", #GroupNo#, #CourseNo#, #GroupName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#, #GroupType#
+		</select>
+
+		<!-- 그룹 수정 -->
+		<select id="team.GROUP_SAVE_U" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_SAVE "U", #GroupNo#, #CourseNo#, #GroupName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#, #GroupType#
+		</select>
+
+		<!-- 그룹 삭제 -->
+		<update id="team.GROUP_SAVE_D" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_SAVE "D", #GroupNo#, #CourseNo#, #GroupName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#, #GroupType#
+		</update>
+		
+		<!-- 팀 저장 -->
+		<select id="team.GROUP_TEAM_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_SAVE "C", #TeamNo#, #GroupNo#, #CourseNo#, #TeamName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#
+		</select>
+
+		<!-- 팀 저장 -->
+		<select id="team.GROUP_TEAM_SAVE_U" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_SAVE "U", #TeamNo#, #GroupNo#, #CourseNo#, #TeamName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#
+		</select>
+
+		<!-- 팀 삭제 -->
+		<update id="team.GROUP_TEAM_SAVE_D" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_SAVE "D", #TeamNo#, #GroupNo#, #CourseNo#, #TeamName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#
+		</update>
+
+		<!-- 멤버 저장 -->
+		<select id="team.GROUP_TEAM_MEMBER_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_MEMBER_SAVE "C", #TeamMemberNo#, #TeamMemberUserNo#, #TeamNo#, #GroupNo#, #CourseNo#, #TeamLeaderYesNo#, #TeamName#, #UserID#
+		</select>
+
+		<!-- 멤버 삭제 -->
+		<select id="team.GROUP_TEAM_MEMBER_SAVE_D" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_MEMBER_SAVE "D", #TeamMemberNo#, #TeamMemberUserNo#, #TeamNo#, #GroupNo#, #CourseNo#, #TeamLeaderYesNo#, #TeamName#, #UserID#
+		</select>
+
+		<!-- 멤버 리더 변경 -->
+		<select id="team.GROUP_TEAM_MEMBER_SAVE_U" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_MEMBER_SAVE "U", #TeamMemberNo#, #TeamMemberUserNo#, #TeamNo#, #GroupNo#, #CourseNo#, #TeamLeaderYesNo#, #TeamName#, #UserID#
+		</select>
+		
+		<!-- 그룹 복제 -->
+		<select id="team.GROUP_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_SAVE "A", #GroupNo#, #CourseNo#, #GroupName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#, #GroupType#
+		</select>
+
+		<!-- 팀 복제 -->
+		<select id="team.GROUP_TEAM_SAVE_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_SAVE "B", #TeamNo#, #GroupNo#, #CourseNo#, #TeamName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#, #NewGroupNo#
+		</select>
+
+		<!-- 멤버 복제 -->
+		<update id="team.GROUP_TEAM_MEMBER_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_MEMBER_SAVE "A", #TeamMemberNo#, #TeamMemberUserNo#, #TeamNo#, #GroupNo#, #CourseNo#, #TeamLeaderYesNo#, #NewGroupNo#, #TeamName#, #UserID#
+		</update>
+
+		<!-- 엑셀 업로드 멤버 저장 -->
+		<update id="team.GROUP_TEAM_MEMBER_SAVE_E" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_MEMBER_SAVE "E", #TeamMemberNo#, #TeamMemberUserNo#, #TeamNo#, #GroupNo#, #CourseNo#, #TeamLeaderYesNo#, #NewGroupNo#, #TeamName#, #UserID#
+		</update>
+		
+	</statements>
+</sqlMap>

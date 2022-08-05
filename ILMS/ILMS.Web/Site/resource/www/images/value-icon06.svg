@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <g id="value-icon06" transform="translate(-960.627 -499.33)">
+    <g id="Rectangle_3517" data-name="Rectangle 3517" transform="translate(960.627 499.33)" fill="#fff" stroke="#e2e6ea" stroke-width="5">
+      <rect width="100" height="100" rx="50" stroke="none"/>
+      <rect x="2.5" y="2.5" width="95" height="95" rx="47.5" fill="none"/>
+    </g>
+    <g id="Group_7204" data-name="Group 7204" transform="translate(997.387 525.33)">
+      <path id="Path_24" data-name="Path 24" d="M1017.62,588.811a3.709,3.709,0,1,0,7.417,0" transform="translate(-1008.089 -544.52)" fill="none" stroke="#124fb6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_25" data-name="Path 25" d="M1023.386,568.486a1.559,1.559,0,0,0,1.555-1.555V563.82a1.482,1.482,0,0,0-.078-.384,13.239,13.239,0,1,0-13.745,0,1.48,1.48,0,0,0-.078.384v3.111a1.559,1.559,0,0,0,1.555,1.555" transform="translate(-1004.752 -531.575)" fill="none" stroke="#124fb6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_26" data-name="Path 26" d="M1027.144,581.323V580.4a1.56,1.56,0,0,0-1.555-1.556H1014.8a1.56,1.56,0,0,0-1.555,1.556v.921a1.488,1.488,0,0,1,0,2.426v.922a1.56,1.56,0,0,0,1.555,1.555h10.79a1.56,1.56,0,0,0,1.555-1.555v-.922a1.488,1.488,0,0,1,0-2.426Z" transform="translate(-1006.954 -541.935)" fill="none" stroke="#124fb6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <line id="Line_96" data-name="Line 96" x2="9.241" transform="translate(7.064 40.601)" fill="none" stroke="#124fb6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <g id="Group_180" data-name="Group 180" transform="translate(3.421 0)">
+        <line id="Line_97" data-name="Line 97" y2="3.668" transform="translate(9.818)" fill="none" stroke="#124fb6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <line id="Line_98" data-name="Line 98" x1="1.834" y2="3.176" transform="translate(17.803 2.631)" fill="none" stroke="#124fb6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <line id="Line_99" data-name="Line 99" x2="1.834" y2="3.176" transform="translate(0 2.631)" fill="none" stroke="#124fb6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

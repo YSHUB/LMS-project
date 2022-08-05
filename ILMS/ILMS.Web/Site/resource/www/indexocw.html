@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+	<div class="container">
+		<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+	</div>
+</div>
+	
+<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">menu A-1</a>
+								<a class="dropdown-item active" href="#">menu A-2</a>
+								<a class="dropdown-item" href="#">menu A-3</a>
+								<a class="dropdown-item" href="#">menu A-4</a>
+							</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+</div>
+	
+<div class="sub-container container">
+    <div class="row">
+        <div class="col-xl-3 d-none d-xl-block">
+            <div class="snb">
+                <div class="snb-title"><span>LMS</span></div>
+                <ul class="snb-list">
+                    <li class="active">
+                        <a href="#">menu A</a>
+                        <ul>
+                            <li class="active"><a href="#">menu A-1</a></li>
+                            <li><a href="#">menu A-2</a></li>
+                            <li><a href="#">menu A-3</a></li>
+                            <li><a href="#">menu A-4</a></li>
+                            <li><a href="#">menu A-5</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">menu B</a>
+                        <ul>
+                            <li><a href="#">menu A-1</a></li>
+                            <li><a href="#">menu A-2</a></li>
+                            <li><a href="#">menu A-3</a></li>
+                            <li><a href="#">menu A-4</a></li>
+                            <li><a href="#">menu A-5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">menu C</a></li>
+                    <li><a href="#">menu D</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xl-9">
+            <h2 class="title02">나의 OCW</h2>
+
+            <div id="content">
+                        <div class="card card-style01">
+                            <div class="card-header">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col">
+                                        <a href="#" class="card-title01 text-dark">[03-2] 도달 구축을 위한 6가지 방법</a>
+                                    </div>
+                                    <div class="col-md-auto text-right">
+                                        <div class="icon-sns">
+                                            <a href="javascript:void(0);" role="button" onclick="snsShare('twitter');" title="트위터 공유">
+                                                <i class="icon twitter"></i><span class="sr-only">트위터 공유</span>
+                                            </a>
+                                            <a href="javascript:void(0);" role="button" onclick="snsShare('facebook');" title="페이스북 공유">
+                                                <i class="icon facebook"></i><span class="sr-only">페이스북 공유</span>
+                                            </a>
+                                            <a href="javascript:void(0);" role="button" onclick="snsShare('kakao');" title="카카오스토리 공유">
+                                                <i class="icon kakaostory"></i><span class="sr-only">카카오스토리 공유</span>
+                                            </a>
+                                            <a href="javascript:void(0);" role="button" onclick="snsShare('naverblog');" title="네이버블로그 공유">
+                                                <i class="icon naverblog"></i><span class="sr-only">네이버블로그 공유</span>
+                                            </a>
+                                            <a href="javascript:void(0);" role="button" onclick="snsShare('share');" title="링크 공유">
+                                                <i class="icon share"></i><span class="sr-only">링크 공유</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="card-body" id="collapseExample2">
+                                <div class="row mt-2 align-items-end">
+                                    <div class="col-12">
+                                        <dl class="row dl-style02">
+                                            <dt class="col-auto w-7rem"><i class="bi bi-dot"></i> 등록자</dt>
+                                            <dd class="col">
+                                                박기*
+                                                <a class="btn btn-sm btn-outline-primary" href="#"><i class="bi bi-plus"></i></a>
+                                                <a class="btn btn-sm btn-outline-success"><i class="bi bi-chat-dots"></i></a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="row dl-style02">
+                                            <dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 전공분류</dt>
+                                            <dd class="col-8 col-md"><a href="#">상경대학 > 정보경영학부 > e비즈니스학</a></dd>
+                                            <dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 테마분류</dt>
+                                            <dd class="col-8 col-md"><a href="#">사회</a></dd>
+                                        </dl>
+                                        <dl class="row dl-style02">
+                                            <dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 최근작성일</dt>
+                                            <dd class="col-8 col-md">2021-09-05</dd>
+                                            <dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 최근수정일</dt>
+                                            <dd class="col-8 col-md">2021-09-05</dd>
+                                        </dl>
+                                        <dl class="row dl-style02">
+                                            <dt class="col-auto w-7rem"><i class="bi bi-dot"></i> 설명</dt>
+                                            <dd class="col">
+                                                유체역학에서 베르누이법칙을 유도하는 과정이 잘 나타나있는 동영상이다.
+                                                <div class="mt-2">
+                                                    <i class="bi bi-tags text-dark mr-2"></i>
+                                                    <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                                                    <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                                                    <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                                                    <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                                                    <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                                                    <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl class="row dl-style02">
+                                            <dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 조회수</dt>
+                                            <dd class="col-2 col-md">100</dd>
+                                            <dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 강좌적용수</dt>
+                                            <dd class="col-2 col-md">50</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="text-right">
+                                            <a class="btn btn-sm btn-outline-primary" href="#"><span class="badge badge-primary">80</span> 추천 <i class="bi bi-hand-thumbs-up"></i> </a>
+                                            <a class="btn btn-sm btn-primary" href="#"><span class="badge badge-primary">80</span> 추천 <i class="bi bi-hand-thumbs-up-fill"></i> </a>
+                                            <a class="btn btn-sm btn-outline-success" href="#"><span class="badge badge-success">80</span> 관심  <i class="bi bi-suit-heart"></i> </a>
+                                            <a class="btn btn-sm btn-success" href="#"><span class="badge badge-success">80</span> 관심 <i class="bi bi-suit-heart-fill"></i> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <a class="btn btn-lg btn-primary" href="/LMS/Exam/StaffEstimationList/29565?ExamNo=543">컨텐츠 보기</a>
+                                    <a class="btn btn-lg btn-secondary" href="/LMS/Exam/StaffEstimationList/29565?ExamNo=543">강의자료 적용하기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="myTabContent">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="rel-tab" data-toggle="tab" href="#rel" role="tab" aria-controls="rel" aria-selected="false">연계 컨텐츠 <span class="badge badge-primary">10</span></a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="opinion-tab" data-toggle="tab" href="#opinion" role="tab" aria-controls="opinion" aria-selected="true">의견 <span class="badge badge-primary">123</span></a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="lecture-tab" data-toggle="tab" href="#lecture" role="tab" aria-controls="lecture" aria-selected="true">강의적용현황 <span class="badge badge-primary">5</span></a>
+                                </li>
+                            </ul>
+                            <div class="tab-pane fade show active" id="rel" role="tabpanel" aria-labelledby="rel-tab">
+                                <h3 class="title04 mt-4">작성자 추천 리스트</h3>
+                                <div class="alert bg-light alert-light rounded text-center m-0"><i class="bi bi-info-circle-fill"></i> 작성자 추천 항목이 없습니다.</div>
+                                <hr class="line-gap" />
+                                <h3 class="title04 mt-4">기타 추천 리스트</h3>
+                                <div class="alert bg-light alert-light rounded text-center m-0"><i class="bi bi-info-circle-fill"></i> 기타 추천 항목이 없습니다.</div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-folder-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">공학</strong>
+                                                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="#" class="text-dark">
+                                                            <strong class="font-size-18">딥 러닝 강의 - 2주차 4차시</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                                                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                                                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                                                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                                                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                                                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- card-item01 -->
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                                                    <!-- image type -->
+                                                    <div class="thumb-wrap">
+                                                        <div class="thumb">
+                                                            <img src="./images/420by300.png">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">공학</strong>
+                                                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="#" class="text-dark">
+                                                            <strong class="font-size-18">인공지능(人工知能) 또는 A.I.(Artificial Intelligence) - 2주차 4차시</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                                                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                                                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                                                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- card-item01 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="opinion" role="tabpanel" aria-labelledby="opinion-tab">
+                                <div class="alert bg-light alert-light rounded text-center mt-4"><i class="bi bi-info-circle-fill"></i> 아직 등록된 의견이 없습니다.</div>
+                                <div class="card card-style01 mt-4">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 col-md">
+                                                <p class="card-title02"><span class="badge badge-primary mr-2">작성자 등록</span>박기*(*123)</p>
+                                            </div>
+                                            <div class="col-auto text-right">
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto text-dark">작성일자</dt>
+                                                    <dd class="col-auto mb-0">2021-01-01</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>
+                                            의견 내용이 여기에 표시됩니다.<br />
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card card-style01 mt-4">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 col-md">
+                                                <p class="card-title02"><span class="badge badge-primary mr-2">작성자 등록</span>박기*(*123)</p>
+                                            </div>
+                                            <div class="col-auto text-right">
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto text-dark">작성일자</dt>
+                                                    <dd class="col-auto mb-0">2021-01-01</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>
+                                            의견 내용이 여기에 표시됩니다.<br />
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card card-style01 mt-4">
+                                    <div class="card-header bg-light">
+                                        <div class="row align-items-center">
+                                            <div class="col-md">
+                                                <p class="card-title02"><strong class="badge badge-success mr-2"></strong>박기*(*123)</p>
+                                            </div>
+                                            <div class="col-md-auto text-right">
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto text-dark">작성일자</dt>
+                                                    <dd class="col-auto mb-0">2021-01-01</dd>
+                                                    <dt class="col-auto text-dark sr-only">관리</dt>
+                                                    <dd class="col-auto mb-0">
+                                                        <a href="#" class="btn btn-sm btn-outline-danger">삭제</a>
+                                                        <a href="#" class="btn btn-sm btn-outline-primary">수정</a>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body bg-light">
+                                        <textarea class="form-control w-100">안녕하세요 반갑습니다.</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="card card-style01 mt-4">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 col-md">
+                                                <p class="card-title02"><span class="badge badge-primary mr-2">작성자 등록</span>박기*(*123)</p>
+                                            </div>
+                                            <div class="col-auto text-right">
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto text-dark">작성일자</dt>
+                                                    <dd class="col-auto mb-0">2021-01-01</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>
+                                            의견 내용이 여기에 표시됩니다.<br />
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="card card-style01 mt-4">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 col-md">
+                                                <p class="card-title02">김개*(*123)</p>
+                                            </div>
+                                            <div class="col-auto text-right">
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto text-dark">작성일자</dt>
+                                                    <dd class="col-auto mb-0">2021-01-01</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>
+                                            의견 내용이 여기에 표시됩니다.<br />
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="card card-style01 mt-4">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 col-md">
+                                                <p class="card-title02">박기*(*12323)</p>
+                                            </div>
+                                            <div class="col-auto text-right">
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto text-dark">작성일자</dt>
+                                                    <dd class="col-auto mb-0">2021-01-01</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>
+                                            의견 내용이 여기에 표시됩니다.<br />
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                            의견 내용이 여기에 표시됩니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card card-style01 mt-4">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-md">
+                                                <p class="card-title02">새 의견 등록</p>
+                                            </div>
+                                            <div class="col-md-auto text-right">
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto text-dark sr-only">관리</dt>
+                                                    <dd class="col-auto mb-0">
+                                                        <a href="#" class="btn btn-sm btn-outline-primary">등록</a>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <textarea class="form-control w-100"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="lecture" role="tabpanel" aria-labelledby="lecture-tab">
+                                <div class="card mt-4">
+                                    <div class="card-body py-0" data-spy="scroll" data-offset="0">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover" cellspacing="0" summary="">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">학년도/학기</th>
+                                                        <th scope="col">강좌</th>
+                                                        <th scope="col">주차</th>
+                                                        <th scope="col">차시(순서)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(1)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(2)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(3)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(4)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(5)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(1)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(2)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(3)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(4)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(5)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(1)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(2)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(3)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(4)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-1</td>
+                                                        <td class="text-left text-nowrap">
+                                                            사회과학연구방법론(5)
+                                                        </td>
+                                                        <td class="text-center">12</td>
+                                                        <td class="text-center">32</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right mt-2">
+                                <button type="button" class="btn btn-secondary" onclick="javascript:document.location.href='myocw.html';">목록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+	
+<div id="footer"></div>
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+<script>
+	$.ajax({
+		method: 'GET',
+		url: 'header.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#header').append(html);
+	});
+	$.ajax({
+		method: 'GET',
+		url: 'footer.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#footer').append(html);
+	});
+
+	$(document).ready(function() {
+			$(".dropdown-toggle").dropdown();
+	});
+</script>
+</body>
+</html>

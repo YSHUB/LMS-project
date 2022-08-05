@@ -1,0 +1,58 @@
+/**
+* 현재 동주대에서 사용하는 서체와 안산대에서 사용하는 서체는
+* noto sans kr로 동일하지만 사용하는 폰트 파일이 조금 달라
+* (안산대가 좀 더 세분화 되어 있음)
+* 따로 이 .css 파일을 만듦.
+* 참고로 안산대에서 이 .css 파일을 참조함.
+* /fonts/notokr/NotoSansKR-****
+*/
+
+/* Noto Sans */
+@font-face {
+	font-family: 'NotoSansKR';
+	font-weight: 100;	
+	src: url(NotoSansKR-Thin.woff2) format('woff2'),
+			url(NotoSansKR-Thin.woff) format('woff'),
+			url(NotoSansKR-Thin.ttf) format('truetype'),
+			url(NotoSansKR-Thin.svg#noto_sans_krthin) format('svg');
+}
+@font-face {
+	font-family: 'NotoSansKR';
+	font-weight: 200;	
+	src: url(NotoSansKR-Light.woff2) format('woff2'),
+			url(NotoSansKR-Light.woff) format('woff'),
+			url(NotoSansKR-Light.ttf) format('truetype'),
+			url(NotoSansKR-Light.svg#noto_sans_krlight) format('svg');
+}
+@font-face {
+	font-family: 'NotoSansKR';
+	font-weight: 400;	
+	src: url(NotoSansKR-Regular.woff2) format('woff2'),
+			url(NotoSansKR-Regular.woff) format('woff'),
+			url(NotoSansKR-Regular.ttf) format('truetype'),
+			url(NotoSansKR-Regular.svg#noto_sans_kr_regularregular) format('svg');
+}
+@font-face {
+	font-family: 'NotoSansKR';
+	font-weight: 500;	
+	src: url(NotoSansKR-Medium.woff2) format('woff2'),
+			url(NotoSansKR-Medium.woff) format('woff'),
+			url(NotoSansKR-Medium.ttf) format('truetype'),
+			url(NotoSansKR-Medium.svg#noto_sans_krmedium) format('svg');
+}
+@font-face {
+	font-family: 'NotoSansKR';
+	font-weight: 700;	
+	src: url(NotoSansKR-Bold.woff2) format('woff2'),
+			url(NotoSansKR-Bold.woff) format('woff'),
+			url(NotoSansKR-Bold.ttf) format('truetype'),
+			url(NotoSansKR-Bold.svg#noto_sans_krbold) format('svg');
+}
+@font-face {
+	font-family: 'NotoSansKR';
+	font-weight: 900;	
+	src: url(NotoSansKR-Black.woff2) format('woff2'),
+			url(NotoSansKR-Black.woff) format('woff'),
+			url(NotoSansKR-Black.ttf) format('truetype'),
+			url(NotoSansKR-Black.svg#noto_sans_krblack) format('svg');
+}

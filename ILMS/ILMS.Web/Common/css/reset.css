@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}

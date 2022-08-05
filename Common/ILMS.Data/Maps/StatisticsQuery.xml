@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="statisticsCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+		
+		<!--SELECT-->
+		<!--접속통계-->
+		<select id="statistics.STATISTICS_ACCESS_SELECT_L" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_ACCESS_SELECT 'L', #SearchDate#
+		</select>
+
+		<select id="statistics.STATISTICS_ACCESS_SELECT_A" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_ACCESS_SELECT 'A', #SearchDate#
+		</select>
+
+		<select id="statistics.STATISTICS_ACCESS_SELECT_F" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_ACCESS_SELECT 'F', #SearchDate#
+		</select>
+
+		<select id="statistics.STATISTICS_ACCESS_SELECT_G" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_ACCESS_SELECT 'G', #SearchDate#
+		</select>
+
+		<select id="statistics.STATISTICS_ACCESS_SELECT_H" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_ACCESS_SELECT 'H', #SearchDate#
+		</select>
+
+		<select id="statistics.STATISTICS_ACCESS_SELECT_I" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_ACCESS_SELECT 'I', #SearchDate#
+		</select>
+
+		<select id="statistics.STATISTICS_ACCESS_SELECT_B" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_ACCESS_SELECT 'B', #SearchDate#
+		</select>
+
+		<select id="statistics.STATISTICS_ACCESS_SELECT_E" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_ACCESS_SELECT 'E', #SearchDate#
+		</select>
+		
+		<!--활동통계-->
+		<select id="statistics.STATISTICS_ACTIVITY_SELECT_L" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_ACTIVITY_SELECT 'L', #TermNo#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="statistics.STATISTICS_BOARD_SELECT_L" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_BOARD_SELECT 'L', #TermNo#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<!--컨텐츠통계-->
+		<select id="statistics.STATISTICS_OCW_SELECT_L" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_OCW_SELECT 'L', #Year#
+		</select>
+		
+		<!--프로그램 이수현황-->
+		<select id="statistics.STATISTICS_OUTADMIN_SELECT_L" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_OUTADMIN_SELECT 'L', #TermNo#, #CourseNo#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="statistics.STATISTICS_OUTADMIN_SELECT_A" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_OUTADMIN_SELECT 'A', #TermNo#, #CourseNo#, #FirstIndex#, #LastIndex#
+		</select>
+		
+		<!--학생별 이수현황-->
+		<select id="statistics.STATISTICS_STUDENT_SELECT_L" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_STUDENT_SELECT 'L', #TermNo#, #SearchSubject#, #SearchText#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<!--개인별 컨텐츠 통계-->
+		<select id="statistics.STATISTICS_PERSONAL_SELECT_L" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_PERSONAL_SELECT 'L', #Year#, #Month#, #UserType#, #Sort#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="statistics.STATISTICS_PERSONAL_SELECT_A" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_PERSONAL_SELECT 'A', #Year#, #Month#, #UserType#, #Sort#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<!--운영통계-->
+		<select id="statistics.STATISTICS_COURSE_SELECT_L" parameterClass="Hashtable" resultClass="statistics">
+			EXEC USP_STATISTICS_COURSE_SELECT 'L', #Year#
+		</select>
+		
+		<!--SELECT-->
+	</statements>
+</sqlMap>

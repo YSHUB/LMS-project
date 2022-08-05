@@ -1,0 +1,304 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title><%:ConfigurationManager.AppSettings["SystemName"].ToString() %></title>
+	<link rel="shortcut icon" href="/site/resource/www/images/favicon.ico">
+	<link  rel="stylesheet"href="/common/css/icommon.css">
+	<link rel="stylesheet" href="/common/jquery.ui/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/site/resource/www/css/style.css">
+	<link rel="stylesheet" href="/site/resource/www/css/contents.css">
+
+	<script src="/common/js/jquery-3.3.1.min.js"></script>
+	<script src="/common/jquery.ui/jquery-1.12.4.js"></script>
+	<script src="/common/jquery.ui/ui/1.12.1/jquery-ui.js"></script>
+    <asp:ContentPlaceHolder ID="CssBlock" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#top-menu">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+
+	<div id="header">
+		<% Html.RenderPartial("./Header"); %>
+	</div>
+
+	<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+		<div class="container">
+			<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+		</div>
+	</div>
+
+	<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link home" href="#">
+							<i class="material-icons notranslate">강의실Home</i>
+							<span class="sr-only">메인</span>
+						</a>
+					</li>
+					<%
+						if(ViewBag.LecMenuList == null)
+						{
+							Response.Redirect(ConfigurationManager.AppSettings["BaseUrl"].ToString() + "/Account/Index");
+						}
+						else
+						{
+					%>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%:ViewBag.HighestMenuTitle.ToString() %></a>
+						<div class="dropdown-menu">
+					<%
+							foreach (var item in (ViewBag.LecMenuList))
+							{
+								if (item.MenuLv == 2)
+								{
+					%>
+							<a class="dropdown-item" href="<%:item.MenuUrl.ToString() %>" target="<%:item.LinkTarget.ToString() %>" ><%:item.MenuName.ToString() %></a>
+					<%
+								}
+							}
+					%>
+						</div>
+					</li>
+					
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%:ViewBag.UpperMenuTitle.ToString() %></a>
+						<div class="dropdown-menu">
+					<%
+							foreach (var item in (ViewBag.LecMenuList))
+							{
+								if (item.MenuLv == 3 && item.UpperMenuCode == ViewBag.HighestMenuCode)
+								{
+					%>
+							<a class="dropdown-item" href="<%:item.MenuUrl.ToString() %>" target="<%:item.LinkTarget.ToString() %>" ><%:item.MenuName.ToString() %></a>
+					<%
+								}
+							}
+					%>
+						</div>
+					</li>
+					<%
+						}
+					%>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	
+	<div class="sub-container container">
+		<div class="row">
+			<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title">
+						<span>강의실Home</span>
+					</div>
+					<ul class="snb-list">
+					<%
+						if(ViewBag.LecMenuList == null)
+						{
+							Response.Redirect(ConfigurationManager.AppSettings["BaseUrl"].ToString() + "/Account/Index");
+						}
+						else
+						{
+							foreach (var item in (ViewBag.LecMenuList))
+							{
+								if (item.MenuLv == 2)
+								{
+					%>
+						<li class="active">
+							<a href="#"><%:item.MenuName.ToString() %></a>
+					<%      
+								}
+								else if(item.MenuLv == 3)
+								{
+									if(item.SortNo % 10 == 1){
+					%>
+							<ul>
+					<%
+									}
+					%>
+								<li class="<%:ViewBag.UpperMenuCode == item.MenuCode ? "active" : "" %>">
+                        <%
+                            if (item.PopupYesNo == "Y")
+                            {
+                        %>
+								<a href="javascript:void(0);" onclick="javascript:fnOpenPopup('<%:item.MenuUrl.ToString() %>','','<%:item.PopupWidth.ToString() %>','<%:item.PopupHeight.ToString() %>',0,0,'auto')" target="<%:item.LinkTarget %>"><%:item.MenuName.ToString() %></a>
+                        <%
+							}
+							else
+							{
+                        %>
+								<a href="<%:item.MenuUrl.ToString() %>" target="<%:item.LinkTarget.ToString() %>" ><%:item.MenuName.ToString() %></a>
+                        <%
+							}
+                        %>
+								</li>
+					<%
+									if(item.LastMenuYN == "Y"){
+					%>
+							</ul>
+					<%
+									}
+								}
+
+								if(item.LastMenuYN.ToString() == "Y" && item.MenuLv == 2)
+								{
+					%>
+						</li>
+					<%
+								}
+							}
+						}
+					%>	
+					</ul>
+					<div class="alert bg-light round rounded-lg mt-2 p-1 text-center">
+						<div class="text-muted"><small><i class="bi bi-alarm"></i> 최근 접속일 : <%:ViewBag.User.LastConnectedDay.ToString().Substring(0, 10) %></small></div>
+						<div class="text-muted"><small><i class="bi bi-geo-alt"></i> 접속 IP  : <%:ViewBag.User.IPAddress.ToString() %></small></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-9">
+				<div class="sec-title">
+					<div class="col-md">
+						<h2 class="title02"><%:ViewBag.CurrentMenuTitle.ToString() %></h2>
+					</div>
+					<div class="col-md-auto">
+						<a href="/LectureRoom/Index/<%:ViewBag.Course.CourseNo %>" class="btn btn-sm btn-light"><i class="bi bi-house-fill"></i> 강의실 메인</a>
+						<a href="/MyPage/LectureRoom" class="btn btn-sm btn-dark"><i class="bi bi-door-open"></i> 강의실 나가기</a>
+					</div>
+				</div>
+				<div id="content">
+					<div class="row align-items-center mt-4">
+						<div class="col d-md-none">
+							<h4 class="title04">강좌정보</h4>
+						</div>
+						<div class="col-auto text-right d-md-none">
+							<button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseCourse" aria-expanded="false" aria-controls="collapseExample1">
+								<span class="sr-only">더 보기</span>
+							</button>
+						</div>
+					</div>
+
+					<div class="card collapse d-md-block" id="collapseCourse">
+						<div class="card-body bg-light pb-1">
+							<div class="form-row align-items-end">
+								<div class="form-group col-12 col-md-4 d-none d-md-block">
+									<label for="ddlTermNo" class="form-label sr-only"><%:ConfigurationManager.AppSettings["TermText"].ToString() %> 선택 <strong class="text-danger">*</strong></label>
+									<select id="ddlTermNo" class="form-control" onchange="javascript:fnChangeCourse(this);">
+										<%
+											if(ViewBag.TermList == null)
+											{
+										%>
+										<option value="">등록된 <%:ConfigurationManager.AppSettings["TermText"].ToString() %>가 없습니다.</option>
+										<%
+											}
+											else
+											{
+												foreach (var item in ViewBag.TermList)
+												{
+										%>
+										<option value="<%:item.TermNo %>" <%:ViewBag.Course.TermNo == item.TermNo ? "selected" : "" %>><%:item.TermName.ToString() %></option>
+										<%
+												}
+											}
+										%>
+									</select>
+								</div>
+								<div class="form-group col">
+									<label for="ddlCourseNo" class="form-label sr-only"><%:ConfigurationManager.AppSettings["SubjectText"].ToString() %> 선택 <strong class="text-danger">*</strong></label>
+									<select class="form-control" id="ddlCourseNo">
+										<%
+											if(ViewBag.TermList == null)
+											{
+										%>
+										<option value="">수강신청한 강의가 없습니다.</option>
+										<%
+											}
+
+											foreach (var item in ViewBag.CourseList)
+											{
+												if (item.ProgramNo == 1)
+												{
+										%>
+										<option value="<%:item.CourseNo %>" <%:ViewBag.Course.CourseNo == item.CourseNo ? "selected" : "" %>>[<%:item.ProgramName %>] <%:item.SubjectName.ToString() %>(<%:item.ClassNo.ToString("000") %>) - <%:item.AssignName.ToString() %> <%:item.TargetGradeName == "기타" ? "" : item.TargetGradeName.ToString() %></option>
+										<%
+												}
+												else
+												{
+										%>
+										<option value="<%:item.CourseNo %>" <%:ViewBag.Course.CourseNo == item.CourseNo ? "selected" : "" %>><%:ConfigurationManager.AppSettings["UnivYN"].ToString().Equals("Y") ? "[" + item.ProgramName + "] " : ""%><%:item.SubjectName.ToString() %></option>
+										<%
+												}
+											}
+										%>
+									</select>
+								</div>
+								<div class="form-group col-auto text-right">
+									<button type="button" id="btnMove" class="btn btn-secondary" onclick="javascript:<%:ViewBag.User.UserType == "USRT001" ? "fnChangeLectureRoom()" : "fnChangeLectureRoomWithPage()" %>;">
+										<span class="icon search">이동</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<asp:ContentPlaceHolder ID="ContentBlock" runat="server" />
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<% Html.RenderPartial("./Footer"); %>
+	</div>
+
+	<div id="divInfoLayer" class="row">
+		<div class="ajax-message col-10 col-md-8 col-lg-6">
+			<div class="msg"></div>
+		</div>
+	</div>
+	
+	
+	<script src="/common/js/popper.js" ></script>
+	<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <script src="/common/js/bootbox.js"></script>
+	<script src="/site/resource/www/js/script.js"></script>
+	
+
+	<script src="/common/js/common.js"></script> 
+	<script src="/common/js/util.js"></script> 
+	<script src="/common/js/file.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			fnHideInfoLayer();
+
+			if ('<%=ViewBag.InfoMessage.ToString() %>' != "" && performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+				bootAlert('<%=ViewBag.InfoMessage.ToString() %>');
+			}
+			<%
+				if (!ViewBag.IsAdmin)
+				{
+			%>
+			$("#liAdmMenu").html("");
+			<%
+				}
+			%>
+		});
+	</script>
+    <asp:ContentPlaceHolder ID="ScriptBlock" runat="server" />
+</body>
+</html>

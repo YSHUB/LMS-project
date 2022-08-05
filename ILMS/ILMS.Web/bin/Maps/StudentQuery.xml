@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="studentCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+	
+	<statements>
+		<!-- 문항 -->
+		<select id="student.STUDENT_SELECT_L" parameterClass="Hashtable" resultClass="student">
+			
+		</select>
+		<!---->
+		<select id="student.STUDENT_SAVE_C" parameterClass="student" resultClass="int">
+			EXEC USP_STUDENT_SAVE 'C',#UserNo#,#DepartmentClass#,#DayNightYesNo#,#LectureDayNightYesNo#,#Grade#,#HakjeokGubun#,#OriginUniversityStudentNo#,#JoinTermCode#
+			<!--select 1;-->
+		</select>
+
+		<update id="student.STUDENT_SAVE_U" parameterClass="student" resultClass="int">
+			EXEC USP_STUDENT_SAVE 'U',#UserNo#,#DepartmentClass#,#DayNightYesNo#,#LectureDayNightYesNo#,#Grade#,#HakjeokGubun#,#OriginUniversityStudentNo#,#JoinTermCode#
+			<!--select 1;-->
+		</update>
+		
+	</statements>
+</sqlMap>

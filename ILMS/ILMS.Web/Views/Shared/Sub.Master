@@ -1,0 +1,199 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title><%:ConfigurationManager.AppSettings["SystemName"].ToString() %></title>
+	<link rel="shortcut icon" href="/site/resource/www/images/favicon.ico">
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link rel="stylesheet" href="/common/jquery.ui/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+
+	<script src="/common/js/jquery-3.3.1.min.js"></script>
+	<script src="/common/jquery.ui/jquery-1.12.4.js"></script>
+	<script src="/common/jquery.ui/ui/1.12.1/jquery-ui.js"></script>
+
+    <asp:ContentPlaceHolder ID="CssBlock" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#top-menu">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+
+	<div id="header">
+		<% Html.RenderPartial("./Header"); %>
+	</div>
+
+	<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+		<div class="container">
+			<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+		</div>
+	</div>
+
+	<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link home" href="#">
+							<i class="material-icons notranslate">home</i>
+							<span class="sr-only">메인</span>
+						</a>
+					</li>
+					<%
+						if(ViewBag.MenuList == null)
+						{
+							Response.Redirect(ConfigurationManager.AppSettings["BaseUrl"].ToString() + "/Account/Index");
+						}
+						else
+						{
+					%>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%:ViewBag.HighestMenuTitle.ToString() %></a>
+						<div class="dropdown-menu">
+					<%
+							foreach (var item in (ViewBag.MenuList))
+							{
+								if (item.MenuLv == 1)
+								{
+					%>
+							<a class="dropdown-item" href="<%:item.MenuUrl.ToString() %>" target="<%:item.LinkTarget.ToString() %>" ><%:item.MenuName.ToString() %></a>
+					<%
+								}
+							}
+					%>
+						</div>
+					</li>
+					
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%:ViewBag.UpperMenuTitle.ToString() %></a>
+						<div class="dropdown-menu">
+					<%
+							foreach (var item in (ViewBag.MenuList))
+							{
+								if (item.MenuLv == 2 && item.UpperMenuCode == ViewBag.HighestMenuCode)
+								{
+					%>
+							<a class="dropdown-item" href="<%:item.MenuUrl.ToString() %>" target="<%:item.LinkTarget.ToString() %>" ><%:item.MenuName.ToString() %></a>
+					<%
+								}
+							}
+					%>
+						</div>
+					</li>
+					<%
+						}
+					%>	
+				</ul>
+			</nav>
+		</div>
+	</div>
+	
+	<div class="sub-container container">
+		<div class="row">
+			<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title">
+						<span><%:ViewBag.HighestMenuTitle.ToString() %></span>
+					</div>
+					<ul class="snb-list">
+					<%
+						foreach (var item in (ViewBag.LeftMenuList))
+						{
+							if (item.MenuLv == 2)
+							{
+								var requestPath = Request.Path.Substring(Request.Path.Length - 1).Equals("/") ? "/" + Request.Path.Substring(1, Request.Path.Length - 2) : Request.Path;
+								var isCourseList = requestPath.Contains("/Course/List") ? item.MenuUrl.ToString().Equals(requestPath) : true;
+					%>
+						<li class="<%:item.MenuUrl.ToString().Equals("/Course/List") ? "snb-focus" : ""%> <%:(item.MenuCode == ViewBag.UpperMenuCode && isCourseList ? "active" : "") %>">
+
+                            <%
+                                if (item.PopupYesNo == "Y")
+                                {
+                            %>
+                            <a href="javascript:void(0);" onclick="fnOpenPopup('<%:item.MenuUrl.ToString() %>','','<%:item.PopupWidth.ToString() %>','<%:item.PopupHeight.ToString() %>',0,0,'auto')" target="<%:item.LinkTarget %>"><%:item.MenuName.ToString() %></a>
+                            <%
+                            }
+                            else
+                            {
+                            %>
+                            <a href="<%:item.MenuUrl.ToString() %>" target="<%:item.LinkTarget.ToString() %>" ><%:item.MenuName.ToString() %></a>
+                            <%
+                                }
+                            %>
+
+						</li>
+					<%
+							}
+						}
+					%>	
+					</ul>
+				</div>
+			</div>
+			<div class="col-xl-9">
+				<div class="sec-title">
+					<div class="col-md">
+						<h2 class="title02"><%:ViewBag.CurrentMenuTitle.ToString() %></h2>
+					</div>
+					<div class="col-md-auto">
+					</div>
+				</div>
+				<div id="content">
+					<asp:ContentPlaceHolder ID="ContentBlock" runat="server" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<% Html.RenderPartial("./Footer"); %>
+	</div>
+
+	<div id="divInfoLayer" class="row">
+		<div class="ajax-message col-10 col-md-8 col-lg-6">
+			<div class="msg"></div>
+		</div>
+	</div>
+
+	<script src="/common/js/jquery-3.3.1.min.js"></script> 
+	<script src="/common/js/popper.js" ></script>
+	<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <script src="/common/js/bootbox.js"></script>
+	<script src="/site/resource/www/js/script.js"></script>
+	<script src="/common/jquery.ui/jquery-1.12.4.js"></script>
+	<script src="/common/jquery.ui/ui/1.12.1/jquery-ui.js"></script>
+
+	<script src="/common/js/common.js"></script> 
+	<script src="/common/js/util.js"></script> 
+	<script src="/common/js/file.js"></script> 
+	<script>
+		$(document).ready(function () {
+			fnHideInfoLayer();
+
+			if ('<%=ViewBag.InfoMessage.ToString() %>' != "" && performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+				bootAlert('<%=ViewBag.InfoMessage.ToString() %>');
+			}
+
+			$("#liLecMenu").html("");
+			<%
+				if (!ViewBag.IsAdmin)
+				{
+			%>
+			$("#liAdmMenu").html("");
+			<%
+				}
+			%>
+		});
+	</script>
+    <asp:ContentPlaceHolder ID="ScriptBlock" runat="server" />
+</body>
+</html>

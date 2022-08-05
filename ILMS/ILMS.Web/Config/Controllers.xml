@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<objects xmlns="http://www.springframework.net">
+
+	<!--WebBaseController-->
+	<object id="WebBaseController" singleton="false" type="ILMS.Web.Controllers.WebBaseController, ILMS.Web">
+		<property name="sessionManager" ref="objSessionManager" />
+		<property name="baseSvc" ref="objBaseService" />
+	</object>
+
+	<!--LectureRoomBaseController-->
+	<object id="LectureRoomBaseController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.LectureRoomBaseController, ILMS.Web">
+	</object>
+
+	<object id="AdminBaseController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.AdminBaseController, ILMS.Web">
+	</object>
+
+	<!--CommonController-->
+	<object id="CommonController" singleton="false" type="ILMS.Web.Controllers.CommonController, ILMS.Web">
+		<property name="sessionManager" ref="objSessionManager" />
+		<property name="baseSvc" ref="objBaseService" />
+	</object>
+
+	<!--SystemController-->
+	<object id="SystemController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.SystemController, ILMS.Web">
+		<property name="systemSvc" ref="objSystemService" />
+	</object>
+
+	<!--AccountController-->
+	<object id="AccountController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.AccountController, ILMS.Web">
+		<property name="accountSvc" ref="objAccountService" />
+	</object>
+
+	<!--HomeController-->
+	<object id="HomeController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.HomeController, ILMS.Web">
+		<property name="boardSvc" ref="objBoardService" />
+		<property name="courseSvc" ref="objCourseService" />
+	</object>
+	
+	<!--CourseController-->
+	<object id="CourseController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.CourseController, ILMS.Web">
+		<property name="courseSvc" ref="objCourseService" />
+		<property name="ocwSvc" ref="objOcwService" />
+	</object>
+
+	<!--DiscussionController-->
+	<object id="DiscussionController" parent="LectureRoomBaseController" singleton="false" type="ILMS.Web.Controllers.DiscussionController, ILMS.Web">
+		<property name="discussionSvc" ref="objDiscussionService" />
+	</object>
+
+	<!--HomeWorkController-->
+	<object id="HomeworkController" parent="LectureRoomBaseController" singleton="false" type="ILMS.Web.Controllers.HomeworkController, ILMS.Web">
+		<property name="homeworkSvc" ref="objHomeworkService" />
+	</object>
+  
+	<!--OcwController-->
+	<object id="OcwController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.OcwController, ILMS.Web">
+		<property name="ocwSvc" ref="objOcwService" />
+		<property name="studySvc" ref="objStudyService" />
+	</object>
+
+	<!--MypageController-->
+	<object id="MypageController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.MypageController, ILMS.Web">
+		<property name="accountSvc" ref="objAccountService" />
+	</object>
+
+	<!--QuestionBankController-->
+	<object id="QuestionBankController" parent="LectureRoomBaseController" singleton="false" type="ILMS.Web.Controllers.QuestionBankController, ILMS.Web">
+	</object>
+
+	<!--BoardController-->
+	<object id="BoardController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.BoardController, ILMS.Web">
+	</object>
+
+	<!--ExamController-->
+	<object id="ExamController" parent="LectureRoomBaseController" singleton="false" type="ILMS.Web.Controllers.ExamController, ILMS.Web">
+		<property name="examSvc" ref="objExamService" />
+	</object>
+
+	<!--QuizController-->
+	<object id="QuizController" parent="LectureRoomBaseController" singleton="false" type="ILMS.Web.Controllers.QuizController, ILMS.Web">
+		<property name="examSvc" ref="objExamService" />
+	</object>
+
+	<!--NoteController-->
+	<object id="NoteController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.NoteController, ILMS.Web">
+	</object>
+
+	<!--LecInfoController-->
+	<object id="LecInfoController" parent="LectureRoomBaseController" singleton="false" type="ILMS.Web.Controllers.LecInfoController, ILMS.Web">
+		<property name="studySvc" ref="objStudyService" />
+		<property name="courseSvc" ref="objCourseService" />
+		<property name="lecInfoSvc" ref="objLecInfoService" />
+	</object>
+
+	<!--LectureRoomController-->
+	<object id="LectureRoomController" parent="LectureRoomBaseController" singleton="false" type="ILMS.Web.Controllers.LectureRoomController, ILMS.Web">
+	</object>
+
+	<!--LectureController-->
+	<object id="LectureController" parent="AdminBaseController" singleton="false" type="ILMS.Web.Controllers.LectureController, ILMS.Web">
+		<property name="courseSvc" ref="objCourseService" />
+	</object>
+
+	<!--ReportController-->
+	<object id="ReportController" parent="LectureRoomBaseController" singleton="false" type="ILMS.Web.Controllers.ReportController, ILMS.Web">
+		<property name="teamProjectSvc" ref="objTeamProjectService" />
+	</object>
+
+	<!--TeamProjectController-->
+	<object id="TeamProjectController" parent="LectureRoomBaseController" singleton="false" type="ILMS.Web.Controllers.TeamProjectController, ILMS.Web">
+	</object>
+
+	<!--TeamController-->
+	<object id="TeamController" parent="LectureRoomBaseController" singleton="false" type="ILMS.Web.Controllers.TeamController, ILMS.Web">
+		<property name="teamSvc" ref="objTeamService" />
+		<property name="courseSvc" ref="objCourseService" />
+	</object>
+
+	<!--ImportController-->
+	<object id="ImportController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.ImportController, ILMS.Web">
+	</object>
+
+	<!--ContentController-->
+	<object id="ContentController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.ContentController, ILMS.Web">
+	</object>
+
+	<!--MessageController-->
+	<object id="MessageController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.MessageController, ILMS.Web">
+		<property name="messageSvc" ref="objMessageService" />
+	</object>
+
+	<!--FacilityController-->
+	<object id="FacilityController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.FacilityController, ILMS.Web">
+	</object>
+
+	<!--SubController-->
+	<object id="SubController" parent="WebBaseController" singleton="false" type="ILMS.Web.Controllers.SubController, ILMS.Web">
+	</object>
+
+</objects>

@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title><%:ConfigurationManager.AppSettings["SystemName"].ToString() %></title>
+	<link rel="stylesheet"href="/common/css/bootstrap-icons.css">
+    <asp:ContentPlaceHolder ID="CssBlock" runat="server" />
+</head>
+
+<body>
+	<asp:ContentPlaceHolder ID="ContentBlock" runat="server" />
+	
+	<script src="/common/js/jquery-3.3.1.min.js"></script>
+	<script src="/common/js/popper.js" ></script>
+	<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <script src="/common/js/bootbox.js"></script>
+
+	<script src="/common/js/util.js"></script> 
+	<script src="/common/js/common.js"></script> 
+	<script>
+		$(document).ready(function () {
+			<%
+				if(ViewBag.InfoMessage != null && !Request.Url.Segments[1].Replace("/", "").Equals("Info"))
+				{
+			%>
+			if ('<%=ViewBag.InfoMessage.ToString() %>' != "" && performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+				bootAlert('<%=ViewBag.InfoMessage.ToString() %>');
+			}
+			<%
+				}
+			%>
+		});
+	</script>
+    <asp:ContentPlaceHolder ID="ScriptBlock" runat="server" />
+</body>
+</html>

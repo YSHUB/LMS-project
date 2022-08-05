@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="boardCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<resultMaps>
+		<resultMap id="BoardSelectExcelA" class="Hashtable">
+			<result column="SubjectName" property="SubjectName" />
+			<result column="ClassNo" property="ClassNo" />
+			<result column="Title" property="Title" />
+			<result column="Contents" property="Contents" />
+			<result column="ContentsCreateDateTime" property="ContentsCreateDateTime" />
+			<result column="CreateUserID" property="CreateUserID" />
+			<result column="CreateUserName" property="CreateUserName" />
+			<result column="Reply" property="Reply" />
+			<result column="ReplyCreateDateTime" property="ReplyCreateDateTime" />
+			<result column="ReplyUserID" property="ReplyUserID" />
+			<result column="ReplyUserName" property="ReplyUserName" />
+		</resultMap>
+	</resultMaps>
+
+	<statements>
+		<select id="board.BOARD_SELECT_L" parameterClass="Hashtable" resultClass="board">
+			EXEC USP_BOARD_SELECT 'L', #MasterNo#, #InquiryUserNo#, #BoardTitle#, #Contents#, #HangulName#, #UserID#, #BoardNo#, #PublicGubun#, #HighestFixYesNo#, #FirstIndex#, #LastIndex#, #DeleteYesNo#, #CreateUserNo#, #StDateTime#, #EndDateTime#, #GroupID#, #GroupIDs#, #IsGroup#, #BoardTypeCodeNo#, #Depth#, #CourseNo#, #GroupNo#, #TeamNo#, #TeamNos#, #CourseNos#, #ProfessorNo#, #HighestEventYesNo#
+		</select>
+
+		<select id="board.BOARD_SELECT_S" parameterClass="Hashtable" resultClass="board">
+			EXEC USP_BOARD_SELECT 'S', #MasterNo#, #InquiryUserNo#, #BoardTitle#, #Contents#, #HangulName#, #UserID#, #BoardNo#, #PublicGubun#, #HighestFixYesNo#, #FirstIndex#, #LastIndex#, #DeleteYesNo#, #CreateUserNo#, #StDateTime#, #EndDateTime#, #GroupID#, #GroupIDs#, #IsGroup#, #BoardTypeCodeNo#, #Depth#, #CourseNo#, #GroupNo#, #TeamNo#, #TeamNos#, #CourseNos#, #ProfessorNo#, #HighestEventYesNo#
+		</select>
+
+		<select id="board.BOARD_SELECT_A" parameterClass="Hashtable" resultClass="board">
+			EXEC USP_BOARD_SELECT 'A', #MasterNo#, #InquiryUserNo#, #BoardTitle#, #Contents#, #HangulName#, #UserID#, #BoardNo#, #PublicGubun#, #HighestFixYesNo#, #FirstIndex#, #LastIndex#, #DeleteYesNo#, #CreateUserNo#, #StDateTime#, #EndDateTime#, #GroupID#, #GroupIDs#, #IsGroup#, #BoardTypeCodeNo#, #Depth#, #CourseNo#, #GroupNo#, #TeamNo#, #TeamNos#, #CourseNos#, #ProfessorNo#, #HighestEventYesNo#
+		</select>
+
+		<select id="board.BOARD_SELECT_E" parameterClass="Hashtable" resultClass="board">
+			EXEC USP_BOARD_SELECT 'E', #MasterNo#, #InquiryUserNo#, #BoardTitle#, #Contents#, #HangulName#, #UserID#, #BoardNo#, #PublicGubun#, #HighestFixYesNo#, #FirstIndex#, #LastIndex#, #DeleteYesNo#, #CreateUserNo#, #StDateTime#, #EndDateTime#, #GroupID#, #GroupIDs#, #IsGroup#, #BoardTypeCodeNo#, #Depth#, #CourseNo#, #GroupNo#, #TeamNo#, #TeamNos#, #CourseNos#, #ProfessorNo#, #HighestEventYesNo#
+		</select>
+
+		<select id="board.BOARD_MASTER_SELECT_S" parameterClass="Hashtable" resultClass="boardMaster">
+			EXEC USP_BOARD_MASTER_SELECT 'S', #MasterNo#
+		</select>
+
+		<select id="board.BOARD_MASTER_SELECT_L" parameterClass="Hashtable" resultClass="boardMaster">
+			EXEC USP_BOARD_MASTER_SELECT 'L'
+		</select>
+
+		<update id="board.BOARD_MASTER_SAVE_C" parameterClass="Hashtable">
+			EXEC USP_BOARD_MASTER_SAVE 'C', #BoardID#, #BoardTitle#, #BoardIsUseAcceptYesNo#, #BoardIsUseFileYesNo#, #BoardIsUseReplyYesNo#, #BoardIsSecretYesNo#, #UseYesNo#, #IsRead#, #IsAnonymous#, #IsEvent#, #IsNotice#, #CreateUserNo#, #MasterNo#
+		</update>
+
+		<update id="board.BOARD_MASTER_SAVE_U" parameterClass="Hashtable">
+			EXEC USP_BOARD_MASTER_SAVE 'U', #BoardID#, #BoardTitle#, #BoardIsUseAcceptYesNo#, #BoardIsUseFileYesNo#, #BoardIsUseReplyYesNo#, #BoardIsSecretYesNo#, #UseYesNo#, #IsRead#, #IsAnonymous#, #IsEvent#, #IsNotice#, #CreateUserNo#, #MasterNo#
+		</update>
+
+		<update id="board.BOARD_SAVE_A" parameterClass="Hashtable">
+			EXEC USP_BOARD_SAVE 'A', #BoardNo#, #InquiryUserNo#
+		</update>
+
+		<update id="board.BOARD_SAVE_B" parameterClass="Hashtable">
+			EXEC USP_BOARD_SAVE 'B', #BoardNo#, #InquiryUserNo#
+		</update>
+
+		<update id="board.BOARD_SAVE_C" parameterClass="Hashtable">
+			EXEC USP_BOARD_SAVE 'C', #BoardNo#, #InquiryUserNo#, #MasterNo#, #BoardTitle#, #HtmlContents#, #Contents#, #Thread#, #Depth#, #HighestFixYesNo#, #ParticipationAcceptYesNo#, #ReadCount#, #IPAddress#, #FileGroupNo#, #DeleteYesNo#, #CreateUserNo#, #CourseNo#, #TeamNo#, #ProfessorNo#, #IsSecret#, #IsAnonymous#, #IsFinish#
+		</update>
+
+		<update id="board.BOARD_SAVE_U" parameterClass="Hashtable">
+			EXEC USP_BOARD_SAVE 'U', #BoardNo#, #InquiryUserNo#, #MasterNo#, #BoardTitle#, #HtmlContents#, #Contents#, #Thread#, #Depth#, #HighestFixYesNo#, #ParticipationAcceptYesNo#, #ReadCount#, #IPAddress#, #FileGroupNo#, #DeleteYesNo#, #CreateUserNo#, #CourseNo#, #TeamNo#, #ProfessorNo#, #IsSecret#, #IsAnonymous#, #IsFinish#
+		</update>
+
+		<update id="board.BOARD_SAVE_E" parameterClass="Hashtable">
+			EXEC USP_BOARD_SAVE 'E', #BoardNo#, #InquiryUserNo#, #MasterNo#, #BoardTitle#, #HtmlContents#, #Contents#, #Thread#, #Depth#, #HighestFixYesNo#, #ParticipationAcceptYesNo#, #ReadCount#, #IPAddress#, #FileGroupNo#, #DeleteYesNo#, #CreateUserNo#, #CourseNo#, #TeamNo#, #ProfessorNo#, #IsSecret#, #IsAnonymous#, #IsFinish#
+		</update>
+
+		<update id="board.BOARD_SAVE_F" parameterClass="Hashtable">
+			EXEC USP_BOARD_SAVE 'F', #BoardNo#, #InquiryUserNo#, #MasterNo#, #BoardTitle#, #HtmlContents#, #Contents#, #Thread#, #Depth#, #HighestFixYesNo#, #ParticipationAcceptYesNo#, #ReadCount#, #IPAddress#, #FileGroupNo#, #DeleteYesNo#, #CreateUserNo#, #CourseNo#, #TeamNo#, #ProfessorNo#, #IsSecret#, #IsAnonymous#, #IsFinish#, #ParentThread#, #PrevThread#
+		</update>
+
+		<select id="board.BOARD_SELECT_B" parameterClass="Hashtable" resultClass="board">
+			EXEC USP_BOARD_SELECT 'B', #MasterNo#
+		</select>
+
+		<delete id="board.BOARD_SAVE_D" parameterClass="Hashtable">
+			EXEC USP_BOARD_SAVE 'D', #BoardNo#, #InquiryUserNo#
+		</delete>
+
+		<select id="board.BOARD_REPLY_SELECT_L" parameterClass="Hashtable" resultClass="boardReply">
+			EXEC USP_BOARD_REPLY_SELECT 'L', #BoardNo#, #FirstIndex#, #LastIndex#, #DeleteYesNo#, #ReplyNo#
+		</select>
+
+		<select id="board.BOARD_REPLY_SELECT_S" parameterClass="Hashtable" resultClass="boardReply">
+			EXEC USP_BOARD_REPLY_SELECT 'S', #BoardNo#, #FirstIndex#, #LastIndex#, #DeleteYesNo#, #ReplyNo#
+		</select>
+	
+		<update id="board.BOARD_REPLY_SAVE_C" parameterClass="boardReply">
+			EXEC USP_BOARD_REPLY_SAVE 'C', #BoardNo#, #Contents#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#
+		</update>
+
+		<update id="board.BOARD_REPLY_SAVE_A" parameterClass="Hashtable">
+			EXEC USP_BOARD_REPLY_SAVE 'A', #BoardNo#, #Contents#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #ReplyNo#, #ParticipationAcceptYesNo#, #AnswerYesNo#
+		</update>
+		
+		<update id="board.BOARD_REPLY_SAVE_B" parameterClass="Hashtable">
+			EXEC USP_BOARD_REPLY_SAVE 'B', #BoardNo#, #Contents#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #ReplyNo#, #ParticipationAcceptYesNo#, #AnswerYesNo#
+		</update>
+
+		<update id="board.BOARD_REPLY_SAVE_U" parameterClass="boardReply">
+			EXEC USP_BOARD_REPLY_SAVE 'U', #BoardNo#, #Contents#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #ReplyNo#, #ParticipationAcceptYesNo#, #AnswerYesNo#
+		</update>
+
+		<update id="board.BOARD_REPLY_SAVE_D" parameterClass="boardReply">
+			EXEC USP_BOARD_REPLY_SAVE 'D', #BoardNo#, #Contents#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #ReplyNo#, #ParticipationAcceptYesNo#, #AnswerYesNo#
+		</update>
+
+		<update id="board.BOARD_EVENT_SAVE_C" parameterClass="Hashtable">
+			EXEC USP_BOARD_EVENT_SAVE #RowState#, #BoardNo#, #UserNo#, #EventCode#
+		</update>
+
+		<update id="board.BOARD_EVENT_SAVE_D" parameterClass="Hashtable">
+			EXEC USP_BOARD_EVENT_SAVE #RowState#, #BoardNo#, #UserNo#, #EventCode#
+		</update>
+
+		<select id="board.BOARD_EVENT_SELECT_S" parameterClass="boardEvent" resultClass="boardEvent">
+			EXEC USP_BOARD_EVENT_SELECT 'S', #BoardNo#, #UserNo#
+		</select>
+
+		<select id="board.BOARD_SELECT_EXCEL_A" parameterClass="Hashtable" resultMap="BoardSelectExcelA">
+			EXEC USP_BOARD_SELECT_EXCEL 'A', #TermNo#, #ProgramNo#, #UserNo#
+		</select>
+
+		<select id="board.BOARD_AUTHORITY_SELECT_S" parameterClass="Hashtable" resultClass="boardAuthority">
+			EXEC USP_BOARD_AUTHORITY_SELECT 'S', #BoardMasterNo#, #UserNo#, #CourseNo#
+		</select>
+	</statements>
+</sqlMap>

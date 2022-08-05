@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+	<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+		<div class="container">
+			<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+		</div>
+	</div>
+
+	<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu A-1</a>
+							<a class="dropdown-item active" href="#">menu A-2</a>
+							<a class="dropdown-item" href="#">menu A-3</a>
+							<a class="dropdown-item" href="#">menu A-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<div class="sub-container container">
+		<div class="row">
+			<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>LMS</span></div>
+					<ul class="snb-list">
+						<li class="active">
+							<a href="#">menu A</a>
+							<ul>
+								<li class="active"><a href="#">menu A-1</a></li>
+								<li><a href="#">menu A-2</a></li>
+								<li><a href="#">menu A-3</a></li>
+								<li><a href="#">menu A-4</a></li>
+								<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">menu B</a>
+							<ul>
+								<li><a href="#">menu A-1</a></li>
+								<li><a href="#">menu A-2</a></li>
+								<li><a href="#">menu A-3</a></li>
+								<li><a href="#">menu A-4</a></li>
+								<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu C</a></li>
+						<li><a href="#">menu D</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xl-9">
+				<h2 class="title02">토론</h2>
+
+				<div id="content">
+					<div class="row align-items-center mt-4">
+						<div class="col">
+							<h3 class="title03">강좌 바로가기</h3>
+						</div>
+						<div class="col-auto text-right d-md-none">
+							<button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+								<span class="sr-only">더 보기</span>
+							</button>
+						</div>
+					</div>
+					<div class="card collapse d-md-block" id="collapseExample1">
+						<div class="card-body pb-1">
+							<div class="form-row">
+								<div class="form-group col-md-4">
+									<label for="" class="form-label">학기 선택 <strong class="text-danger">*</strong></label>
+									<select id="tno" class="form-control">
+										<option value="10">2022년도 1학기</option>
+									</select>
+								</div>
+								<div class="form-group col-md-8">
+									<label for="" class="form-label">교과목 선택 <strong class="text-danger">*</strong></label>
+									<select class="form-control" id="roommastercourseselect" onchange="javascript:goRoomWithPage(this);">
+										<option value="">강의실을 선택해주세요.</option>
+										<option value="">지도교수세미나Ⅲ-Ⅰ(103)</option>
+										<option value="">하이테크지식경영(001)</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h3 class="title04">토론 정보</h3>
+					<div class="card d-md-block">
+						<div class="card-body">
+							<div class="form-row">
+								<div class="form-group col-md-12">
+									<label for="Exam_Title" class="form-label">토론주제 <strong class="text-danger">*</strong></label>
+									<input type="text" id="Exam_Title" name="Exam.ExamTitle" class="form-control" value="">
+								</div>
+								<div class="form-group col-4 col-md-3">
+									<label for="Exam_Week" class="form-label">토론속성 <strong class="text-danger">*</strong></label>
+									<select class="form-control" id="Exam_Week" name="Exam.Week">
+										<option value="">조별토론</option>
+										<option value="">개별토론</option>
+									</select>
+								</div>
+								<div class="form-group col-8 col-md-4">
+									<label for="Exam_InningNo" class="form-label">팀 편성 <strong class="text-danger">*</strong></label>
+									<div class="input-group">
+										<select class="form-control" id="Exam_InningNo" name="Exam.InningNo">
+											<option value="">그룹선택</option>
+											<option value="">그룹1</option>
+											<option value="">그룹2</option>
+											<option value="">그룹3</option>
+										</select>
+										<span class="input-group-append">
+											<a href="#" class="btn btn-primary">팀 편성 보기</a>
+										</span>
+									</div>
+								</div>
+								<div class="form-group col-md-5">
+									<label for="Grading" class="form-label">공개여부 <strong class="text-danger">*</strong></label>
+									<!-- Rounded switch -->
+									<label class="switch">
+										<input type="checkbox" id="Grading" checked="checked">
+										<span class="slider round"></span>
+									</label>
+									<small class="text-secondary">※ 비공개는 조별토론일 때만 선택가능하며, 비공개를 선택하면 해당 팀원만 볼 수 있습니다.</small>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="Exam_ExamContents" class="form-label">토론개요 <strong class="text-danger">*</strong></label>
+									<textarea id="Exam_ExamContents" name="Exam.ExamContents" rows="3" class="form-control" title=""></textarea>
+								</div>
+								<div class="form-group col-6 col-md-3">
+									<label for="Exam_StartDay" class="form-label">토론시작일자 <strong class="text-danger">*</strong></label>
+									<div class="input-group">
+										<input class="form-control datepicker hasDatepicker" name="Exam.StartDay" id="Exam_StartDay" title="" readonly="" type="text" value="">
+										<div class="input-group-append">
+											<button class="input-group-text"><i class="bi bi-calendar-range"></i></button>
+										</div>
+									</div>
+								</div>
+								<div class="form-group col-6 col-md-3">
+									<label for="Exam_EndDay" class="form-label">토론종료일자 <strong class="text-danger">*</strong></label>
+									<div class="input-group">
+										<input class="form-control datepicker hasDatepicker" name="Exam.EndDay" id="Exam_EndDay" title="" readonly="" type="text" value="">
+										<div class="input-group-append">
+											<button class="input-group-text"><i class="bi bi-calendar-range"></i></button>
+										</div>
+									</div><!-- form-row -->
+								</div>
+								<div class="form-group col-12 col-md-6">
+									<label for="Exam_Title" class="form-label">첨부파일</label>
+									<div class="file">
+										<input type="file" />
+									</div>
+								</div>
+								</div><!-- form-row -->
+							</div>
+						<div class="card-footer">
+							<div class="row align-items-center">
+								<div class="col-md">
+									<p class="font-size-14 text-danger font-weight-bold mb-0"><i class="bi bi-info-circle-fill"></i> * 필수입력 항목</p>
+								</div>
+								<div class="col-md-auto text-right">
+									<button type="button" class="btn btn-primary">저장</button>
+									<button type="button" class="btn btn-secondary" onclick="javascript: document.location.href = 'discussion.html';">취소</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+
+	<script src="/common/js/jquery-3.3.1.min.js"></script>
+	<script src="/common/js/popper.js"></script>
+	<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+	<script src="/site/resource/www/js/script.js"></script>
+	<script>
+		$.ajax({
+			method: 'GET',
+			url: 'header.html',
+			async: false,
+			dataType: 'html'
+		}).done(function (html) {
+			$('#header').append(html);
+		});
+		$.ajax({
+			method: 'GET',
+			url: 'footer.html',
+			async: false,
+			dataType: 'html'
+		}).done(function (html) {
+			$('#footer').append(html);
+		});
+
+		$(document).ready(function () {
+			$(".dropdown-toggle").dropdown();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+	<div class="container">
+		<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+	</div>
+</div>
+	
+<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">menu A-1</a>
+								<a class="dropdown-item active" href="#">menu A-2</a>
+								<a class="dropdown-item" href="#">menu A-3</a>
+								<a class="dropdown-item" href="#">menu A-4</a>
+							</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+</div>
+	
+<div class="sub-container container">
+	<div class="row">
+		<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>LMS</span></div>
+					<ul class="snb-list">
+						<li class="active"><a href="#">menu A</a>
+							<ul>
+									<li class="active"><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu B</a>
+							<ul>
+									<li><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu C</a></li>
+						<li><a href="#">menu D</a></li>
+					</ul>
+				</div>
+		</div>
+		<div class="col-xl-9">
+			<h2 class="title02">퀴즈 평가</h2>
+      
+			<div id="content">
+        <div class="row no-gutters align-items-center mt-4">
+					<div class="col">
+						<span class="text-muted font-size-14 d-block d-md-inline"><strong class="w-6rem d-sm-inline-block d-md-inline"><i class="bi bi-dot"></i>최근 접속일</strong> : 2021-08-20</span>
+						<span class="text-muted font-size-14 "><strong class="w-6rem d-sm-inline-block d-md-inline"><i class="bi bi-dot"></i>접속 IP </strong> :  192.168.20.119</span>
+					</div>
+					<div class="col-auto text-right">
+						<a href="#" class="btn btn-dark">강의실 나가기</a>
+					</div>
+				</div>
+        
+        <div class="row align-items-center mt-4">
+          <div class="col">
+            <h3 class="title03">강좌 바로가기</h3>
+          </div>
+          <div class="col-auto text-right d-md-none">
+            <button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+              <span class="sr-only">더 보기</span>
+            </button>
+          </div>
+        </div>
+        <div class="card collapse d-md-block" id="collapseExample1">
+          <div class="card-body pb-1">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="" class="form-label">학기 선택 <strong class="text-danger">*</strong></label>
+                <select id="tno" class="form-control">
+                    <option value="10">2022년도 1학기</option>
+                </select>
+              </div>
+              <div class="form-group col-md-8">
+                <label for="" class="form-label">교과목 선택 <strong class="text-danger">*</strong></label>
+                <select class="form-control" id="roommastercourseselect" onchange="javascript:goRoomWithPage(this);">
+                  <option value="">강의실을 선택해주세요.</option>
+                  <option value="">지도교수세미나Ⅲ-Ⅰ(103)</option>
+                  <option value="">하이테크지식경영(001)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-4 alert bg-light rounded">
+          <p class="font-size-14 text-danger font-weight-bold"><i class="bi bi-info-circle-fill"></i> 자동 채점 기능 사용 시 아래사항에 대하여 검토가 필요합니다.</p>
+          <ul class="list-style03 mb-0">
+            <li>
+              단답형 자동 채점은 기호 또는 생각하지 못한 유사답안으로 인해 학생에게 오답으로 처리될 수 있으므로 반드시 단답형의 점수를 확인하시고 점수가 맞지 않는 경우 올바른 점수로 수정하시기 바랍니다.
+            </li>
+            <li>
+              단답형의 자동 채점은 띄어쓰기 구분이 없으며, 영문자의 경우 대소문자 구분없이 사용자 답안과 비교됩니다.
+            </li>
+            <li>
+              서술형의 경우, 점수를 <span class="text-danger">수동으로 입력</span>하셔야 합니다.
+            </li>
+            <li>
+              <span class="text-danger">‘채점대기’</span>의 경우, 저장 이후 점수에 반영됩니다.
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="title03 mt-4">학생정보</h3>
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-inline-style03">
+              <li class="list-inline-item">
+                <strong class="pr-2">학번</strong>
+                <span>20181221</span>
+              </li>
+              <li class="list-inline-item bar-vertical"></li>
+              <li class="list-inline-item">
+                <strong class="pr-2">이름</strong>
+                <span>홍길*</span>
+              </li>
+              <li class="list-inline-item bar-vertical"></li>
+              <li class="list-inline-item">
+                <strong class="pr-2">학년</strong>
+                <span>2학년</span>
+              </li>
+              <li class="list-inline-item bar-vertical"></li>
+              <li class="list-inline-item">
+                <strong class="pr-2">소속</strong>
+                <span>e비즈니스학</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="title03 mt-4">응시정보</h3>
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-inline-style03">
+              <li class="col-12 col-sm-auto px-0 mb-2 mb-sm-0 list-inline-item">
+                <strong class="d-block">응시시작시간</strong>
+                <span class="font-size-20">2021.08.25 13:57:00:00</span>
+              </li>
+              <li class="list-inline-item bar-vertical"></li>
+              <li class="list-inline-item">
+                <strong class="d-block">객관식</strong>
+                <strong class="font-size-20 text-primary">72</strong><span>/80</span>
+              </li>
+              <li class="list-inline-item bar-vertical"></li>
+              <li class="list-inline-item">
+                <strong class="d-block">주관식</strong>
+                <strong class="font-size-20 text-primary">20</strong><span>/20</span>
+              </li>
+              <li class="list-inline-item bar-vertical"></li>
+              <li class="list-inline-item">
+                <strong class="d-block">총점</strong>
+                <strong class="font-size-20 text-primary">92</strong><span>/100</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <h3 class="title03 mt-4">문항별 채점</h3><div class="card card-style03 mt-4">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-lg mb-2 mb-lg-0">
+                <p class="card-title02"><strong class="badge badge-primary mr-2">문제1</strong>웨비나의 설명으로 잘못된 것을 고르시오</p>
+              </div>
+              <div class="col-md-auto text-right">
+                  <dl class="row dl-style01">
+                    <dt class="col-auto text-dark">객관식</dt>
+                    <dd class="col-auto mb-0">단일선택</dd>
+                  </dl>
+              </div>
+              <div class="col-md-auto text-right">											
+                  <dl class="row dl-style01">
+                    <dt class="col-auto text-primary">저장시간</dt>
+                    <dd class="col-auto mb-0">2021-08-25 오후 1:58:29</dd>
+                  </dl>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="pl-0">
+              <li class="text-primary">
+                <strong class="font-size-14">학생답안</strong>
+                <span class="col-sm">웨비나 진행은 기업 내부 전문가가 진행한다. <i class="bi bi-check-circle-fill"></i></span>
+              </li>
+              <li class="text-primary">
+                <strong class="font-size-14">모범답안</strong>
+                <span class="col-sm">웨비나 진행은 기업 내부 전문가가 진행한다. <i class="bi bi-check-circle-fill"></i></span>
+              </li>
+              <li class="text-secondary">
+                <strong class="font-size-14">답안설명</strong>
+                <span class="col-sm">웨비나 진행은 기업 내부 전문가가 진행한다</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="form-inline justify-content-md-end">
+              <label for="Exam_Score" class="col-form-label mr-2">점수입력 <strong class="pl-1 text-danger">*</strong></label>
+              <div class="input-group">
+                <input type="text" class="form-control w-4rem" id="Exam_Score" name="Exam.Exam_Score" title="" value="0">
+                <div class="input-group-append">
+                  <span class="input-group-text">20 점</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- card -->
+        
+        <div class="card card-style03 mt-4">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-lg mb-2 mb-lg-0">
+                <p class="card-title02"><strong class="badge badge-primary mr-2">문제1</strong>웨비나의 설명으로 잘못된 것을 고르시오</p>
+              </div>
+              <div class="col-md-auto text-right">
+                  <dl class="row dl-style01">
+                    <dt class="col-auto text-dark">객관식</dt>
+                    <dd class="col-auto mb-0">단일선택</dd>
+                  </dl>
+              </div>
+              <div class="col-md-auto text-right">											
+                  <dl class="row dl-style01">
+                    <dt class="col-auto text-primary">저장시간</dt>
+                    <dd class="col-auto mb-0">2021-08-25 오후 1:58:29</dd>
+                  </dl>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="pl-0">
+              <li class="text-danger">
+                <strong class="font-size-14">학생답안</strong>
+                <span class="col-sm">웨비나 진행은 기업 내부 전문가가 진행한다. <i class="bi bi-x-circle-fill"></i></span>
+              </li>
+              <li class="text-primary">
+                <strong class="font-size-14">모범답안</strong>
+                <span class="col-sm">웨비나 진행은 기업 내부 전문가가 진행한다. <i class="bi bi-check-circle-fill"></i></span>
+              </li>
+              <li class="text-secondary">
+                <strong class="font-size-14">답안설명</strong>
+                <span class="col-sm">웨비나 진행은 기업 내부 전문가가 진행한다</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="form-inline justify-content-md-end">
+              <label for="Exam_Score" class="col-form-label mr-2">점수입력 <strong class="pl-1 text-danger">*</strong></label>
+              <div class="input-group">
+                <input type="text" class="form-control w-4rem" id="Exam_Score" name="Exam.Exam_Score" title="" value="0">
+                <div class="input-group-append">
+                  <span class="input-group-text">20 점</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- card -->
+        
+        <div class="card card-style03 mt-4">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-lg mb-2 mb-lg-0">
+                <p class="card-title02"><strong class="badge badge-primary mr-2">문제3</strong>다음중 코로나와 관련된 이미지가 아닌것을 고르시오.</p>
+              </div>
+              <div class="col-md-auto text-right">
+                  <dl class="row dl-style01">
+                    <dt class="col-auto text-dark">객관식</dt>
+                    <dd class="col-auto mb-0">단일선택</dd>
+                  </dl>
+              </div>
+              <div class="col-md-auto text-right">											
+                  <dl class="row dl-style01">
+                    <dt class="col-auto text-primary">저장시간</dt>
+                    <dd class="col-auto mb-0">2021-08-25 오후 1:58:29</dd>
+                  </dl>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="row d-flex align-items-start pl-0">
+              <li class="col-6 col-md-3 text-primary">
+                <strong class="font-size-14">학생답안 <i class="bi bi-check-circle-fill"></i></strong>
+                <img src="./images/q-sample04.jpg" class="img-fluid w-100 border border-primary" alt="과일이 바구니에 담긴 사진">
+              </li>
+              <li class="col-6 col-md-3 text-primary">
+                <strong class="font-size-14">모범답안 <i class="bi bi-check-circle-fill"></i></strong>
+                <img src="./images/q-sample04.jpg" class="img-fluid w-100 border border-primary" alt="과일이 바구니에 담긴 사진">
+              </li>
+              <li class="col-md text-secondary">
+                <strong class="font-size-14">답안설명</strong>
+                <p>답안에 대한 설명글이 들어갑니다.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="form-inline justify-content-md-end">
+              <label for="Exam_Score" class="col-form-label mr-2">점수입력 <strong class="pl-1 text-danger">*</strong></label>
+              <div class="input-group">
+                <input type="text" class="form-control w-4rem" id="Exam_Score" name="Exam.Exam_Score" title="" value="0">
+                <div class="input-group-append">
+                  <span class="input-group-text">20 점</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- card -->
+        
+        <div class="card card-style03 mt-4">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-lg mb-2 mb-lg-0">
+                <p class="card-title02"><strong class="badge badge-primary mr-2">문제3</strong>다음중 코로나와 관련된 이미지가 아닌것을 고르시오.</p>
+              </div>
+              <div class="col-md-auto text-right">
+                  <dl class="row dl-style01">
+                    <dt class="col-auto text-dark">객관식</dt>
+                    <dd class="col-auto mb-0">단일선택</dd>
+                  </dl>
+              </div>
+              <div class="col-md-auto text-right">											
+                  <dl class="row dl-style01">
+                    <dt class="col-auto text-primary">저장시간</dt>
+                    <dd class="col-auto mb-0">2021-08-25 오후 1:58:29</dd>
+                  </dl>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul class="row d-flex align-items-start pl-0">
+              <li class="col-6 col-md-3 text-danger">
+                <strong class="font-size-14">학생답안 <i class="bi bi-x-circle-fill"></i></strong>
+                <img src="./images/q-sample04.jpg" class="img-fluid w-100 border border-danger" alt="과일이 바구니에 담긴 사진">
+              </li>
+              <li class="col-6 col-md-3 text-primary">
+                <strong class="font-size-14">모범답안 <i class="bi bi-check-circle-fill"></i></strong>
+                <img src="./images/q-sample04.jpg" class="img-fluid w-100 border border-primary" alt="과일이 바구니에 담긴 사진">
+              </li>
+              <li class="col-md text-secondary">
+                <strong class="font-size-14">답안설명</strong>
+                <p>답안에 대한 설명글이 들어갑니다.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="form-inline justify-content-md-end">
+              <label for="Exam_Score" class="col-form-label mr-2">점수입력 <strong class="pl-1 text-danger">*</strong></label>
+              <div class="input-group">
+                <input type="text" class="form-control w-4rem" id="Exam_Score" name="Exam.Exam_Score" title="" value="0">
+                <div class="input-group-append">
+                  <span class="input-group-text">20 점</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- card -->
+
+        <div class="form">
+          <div class="form-group">
+            <label for="Exam_ExamContents" class="form-label">코멘트</label>
+            <textarea id="Exam_ExamContents" name="Exam.ExamContents" rows="3" class="form-control" title=""></textarea>
+          </div>
+        </div>
+        <p class="font-size-14 text-danger font-weight-bold mb-0"><i class="bi bi-info-circle-fill"></i> 현재 진행된 평가를 저장하고 이전학생 또는 다음학생 평가로 바로 이동할 수 있습니다.
+        </p>
+        <div class="row mt-2">
+          <div class="col-6">
+            <button type="button" class="btn text-primary" onclick="javascript:void(0);">
+              <i class="bi bi-chevron-left"></i> <span>이전 학생 평가</span>
+            </button>
+          </div>
+          <div class="col-6 text-right">
+            <button type="button" class="btn text-primary" onclick="javascript:void(0);">
+              <span>다음 학생 평가</span> <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="text-right mt-4">
+          <button type="button" class="btn btn-primary" onclick="javascript:void(0);">저장</button>
+          <button type="button" class="btn btn-secondary" onclick="javascript:void(0);">목록</button>
+        </div>
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+<div id="footer"></div>
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+<script>
+	$.ajax({
+		method: 'GET',
+		url: 'header.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#header').append(html);
+	});
+	$.ajax({
+		method: 'GET',
+		url: 'footer.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#footer').append(html);
+	});
+
+	$(document).ready(function() {
+			$(".dropdown-toggle").dropdown();
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="questionBankCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+	
+	<statements>
+		<!-- 문항 -->
+		<select id="questionBankQuestion.QUESTION_SELECT_L" parameterClass="Hashtable" resultClass="questionBankQuestion">
+			USP_QUESTION_SELECT #RowState#,#UseYesNo#,#Difficulty#,#QuestionBankType#,#GubunNo#,#CreateUserNo#,#GubunType#,#QuestionBankNo#,#QuestionBankNos#,#FirstIndex#,#LastIndex#,#SearchText#,#QuestionType#
+		</select>
+
+		<select id="questionBankQuestion.QUESTION_SELECT_B" parameterClass="Hashtable" resultClass="questionBankQuestion">
+			USP_QUESTION_SELECT #RowState#,#UseYesNo#,#Difficulty#,#QuestionBankType#,#GubunNo#,#CreateUserNo#,#GubunType#,#QuestionBankNo#,#QuestionBankNos#,#FirstIndex#,#LastIndex#,#SearchText#,#QuestionType#
+		</select>
+		
+		<select id="questionBankQuestion.QUESTION_SELECT_S" parameterClass="Hashtable" resultClass="questionBankQuestion">
+			USP_QUESTION_SELECT #RowState#,#UseYesNo#,#Difficulty#,#QuestionBankType#,#GubunNo#,#CreateUserNo#,#GubunType#,#QuestionBankNo#,#QuestionBankNos#,#FirstIndex#,#LastIndex#,#SearchText#,#QuestionType#
+		</select>
+
+		<select id="questionBankQuestion.QUESTION_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			<!-- 문제 신규 등록-->
+			USP_QUESTION_SAVE 'C',#QuestionBankNo#,#DeleteYesNo#,#CreateUserNo#,#UpdateUserNo#,#UseYesNo#,#Difficulty#,#QuestionType#,#Question#,#AnswerExplain#,#GubunNo#,#UseCount#
+		</select>
+
+		<update id="questionBankQuestion.QUESTION_SAVE_U" parameterClass="Hashtable" resultClass="int">
+			<!-- 문제 수정-->
+			USP_QUESTION_SAVE #RowState#,#QuestionBankNo#,#DeleteYesNo#,#CreateUserNo#,#UpdateUserNo#,#UseYesNo#,#Difficulty#,#QuestionType#,#Question#,#AnswerExplain#,#GubunNo#,#UseCount#
+		</update>
+
+		<update id="questionBankQuestion.QUESTION_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			<!-- 문제 수정-->
+			USP_QUESTION_SAVE 'A',#QuestionBankNo#,#DeleteYesNo#,#CreateUserNo#,#UpdateUserNo#,#UseYesNo#,#Difficulty#,#QuestionType#,#Question#,#AnswerExplain#,#GubunNo#,#UseCount#
+		</update>
+		
+		
+		<update id="questionBankQuestion.QUESTION_SAVE_D" parameterClass="Hashtable" resultClass="int">
+			
+			USP_QUESTION_SAVE #RowState#,#QuestionBankNo#,#DeleteYesNo#,#CreateUserNo#,#UpdateUserNo#,#UseYesNo#,#Difficulty#,#QuestionType#,#Question#,#AnswerExplain#,#GubunNo#,#UseCount#
+		</update>
+		
+		<!-- 문항 - 엑셀-->
+		<select id="questionBankExample.QUESTION_EXAMPLE_SELECT_L" parameterClass="Hashtable" resultClass="questionBankExample">
+			USP_QUESTION_EXAMPLE_SELECT #RowState#,#QuestionBankNo#,#GubunNo#,#QuestionBankNos#
+		</select>
+
+		<update id="questionBankExample.QUESTION_EXAMPLE_SAVE_C" parameterClass="Hashtable" resultClass="int" >
+			USP_QUESTION_EXAMPLE_SAVE 'C',#QuestionBankNo#,#ExampleContents#,#CorrectAnswerYesNo#,#FileGroupNo#,#GubunNo#,#Answer#,#ExampleNo#
+		</update>
+
+		<update id="questionBankExample.QUESTION_EXAMPLE_SAVE_U" parameterClass="Hashtable" resultClass="int" >
+			USP_QUESTION_EXAMPLE_SAVE #RowState#,#QuestionBankNo#,#ExampleContents#,#CorrectAnswerYesNo#,#FileGroupNo#,#GubunNo#,#Answer#,#ExampleNo#
+		</update>
+		
+		<!--프린트-->
+		<!--문제 출력-->
+		<select id="questionBankPrintInfo.QUESTION_PRINT_SELECT_A" parameterClass="Hashtable" resultClass="questionBankPrintInfo">
+			USP_QUESTION_PRINT_SELECT #RowState#,#GubunNo#,#CorrectAnswerYesNo#
+		</select>
+		<!--답안 출력-->
+		<select id="questionBankPrint.QUESTION_PRINT_SELECT_L" parameterClass="Hashtable" resultClass="questionBankPrint">
+			USP_QUESTION_PRINT_SELECT #RowState#,#GubunNo#,#CorrectAnswerYesNo#
+		</select>
+		<!-- 폴더 -->
+		<select id="questionBankGubun.QUESTION_CATEGORY_SELECT_L" parameterClass="Hashtable" resultClass="questionBankGubun">
+			USP_QUESTION_CATEGORY_SELECT #RowState#,#UserType#,#QuestionType#,#DeleteYesNo#,#GubunNo#,#CreateUserNo#,#ManageLevel#,#GubunCodeName#
+		</select>
+
+		<update id="questionBankGubun.QUESTION_CATEGORY_SAVE_C" parameterClass="questionBankGubun" resultClass="int">
+			USP_QUESTION_CATEGORY_SAVE #RowState#,#GubunCodeName#,#QuestionType#,#CreateUserNo#,#UpdateUserNo#,#DeleteYesNo#,#Depth#,#ManageLevel#,#GubunNo#,#Thread#,#GroupNo#
+		</update>
+
+		<update id="questionBankGubun.QUESTION_CATEGORY_SAVE_D" parameterClass="Hashtable" resultClass="int">
+			USP_QUESTION_CATEGORY_SAVE #RowState#,#GubunCodeName#,#QuestionType#,#CreateUserNo#,#UpdateUserNo#,#DeleteYesNo#,#Depth#,#ManageLevel#,#GubunNo#,#Thread#,#GroupNo#
+		</update>
+
+		<update id="questionBankGubun.QUESTION_CATEGORY_SAVE_U" parameterClass="Hashtable" resultClass="int">
+			USP_QUESTION_CATEGORY_SAVE #RowState#,#GubunCodeName#,#QuestionType#,#CreateUserNo#,#UpdateUserNo#,#DeleteYesNo#,#Depth#,#ManageLevel#,#GubunNo#,#Thread#,#GroupNo#
+		</update>
+
+		<update id="questionBankGubun.QUESTION_CATEGORY_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			USP_QUESTION_CATEGORY_SAVE #RowState#,#GubunCodeName#,#QuestionType#,#CreateUserNo#,#UpdateUserNo#,#DeleteYesNo#,#Depth#,#ManageLevel#,#GubunNo#,#Thread#,#GroupNo#
+		</update>
+	</statements>
+</sqlMap>

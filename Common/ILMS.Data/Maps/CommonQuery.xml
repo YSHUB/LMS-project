@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="commonCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+  
+	<statements>
+		<select id="common.COMMON_DEPT_SELECT_L" parameterClass="assign" resultClass="assign">
+			EXEC USP_COMMON_DEPT_SELECT		'L'
+		</select>
+
+		<select id="common.COURSE_WEEK_SELECT_L" parameterClass="inning" resultClass="inning">
+			EXEC USP_COURSE_WEEK_SELECT		'L', #CourseNo#
+		</select>
+    
+		<select id="common.COURSE_WEEK_SELECT_A" parameterClass="Hashtable" resultClass="inning">
+			EXEC USP_COURSE_WEEK_SELECT		'A', #CourseNo#
+		</select>
+
+    <select id="common.COURSE_WEEK_SELECT_B" parameterClass="inning" resultClass="inning">
+      EXEC USP_COURSE_WEEK_SELECT		'B', #CourseNo#
+    </select>
+
+
+    <select id="common.COURSE_INNING_SELECT_A" parameterClass="inning" resultClass="inning">
+			EXEC USP_COURSE_INNING_SELECT	'A', #CourseNo#, #Week#, #InningNo#, #UseYesNo#, #DeleteYesNo#, #InningSeqNo#, #UserNo#, #ExamType#, #ExamNo#, #HomeworkNo#, #HomeworkType#
+		</select>
+
+		<select id="common.COURSE_INNING_SELECT_B" parameterClass="inning" resultClass="inning">
+			EXEC USP_COURSE_INNING_SELECT	'B', #CourseNo#, #Week#, #InningNo#, #UseYesNo#, #DeleteYesNo#, #InningSeqNo#, #UserNo#, #ExamType#, #ExamNo#, #HomeworkNo#, #HomeworkType#
+		</select>
+
+		<select id="common.COURSE_INNING_SELECT_N" parameterClass="inning" resultClass="inning">
+			EXEC USP_COURSE_INNING_SELECT 'N', #CourseNo#
+		</select>
+
+		<select id="common.DETAILCODE_SELECT_A" parameterClass="code" resultClass="code">
+			EXEC USP_DETAILCODE_SELECT		'A', #ClassCode#, #DeleteYesNo#, #UseYesNo#
+		</select>
+		
+		<select id="common.FILE_SELECT_L" parameterClass="file" resultClass="file">
+			EXEC USP_FILE_SELECT 'L', #FileGroupNo#, #FileGroupNos#, #FileNo#
+		</select>
+
+		<select id="common.FILE_SELECT_S" parameterClass="file" resultClass="file">
+			EXEC USP_FILE_SELECT 'S', #FileGroupNo#, #FileGroupNos#, #FileNo#
+		</select>
+
+		<update id="common.FILE_SAVE_A" parameterClass="Hashtable" >
+			EXEC USP_FILE_SAVE 'A', #FileNo#
+		</update>
+
+		<delete id="common.FILE_SAVE_D" parameterClass="Hashtable" >
+			EXEC USP_FILE_SAVE 'D', #FileNo#, #CreateUserNo#
+		</delete>
+
+		<delete id="common.FILE_SAVE_B" parameterClass="Hashtable" >
+			EXEC USP_FILE_SAVE 'B', #FileNo#, #CreateUserNo#
+		</delete>
+
+		<select id="common.FILEFOLDER_SELECT_S" parameterClass="Hashtable" resultClass="fileFolder">
+			EXEC USP_FILEFOLDER_SELECT 'S', #FolderNo#, #FolderName#, #PhysicalPath#, #VirtualPath#, #Remark#, #UseYesNo#, #DeleteYesNo#
+		</select>
+
+		<select id="common.FILEGROUP_SAVE_C" parameterClass="Hashtable" resultClass="fileGroup" remapResults="true">
+			EXEC USP_FILEGROUP_SAVE 'C', #FolderNo#
+		</select>
+
+		<update id="common.FILE_SAVE_C" parameterClass="Hashtable">
+			EXEC USP_FILE_SAVE 'C', #FileNo#, #CreateUserNo#, #FileGroupNo#, #OriginFileName#, #SaveFileName#, #FileSize#, #Extension#, #UseYesNo#, #DeleteYesNo#
+		</update>
+		
+	</statements>
+</sqlMap>

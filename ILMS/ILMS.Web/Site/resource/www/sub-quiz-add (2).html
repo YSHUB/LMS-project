@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+	<div class="container">
+		<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+	</div>
+</div>
+	
+<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">menu A-1</a>
+								<a class="dropdown-item active" href="#">menu A-2</a>
+								<a class="dropdown-item" href="#">menu A-3</a>
+								<a class="dropdown-item" href="#">menu A-4</a>
+							</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+</div>
+	
+<div class="sub-container container">
+	<div class="row">
+		<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>LMS</span></div>
+					<ul class="snb-list">
+						<li class="active"><a href="#">menu A</a>
+							<ul>
+									<li class="active"><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu B</a>
+							<ul>
+									<li><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu C</a></li>
+						<li><a href="#">menu D</a></li>
+					</ul>
+				</div>
+		</div>
+		<div class="col-xl-9">
+			<h2 class="title02">퀴즈</h2>
+			
+			<div id="content">
+        <div class="row no-gutters align-items-center mt-4">
+					<div class="col">
+						<span class="text-muted font-size-14 d-block d-md-inline"><strong class="w-6rem d-sm-inline-block d-md-inline"><i class="bi bi-dot"></i>최근 접속일</strong> : 2021-08-20</span>
+						<span class="text-muted font-size-14 "><strong class="w-6rem d-sm-inline-block d-md-inline"><i class="bi bi-dot"></i>접속 IP </strong> :  192.168.20.119</span>
+					</div>
+					<div class="col-auto text-right">
+						<a href="#" class="btn btn-dark">강의실 나가기</a>
+					</div>
+				</div>
+
+        <div class="row align-items-center mt-4">
+					<div class="col">
+						<h3 class="title03">강좌 바로가기</h3>
+					</div>
+					<div class="col-auto text-right d-md-none">
+						<button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+							<span class="sr-only">더 보기</span>
+						</button>
+					</div>
+				</div>
+				<div class="card collapse d-md-block" id="collapseExample1">
+					<div class="card-body pb-1">
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								<label for="" class="form-label">학기 선택 <strong class="text-danger">*</strong></label>
+								<select id="tno" class="form-control">
+										<option value="10">2022년도 1학기</option>
+								</select>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="" class="form-label">교과목 선택 <strong class="text-danger">*</strong></label>
+								<select class="form-control" id="roommastercourseselect" onchange="javascript:goRoomWithPage(this);">
+									<option value="">강의실을 선택해주세요.</option>
+									<option value="">지도교수세미나Ⅲ-Ⅰ(103)</option>
+									<option value="">하이테크지식경영(001)</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<form action="/LMS/Exam/Create" method="post" id="mainForm">
+					<div class="row align-items-center mt-4">
+						<div class="col">
+							<h3 class="title03">퀴즈 기본정보</h3>
+						</div>
+						<div class="col-auto text-right d-md-none">
+							<button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+								<span class="sr-only">더 보기</span>
+							</button>
+						</div>
+					</div>
+					<div class="card collapse d-md-block" id="collapseExample2">
+						<div class="card-body">
+							<div class="form-row">
+								<div class="form-group col-md-3">
+									<label for="Exam_Week" class="form-label">주차 선택 <strong class="text-danger">*</strong></label>
+									<select class="form-control" id="Exam_Week" name="Exam.Week">
+										<option value="">주차선택</option>
+									</select>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="Exam_InningNo" class="form-label">차시 선택 <strong class="text-danger">*</strong></label>
+									<select class="form-control" id="Exam_InningNo" name="Exam.InningNo">
+										<option value="">차시선택</option>
+									</select>
+								</div>
+								<div class="form-group col-md-6">
+									<label for="Exam_Title" class="form-label">퀴즈제목 입력 <strong class="text-danger">*</strong></label>
+									<input type="text" id="Exam_Title" name="Exam.ExamTitle" class="form-control" value="">
+								</div>
+								<div class="form-group col-md-12">
+									<label for="Exam_ExamContents" class="form-label">퀴즈안내(학생용)</label>
+									<textarea id="Exam_ExamContents" name="Exam.ExamContents" rows="3" class="form-control" title=""></textarea>
+								</div>
+								
+								<div class="form-group col-md-3">
+									<label for="se0" class="form-label">응시방식 <strong class="text-danger">*</strong></label>
+									<select class="form-control" id="se0" name="Exam.SEType">
+										<option value="1">시작/종료방식</option>
+										<option value="2">기간방식</option>
+									</select>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="Grading" class="form-label">성적반영여부 <strong class="text-danger">*</strong></label>
+									<!-- Rounded switch -->
+									<div class="switch-wrap">
+										<label class="switch">
+											<input type="checkbox" id="Grading">
+											<span class="slider round"></span>
+										</label>
+									</div>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="OpenYes" class="form-label">공개여부 <strong class="text-danger">*</strong></label>
+									<!-- Rounded switch -->
+									<div class="switch-wrap">
+										<label class="switch">
+											<input type="checkbox" id="OpenYes">
+											<span class="slider round"></span>
+										</label>
+									</div>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="UseMixYesNo" class="form-label">문제섞기 <strong class="text-danger">*</strong></label>
+									<!-- Rounded switch -->
+									<div class="switch-wrap">
+										<label class="switch">
+											<input type="checkbox" id="UseMixYesNo">
+											<span class="slider round"></span>
+										</label>
+									</div>
+								</div>
+							</div><!-- form-row -->
+
+							<div class="form-row" style="display: none;">
+								<div class="col-md-6">
+									<div class="form-row align-items-end">
+										<div class="form-group col-md-5">
+											<label for="Exam_StartDay" class="form-label">응시시작일 <strong class="text-danger">*</strong></label>
+											<div class="input-group">
+												<input class="form-control datepicker hasDatepicker" name="Exam.StartDay" id="Exam_StartDay" title="" readonly type="text" value="">
+												<div class="input-group-append">
+													<button class="input-group-text"><i class="bi bi-calendar-range"></i></button>
+												</div>
+											</div>
+										</div>
+										<div class="form-group col-md">
+											<label for="Exam_StartHour" class="sr-only">시작시간 <strong class="text-danger">*</strong></label>
+											<div class="input-group">
+												<select name="Exam.StartHour" id="Exam_StartHour" class="form-control">
+													<option value="00" selected="'selected'">00</option>
+													<option value="01">01</option>
+													<option value="02">02</option>
+													<option value="03">03</option>
+													<option value="04">04</option>
+													<option value="05">05</option>
+													<option value="06">06</option>
+													<option value="07">07</option>
+													<option value="08">08</option>
+													<option value="09">09</option>
+													<option value="10">10</option>
+												</select>
+												<div class="input-group-append">
+													<span class="input-group-text"> 시</span>
+												</div>
+											</div>
+										</div>
+										<div class="form-group col-md">
+											<label for="Exam_StartMinute" class="sr-only">분 <strong class="text-danger">*</strong></label>
+											<div class="input-group">
+												<select name="Exam.StartMinute" id="Exam_StartMinute" class="form-control">
+													<option value="00" selected="'selected'">00</option>
+													<option value="10">10</option>
+													<option value="20">20</option>
+													<option value="30">30</option>
+													<option value="40">40</option>
+													<option value="50">50</option>
+												</select>
+												<div class="input-group-append">
+													<span class="input-group-text"> 분</span>
+												</div>
+											</div>
+										</div>
+									</div><!-- form-row -->
+								</div>
+								<div class="col-md-6">
+									<div class="form-row align-items-end">
+										<div class="form-group col-md-5">
+											<label for="Exam_EndDay" class="form-label">응시종료일시 <strong class="text-danger">*</strong></label>
+											<div class="input-group">
+												<input class="form-control datepicker hasDatepicker" name="Exam.EndDay" id="Exam_EndDay" title="" readonly type="text" value="">
+												<div class="input-group-append">
+													<button class="input-group-text"><i class="bi bi-calendar-range"></i></button>
+												</div>
+											</div>
+										</div>
+										<div class="form-group col-md">
+											<label for="Exam_EndHour" class="sr-only">종료시간 <strong class="text-danger">*</strong></label>
+											<div class="input-group">
+												<select name="Exam.EndHour" id="Exam_EndHour" class="form-control">
+													<option value="00" selected="'selected'">00</option>
+													<option value="01">01</option>
+													<option value="02">02</option>
+													<option value="03">03</option>
+													<option value="04">04</option>
+													<option value="05">05</option>
+													<option value="06">06</option>
+													<option value="07">07</option>
+													<option value="08">08</option>
+													<option value="09">09</option>
+													<option value="10">10</option>
+												</select>
+												<div class="input-group-append">
+													<span class="input-group-text"> 시</span>
+												</div>
+											</div>
+										</div>
+										<div class="form-group col-md">
+											<label for="Exam_EndMinute" class="sr-only">분 <strong class="text-danger">*</strong></label>
+											<div class="input-group">
+												<select name="Exam.EndMinute" id="Exam_EndMinute" class="form-control">
+													<option value="00" selected="'selected'">00</option>
+													<option value="10">10</option>
+													<option value="20">20</option>
+													<option value="30">30</option>
+													<option value="40">40</option>
+													<option value="50">50</option>
+												</select>
+												<div class="input-group-append">
+													<span class="input-group-text"> 분</span>
+												</div>
+											</div>
+										</div>
+									</div><!-- form-row -->
+								</div>
+								
+								<div class="form-group col-md-6">
+									<label for="RestrictionType" class="form-label">응시제한유형 <strong class="text-danger">*</strong></label>
+									<select class="form-control" id="RestrictionType" name="Exam.RestrictionType">
+										<option value="EXRS001">주차 수강 완료 이후 응시 가능</option>
+										<option value="EXRS002">차시 수강 완료 이후 응시 가능</option>
+										<option value="EXRS003">해당없음</option>
+									</select>
+								</div>
+								<div class="form-group col-md-2">
+									<label for="Exam_LimitTime" class="form-label">제한시간 <strong class="text-danger">*</strong></label>
+									<div class="input-group">
+										<input type="text" class="form-control" id="Exam_LimitTime" name="Exam.LimitTime" title="" value="0">
+										<div class="input-group-append">
+											<span class="input-group-text"> 분</span>
+										</div>
+									</div>
+								</div>
+							</div><!-- form-row -->
+
+						</div>
+						<div class="card-footer">
+							<div class="row align-items-center">
+								<div class="col-md">
+									<p class="font-size-14 text-danger font-weight-bold mb-0"><i class="bi bi-info-circle-fill"></i> * 필수입력 항목</p>
+								</div>
+								<div class="col-md-auto text-right">
+									<button type="button" class="btn btn-primary">저장</button>
+									<button type="button" class="btn btn-secondary">취소</button>
+								</div>
+							</div>
+						</div>
+					</div><!-- card -->
+					
+					<div class="row align-items-center mt-4">
+						<div class="col">
+							<h3 class="title03">주차별 문항수/배점</h3>
+						</div>
+						<div class="col-auto text-right">
+							<button title="세로형" class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+								<span class="sr-only">더 보기</span>
+							</button>
+							<button title="가로형" class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+								<span class="sr-only">더 보기</span>
+							</button>
+						</div>
+					</div>
+					<div class="card collapse" id="collapseExample3">
+						<div class="card-body py-0">
+							<div class="table-responsive" id="Grading">
+								<table class="table table-hover table-sm" cellspacing="0" summary="">
+									<caption>주차별 문항수/배점 리스트</caption>
+									<colgroup>
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+										<col>
+										<col>
+										<col>
+									</colgroup><thead>
+										<tr>
+											<th scope="col">주차</th>
+											<th scope="col">후보 문항수</th>
+											<th scope="col">출제 문항수</th>
+											<th scope="col">문항당 배점</th>
+											<th scope="col">배점 소계</th>
+										</tr>
+									</thead>
+									<tbody>												
+										<tr>
+												<th class="text-center">1주차<input type="hidden" name="randomDiffCodes" value="MJDF001"></th>
+												<th class="text-center" id="1week">
+														0
+														<input type="hidden" id="1weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="1randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="1weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">2주차<input type="hidden" name="randomDiffCodes" value="MJDF002"></th>
+												<th class="text-center" id="2week">
+														0
+														<input type="hidden" id="2weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="2randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="2weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">3주차<input type="hidden" name="randomDiffCodes" value="MJDF003"></th>
+												<th class="text-center" id="3week">
+														0
+														<input type="hidden" id="3weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="3randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="3weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">4주차<input type="hidden" name="randomDiffCodes" value="MJDF004"></th>
+												<th class="text-center" id="4week">
+														0
+														<input type="hidden" id="4weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="4randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="4weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">5주차<input type="hidden" name="randomDiffCodes" value="MJDF005"></th>
+												<th class="text-center" id="5week">
+														5
+														<input type="hidden" id="5weekval" value="5">
+												</th>
+												<td class="text-right"><input type="text" id="5randomDiffCount" name="randomDiffCount" maxlength="2" value="5" class="form-control"></td>
+												<td class="text-right"><input type="text" id="5weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+										
+										<tr>
+												<th class="text-center">6주차<input type="hidden" name="randomDiffCodes" value="MJDF006"></th>
+												<th class="text-center" id="6week">
+														2
+														<input type="hidden" id="6weekval" value="2">
+												</th>
+												<td class="text-right"><input type="text" id="6randomDiffCount" name="randomDiffCount" maxlength="2" value="2" class="form-control"></td>
+												<td class="text-right"><input type="text" id="6weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+										
+										<tr>
+												<th class="text-center">7주차<input type="hidden" name="randomDiffCodes" value="MJDF007"></th>
+												<th class="text-center" id="7week">
+														0
+														<input type="hidden" id="7weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="7randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="7weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">8주차<input type="hidden" name="randomDiffCodes" value="MJDF008"></th>
+												<th class="text-center" id="8week">
+														0
+														<input type="hidden" id="8weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="8randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="8weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">9주차<input type="hidden" name="randomDiffCodes" value="MJDF009"></th>
+												<th class="text-center" id="9week">
+														0
+														<input type="hidden" id="9weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="9randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="9weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">10주차<input type="hidden" name="randomDiffCodes" value="MJDF010"></th>
+												<th class="text-center" id="10week">
+														0
+														<input type="hidden" id="10weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="10randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="10weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">11주차<input type="hidden" name="randomDiffCodes" value="MJDF011"></th>
+												<th class="text-center" id="11week">
+														0
+														<input type="hidden" id="11weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="11randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="11weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">12주차<input type="hidden" name="randomDiffCodes" value="MJDF012"></th>
+												<th class="text-center" id="12week">
+														0
+														<input type="hidden" id="12weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="12randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="12weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">13주차<input type="hidden" name="randomDiffCodes" value="MJDF013"></th>
+												<th class="text-center" id="13week">
+														0
+														<input type="hidden" id="13weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="13randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="13weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">14주차<input type="hidden" name="randomDiffCodes" value="MJDF014"></th>
+												<th class="text-center" id="14week">
+														0
+														<input type="hidden" id="14weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="14randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="14weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">15주차<input type="hidden" name="randomDiffCodes" value="MJDF015"></th>
+												<th class="text-center" id="15week">
+														0
+														<input type="hidden" id="15weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="15randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="15weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">16주차<input type="hidden" name="randomDiffCodes" value="MJDF016"></th>
+												<th class="text-center" id="16week">
+														0
+														<input type="hidden" id="16weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="16randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="16weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+														
+										<tr>
+												<th class="text-center">17주차<input type="hidden" name="randomDiffCodes" value="MJDF017"></th>
+												<th class="text-center" id="17week">
+														0
+														<input type="hidden" id="17weekval" value="0">
+												</th>
+												<td class="text-right"><input type="text" id="17randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" id="17weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+												<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+										</tr>
+									</tbody>
+
+									<tfoot>
+										<tr>
+												<th class="text-center">소계</th>
+												<th class="text-center" id="totalWeek"></th>
+												<td class="text-right"><input type="text" id="totalCounts" name="totalCounts" value="0" readonly="readonly" class="form-control"></td>
+												<td></td>
+												<td class="text-right"><input type="text" id="sumScores" name="sumScores" style="border-style:none;" value="0" class="form-control"></td>
+										</tr>
+									</tfoot>
+							
+								</table>
+
+							</div>
+						</div>
+					</div><!-- card -->
+
+					<div class="card collapse" id="collapseExample4">
+						<div class="card-body py-0">
+							<div class="table-responsive" id="">
+								<table class="table table-hover table-sm table-horizontal" cellspacing="0" summary="">
+									<caption>주차별 문항수/배점 리스트</caption>
+									<colgroup>
+										<col style="width: 10%;">
+										<col>
+										<col>
+										<col>
+										<col>
+										<col>
+
+										<col>
+										<col>
+										<col>
+										<col>
+										<col>
+										
+										<col>
+										<col>
+										<col>
+										<col>
+										<col>
+										
+										<col>
+										<col>
+
+										<col>
+									</colgroup>
+
+									<thead>
+										<tr>
+											<th scope="col">주차</th>
+											<th scope="col">1</th>
+											<th scope="col">2</th>
+											<th scope="col">3</th>
+											<th scope="col">4</th>
+											<th scope="col">5</th>
+											<th scope="col">6</th>
+											<th scope="col">7</th>
+											<th scope="col">8</th>
+											<th scope="col">9</th>
+											<th scope="col">10</th>
+											<th scope="col">11</th>
+											<th scope="col">12</th>
+											<th scope="col">13</th>
+											<th scope="col">14</th>
+											<th scope="col">15</th>
+											<th scope="col">16</th>
+											<th scope="col">17</th>
+											<th scope="col">소계</th>
+										</tr>
+									</thead>
+									
+									<tbody>
+										<tr class="q-count">
+											<th scope="col">후보 문항수</th>
+											<th scope="col" id="1week">0<input type="hidden" id="1weekval" value="0"></th>
+											<th scope="col" id="2week">0<input type="hidden" id="2weekval" value="0"></th>
+											<th scope="col" id="3week">0<input type="hidden" id="3weekval" value="0"></th>
+											<th scope="col" id="4week">0<input type="hidden" id="4weekval" value="0"></th>
+											<th scope="col" id="5week">5<input type="hidden" id="5weekval" value="5"></th>
+											<th scope="col" id="6week">2<input type="hidden" id="6weekval" value="2"></th>
+											<th scope="col" id="7week">0<input type="hidden" id="7weekval" value="0"></th>
+											<th scope="col" id="8week">0<input type="hidden" id="8weekval" value="0"></th>
+											<th scope="col" id="9week">0<input type="hidden" id="9weekval" value="0"></th>
+											<th scope="col" id="10week">0<input type="hidden" id="10weekval" value="0"></th>
+											<th scope="col" id="11week">0<input type="hidden" id="11weekval" value="0"></th>
+											<th scope="col" id="12week">0<input type="hidden" id="12weekval" value="0"></th>
+											<th scope="col" id="13week">0<input type="hidden" id="13weekval" value="0"></th>
+											<th scope="col" id="14week">0<input type="hidden" id="14weekval" value="0"></th>
+											<th scope="col" id="15week">0<input type="hidden" id="15weekval" value="0"></th>
+											<th scope="col" id="16week">0<input type="hidden" id="16weekval" value="0"></th>
+											<th scope="col" id="17week">0<input type="hidden" id="17weekval" value="0"></th>
+											<th id="totalWeek"></th>
+										</tr>
+										<tr>
+											<th scope="col">출제 문항수</th>
+											<td class="text-right"><input type="text" id="1randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="2randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="3randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="4randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="5randomDiffCount" name="randomDiffCount" maxlength="2" value="5" class="form-control"></td>
+											<td class="text-right"><input type="text" id="6randomDiffCount" name="randomDiffCount" maxlength="2" value="2" class="form-control"></td>
+											<td class="text-right"><input type="text" id="7randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="8randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="9randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="10randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="11randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="12randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="13randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="14randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="15randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="16randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="17randomDiffCount" name="randomDiffCount" maxlength="2" value="0" class="form-control"></td>
+											<td><input type="text" id="totalCounts" name="totalCounts" value="0" readonly="readonly" class="form-control"></td>
+										</tr>
+														
+										<tr>
+											<th scope="col">문항당 배점</th>
+											<td class="text-right"><input type="text" id="1weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="2weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="3weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="4weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="5weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="6weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="7weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="8weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="9weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="10weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="11weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="12weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="13weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="14weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="15weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="16weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td class="text-right"><input type="text" id="17weekPoint" name="randomDiffOneScore" value="0" class="form-control"></td>
+											<td></td>
+										</tr>
+
+										<tr>
+											<th scope="col">배점 소계</th>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" name="randomDiffSumScore" value="0" class="form-control" readonly="readonly"></td>
+											<td class="text-right"><input type="text" id="sumScores" name="sumScores" style="border-style:none;" value="0" class="form-control"></td>
+										</tr>
+									</tbody>
+							
+								</table>
+							</div>
+						</div>
+					</div><!-- card -->
+
+					<h3 class="title03 mt-4">문제 목록</h3>
+					<div class="card card-style01">
+						<div class="card-header">
+							<div class="row">
+								<div class="col">
+									<button type="button" id="btn_delete" class="btn btn-sm btn-secondary">선택삭제</button>
+								</div>
+								<div class="col-auto text-right">
+									<button type="button" id="btn_add" class="btn btn-sm btn-point" onclick="window.open('sub-quiz-pop-qbank.html', 'offpop', 'width=1200, height=682, scrollbars=no');">문제추가</button>
+								</div>
+							</div>
+						</div>
+						<div class="card-body py-0">
+							<div class="table-responsive-lg">
+								<table class="table table-hover" cellspacing="0" summary="" id="questionList">
+									<colgroup>
+										<col width="5%">
+										<col width="5%">
+										<col width="12%">
+										<col width="">
+										<col width="10%">
+										<col width="10%" style="text-align: left; display: none;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col"><input class="checkbox" type="checkbox" id="check_select_all" onclick="selectAll(this)"></th>
+											<th scope="col">번호</th>
+											<th scope="col">문제유형</th>
+											<th scope="col">문제</th>
+											<th scope="col">주차</th>
+											<th scope="col" style="text-align: left; display: none;">배점</th>
+										</tr>
+									</thead>
+										
+									<tbody id="tb_questionList">
+										<tr>
+											<th scope="row" class="text-center">
+												<input type="checkbox" name="questionNos" value="138" class="i_check">
+												<input type="hidden" name="questionBankNos" value="138">
+												<input type="hidden" name="Difficulty" value="MJDF005"></th>
+											<th scope="row">1</th>
+											<td>단일선택</td>
+											<td class="text-left title">웨비나의 설명으로 잘못된 것을 고르시오&nbsp;</td>
+											<td>6주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0">
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="text-center">
+												<input type="checkbox" name="questionNos" value="138" class="i_check">
+											</th>
+											<th scope="row">2</th>
+											<td>단일선택</td>
+											<td class="text-left title">웨비나의 주목도를 높이기 위한 5단계 전략에 해당되지 않는 것을 고르시오&nbsp;</td>
+											<td>6주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0">
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="text-center">
+												<input type="checkbox" name="questionNos" value="138" class="i_check">
+											</th>
+											<th scope="row">3</th>
+											<td>단일선택</td>
+											<td class="text-left title">훌륭한 이북을 만드는 10단계 청사진에 해당되지 않은 것은 무엇인가?&nbsp;</td>
+											<td>6주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0">
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="text-center">
+												<input type="checkbox" name="questionNos" value="138" class="i_check">
+											</th>
+											<th scope="row">4</th>
+											<td>단일선택</td>
+											<td class="text-left title">다음 중 슈퍼스타덤으로 가는 B2B 링크드인 3단계에 해당되지 않는 것은?&nbsp;</td>
+											<td>12주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0">
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="text-center">
+												<input type="checkbox" name="questionNos" value="138" class="i_check">
+											</th>
+											<th scope="row">5</th>
+											<td>단일선택</td>
+											<td class="text-left title">전공 관련 분야의 학습 경험이 있습니까?</td>
+											<td>1주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0">
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="text-center">
+												<input type="checkbox" name="questionNos" value="138" class="i_check">
+											</th>
+											<th scope="row">6</th>
+											<td>단일선택</td>
+											<td class="text-left title">전공 관련 분야의 근무 경력은?</td>
+											<td>1주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+						
+						<div class="card-footer">
+							<div class="row">
+								<div class="col">
+									<button type="button" id="btn_delete2" class="btn btn-sm btn-secondary">선택삭제</button>
+								</div>
+								<div class="col-auto text-right">
+									<button type="button" id="btn_add2" class="btn btn-sm btn-point" onclick="window.open('sub-quiz-pop-qbank.html', 'offpop', 'width=1200, height=682, scrollbars=no');">문제추가</button>
+								</div>
+							</div>
+						</div>
+					</div><!-- card -->
+					
+					<div class="mt-4 text-right">
+						<button type="button" class="btn btn-primary">저장</button>
+						<button type="button" class="btn btn-secondary">취소</button>
+					</div>
+
+				</form><!-- form -->
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+<div id="footer"></div>
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+<script>
+	$.ajax({
+		method: 'GET',
+		url: 'header.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#header').append(html);
+	});
+	$.ajax({
+		method: 'GET',
+		url: 'footer.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#footer').append(html);
+	});
+
+	$(document).ready(function() {
+			$(".dropdown-toggle").dropdown();
+	});
+</script>
+</body>
+</html>

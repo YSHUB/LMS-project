@@ -1,0 +1,758 @@
+﻿<!DOCTYPE html>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Message.master.cs" Inherits="IDINO_UIS.Message.master.Message" %>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <!-- polyfill -->
+    <%--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>--%>
+    <script src="/Message/scripts/es5/polyfill/Symbol-es6.js"></script>
+    <script src="/Message/scripts/es5/polyfill/Object.assign.js"></script>
+    <script src="/Message/scripts/es5/polyfill/Array.prototype.find.js"></script>
+    <script src="/Message/scripts/es5/polyfill/Array.prototype.findIndex.js"></script>
+    <script src="/Message/scripts/es5/polyfill/Array.prototype.includes.js"></script>
+    <!-- bootstrap css -->
+    <script src="/Message/scripts/jquery.min.js"></script>
+    <script src="/Message/scripts/bootstrap.bundle.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/Message/scripts/common.css">
+    <link rel="stylesheet" href="/Message/scripts/react-datepicker.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link href="/Message/scripts/common/css/icommon.css" rel="stylesheet">
+    <link href="/Message/scripts/common/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="/Message/scripts/www/css/style.css" rel="stylesheet">
+
+    <asp:ContentPlaceHolder ID="headContent" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        .table > tbody > tr.active > td {
+            background-color: #faf2d5;
+        }
+
+        .table-filter {
+            background: #f3f3f4;
+            border: #e0e0e0 solid 1px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            padding: 5px 10px 5px 10px;
+            margin: 0 0 10px 0;
+        }
+               
+        .form-group label, .control-label {
+            font-size: 13px;
+            font-family: 'Nanum Gothic Bold';
+            font-weight: 600;
+            margin-top: inherit;
+        }
+
+        .ui-datepicker-trigger {
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6)
+        }
+
+        .ui-datepicker-trigger {
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background-color: #a1bac5;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            width: 33px;
+            height: 26px;
+            border: none;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body id="page_top" style="padding: 0px">
+     <script>
+         <% /* 스피너 표시 */%>
+         if (parent.startSpin) {
+             parent.startSpin();
+         }
+     </script>
+
+    <div class="container-fluid" style="margin-left: 0; margin-right: 0">
+        <div id="content">
+            <div id="app" class="mt-2">
+                <div>
+                    <div id="bodyContent">
+                        <h3>메세지전송</h3>
+                        <div class="mt-2 card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 col-lg-auto">
+                                        <div class="msg_box mb-4 mb-lg-0">
+                                            <form class="" onsubmit="onSubmitSend(event)">
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="cboMsgType" class=""><span class="text-danger">*</span> 메세지 유형</label>
+                                                            <select name="cboMsgType" id="cboMsgType" class="form-control-sm form-control" onchange="onSelectStatus(event)">
+                                                                <option value="">선택</option>
+                                                                <option value="Sms">SMS</option>
+                                                                <option value="Mms">MMS</option>
+                                                                <option value="KakaoNotificationTalk">카카오 알림톡</option>
+                                                                <option value="KakaoFriendTalk">카카오 친구톡</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="template" class="">내용 템플릿</label>
+                                                            <select name="template" id="template" class="form-control-sm form-control" onchange="onSelectTpl(event)">
+                                                                <option value="">선택</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row" style="display: none;">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="subject" class="">제목</label>
+                                                            <input name="subject" id="subject" type="text" class="form-control-sm form-control" value="" onchange="onChange(event)">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="body" class=""><span class="text-danger">*</span> 내용</label>
+                                                            <textarea name="body" id="body" rows="10" class="area_message form-control-sm form-control" onchange="onChange(event)"  onkeypress="KeyPress(event)"></textarea>
+                                                            <small class="mb-1">메세지치환유형(기본) : </small>
+                                                            <br>
+                                                            <small class="mb-1" id="smallvariables">#{이름}#{핸드폰번호}#{회사}#{날짜}</small>
+                                                            <div style="padding-bottom: 5px;" id="divImages"></div>
+                                                            <div id="divSelectedTplButtons"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <small name="lblByte" id="lblByte" style="color: rgb(46, 172, 188);"></small>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg">
+                                        <div class="sm-4">
+                                            <form class="">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <%--<div class="form-group">
+                                                            <label class=""><span class="text-danger">*</span> 발신자</label>
+                                                            <div class="input-group">
+																<input type="text" id="txtTelNo1" class="form-control" style="width: 30px" />
+																-
+																<input type="text" id="txtTelNo2" class="form-control" style="width: 30px" />
+																-
+																<input type="text" id="txtTelNo3" class="form-control" style="width: 30px" />
+															</div>
+                                                        </div>--%>
+                                                        <div class="form-group">
+                                                            <label class=""><span class="text-danger">*</span> 발신자 선택</label>
+                                                            <select name="sender" id="sender" class="form-control" onchange="onSelectSender(event)">
+                                                                <option value="">선택</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Excel 연락처 업로드</label>
+                                                            <i class="material-icons text-gray-500 help_icon" onclick="onHelpClick(event)">help_outline</i>
+                                                            <div class="input-group">
+                                                                <div class="custom-file">
+                                                                    <input id="uploadFile" type="file" class="custom-file-input" aria-describedby="inputGroup-sizing-sm" onchange="handleClickSelectFile(event)">
+                                                                    <label class="custom-file-label" id="lblFileSelect">파일 선택</label>
+                                                                </div>
+                                                                <div class="input-group-append">
+                                                                    <button class="btn btn-outline-secondary" style="height: 38px;" onclick="handleClickDownloadFile(event, 'Excel')">
+                                                                        <div><i class="material-icons">archive</i> 양식 다운로드</div>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="">예약시간</label>&nbsp;
+                                                            <input id="chkSchedule" type="checkbox" class="form-check-input" onchange="scheduleChecked(event)">
+                                                            <div class="input-group">
+                                                                <input id="txtscheduledDate" type="text" placeholder="예약 일시 선택" class="form-control datepicker" value="" disabled="disabled"
+                                                                    onchange="onScheduledDateChange(event)">
+                                                                <div class="input-group-append">
+                                                                    <select id="scheduledTime" class="form-control" disabled="disabled" onchange="onScheduledTimeChange(event)">
+                                                                        <option>00</option>
+                                                                        <option>01</option>
+                                                                        <option>02</option>
+                                                                        <option>03</option>
+                                                                        <option>04</option>
+                                                                        <option>05</option>
+                                                                        <option>06</option>
+                                                                        <option>07</option>
+                                                                        <option>08</option>
+                                                                        <option>09</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                        <option>12</option>
+                                                                        <option>13</option>
+                                                                        <option>14</option>
+                                                                        <option>15</option>
+                                                                        <option>16</option>
+                                                                        <option>17</option>
+                                                                        <option>18</option>
+                                                                        <option>19</option>
+                                                                        <option>20</option>
+                                                                        <option>21</option>
+                                                                        <option>22</option>
+                                                                        <option>23</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="input-group-append">
+                                                                    <select id="scheduledMinutes" class="form-control" disabled="disabled" onchange="onScheduledMMChange(event)">
+                                                                        <option>00</option>
+                                                                        <option>05</option>
+                                                                        <option>10</option>
+                                                                        <option>15</option>
+                                                                        <option>20</option>
+                                                                        <option>25</option>
+                                                                        <option>30</option>
+                                                                        <option>35</option>
+                                                                        <option>40</option>
+                                                                        <option>45</option>
+                                                                        <option>50</option>
+                                                                        <option>55</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="input-group-append" style="display: none" id="divResetSchedule">
+                                                                    <span class="btn btn-secondary" onclick="handleClickDeleteScheduled()">초기화</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group" id="divSendImage" style="display: none">
+                                                            <label>이미지파일 업로드</label>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <div class="custom-file">
+                                                                    <input type="file" id="uploadimage" class="custom-file-input" accept="image/jpeg, image/jpg" onchange="handleClickImageUploadFile(event)">
+                                                                    <label class="custom-file-label" id="selectedImageFileLabel">파일 선택</label>
+                                                                </div>
+                                                                <div class="input-group-append" style="padding-left: 10px; padding-top: 3px;">
+                                                                    <small class="mb-1" style="color: rgb(46, 172, 188);">권장사이즈 : 720px x 630px
+                                                                        <br>
+                                                                        지원파일 : jpg/jpeg (최대 500KB)</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="display: none;">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label class=""><strong>총 발송 비용</strong></label>
+                                                            <div class="send_setup send_total">
+                                                                <div class="item_bundle pay_total">
+                                                                    <strong class="tit_bundle">0원 X 0 (건) = </strong>
+                                                                    <div class="cont_bundle">
+                                                                        <span class="txt_count"><span id="txt_count">0</span></span>원
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div id="divnewVariables" class="row" style="display: none;">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>메세지치환</label>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <button id="btnVariablesModal" type="button"
+                                                                        class="btn btn-secondary btn btn-secondary btn-sm"
+                                                                        data-toggle="modal" data-target="#variablesmodal">
+                                                                        입력</button>
+                                                                </div>
+                                                                <input id="inputVariables" name="inputVariables" readonly="" type="text" class="form-control" value="" onchange="onChange(event)">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="divNotiTalk" class="row" style="display: none;">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <small style="color: rgb(46, 172, 188);">알림톡 사용시 주의사항</small>
+                                                            <i class="material-icons text-gray-500 help_icon" onclick="$('#modalHelpNotiTalk').modal('show')">help_outline</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="divFirendTalk" class="row" style="display: none;">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <small style="color: rgb(46, 172, 188);">친구톡 사용시 주의사항</small>
+                                                            <i class="material-icons text-gray-500 help_icon" onclick="$('#modalFriTalk').modal('show')">help_outline</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+												
+												<div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mb-0">
+                                                            <label class="">재전송 기능: </label>
+															<input type="radio" name="k_next_type" class="ml-2" onchange="onChange(event)" value="0" checked="checked" />기본
+															<input type="radio" name="k_next_type" class="ml-2" onchange="onChange(event)" value="4" />SMS
+															<input type="radio" name="k_next_type" class="ml-2" onchange="onChange(event)" value="5" />LMS
+															<input type="radio" name="k_next_type" class="ml-2" onchange="onChange(event)" value="6" />MMS
+                                                        </div>
+														<small style="color: rgb(46, 172, 188);">재전송기능 사용시 사용시 주의사항</small>
+														<i class="material-icons text-gray-500 help_icon" onclick="$('#modalResend').modal('show')">help_outline</i>
+                                                    </div>
+                                                </div>
+												
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label id="lblErrorMsg" class="" style="color: red;"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <button class="btn-outline-primary btn-sm btn btn-secondary" onclick="onSubmitSend(event)">
+                                                            <i class="material-icons">send</i> 전송하기
+                                                        </button>
+                                                    </div>
+                                                    <div class="col" style="text-align: right;">
+                                                        <button type="button" class="btn-outline-danger btn-sm btn btn-secondary" onclick="onExcept(event)">
+                                                            <i class="material-icons">delete</i> 미선택 삭제
+                                                        </button>
+                                                        <button type="button" data-toggle="tooltip" data-placement="top" title="1명씩 추가시" id="btnAddNumber" class="btn-outline-success btn-sm btn btn-secondary"
+                                                            onclick="showModalContactAdd(event)" style="display:none">
+                                                            <i class="material-icons">perm_identity</i> 연락처추가
+                                                        </button>
+                                                        <button type="button" class="btn-outline-secondary btn-sm btn btn-secondary" id="btnReceiver" onclick="showDeptModal(event)">
+                                                            <i class="material-icons">people</i> 수신자 조회</button>
+														<button type="button" data-toggle="tooltip" data-placement="top" title="1명씩 추가시" id="btnAddUser" class="btn-outline-success btn-sm btn btn-secondary"
+                                                           <%-- onclick="showModalUserAdd(event)">--%>
+                                                             onclick="showModalContactAdd(event)">
+                                                            <i class="material-icons">perm_identity</i> 수신자 추가
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding-top: 5px;">
+                                                    <div class="col">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-row justify-content-start justify-content-md-end">
+                                                                            <div class="col-auto form-text">총 <strong id="strngTotalCount" class="text-danger">0</strong> 건</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body p-0" style="overflow-y: auto; height: 350px">
+                                                                <div>
+                                                                    <table id="tblReceiver" class="tblSenderList table table-bordered table-hover">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th style="width: 40px;">
+                                                                                    <input name="chkAllReceiver" type="checkbox" class="form-check-input" onclick="onCheckAllReceiver(event)">
+                                                                                </th>
+                                                                                <th style="width: 150px;">이름</th>
+                                                                                <th style="width: 150px;">핸드폰번호</th>
+                                                                                <th>치환메시지</th>
+                                                                                <%--<th style="width: 250px;">비고</th>--%>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody class="tbodyheight45">
+                                                                            <tr>
+                                                                                <td colspan="4" class="text-center"><b>선택된 사용자가 없습니다.</b></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <ul id="receiverPager" class="pagination" style="display: none">
+                                                            <li class="page-item"><a class="page-link">처음으로</a></li>
+                                                            <li class="page-item"><a class="page-link">이전</a></li>
+
+                                                            <li class="page-item"><a class="page-link">다음</a></li>
+                                                            <li class="page-item"><a class="page-link">끝으로</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%-- 모달창 - 메세지치환 시작 --%>
+                        <div class="modal fade" id="variablesmodal" tabindex="-1" role="dialog" aria-labelledby="variablesmodalLabel">
+                            <div class="modal-dialog modal-md" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">메세지치환유형 입력</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="search-form card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group" id="divNewVariablesModal">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="variablesCheck(event)">적용</button>
+                                        <button type="button" class="btn btn-secondary btn-sm" onclick="hideModal('#variablesmodal')">닫기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%-- 모달창 - 메세지치환 종료 --%>
+
+                        <%-- 모달창 - 연락처 업로드 도움말 시작 --%>
+                        <div id="modalContactHelp" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="modalContactHelplLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="layer_rocket layer_manage" style="width: 550px;">
+                                        <div class="layer_head">
+                                            <strong class="tit_layer">Excel 연락처 업로드시 유의사항</strong>
+                                        </div>
+                                        <div class="layer_body">
+                                            <p class="desc_ad">
+                                                <span class="emph_g4">다수의 수신자 정보를 발송할 경우, </span>아래와 같은 절차를 진행하시면 됩니다.
+                                            </p>
+                                            <ul class="list_guide">
+                                                <li>
+                                                    <strong class="tit_guide">1. 양식 다운로드</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>다운로드 받은 양식 등록에 필요한 정보들을 작성합니다.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <strong class="tit_guide">2. 작성한 양식 업로드(첨부)</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>작성한 파일을 선택(첨부)하면, 하단 수신자정보 리스트에 활성화 됩니다.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="layer_foot">
+                                            <button class="btn_close" data-dismiss="modal">
+                                                <span class="ico_rocket ico_close">닫기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%-- 모달창 - 연락처 업로드 도움말 종료 --%>
+
+                        <%-- 모달창 - 연락처 추가 시작 --%>
+                        <div id="modalContactAdd" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="modalContactAddLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">연락처추가</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="input-group mb-3">
+                                            <input name="addName" id="addName" placeholder="성명" type="text" class="form-control" value="" style="width: 50px;" onchange="onChange(event)" onblur="onChange(event)">
+                                            <input name="addPhone" id="addPhone" maxlength="11" aria-describedby="basic-addon2" placeholder="휴대폰번호" type="text" class="form-control form-control" value=""
+                                                onchange="onChange(event)" onblur="onChange(event)">
+                                            <div class="input-group-append">
+                                                <button class="input-group-text btn btn-outline bg-light" id="basic-addon2" onclick="onAddReceiver(event)">추가</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary btn-sm" onclick="hideModal('#modalContactAdd')">닫기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%-- 모달창 - 연락처 추가 종료 --%>
+
+                        <%-- 모달창-알림톡도움말 시작 --%>
+                        <div id="modalHelpNotiTalk" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="modalHelpNotiTalkLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="layer_rocket layer_manage" style="width: 550px;">
+                                        <div class="layer_head">
+                                            <strong class="tit_layer">카카오 알림톡 이란</strong>
+                                        </div>
+                                        <div class="layer_body">
+                                            <p class="desc_ad">
+                                                카카오 알림톡은 <span class="emph_g4">광고성 메시지가 아닌</span>
+                                                주문, 배송, 예약 등 이용자분들에게<br>
+                                                꼭 필요한 정보성 메시지를 기업이 카카오톡 메시지를 통해 전송하는 서비스입니다.<br>
+                                                <span class="emph_g4">알림톡 템플릿</span>이라는 형태로 발송내용에 대해 <span class="emph_g4">카카오의 사전 검수</span>를 받아야 합니다.
+                                            </p>
+                                            <ul class="list_guide">
+                                                <li><strong class="tit_guide">1. 카카오톡 이용자라면 모두 알림톡을 받아볼 수 있나요?</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>광고성 메시지와 달리 정보성 메시지는 정보통신망법에 따라 수신자의 사전 동의가 없어도 발송이 가능합니다.</li>
+                                                        <li>정보성 메시지(한국인터넷진흥원 가이드상 
+                                        <span class="emph_g4">‘광고성 정보의 예외’</span> 중 이용자 보호 차원에서 서비스에 적합하다고 보는 일부)에 한해 발송이 가능합니다.
+                                                        </li>
+                                                        <li>후원을 요청하는 메시지는 광고성 정보로 판정되어 알림톡을 발송할 수 없습니다. 
+                                        <span class="emph_g4">'후원하기', '기부하기'</span> 등의 단어가 포함되어 있으면 알림톡 <strong>승인이 거절</strong>됩니다.
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong class="tit_guide">2. 카카오는 알림톡을 보낼 대상을 어떻게 확인하나요?</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>카카오는 알림톡 발송을 원하는 기업으로부터 고객의 전화번호를 전달받아 정보성 메시지 발송 업무를 대행 처리합니다.</li>
+                                                        <li>알림톡은 친구톡(플러스친구)와 친구를 맺지 않은 <strong>카카오톡 사용자</strong>에게도 발송이 가능합니다.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong class="tit_guide">3. 알림톡은 언제 어디서나 전달받을 수 있나요?</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>카카오톡을 이용할 때와 마찬가지로 와이파이나 LTE 등 데이터 통신망에 연결되어 있을 때만 메시지를 받으실 수 있어요.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong class="tit_guide">4. 알림톡으로 전송된 메시지는 어떻게 관리되나요?</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>카카오는 기업들을 대신해 알림톡 메시지를 발송합니다.<br>
+                                                            해당 메시지는 전송 이외에 다른 목적으로는 전혀 활용되지 않으며,<br>
+                                                            전송 완료된 메시지는 카카오 서버에서 파기됩니다.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="layer_foot">
+                                            <button class="btn_close"><span class="ico_rocket ico_close" onclick="hideModal('#modalHelpNotiTalk')">닫기</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%-- 모달창-알림톡도움말 종료 --%>
+
+                        <%-- 모달창-친구톡 시작 --%>
+                        <div id="modalFriTalk" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="modalFriTalkLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="layer_rocket layer_manage" style="width: 550px;">
+                                        <div class="layer_head">
+                                            <strong class="tit_layer">카카오 친구톡 이란</strong>
+                                        </div>
+                                        <div class="layer_body">
+                                            <p class="desc_ad">
+                                                카카오 친구톡은 <strong>플러스친구와 친구를 맺은 카카오톡 사용자에게</strong> 메시지를 발송하는 기능이며,
+                            <span class="emph_g4">카카오의 검수가 필요 없고 이미지 삽입과 광고성 메시지 발송이 가능합니다.</span>
+                                            </p>
+                                            <ul class="list_guide">
+                                                <li><strong class="tit_guide">1. 카카오톡 이용자라면 모두 친구톡을 받아볼 수 있나요?</strong>
+                                                    <ul class="list_depth2">
+                                                        <li><strong>비영리조직에서 공익 목적으로 발송하는 메시지는 '광고성 정보의 예외'로 인정 받을 수 있습니다.</strong>
+                                                            구성원과 후원자에게 활동소식을 알리는 메시지 등이 공익 목적으로 발송하는 메시지 입니다. 이 경우에는 (광고) 문구를 표기하지 않아도 괜찮습니다.
+                                                        </li>
+                                                        <li>친구톡은 카카오의 광고성 메시지 발송금지 시간대인 19:30~08:30 사이에 발송이 제한됩니다.</li>
+                                                        <li>광고성 메시지를 발송하는 경우에는 정보통신망이용법상 메시지 내용 제일 앞에 (광고)라는 문구를 표기해야 합니다.
+                                        <em class="emph_caution">미표기 시 최대 3,000만 원의 과태료가 부가될 수 있습니다.</em>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <strong class="tit_guide">2. 카카오는 친구톡을 보낼 대상을 어떻게 확인하나요?</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>친구 전체에게 메시지가 발송되는 일반적인 플러스친구 메시지 발송 방식과 다르게 구성원의 휴대전화번호를 활용해 
+                                    <span class="emph_g4">친구를 맺은 구성원 중 특정 구성원에게만 개인화된 메시지</span>를 발송할 수 있습니다.
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <strong class="tit_guide">3. 친구톡은 언제 어디서나 전달받을 수 있나요?</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>카카오톡을 이용할 때와 마찬가지로 와이파이나 LTE 등 데이터 통신망에 연결되어 있을 때만 메시지를 받으실 수 있어요.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="layer_foot">
+                                            <button class="btn_close"><span class="ico_rocket ico_close" onclick="hideModal('#modalFriTalk')">닫기</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%-- 모달창-친구톡 종료 --%>
+
+						<%-- 모달창-재전송 시작 --%>
+                        <div id="modalResend" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="modalResendLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="layer_rocket layer_manage" style="width: 550px;">
+                                        <div class="layer_head">
+                                            <strong class="tit_layer">재전송 기능 이란</strong>
+                                        </div>
+                                        <div class="layer_body">
+                                            <p class="desc_ad">
+                                                재전송 기능은 발송 <strong>실패</strong>시 일반 메세징으로 재전송을 처리하는 기능입니다.
+                                            </p>
+                                            <ul class="list_guide">
+                                                <li><strong class="tit_guide">1. 기본</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>전송 실패시 재전송 기능을 사용하지 않습니다.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <strong class="tit_guide">2. SMS</strong>
+                                                    <ul class="list_depth2">
+														<li>SMS 기능으로 재전송을 합니다. 90byte 단위로 잘라 여러 개로 전송합니다.</li>
+                                                        <li>
+															<span class="emph_g4">내용이 긴 경우, 과금량이 상당할 수 있으므로 주의가 필요합니다.</span>
+                                                        </li>
+														<li>
+															<span class="emph_g4">SMS특성상 도착 순서가 보장되지 않습니다.</span>
+														</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <strong class="tit_guide">3. LMS</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>LMS 기능으로 재전송을 합니다. 2000byte만 재전송 가능합니다.</li>
+														<li>
+															<span class="emph_g4">친구톡이미지의 경우는 첨부된 파일을 무시하고 발송합니다.</span>
+														</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <strong class="tit_guide">4. MMS</strong>
+                                                    <ul class="list_depth2">
+                                                        <li>MMS 기능으로 재전송을 합니다. 2000byte만 재전송 가능합니다.</li>
+														<li>
+															<span class="emph_g4">친구톡미지에서 이미지를 포함한 재전송시에만 사용합니다.</span>
+														</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="layer_foot">
+                                            <button class="btn_close"><span class="ico_rocket ico_close" onclick="hideModal('#modalResend')">닫기</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%-- 모달창-재전송 종료 --%>
+                        <asp:ContentPlaceHolder ID="modalPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Message/scripts/bluebird.min.js"></script>
+    <script src="/Message/scripts/common/js/jquery-3.3.1.min.js"></script>
+    <script src="/Message/scripts/common/js/jquery-ui-1.12.1.min.js"></script>
+    <script src="/Message/scripts/common/js/ibootstrap.min.js"></script>
+    <script src="/Message/scripts/common/js/owl.carousel.min.js"></script>
+    <script src="/Message/scripts/moment.min.js"></script>
+    <script src="/Message/scripts/common/js/lnb.js"></script>
+    <script src="/Message/scripts/www/js/script.js"></script>
+    <script src="/Message/scripts/common.js"></script>
+
+    <script src="/Message/scripts/master.js?ver=<%=DateTime.Now.ToString("yyyyMMdd")%>"></script>
+    <script src="/Message/scripts/es5/message.es5.util.js?ver=<%=DateTime.Now.ToString("yyyyMMdd")%>"></script>
+    <script src="/Message/scripts/es5/message.es5.api.js?ver=<%=DateTime.Now.ToString("yyyyMMdd")%>"></script>
+    <script src="/Message/scripts/es5/message.es5.ui.js?ver=<%=DateTime.Now.ToString("yyyyMMdd")%>"></script>
+
+    <script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <script src="/common/js/bootbox.js"></script>
+	<script src="/site/resource/www/js/script.js"></script>
+
+	<script src="/Common/js/common.js"></script>
+	<script src="/Common/js/util.js"></script>
+
+    <script>
+		var senderKey;
+
+        $(document.body).resize(function () {
+            window.parent.resizeTabPanel({
+                'width': $(this).width() - 288,
+                //'height': $(document).height()
+                'height': $(this).height()
+            });
+        });
+
+        $(document).ready(function () {
+
+            $('.datepicker').on('focusin', function (e) {
+                $(this).datepicker();
+                $(this).datepicker('show');
+            });            
+
+            $(window).resize(function () {
+                window.parent.resizeTabPanel({
+                    'width': $(this).width() - 288,
+                    //'height': $(document).height()
+                    'height': $(this).height()
+                });
+			});
+
+			var id = '<%=System.Web.Configuration.WebConfigurationManager.AppSettings["UMS_ID"].ToString()%>';
+			var pwd = '<%=System.Web.Configuration.WebConfigurationManager.AppSettings["UMS_PWD"].ToString()%>';
+			var hash = '<%=System.Web.Configuration.WebConfigurationManager.AppSettings["UMS_HASH"].ToString()%>';
+			var sitekey = '<%=System.Web.Configuration.WebConfigurationManager.AppSettings["UMS_SITEKEY"].ToString()%>';
+
+			createDefaultAuthUser(id, pwd, hash, sitekey, function (user) {
+				$('#sender').dataBindSender(user);
+                $("#cboMsgType").dataBindCodeChild('00000005');
+                dataBindGroupsData('#msgGroup', user);
+
+                if (parent.stopSpin) {
+                    parent.stopSpin();
+                }
+			});
+
+            if (window.parent && window.parent.resizeTabPanel) {
+
+                var height_form = $(document).height();
+
+                window.parent.resizeTabPanel({
+                    'width': $(document).width() - 288,
+                    //'height': $(document).height()
+                    'height': height_form
+                });
+            }
+        });
+
+	</script>
+    <asp:ContentPlaceHolder ID="scripts" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

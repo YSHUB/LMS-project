@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="importCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+		
+		<!-- 연동로그 조회-->
+		<select id="import.IMPORT_LOG_SELECT_L" parameterClass="Hashtable" resultClass="importLogList">
+			EXEC USP_IMPORT_LOG_SELECT 'L', #StartDate#, #EndDate#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<update id="import.IMPORT_SAVE_COURSEUPDATE" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_IMPORT_SAVE 'COURSEUPDATE', #IOType#, #UpdateUserNo#, #Param1#
+		</update>
+
+	</statements>
+</sqlMap>

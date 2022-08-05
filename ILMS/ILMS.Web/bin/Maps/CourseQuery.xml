@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<cacheModels>
+		<cacheModel id="courseCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<!--학습상황관리 > 참여도현황-->
+	<resultMaps>
+		<resultMap id="ProgressDetailB" class="Hashtable" >
+			<result column="CourseNo" property="CourseNo" />
+			<result column="AssignName" property="AssignName" />
+			<result column="GeneralUserCode" property="GeneralUserCode" />
+			<result column="UserID" property="UserID" />
+			<result column="UserNo" property="UserNo" />
+			<result column="HangulName" property="HangulName" />
+			<result column="Grade" property="Grade" />
+			<result column="Email" property="Email" />
+			<result column="HakjeokGubunName" property="HakjeokGubunName" />
+			<result column="ResidentNo" property="ResidentNo" />
+			<result column="QACount" property="QACount" />
+			<result column="DiscussionCount" property="DiscussionCount" />
+			<result column="DiscussionCheckCount" property="DiscussionCheckCount" />
+			<result column="TeamProjectCount" property="TeamProjectCount" />
+			<result column="TeamProjectSubmitCount" property="TeamProjectSubmitCount" />
+			<result column="HomeworkCount" property="HomeworkCount" />
+			<result column="HomeworkSubmitCount" property="HomeworkSubmitCount" />
+			<result column="QuizCount" property="QuizCount" />
+			<result column="QuizSubmitCount" property="QuizSubmitCount" />
+			<result column="ExamCount" property="ExamCount" />
+			<result column="ExamSubmitCount" property="ExamSubmitCount" />
+			<result column="strHangulName" property="strHangulName" />
+			<result column="strAttendanceCount" property="strAttendanceCount" />
+			<result column="strHomework" property="strHomework" />
+			<result column="strQuiz" property="strQuiz" />
+			<result column="strProject" property="strProject" />
+			<result column="strExamStatus1" property="strExamStatus1" />
+			<result column="strExamStatus2" property="strExamStatus2" />
+			<result column="strQandACount" property="strQandACount" />
+			<result column="strDisscussionCount" property="strDisscussionCount" />
+			<result column="QACheckCount" property="QACheckCount" />
+			<result column="IsUseExam" property="IsUseExam" />
+			<result column="IsUseHomework" property="IsUseHomework" />
+			<result column="IsUseParticipationQA" property="IsUseParticipationQA" />
+			<result column="IsUseDisscussion" property="IsUseDisscussion" />
+			<result column="IsUseQuiz" property="IsUseQuiz" />
+		</resultMap>
+	
+	<!--학습상황관리 > 컨텐츠활동-->
+		<resultMap id="ProgressDetailC" class="Hashtable" >
+			<result column="AssignName" property="AssignName" />
+			<result column="GeneralUserCode" property="GeneralUserCode" />
+			<result column="UserNo" property="UserNo" />
+			<result column="UserID" property="UserID" />
+			<result column="HangulName" property="HangulName" />
+			<result column="Grade" property="Grade" />
+			<result column="Email" property="Email" />
+			<result column="HakjeokGubunName" property="HakjeokGubunName" />
+			<result column="ResidentNo" property="ResidentNo" />
+			<result column="OcwCreateCount" property="OcwCreateCount" />
+			<result column="TotalViewCount" property="TotalViewCount" />
+			<result column="OcwOpinionCount" property="OcwOpinionCount" />
+		</resultMap>
+
+		<resultMap id="OcwByInning" class="Hashtable">
+			<result column="SubjectNo" property="SubjectNo" />
+			<result column="CourseNo" property="CourseNo" />
+			<result column="InningNo" property="InningNo" />
+			<result column="LectureNo" property="LectureNo" />
+			<result column="StudyInningNo" property="StudyInningNo" />
+			<result column="LMSContentsNo" property="LMSContentsNo" />
+			<result column="InningStartDay" property="InningStartDay" />
+			<result column="InningEndDay" property="InningEndDay" />
+			<result column="InningLatenessStartDay" property="InningLatenessStartDay" />
+			<result column="InningLatenessEndDay" property="InningLatenessEndDay" />
+			<result column="AttendanceAcceptTime" property="AttendanceAcceptTime" />
+			<result column="MiddleAttendanceStartMinute" property="MiddleAttendanceStartMinute" />
+			<result column="MiddleAttendanceEndMinute" property="MiddleAttendanceEndMinute" />
+			<result column="StudyStatus" property="StudyStatus" />
+			<result column="AttendanceStatus" property="AttendanceStatus" />
+			<result column="StudyMiddleDateTime" property="StudyMiddleDateTime" />
+			<result column="IsStudent" property="IsStudent" />
+		</resultMap>
+
+		<resultMap id="AttendanceListExcelAdmin" class="Hashtable" >
+			<result column="UserID" property="UserID" />
+			<result column="HangulName" property="HangulName" />
+			<result column="AssignName" property="AssignName" />
+			<result column="HakjeokGubunName" property="HakjeokGubunName" />
+			<result column="SubjectName" property="SubjectName" />
+			<result column="Week" property="Week" />
+			<result column="InningPeriod" property="InningPeriod" />
+			<result column="InningSeqNo" property="InningSeqNo" />
+			<result column="AttendanceName" property="AttendanceName" />
+		</resultMap>
+	</resultMaps>
+
+	<statements>
+		<select id="course.COURSE_SELECT_L" parameterClass="course" resultClass="course">
+      EXEC USP_COURSE_SELECT 'L', #ProgramNo#, #TermNo#, #UserNo#, null, #UnivYN#, #SearchText#, null, #Mnos#, #SearchDate#, #FirstIndex#, #LastIndex#, #AssignNo#, #ProfessorName#, #CreditAcceptGubun#, #SubjectNo#, #StudyType#
+    </select>
+
+		<select id="course.COURSE_SELECT_S" parameterClass="course" resultClass="course">
+			EXEC USP_COURSE_SELECT 'S', #ProgramNo#, #TermNo#, #UserNo#, #CourseNo#, #UnivYN#, #SearchText#, null, #Mnos#, #SearchDate#
+		</select>
+
+		<select id="course.COURSE_SELECT_A" parameterClass="course" resultClass="course">
+			EXEC USP_COURSE_SELECT 'A', #ProgramNo#, #TermNo#, #UserNo#, null, null, null, null, null, null
+		</select>
+
+		<select id="course.COURSE_SELECT_B" parameterClass="course" resultClass="course">
+			EXEC USP_COURSE_SELECT 'B', NULL, NULL, #UserNo#, #CourseNo#
+		</select>
+
+		<select id="course.COURSE_SELECT_C" parameterClass="course" resultClass="course">
+			EXEC USP_COURSE_SELECT 'C', NULL, #TermNo#, #UserNo#, #CourseNo#
+		</select>
+
+		<select id="course.COURSE_SELECT_D" parameterClass="course" resultClass="course">
+			EXEC USP_COURSE_SELECT 'D', NULL, #TermNo#, #UserNo#, NULL, NULL, NULL
+		</select>
+
+		<select id="course.COURSE_SELECT_E" parameterClass="course" resultClass="course">
+			EXEC USP_COURSE_SELECT 'E', NULL, #TermNo#, NULL, #CourseNo#, NULL, NULL
+		</select>
+
+		<select id="course.COURSE_SELECT_F" parameterClass="course" resultClass="course">
+			EXEC USP_COURSE_SELECT 'F', NULL, #TermNo#, #UserNo#
+		</select>
+
+		<select id="course.COURSE_SELECT_EXCEL_G" parameterClass="Hashtable" resultClass="Hashtable">
+			EXEC USP_COURSE_SELECT 'G', #ProgramNo#, #TermNo#
+		</select>
+
+		<select id="course.COURSE_SELECT_H" parameterClass="course" resultClass="course">
+			EXEC USP_COURSE_SELECT 'H', NULL, NULL, NULL, #CourseNo#
+		</select>
+
+		<select id="course.COURSE_SELECT_I" parameterClass="estimationItemBasis" resultClass="estimationItemBasis">
+			EXEC USP_COURSE_SELECT 'I', NULL, NULL, NULL, #CourseNo#
+		</select>
+
+		<select id="course.COURSE_SELECT_J" parameterClass="estimationItemBasis" resultClass="estimationItemBasis">
+			EXEC USP_COURSE_SELECT 'J', NULL, NULL, NULL, #CourseNo#
+		</select>
+
+		<select id="course.COURSE_SELECT_K" parameterClass="estimationItemBasis" resultClass="estimationItemBasis">
+			EXEC USP_COURSE_SELECT 'K', NULL, NULL, NULL, #CourseNo#
+		</select>
+
+		<select id="course.COURSE_SELECT_M" parameterClass="course" resultClass="course">
+			EXEC USP_COURSE_SELECT 'M', NULL, #TermNo#, NULL, NULL
+		</select>
+
+		<select id="course.COURSE_SELECT_N" parameterClass="course" resultClass="course">
+			EXEC USP_COURSE_SELECT 'N', #ProgramNo#, #TermNo#, #UserNo#, #CourseNo#, #UnivYN#, #SearchText#, NULL, NULL, #SearchDate#, #FirstIndex#, #LastIndex#, #AssignNo#, #ProfessorName#, #CreditAcceptGubun#, #SubjectNo#
+		</select>
+		
+		<select id="course.COURSE_SELECT_O" parameterClass="Hashtable" resultClass="Hashtable">
+			EXEC USP_COURSE_SELECT 'O', #ProgramNo#, #TermNo#, #UserNo#, #CourseNo#, #UnivYN#, #SearchText#, NULL, NULL, #SearchDate#, #FirstIndex#, #LastIndex#, #AssignNo#, #ProfessorName#, #CreditAcceptGubun#
+		</select>
+
+		<select id="course.COURSE_SELECT_P" parameterClass="Hashtable" resultClass="inning">
+			EXEC USP_COURSE_SELECT 'P', NULL, NULL, NULL, #CourseNo#, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, #SubjectNo#
+		</select>
+
+		<select id="course.COURSE_EST_SELECT_S" parameterClass="course" resultClass="estimationItemBasis">
+			EXEC USP_COURSE_EST_SELECT 'S', #CourseNo#, NULL, NULL, NULL, NULL, NULL
+		</select>
+
+		<select id="course.COURSE_INNING_SELECT_L" parameterClass="course" resultClass="inning">
+			EXEC USP_COURSE_INNING_SELECT 'L', #CourseNo#, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+		</select>
+
+		<select id="course.COURSE_INNING_SELECT_S" parameterClass="Hashtable" resultClass="inning">
+			EXEC USP_COURSE_INNING_SELECT 'S', NULL, NULL, #InningNo#, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+		</select>
+
+    <select id="course.COURSE_INNING_SELECT_C" parameterClass="inning" resultClass="inning">
+      EXEC USP_COURSE_INNING_SELECT 'C', #CourseNo#, #Week#, #InningNo#, #UseYesNo#, #DeleteYesNo#, #InningSeqNo#, NULL, NULL, #ExamNo#, NULL, NULL, #LessonForm#
+    </select>
+
+    <select id="course.COURSE_INNING_SELECT_D" parameterClass="inning" resultClass="inning">
+      EXEC USP_COURSE_INNING_SELECT 'D', #CourseNo#, #Week#, #InningNo#, #UseYesNo#, #DeleteYesNo#, #InningSeqNo#, NULL, NULL, #ExamNo#, NULL, NULL, #LessonForm#
+    </select>
+
+    <select id="course.COURSE_INNING_SELECT_E" parameterClass="inning" resultClass="inning">
+      EXEC USP_COURSE_INNING_SELECT 'E', #CourseNo#, #Week#, #InningNo#, #UseYesNo#, #DeleteYesNo#, #InningSeqNo#, NULL, NULL, NULL, NULL, NULL, #LessonForm#
+    </select>
+
+    <select id="course.COURSE_INNING_SELECT_F" parameterClass="inning" resultClass="inning">
+      EXEC USP_COURSE_INNING_SELECT 'F', NULL, NULL, #InningNo#, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+    </select>
+
+    <select id="course.COURSE_INNING_SELECT_H" parameterClass="inning" resultClass="inning">
+      EXEC USP_COURSE_INNING_SELECT 'H', NULL, NULL, #InningNo#, NULL, NULL, NULL, #UserNo#
+    </select>
+
+    <select id="course.COURSE_INNING_SELECT_I" parameterClass="inning" resultClass="inning">
+      EXEC USP_COURSE_INNING_SELECT 'I', #CourseNo#, #Week#, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+    </select>
+
+    <select id="course.COURSE_INNING_SELECT_J" parameterClass="Hashtable" resultClass="inning">
+      EXEC USP_COURSE_INNING_SELECT 'J', #CourseNo#, NULL, NULL, NULL, NULL, NULL, #UserNo#
+    </select>
+    
+    <select id="course.COURSE_INNING_SELECT_K" parameterClass="Hashtable" resultClass="inning">
+      EXEC USP_COURSE_INNING_SELECT 'K', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, #CourseNos#
+    </select>
+
+		<select id="course.COURSE_INNING_SELECT_M" parameterClass="Hashtable" resultMap="OcwByInning">
+			EXEC USP_COURSE_INNING_SELECT 'M', NULL, NULL, #InningNo#, NULL, NULL, NULL, #UserNo#
+		</select>
+		
+    <select id="course.COURSE_CATEGORY_SELECT_L" parameterClass="Hashtable" resultClass="category">
+			EXEC USP_COURSE_CATEGORY_SELECT 'L', #Mnos#, #IsOpen#
+		</select>
+
+		<update id="course.COURSE_CATEGORY_SAVE_C" parameterClass="Hashtable" resultClass="category">
+			EXEC USP_COURSE_CATEGORY_SAVE 'C', #MNo#, #MName#, #SortNo#, #IsOpen#, #IsDeleted#, #UNO#
+		</update>
+
+		<update id="course.COURSE_CATEGORY_SAVE_U" parameterClass="Hashtable" resultClass="category">
+			EXEC USP_COURSE_CATEGORY_SAVE 'U', #MNo# , #MName#, #SortNo#, #IsOpen#, #IsDeleted#, #UNO#
+		</update>
+
+		<update id="course.COURSE_CATEGORY_SAVE_D" parameterClass="Hashtable" resultClass="category">
+			EXEC USP_COURSE_CATEGORY_SAVE 'D', #MNo#, #MName#, #SortNo#, #IsOpen#, #IsDeleted#, #UNO#
+		</update>
+
+		<select id="course.COURSE_LECTURE_SELECT_A" parameterClass="Hashtable" resultClass="courseLecture">
+			EXEC USP_COURSE_LECTURE_SELECT 'A', #CourseNo#, #UserNo#, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+		</select>
+
+		<select id="course.COURSE_LECTURE_SELECT_B" parameterClass="courseLecture" resultClass="student">
+			EXEC USP_COURSE_LECTURE_SELECT 'B', #CourseNo#, #UserNo#
+		</select>
+
+		<select id="course.COURSE_LECTURE_SELECT_C" parameterClass="courseLecture" resultClass="courseLecture">
+			EXEC USP_COURSE_LECTURE_SELECT 'C', #CourseNo#
+		</select>
+
+		<select id="course.COURSE_LECTURE_SELECT_E" parameterClass="courseLecture" resultClass="courseLecture">
+			EXEC USP_COURSE_LECTURE_SELECT 'E', #CourseNo#, NULL, NULL, #SearchText#, NULL, NULL, NULL, NULL, NULL, #TermNo#, #FirstIndex#, #LastIndex#, #AssignNo#, #SubjectNo#, #StudyType#, #SearchGbn#
+		</select>
+
+		<select id="course.COURSE_LECTURE_SELECT_F" parameterClass="courseLecture" resultClass="courseLecture">
+			EXEC USP_COURSE_LECTURE_SELECT 'F', #CourseNo#, NULL, NULL, #SearchText#, NULL, NULL, NULL, NULL, NULL, #TermNo#, #FirstIndex#, #LastIndex#, #AssignNo#, #SubjectNo#
+		</select>
+
+		<select id="course.COURSE_LECTURE_SELECT_G" parameterClass="courseLecture" resultClass="courseLecture">
+			EXEC USP_COURSE_LECTURE_SELECT 'G', #CourseNo#, NULL, NULL, #SearchText#, NULL, NULL, NULL, NULL, NULL, #TermNo#, #FirstIndex#, #LastIndex#, #AssignNo#
+		</select>
+
+		<select id="course.COURSE_LECTURE_SELECT_I" parameterClass="courseLecture" resultClass="courseLecture">
+			EXEC USP_COURSE_LECTURE_SELECT 'I', #CourseNo#, #UserNo#, NULL, #SearchText#, NULL, NULL, NULL, NULL, NULL, #TermNo#, #FirstIndex#, #LastIndex#, #AssignNo#, #SubjectNo#, #StudyType#
+		</select>
+
+		<select id="course.COURSE_LECTURE_SELECT_J" parameterClass="courseLecture" resultMap="AttendanceListExcelAdmin">
+			EXEC USP_COURSE_LECTURE_SELECT 'J', #CourseNo#, #UserNo#, NULL, #SearchText#, NULL, NULL, NULL, NULL, NULL, #TermNo#, #FirstIndex#, #LastIndex#, #AssignNo#, #SubjectNo#, #StudyType#
+		</select>
+
+		<select id="course.COURSE_LECTURE_SAVE_C" parameterClass="courseLecture" resultClass="Int64">
+			EXEC USP_COURSE_LECTURE_SAVE 'C', #CourseNo#, #UserNo#, #LectureStatus#, #CreateUserNo#
+		</select>
+
+		<select id="course.COURSE_INNING_SAVE_C" parameterClass="courseLecture" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'C', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#
+		</select>
+
+		<update id="course.COURSE_LECTURE_SAVE_U" parameterClass="courseLecture" resultClass="courseLecture">
+			EXEC USP_COURSE_LECTURE_SAVE 'U', #CourseNo#, #UserNo#, #LectureStatus#
+		</update>
+
+		<select id="course.COURSE_GRADE_SELECT_A" parameterClass="Hashtable" resultClass="string">
+			EXEC USP_COURSE_GRADE_SELECT 'A', #CourseNo#, #ExamKind#
+		</select>
+
+		<select id="course.COURSE_GRADE_SELECT_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_GRADE_SELECT 'B', #CourseNo#, #ExamKind#
+		</select>
+
+		<select id="course.COURSE_GRADE_SELECT_C" parameterClass="Hashtable" resultClass="inning">
+			EXEC USP_COURSE_GRADE_SELECT 'C', #CourseNo#
+		</select>
+
+		<select id="course.COURSE_GRADE_SELECT_D" parameterClass="Hashtable" resultClass="courseLecture">
+			EXEC USP_COURSE_GRADE_SELECT 'D', #CourseNo#
+		</select>
+
+		<select id="course.COURSE_GRADE_SELECT_E" parameterClass="examQuestion" resultClass="examQuestion">
+			EXEC USP_COURSE_GRADE_SELECT 'E', #CourseNo#, NULL, #ExamNo#
+		</select>
+
+		<select id="course.COURSE_GRADE_SELECT_F" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_GRADE_SELECT 'F', #CourseNo#
+		</select>
+
+		<select id="course.COURSE_GRADE_SELECT_G" parameterClass="grade" resultClass="grade">
+			EXEC USP_COURSE_GRADE_SELECT 'G', #CourseNo#
+		</select>
+
+		<select id="course.COURSE_GRADE_SELECT_H" parameterClass="examQuestion" resultClass="examQuestion">
+			EXEC USP_COURSE_GRADE_SELECT 'H', #CourseNo#, NULL, #ExamNo#
+		</select>
+
+		<select id="course.COURSE_GRADE_SELECT_I" parameterClass="inning" resultClass="inning">
+			EXEC USP_COURSE_GRADE_SELECT 'I', #CourseNo#
+		</select>
+
+		<select id="course.COURSE_GRADE_SELECT_J" parameterClass="inning" resultClass="inning">
+			EXEC USP_COURSE_GRADE_SELECT 'J', #CourseNo#
+		</select>
+
+		<select id="course.STUDY_LOG_SELECT_S" parameterClass="Hashtable" resultClass="studyLog">
+			EXEC USP_STUDY_LOG_SELECT 'S', #StudyInningNo#
+		</select>
+
+		<update id="course.STUDY_LOG_SAVE_C" parameterClass="studyLog" resultClass="int">
+			EXEC USP_STUDY_LOG_SAVE 'C', NULL, #StudyInningNo#, #UserNo#, #InningNo#, #CourseNo#, #SubjectNo#, #StudyTime#, #TotalStudyTime#, #StudyHistory#, #LMSContentsNo#, #StudyCount#
+		</update>
+
+		<update id="course.STUDY_LOG_SAVE_U" parameterClass="studyLog" resultClass="int">
+			EXEC USP_STUDY_LOG_SAVE 'U', #StudyLogNo#, #StudyInningNo#, #StudyUserNo#, #InningNo#, #CourseNo#, #SubjectNo#, #StudyTime#, #TotalStudyTime#, #StudyHistory#, #LMSContentsNo#, #StudyCount#
+		</update>
+
+		<update id="course.STUDY_LOG_AFTER_SAVE_C" parameterClass="studyLogAfter" resultClass="int">
+			EXEC USP_STUDY_LOG_AFTER_SAVE 'C', NULL, #LectureNo#, #InningNo#, NULL, NULL, NULL, #StudyDevice#, #LogUserAgent#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_U" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'U', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#, #ExamNo#, #ExamineeNo#, #RetestGubun#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'A', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#, #ExamNo#, #ExamineeNo#, #RetestGubun#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'B', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#, #ExamNo#, #ExamineeNo#, #RetestGubun#, #Week#, #InningNo#, #InningSeqNo#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_E" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'E', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#, #ExamNo#, #ExamineeNo#, #RetestGubun#, #Week#, #InningNo#, #InningSeqNo#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_F" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'F', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#, #ExamNo#, #ExamineeNo#, #RetestGubun#, #Week#, #InningNo#, #InningSeqNo#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_G" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'G', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#, #ExamNo#, #ExamineeNo#, #RetestGubun#, #Week#, #InningNo#, #InningSeqNo#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_H" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'H', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#, #ExamNo#, #ExamineeNo#, #RetestGubun#, #Week#, #InningNo#, #InningSeqNo#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_I" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'I', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#, #ExamNo#, #ExamineeNo#, #RetestGubun#, #Week#, #InningNo#, #InningSeqNo#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_D" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'D', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#, #ExamNo#, #ExamineeNo#, #RetestGubun#, #Week#, #InningNo#, #InningSeqNo#
+		</update>
+		
+		<update id="course.COURSE_INNING_SAVE_J" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'J', #CourseNo#, #LectureNo#, #LectureStatus#, #CreateUserNo#, #ExamNo#, #ExamineeNo#, #RetestGubun#, #Week#, #InningNo#, #InningSeqNo#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_K" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'K', #CourseNo#, NULL, NULL, #CreateUserNo#, NULL, NULL, NULL, #Week#, NULL, #InningSeqNo#
+										, #LessonForm#, #LectureType#, #ContentTitle#, #InningStartDay#, #InningEndDay#, #LatenessSetupDay#, #AttendanceAcceptTime#
+										, #MiddleAttendanceStartMinute#, #MiddleAttendanceEndMinute#, #LMSContentsNo#, #ZoomURL#, #UpdateUserNo#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_L" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'L', #CourseNo#, NULL, NULL, #CreateUserNo#, NULL, NULL, NULL, #Week#, #InningNo#, #InningSeqNo#
+										, #LessonForm#, #LectureType#, #ContentTitle#, #InningStartDay#, #InningEndDay#, #LatenessSetupDay#, #AttendanceAcceptTime#
+										, #MiddleAttendanceStartMinute#, #MiddleAttendanceEndMinute#, #LMSContentsNo#, #ZoomURL#, #UpdateUserNo#
+		</update>
+
+		<update id="course.COURSE_INNING_SAVE_M" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_INNING_SAVE 'M', #CourseNo#, NULL, NULL, #CreateUserNo#, NULL, NULL, NULL, #Week#, NULL, NULL
+			, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, #CopyCourseNo#
+		</update>
+
+		<select id="course.COURSE_PROFESSOR_SELECT_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_PROFESSOR_SELECT 'A', #UserNo#, NULL, #CourseNo#
+		</select>
+
+		<select id="course.COMPLETION_SELECT_L" parameterClass="course" resultClass="course">
+			EXEC USP_COMPLETION_SELECT 'L', #CourseNo#, #UserNo#, #PrintUserNo#, #TermNo#, #SubjectName#, #HangulName#, #FirstIndex#, #LastIndex#, #IsPass#
+		</select>
+
+		<select id="course.COMPLETION_SELECT_S" parameterClass="courseLecture" resultClass="courseLecture">
+			EXEC USP_COMPLETION_SELECT 'S', #CourseNo#, #UserNo#, #PrintUserNo#
+		</select>
+
+		<select id="course.COURSE_PROGRESS_LIST_SELECT_L" parameterClass="Hashtable" resultClass="course">
+			EXEC USP_COURSE_PROGRESS_LIST_SELECT 'L', #ProgramNo#, #TermNo#, #SearchText#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="course.COURSE_PROGRESS_DETAIL_SELECT_L" parameterClass="Hashtable" resultClass="course">
+			EXEC USP_COURSE_PROGRESS_DETAIL_SELECT 'L', #CourseNo#, #TermNo#, NULL, NULL, NULL
+		</select>
+
+		<select id="course.COURSE_PROGRESS_DETAIL_SELECT_A" parameterClass="Hashtable" resultClass="student">
+			EXEC USP_COURSE_PROGRESS_DETAIL_SELECT 'A', #CourseNo#, #TermNo#, #SearchSort#, #SearchGbn#, #SearchStud#, #UserNo#
+		</select>
+
+		<select id="course.COURSE_PROGRESS_DETAIL_SELECT_B" parameterClass="Hashtable" resultMap="ProgressDetailB">
+			EXEC USP_COURSE_PROGRESS_DETAIL_SELECT 'B', #CourseNo#, #TermNo#, #SearchSort#, NULL, NULL, #UserNo#
+		</select>
+
+		<select id="course.COURSE_PROGRESS_DETAIL_SELECT_C" parameterClass="Hashtable" resultMap="ProgressDetailC">
+			EXEC USP_COURSE_PROGRESS_DETAIL_SELECT 'C', #CourseNo#, #TermNo#, #SearchSort#, NULL, NULL, #UserNo#
+		</select>
+
+		<select id="course.COURSE_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_SAVE 'C', #CourseNo#, #SubjectNo#, #ClassNo#, #StudyType#, #ViewYesNo#, #FileGroupNo#, #CreateUserNo#, #UpdateUserNo#, #Introduce#, #Mnos#, #RStart#, #REnd#, #LStart#, #LEnd#, NULL, NULL, #ClassTarget#, #ClassRoom#, #ClassTime#, #TargetUser#, #CourseExpense#, #CourseQA#, #TextbookData#, #Completion#, #SupportDevice#
+		</select>
+
+		<update id="course.COURSE_SAVE_U" parameterClass="Hashtable">
+			EXEC USP_COURSE_SAVE 'U', #CourseNo#, #SubjectNo#, #ClassNo#, #StudyType#, #ViewYesNo#, #FileGroupNo#, #CreateUserNo#, #UpdateUserNo#, #Introduce#, #Mnos#, #RStart#, #REnd#, #LStart#, #LEnd#, NULL, NULL, #ClassTarget#, #ClassRoom#, #ClassTime#, #TargetUser#, #CourseExpense#, #CourseQA#, #TextbookData#, #Completion#, #SupportDevice#
+		</update>
+
+		<update id="course.COURSE_SAVE_D" parameterClass="Hashtable">
+			EXEC USP_COURSE_SAVE 'D', #CourseNo#, #SubjectNo#, #ClassNo#, #StudyType#, #ViewYesNo#, #FileGroupNo#, #CreateUserNo#, #UpdateUserNo#, #Introduce#, #Mnos#, #RStart#, #REnd#, #LStart#, #LEnd#, NULL
+		</update>
+		
+		<update id="course.COURSE_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_SAVE 'A', #CourseNo#, #SubjectNo#, #ClassNo#, #StudyType#, #ViewYesNo#, #FileGroupNo#, #CreateUserNo#, #UpdateUserNo#, #Introduce#, #Mnos#, #RStart#, #REnd#, #LStart#, #LEnd#, NULL
+		</update>
+
+		<update id="course.COURSE_SAVE_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_SAVE 'B', #CourseNo#, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+		</update>
+
+		<update id="course.COURSE_SAVE_E" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_SAVE 'E', #CourseNo#, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, #InningNo#
+		</update>
+		
+		<update id="course.COURSE_SAVE_F" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_SAVE 'F', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, #InningNo#
+		</update>
+
+		<update id="course.COURSE_SAVE_G" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_SAVE 'G', #CourseNo#, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, #PassPoint#
+		</update>
+
+		<select id="course.COURSE_SUBJECT_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_SUBJECT_SAVE 'C', #SubjectNo#, #TermNo#, #SubjectName#, #CreateUserNo#, #UpdateUserNo#, #StudyType#
+		</select>
+
+		<update id="course.COURSE_SUBJECT_SAVE_U" parameterClass="Hashtable">
+			EXEC USP_COURSE_SUBJECT_SAVE 'U', #SubjectNo#, #TermNo#, #SubjectName#, #CreateUserNo#, #UpdateUserNo#, #StudyType#
+		</update>
+
+		<update id="course.COURSE_WEEK_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_WEEK_SAVE 'C', #CourseNo#, #CreateUserNo#, #UpdateUserNo#, NULL, NULL, NULL
+		</update>
+
+		<update id="course.COURSE_WEEK_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_WEEK_SAVE 'A', #CourseNo#, #CreateUserNo#, NULL, #InningStartDay#, #InningEndDay#, #Week#
+		</update>
+
+		<update id="course.COURSE_WEEK_SAVE_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_WEEK_SAVE 'B', #CourseNo#, NULL, #UpdateUserNo#, NULL, NULL, #Week#
+		</update>
+
+		<update id="course.COURSE_WEEK_SAVE_E" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_WEEK_SAVE 'E', #CourseNo#, #CreateUserNo#, NULL, NULL, NULL, #Week#, #CopyCourseNo#
+		</update>
+
+		<update id="course.COURSE_WEEK_SAVE_F" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_WEEK_SAVE 'F', #CourseNo#, #CreateUserNo#, NULL, NULL, NULL, #Week#, #CopyCourseNo#
+		</update>
+		
+		<select id="course.COURSE_PROFESSOR_SELECT_B" parameterClass="Hashtable" resultClass="course">
+			EXEC USP_COURSE_PROFESSOR_SELECT 'B', #UserNo#, #TermNo#, #CourseNo#
+		</select>
+
+		<update id="course.COURSE_PROFESSOR_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_PROFESSOR_SAVE 'C', #SubjectNo#, #CourseNo#, #ClassNo#,#CreateUserNo#, #UpdateUserNo#, #ProfessorNos#
+		</update>
+
+		<update id="course.COURSE_LECTURE_SAVE_L" parameterClass="Hashtable">
+			EXEC USP_COURSE_LECTURE_SAVE 'L', #CourseNo#, NULL, NULL, #CreateUserNo#, #ClassNo#
+		</update>
+
+		<update id="course.STUDY_LOG_HISTORY_SAVE_U" parameterClass="studyInning" resultClass="int">
+			EXEC USP_STUDY_LOG_HISTORY_SAVE 'U', #StudyInningNo#, #UserNo#, #StudyTime#, #StudyDevice#
+		</update>
+
+		<update id="course.STUDY_INNING_SAVE_H" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_STUDY_INNING_SAVE 'H', NULL, NULL, NULL, NULL, NULL, NULL, #UserNo#, NULL, #StudyInningNo#
+		</update>
+
+		<update id="course.STUDY_INNING_SAVE_D" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_STUDY_INNING_SAVE 'D', #ExamNo#, #RetestGubun#, #InningNo#
+		</update>
+
+		<select id="course.STUDY_INNING_SELECT_S" parameterClass="Hashtable" resultClass="studyInning">
+			EXEC USP_STUDY_INNING_SELECT 'S', NULL, #InningNo#, NULL, NULL, NULL, NULL, #UserNo#, NULL, NULL, #StudyInningNo#, #LectureNo#
+		</select>
+
+		<select id="course.STUDY_INNING_SELECT_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_STUDY_INNING_SELECT 'B', NULL, #InningNo#, NULL, NULL, NULL, NULL, #UserNo#, NULL, NULL, #StudyInningNo#, #LectureNo#
+		</select>
+
+		<select id="course.STUDY_INNING_SELECT_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_STUDY_INNING_SELECT 'C', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, #StudyInningNo#, NULL
+		</select>
+
+		<select id="course.STUDY_INNING_SELECT_L" parameterClass="Hashtable" resultClass="studyInning">
+			EXEC USP_STUDY_INNING_SELECT 'L', #CourseNo#, #InningNo#
+		</select>
+
+		<select id="course.STUDY_INNING_SELECT_A" parameterClass="Hashtable" resultClass="studyInning">
+			EXEC USP_STUDY_INNING_SELECT 'A', #CourseNo#, #InningNo#, NULL, NULL, #attCode1#, #attCode2#, #UserNo#, #Week#, #InningSeqNo#
+		</select>
+
+		<update id="course.STUDY_INNING_SAVE_A" parameterClass="studyInning" resultClass="int">
+			EXEC USP_STUDY_INNING_SAVE 'A', NULL, NULL, NULL, #AttendanceStatus#, #AttendanceReason#, #CreateUserNo#, #UpdateUserNo#, #DeleteYesNo#, #StudyInningNo#, #UserID#, NULL, NULL, NULL, NULL, NULL, NULL, #FileGroupNo#
+		</update>
+
+		<update id="course.STUDY_INNING_SAVE_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_STUDY_INNING_SAVE 'B', NULL, NULL, NULL, #AttendanceStatus#, NULL, NULL, NULL, NULL, #StudyInningNo#
+		</update>
+
+		<update id="course.STUDY_INNING_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_STUDY_INNING_SAVE 'C', NULL, NULL, #InningNo#, NULL, NULL, #CreateUserNo#, NULL, NULL, NULL, NULL, #CourseNo#, #Week#
+		</update>
+
+		<update id="course.STUDY_INNING_SAVE_U" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_STUDY_INNING_SAVE 'U', NULL, NULL, NULL, #AttendanceStatus#, NULL, #UserNo#, #UserNo#, NULL, #StudyInningNo#, NULL, NULL, NULL, #StudyStatus#, #StudyEndDateTime#, #StudyTime#
+		</update>
+
+		<update id="course.STUDY_INNING_SAVE_E" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_STUDY_INNING_SAVE 'E', NULL, NULL, NULL, #AttendanceStatus#, NULL, NULL, #UpdateUserNo#, NULL, #StudyInningNo#, NULL, NULL, NULL
+		</update>
+
+		<update id="course.STUDY_INNING_SAVE_F" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_STUDY_INNING_SAVE 'F', NULL, NULL, NULL, NULL, NULL, #CreateUserNo#, NULL, NULL, NULL, NULL, #CourseNo#, #Week#
+		</update>
+
+		<update id="course.STUDY_INNING_SAVE_G" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_STUDY_INNING_SAVE 'G', NULL, NULL, #InningNo#, NULL, NULL, #UserNo#, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, #LectureNo#
+		</update>
+		
+		<select id="course.COURSE_PROFESSOR_SELECT_C" parameterClass="Hashtable" resultClass="course">
+		  EXEC USP_COURSE_PROFESSOR_SELECT 'C', #UserNo#, #TermNo#, #CourseNo#, NULL, NULL, NULL, #HaksuNo#
+		</select>
+		
+		<select id="course.COURSE_LECTURE_SELECT_H" parameterClass="courseLecture" resultClass="courseLecture">
+			EXEC USP_COURSE_LECTURE_SELECT 'H', #CourseNo#, #UserNo#
+		</select>
+
+		<select id="course.USP_STUDY_INNING_SELECT_EXCEL_K" parameterClass="studyInning" resultClass="studyInning">
+			EXEC USP_STUDY_INNING_SELECT_EXCEL 'K', #CourseNo#, NULL, NULL, NULL, #UserNo#, NULL, #LectureNo#
+		</select>
+
+		<select id="course.USP_STUDY_INNING_SELECT_EXCEL_K2" parameterClass="Hashtable" resultClass="Hashtable">
+			EXEC USP_STUDY_INNING_SELECT_EXCEL 'K', #CourseNo#, NULL, NULL, NULL, #UserNo#, NULL, #LectureNo#
+		</select>
+		
+		<select id="course.USP_STUDY_INNING_SELECT_EXCEL_M" parameterClass="studyInning" resultClass="studyInning">
+			EXEC USP_STUDY_INNING_SELECT_EXCEL 'M', NULL, NULL, NULL, #InningNo#, #UserNo#
+		</select>
+
+		<select id="course.USP_STUDY_INNING_SELECT_EXCEL_N" parameterClass="studyInning" resultClass="studyInning">
+			EXEC USP_STUDY_INNING_SELECT_EXCEL 'N', NULL, NULL, NULL, #InningNo#, #UserNo#
+		</select>
+
+		<select id="course.USP_STUDY_INNING_SELECT_EXCEL_O" parameterClass="studyInning" resultClass="studyInning">
+			EXEC USP_STUDY_INNING_SELECT_EXCEL 'O', NULL, NULL, NULL, #InningNo#, #UserNo#
+		</select>
+
+		<update id="course.COURSE_EST_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_EST_SAVE 'C', #CourseNo#, #ParticipationItemGubun#, #HighMiddleLowBasisCode#, #RateScore#, #BasisScore#, #EnoughCount#, #CreateUserNo#, #UpdateUserNo#
+		</update>
+
+		<update id="course.COURSE_EST_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_EST_SAVE 'A', #CourseNo#, #ParticipationItemGubun#, #HighMiddleLowBasisCode#, #RateScore#, #BasisScore#, #EnoughCount#, #CreateUserNo#, #UpdateUserNo#
+			, #EstimationType#, #PerfectionHandleBasis#, #AttendanceAutoPassiveYesNo#, #LatenessPenaltyValue#, #AbsencePenaltyValue#, #EstimationItemSummary#, #ParticipationAcceptType#
+			, #EstimationItemGubun#
+		</update>
+
+		<update id="course.COURSE_EST_SAVE_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_EST_SAVE 'B', #CourseNo#, #ParticipationItemGubun#, #HighMiddleLowBasisCode#, #RateScore#, #BasisScore#, #EnoughCount#, #CreateUserNo#, #UpdateUserNo#
+			, #EstimationType#, #PerfectionHandleBasis#, #AttendanceAutoPassiveYesNo#, #LatenessPenaltyValue#, #AbsencePenaltyValue#, #EstimationItemSummary#, #ParticipationAcceptType#
+			, #EstimationItemGubun#
+		</update>
+
+		<select id="course.ATTENDANCE_RANDOM_SELECT_A" parameterClass="inning" resultClass="inning">
+			EXEC USP_ATTENDANCE_RANDOM_SELECT 'A', #CourseNo#, #Week#, #InningNo#, #InningSeqNo#
+		</select>
+
+		<select id="course.ATTENDANCE_RANDOM_SELECT_S" parameterClass="inning" resultClass="inning">
+			EXEC USP_ATTENDANCE_RANDOM_SELECT 'S', #CourseNo#, #Week#, #InningNo#, #InningSeqNo#, #IssueNo#
+		</select>
+
+		<update id="course.ATTENDANCE_RANDOM_SAVE_C" parameterClass="inning" resultClass="int">
+			EXEC USP_ATTENDANCE_RANDOM_SAVE 'C', #CourseNo#, #Week#, #InningNo#, #InningSeqNo#, #IssueNo#, #Random1#, #Random2#, #CreateUserNo#
+		</update>
+
+		<select id="course.STUDY_INNING_SELECT_X" parameterClass="Hashtable" resultClass="studyInning">
+			EXEC USP_STUDY_INNING_SELECT 'X', #CourseNo#, NULL, #HangulName#, #UserID#
+		</select>
+
+		<update id="course.COURSE_BOARD_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_BOARD_SAVE 'C', #CourseNo#, #CreateUserNo#, #CopyCourseNo#
+		</update>
+		
+		<update id="course.COURSE_STATE_SAVE_U" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_COURSE_STATE_SAVE 'U', #LectureStatus#, #LENos#
+		</update>
+
+		<update id="course.COURSE_GRADE_SAVE_C" parameterClass="grade">
+			EXEC USP_COURSE_GRADE_SAVE 'C', #CourseNo#, #UserNo#, #MidtermExamPerfectScore#, #MidtermExamScore#, #MidtermExam#, #FinalExamPerfectScore#, #FinalExamScore#, #FinalExam#
+														, #AttendancePerfectScore#, #AttendanceScore#, #Attendance#, #HomeWorkPerfectScore#, #HomeWorkScore#, #HomeWork#, #QuizPerfectScore#, #QuizScore#
+														, #Quiz#, #TotalScore#, #GradeText#, #FailingGradeYesNo#, #EstimationType#, #CreateUserNo#, #CreateDateTime#, #UpdateUserNo#, #UpdateDateTime#, #IsPass#, #LectureNo#
+		</update>
+
+		<update id="course.COURSE_GRADE_SAVE_D" parameterClass="grade">
+			EXEC USP_COURSE_GRADE_SAVE 'D', #CourseNo#, #UserNo#, #IsPass#, #LectureNo#
+		</update>
+
+	</statements>
+</sqlMap>

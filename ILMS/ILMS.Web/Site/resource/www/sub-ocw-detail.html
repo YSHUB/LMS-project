@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:mso="urn:schemas-microsoft-com:office:office"
+    xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>LMS학습관리시스템</title>
+    <link href="/common/css/icommon.css" rel="stylesheet">
+    <link href="/site/resource/www/css/style.css" rel="stylesheet">
+    <link href="/site/resource/www/css/contents.css" rel="stylesheet">
+
+
+    <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body>
+    <div id="accessibility">
+        <h1 class="sr-only">Skip Menu</h1>
+        <ul>
+            <li><a href="#lnb">주메뉴 바로가기</a></li>
+            <li><a href="#content">본문 바로가기</a></li>
+        </ul>
+    </div>
+    <!-- header -->
+    <div id="header"></div>
+    <!-- //header -->
+
+    <div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+        <div class="container">
+            <div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+        </div>
+    </div>
+
+    <div class="page-navi">
+        <div class="container">
+            <nav class="navbar flex-row-reverse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link home" href="#"><i
+                                class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">menu A</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">menu A-1</a>
+                            <a class="dropdown-item active" href="#">menu A-2</a>
+                            <a class="dropdown-item" href="#">menu A-3</a>
+                            <a class="dropdown-item" href="#">menu A-4</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">menu B</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">menu B-1</a>
+                            <a class="dropdown-item" href="#">menu B-2</a>
+                            <a class="dropdown-item" href="#">menu B-3</a>
+                            <a class="dropdown-item" href="#">menu B-4</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">menu C</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">menu C-1</a>
+                            <a class="dropdown-item" href="#">menu C-2</a>
+                            <a class="dropdown-item" href="#">menu C-3</a>
+                            <a class="dropdown-item" href="#">menu C-4</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="sub-container container">
+        <div class="row">
+            <div class="col-xl-3 d-none d-xl-block">
+                <div class="snb">
+                    <div class="snb-title"><span>LMS</span></div>
+                    <ul class="snb-list">
+                        <li class="active"><a href="#">menu A</a>
+                            <ul>
+                                <li class="active"><a href="#">menu A-1</a></li>
+                                <li><a href="#">menu A-2</a></li>
+                                <li><a href="#">menu A-3</a></li>
+                                <li><a href="#">menu A-4</a></li>
+                                <li><a href="#">menu A-5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">menu B</a>
+                            <ul>
+                                <li><a href="#">menu A-1</a></li>
+                                <li><a href="#">menu A-2</a></li>
+                                <li><a href="#">menu A-3</a></li>
+                                <li><a href="#">menu A-4</a></li>
+                                <li><a href="#">menu A-5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">menu C</a></li>
+                        <li><a href="#">menu D</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-9">
+                <h2 class="title02">관심 OCW</h2>
+
+                <div id="content">
+                    <form action="/Ocw/Detail" id="mainForm" method="post">
+                        <div class="card card-style01 mb-4">
+                            <div class="card-header">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col">
+                                        <a href="#" class="card-title01 text-dark">ㅎㅎ</a>
+
+                                    </div>
+                                    <div class="col-md-auto text-right">
+                                        <div class="icon-sns">
+                                            <a href="javascript:void(0);" role="button" id="twitter"
+                                                onclick="fnSnsShare ($(this));" title="트위터 공유">
+                                                <i class="icon twitter"></i><span class="sr-only">트위터 공유</span>
+                                            </a>
+                                            <a href="javascript:void(0);" role="button" id="facebook"
+                                                onclick="fnSnsShare ($(this));" title="페이스북 공유">
+                                                <i class="icon facebook"></i><span class="sr-only">페이스북 공유</span>
+                                            </a>
+                                            <a href="javascript:void(0);" role="button" id="kakaostory"
+                                                onclick="fnSnsShare ($(this));" title="카카오스토리 공유">
+                                                <i class="icon kakaostory"></i><span class="sr-only">카카오스토리 공유</span>
+                                            </a>
+                                            <a href="javascript:void(0);" role="button" id="naverblog"
+                                                onclick="fnSnsShare ($(this));" title="네이버블로그 공유">
+                                                <i class="icon naverblog"></i><span class="sr-only">네이버블로그 공유</span>
+                                            </a>
+                                            <a href="javascript:void(0);" role="button" id="link"
+                                                onclick="fnSnsShare ($(this));" title="링크 공유">
+                                                <i class="icon share"></i><span class="sr-only">링크 공유</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-body" id="collapseExample2">
+                                <div class="row mt-2 align-items-end">
+                                    <div class="col-12">
+                                        <dl class="row dl-style02">
+                                            <dt class="col-auto w-7rem"><i class="bi bi-dot"></i>등록자</dt>
+                                            <dd class="col">
+                                                <span class="pr-2">박기*</span>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary d-block d-md-inline-block mb-1 mb-md-0"
+                                                    onclick="fnGoMember(22798);" title="등록자 LMS 보기"><i class="bi bi-person-lines-fill mr-2"></i>등록 OCW</button>
+                                                <a class="btn btn-sm btn-point" title="쪽지보내기"
+                                                    onclick="javascript:bootAlert('준비중입니다.'); return false;"><i class="bi bi-envelope-fill mr-2"></i>쪽지보내기</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="row dl-style02">
+                                            <dt class="col-auto w-7rem"><i class="bi bi-dot"></i>전공분류</dt>
+                                            <dd class="col"><a href="#"
+                                                    onclick="fnSearchAssign('01227');">ICT공과대학&gt;디지털영상공학부&gt;게임영상공학</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="row dl-style02">
+                                            <dt class="col-auto w-7rem"><i class="bi bi-dot"></i>테마분류</dt>
+                                            <dd class="col">
+                                                <a href="#" onclick="fnSearchTheme(3);">인문</a>
+                                            </dd>
+                                        </dl>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <dl class="row dl-style02">
+                                                    <dt class="col-auto w-7rem"><i class="bi bi-dot"></i>최근작성일</dt>
+                                                    <dd class="col">2021-12-31</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <dl class="row dl-style02">
+                                                    <dt class="col-auto w-7rem"><i class="bi bi-dot"></i>최근수정일</dt>
+                                                    <dd class="col">2021-12-31</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <dl class="row dl-style02">
+                                            <dt class="col-auto w-7rem"><i class="bi bi-dot"></i>설명</dt>
+                                            <dd class="col">ㅎㅎ35345354ㅛㅛㅛ
+                                                <div class="mt-2">
+                                                    <i class="bi bi-tags text-dark mr-2"></i>
+                                                    <a href="#" class="badge badge-1-light"
+                                                        onclick="javascript:fnSearchTag(this);">ㅎㅎ</a> <a href="#"
+                                                        class="badge badge-1-light"
+                                                        onclick="javascript:fnSearchTag(this);"> ERP회계원리</a> <a href="#"
+                                                        class="badge badge-1-light"
+                                                        onclick="javascript:fnSearchTag(this);"> 수료증 테스트 과목</a>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <dl class="row dl-style02">
+                                                    <dt class="col-auto w-7rem"><i class="bi bi-dot"></i>조회수</dt>
+                                                    <dd class="col">0</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <dl class="row dl-style02">
+                                                    <dt class="col-auto w-7rem"><i class="bi bi-dot"></i>강좌적용수</dt>
+                                                    <dd class="col">2</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="text-right">
+                                            <a class="btn btn-primary" href="#">콘텐츠 보기</a>
+                                            <a class="btn btn-secondary " data-toggle="modal"
+                                                data-target="#divModalCourse">강의자료 적용하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <!-- 추천 버튼 -->
+                                    <button type="button" class="btn btn-sm btn-primary"
+                                        onclick="javascript:fnOcwLike(2879);"><span class="badge badge-primary">1</span>
+                                        추천 <i class="bi bi-hand-thumbs-up-fill"></i></button>
+                                    <!-- 관심 버튼 -->
+                                    <a class="btn btn-sm btn-success"
+                                        onclick="javascript:bootAlert('이미 관심 OCW로 등록했거나 자신의 OCW일 경우 등록할 수 없습니다.'); return false;"><span
+                                            class="badge badge-success">0</span> 관심 <i
+                                            class="bi bi-suit-heart-fill"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="tab-content" id="myTabContent">
+
+                            <!-- 탭리스트 -->
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="rel-tab" data-toggle="tab" href="#rel" role="tab"
+                                        aria-controls="rel" aria-selected="false">연계 컨텐츠
+                                        <span class="badge badge-primary">3</span></a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="opinion-tab" data-toggle="tab" href="#opinion"
+                                        role="tab" aria-controls="opinion" aria-selected="true">의견
+                                        <span class="badge badge-primary">0</span></a>
+                                </li>
+                            </ul>
+
+                            <!-- 연계 컨텐츠 -->
+                            <div class="tab-pane fade active show" id="rel" role="tabpanel" aria-labelledby="rel-tab">
+                                <h3 class="title04 mt-4">작성자 추천 리스트</h3>
+
+                                <div class="alert bg-light alert-light rounded text-center m-0"><i
+                                        class="bi bi-info-circle-fill"></i> 작성자 추천 항목이 없습니다.</div>
+                                <!-- 기타 추천 -->
+                                <hr class="line-gap">
+                                <h3 class="title04 mt-4">기타 추천 리스트</h3>
+                                <div class="card card-style05">
+                                    <div class="card-body">
+                        
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+        
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-folder-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+        
+                                                
+                                                <!-- image type -->
+                                                
+        
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">이학</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-10-07</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(4)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/2553" class="text-dark">
+                                                            <strong class="font-size-18">원자구조</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        무기화학 원자구조에 대한 설명을 정리한 파일
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">자연과학</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">화학</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">무기화학</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">원자</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> ERP회계원리</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                
+                        
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+        
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-collection-play-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+        
+                                                
+                                                <!-- image type -->
+                                                
+        
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">기타</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-09-24</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(6)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/2444" class="text-dark">
+                                                            <strong class="font-size-18">동의대학교 볼거리(혜안지/수덕전/정심정)</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        DOOR(동영상) 콘텐츠 제작 동아리에서 제작한 동의대학교의 다양한 볼거리 소개를 위한 영상
+        (디지털콘텐츠학 이홍섭,곽봉현,정은아,이해솔,이윤경,석예린)
+        
+        BGM출처
+        MBB-Happy - https://www.youtube.com/watch?v=ki9uPx5zIUo
+        Osheen &amp; JayJen - Flying - https://www.youtube.com/watch?v=6ZFwmlV9_FY
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">동의대학교</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 볼거리</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 혜안지</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 수덕전</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 정심정</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 동아리</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                
+                        
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+        
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-folder-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+        
+                                                
+                                                <!-- image type -->
+                                                
+        
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">의학</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-07-09</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(18)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/2171" class="text-dark">
+                                                            <strong class="font-size-18">약성가</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        한의학 약재들의 성미와 효능을 외우기 쉽게 만든 약성가 자료입니다~
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">약성가</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 동의대. 동의대학교</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> DOOR</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 도어</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> </a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                
+                        
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+        
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-folder-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+        
+                                                
+                                                <!-- image type -->
+                                                
+        
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">공학</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-06-25</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(12)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/2074" class="text-dark">
+                                                            <strong class="font-size-18">캡스톤디자인 최종발표</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        캡스톤디자인 최종 보고서
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">#동의대 #동의대학교 #캡스톤디자인최종보고서</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                
+                        
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+        
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-folder-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+        
+                                                
+                                                <!-- image type -->
+                                                
+        
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">공학</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-06-25</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(15)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/2080" class="text-dark">
+                                                            <strong class="font-size-18">캡스톤 디자인 PPT(정보수재 조)</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        캡스톤 디자인 최종 PPT자료입니다.
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">동의대</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">DOOR</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">도어</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">동의대학교</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">캡스톤디자인</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                
+                        
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+        
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-folder-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+        
+                                                
+                                                <!-- image type -->
+                                                
+        
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">공학</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-06-25</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(61)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/2081" class="text-dark">
+                                                            <strong class="font-size-18">캡스톤 디자인 최종보고서(정보수재 조)</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        캡스톤 디자인 최종보고서(전재수재 조)
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">동의대</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 동의대학교</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> DOOR</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 도어</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 캡스톤디자인</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">졸업작품</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 융복합캡스톤디자인</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                
+                        
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+        
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-collection-play-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+        
+                                                
+                                                <!-- image type -->
+                                                
+        
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">기타</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-04-15</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(5)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/1379" class="text-dark">
+                                                            <strong class="font-size-18">동의대학교 인문교양페스티벌 - 동의대잔치</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        유투브 채널: 동의대학교 인문교양페스티벌-나를 교양하라!
+        
+        동의대학교 인문교양페스티벌 출품작 12 - 동의대잔치
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">동의대학교</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                
+                        
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+        
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-collection-play-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+        
+                                                
+                                                <!-- image type -->
+                                                
+        
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">기타</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-04-15</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(7)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/1380" class="text-dark">
+                                                            <strong class="font-size-18">동의대학교 인문교양페스티벌 - 하늘에서 바라본 동의대학교</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        유투브 채널: 동의대학교 인문교양페스티벌-나를 교양하라!
+        
+        동의대학교 인문교양페스티벌 출품작 6 - 하늘에서 바라본 동의대학교
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">동의대학교</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 드론</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                
+                        
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+        
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-collection-play-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+        
+                                                
+                                                <!-- image type -->
+                                                
+        
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">기타</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-04-15</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(10)</strong>
+                                                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/1381" class="text-dark">
+                                                            <strong class="font-size-18">동의대학교 인문교양페스티벌 - 동의대 예체대를 소개합니다!</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        유투브 채널: 동의대학교 인문교양페스티벌-나를 교양하라!
+        
+        동의대학교 인문교양페스티벌 출품작 22 - 동의대 예체대를 소개합니다!
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);">동의대학교</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 예술디자인체육대학</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 체육학과</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 레저스포츠학과</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 태권도학과</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 디자인조형학과</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 음악학과</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> 패션디자인학과</a> <a href="#" class="badge badge-1-light" onclick="javascript:fnSearchTag(this);"> </a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                
+                        
+                                    </div>
+                                </div>
+                                
+                                <div class="card card-style05">
+                                    <div class="card-body">
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-folder-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- image type -->
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">이학</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-10-07</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(4)</strong>
+                                                        <a href="#"
+                                                            onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');"
+                                                            title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/2553" class="text-dark">
+                                                            <strong class="font-size-18">원자구조</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        무기화학 원자구조에 대한 설명을 정리한 파일
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);">자연과학</a> <a
+                                                                href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);">화학</a> <a
+                                                                href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);">무기화학</a> <a
+                                                                href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);">원자</a> <a
+                                                                href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);">
+                                                                ERP회계원리</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-collection-play-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- image type -->
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">인문</strong>
+                                                        <strong class="font-size-14 bar-vertical">2019-03-27</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(37)</strong>
+                                                        <a href="#"
+                                                            onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');"
+                                                            title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/1163" class="text-dark">
+                                                            <strong class="font-size-18">&lt;서동요&gt; 생황 연주</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        .
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);">한국고전시가론</a> <a
+                                                                href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);"> ERP회계원리</a> <a
+                                                                href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);">
+                                                                관리자테스트</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card-item01">
+                                            <div class="row no-gutters align-items-md-stretch">
+                                                <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+
+                                                    <!-- icon type -->
+                                                    <div class="thumb-wrap icon">
+                                                        <div class="thumb">
+                                                            <i class="bi bi-collection-play-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- image type -->
+                                                <div class="col-md-8 col-lg-9 pl-md-4">
+                                                    <div class="text-secondary d-flex flex-wrap align-items-center">
+                                                        <strong class="font-size-14 bar-vertical">인문, 사회</strong>
+                                                        <strong class="font-size-14 bar-vertical">2018-12-26</strong>
+                                                        <strong class="font-size-14 bar-vertical">조회(78)</strong>
+                                                        <a href="#"
+                                                            onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');"
+                                                            title="강의 바로보기" class="font-size-20 text-point">
+                                                            <i class="bi bi-eye-fill"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="my-1 text-truncate">
+                                                        <a href="/Ocw/Detail/73" class="text-dark">
+                                                            <strong class="font-size-18">검토1</strong>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-secondary text-truncate">
+                                                        .
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <i class="bi bi-tags text-dark mr-2"></i>
+                                                        <span><a href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);">기와</a> <a
+                                                                href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);"> ERP회계원리</a> <a
+                                                                href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);"> wer</a> <a
+                                                                href="#" class="badge badge-1-light"
+                                                                onclick="javascript:fnSearchTag(this);"> 퀴즈
+                                                                테스트</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 페이징 -->
+                            </div>
+
+                            <!-- 의견 -->
+                            <div class="tab-pane fade" id="opinion" role="tabpanel"
+                                aria-labelledby="opinion-tab">
+
+                                <div class="card">
+                                    <div class="parent">
+                                        <div class="card-header">
+                                            <div class="row align-items-center">
+                                                <div class="col-12 col-md">
+                                                    <dl class="row dl-style01">
+                                                        <dt class="col-auto sr-only">작성자</dt>
+                                                        <dd class="col-auto mb-0 text-primary font-weight-bold">통합운영자(*min)</dd>
+                                                        <dt class="col-auto sr-only">작성일자</dt>
+                                                        <dd class="col-auto mb-0 text-dark">2022-01-11</dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="col-auto text-right">
+                                                    <dl class="row dl-style01">
+                                                        <dt class="col-auto text-dark sr-only">관리</dt>
+                                                        <dd class="col-auto mb-0 ">
+                                                            <button type="button" class="btn btn-sm btn-point" onclick="fnReplyOp(this, 594, 1, 0, 0);">답글</button>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div>관리자가 의견등록</div>
+                                            <!-- 삭제된 댓글의 경우 DB에서 안보이게 처리함  -->
+                                        </div>
+                                    </div>
+
+                                    <div class="replyOn">
+                                        <div class="card-header">
+                                            <div class="row align-items-center">
+                                                <div class="col-md">
+                                                    <strong class="font-size-14 text-primary">
+                                                        <i class="bi bi-arrow-return-right font-size-16 mr-1"></i>답글 등록
+                                                    </strong>
+                                                </div>
+                                                <div class="col-md-auto text-right">
+                                                    <dl class="row dl-style01">
+                                                        <dt class="col-auto sr-only">관리</dt>
+                                                        <dd class="col-auto mb-0">
+                                                            <button type="button" class="btn btn-sm btn-primary" onclick="fnSaveReply(this, 594 );">등록</button>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <textarea id="txtOpinionRe" class="form-control w-100"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 col-md">
+                                                <strong class="text-primary font-size-14">
+                                                    <i class="bi bi-arrow-return-right font-size-16 mr-1"></i>
+                                                    <span class="badge badge-primary mr-2">작성자 등록</span>
+                                                </strong>
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto sr-only">작성자</dt>
+                                                    <dd class="col-auto mb-0 text-primary font-weight-bold">박기*(*442)</dd>
+                                                    <dt class="col-auto sr-only">작성일자</dt>
+                                                    <dd class="col-auto mb-0 text-dark">2022-01-11</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-auto text-right">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div>이것도 돼?</div>
+                                        <!-- 삭제된 대댓글의 경우 DB에서 안보이게 처리함  -->
+                                    </div>
+
+                                </div>
+
+                                <div class="card">
+                                    <div class="parent">
+                                        <div class="card-header">
+                                            <div class="row align-items-center">
+                                                <div class="col-12 col-md">
+                                                    <dl class="row dl-style01">
+                                                        <dt class="col-auto sr-only">작성자</dt>
+                                                        <dd class="col-auto mb-0 text-primary font-weight-bold">통합운영자(*min)</dd>
+                                                        <dt class="col-auto sr-only">작성일자</dt>
+                                                        <dd class="col-auto mb-0 text-dark">2022-01-12</dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="col-auto text-right">
+                                                    <dl class="row dl-style01">
+                                                        <dt class="col-auto sr-only">관리</dt>
+                                                        <dd class="col-auto mb-0 ">
+                                                            <button type="button" class="btn btn-sm btn-point"
+                                                                onclick="fnReplyOp(this
+                                                                , 597
+                                                                , 1
+                                                                , 0
+                                                                , 0);">답글</button>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div>의견테스트</div>
+                                            <!-- 삭제된 댓글의 경우 DB에서 안보이게 처리함  -->
+                                        </div>
+                                    </div>
+
+                                    <div class="replyOff d-none">
+                                        <div class="card-header">
+                                            <div class="row align-items-center">
+                                                <div class="col-md">
+                                                    <strong class="font-size-14 text-primary">
+                                                        <i class="bi bi-arrow-return-right font-size-16 mr-1"></i>답글 등록 
+                                                    </strong>
+                                                </div>
+                                                <div class="col-md-auto text-right">
+                                                    <dl class="row dl-style01">
+                                                        <dt class="col-auto sr-only">관리</dt>
+                                                        <dd class="col-auto mb-0">
+                                                            <button type="button" class="btn btn-sm btn-point"
+                                                                onclick="fnSaveReply(this, 597 );">등록</button>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <textarea id="txtOpinionRe" class="form-control w-100"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card">
+                                    <div class="parent">
+                                        <div class="card-header">
+                                            <div class="row align-items-center">
+                                                <div class="col-12 col-md">
+                                                    <dl class="row dl-style01">
+                                                        <dt class="col-auto sr-only">작성자</dt>
+                                                        <dd class="col-auto mb-0 text-primary font-weight-bold">통합운영자(*min)</dd>
+                                                        <dt class="col-auto sr-only">작성일자</dt>
+                                                        <dd class="col-auto mb-0 text-dark">2022-01-11</dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="col-auto text-right">
+                                                    <dl class="row dl-style01">
+                                                        <dd class="col-auto mb-0 ">
+                                                            <button type="button" class="btn btn-sm btn-point"
+                                                                onclick="fnReplyOp(this
+                                                                , 598
+                                                                , 1
+                                                                , 0
+                                                                , 0);">답글</button>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div>의견테스트2</div>
+                                            <!-- 삭제된 댓글의 경우 DB에서 안보이게 처리함  -->
+                                        </div>
+                                    </div>
+
+                                    <div class="replyOff d-none">
+                                        <div class="card-header">
+                                            <div class="row align-items-center">
+                                                <div class="col-md">
+                                                    <strong class="font-size-14 text-primary">
+                                                        <i class="bi bi-arrow-return-right font-size-16 mr-1"></i>답글 등록 
+                                                    </strong>
+                                                </div>
+                                                <div class="col-md-auto text-right">
+                                                    <dl class="row dl-style01">
+                                                        <dt class="col-auto text-dark sr-only">관리</dt>
+                                                        <dd class="col-auto mb-0">
+                                                            <button type="button" class="btn btn-sm btn-outline-primary"
+                                                                onclick="fnSaveReply(this, 598 );">등록</button>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <textarea id="txtOpinionRe" class="form-control w-100"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-md">
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto sr-only">작성자</dt>
+                                                    <dd class="col-auto mb-0 text-primary font-weight-bold">박기*(*832)</dd>
+                                                    <dt class="col-auto sr-only">작성일자</dt>
+                                                    <dd class="col-auto mb-0 text-dark">2022-03-02</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-md-auto text-right">
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto sr-only">관리</dt>
+                                                    <dd class="col-auto mb-0">
+                                                        <div class="btn-group">
+                                                            <a href="#" class="btn btn-sm btn-secondary" onclick="fnDeleteOpinion(this, 610);">삭제</a>
+                                                            <a href="#" class="btn btn-sm btn-secondary" onclick="fnModifyOpinion(this, 610);">수정</a>
+                                                        </div>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <textarea class="form-control w-100">댓글 테스트 중 -수정</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-md">
+                                                <strong class="font-size-14 text-primary">
+                                                    새 의견 등록 
+                                                </strong>
+                                            </div>
+                                            <div class="col-md-auto text-right">
+                                                <dl class="row dl-style01">
+                                                    <dt class="col-auto text-dark sr-only">관리</dt>
+                                                    <dd class="col-auto mb-0">
+                                                        <button type="button" class="btn btn-sm btn-primary"
+                                                            onclick="fnSaveOpinion(0);">등록</button>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <textarea id="txtOpinion" class="form-control w-100"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- 쪽지 보내기 modal -->
+                            <div class="modal fade show" id="divNoteSend" tabindex="-1"
+                                aria-labelledby="divNoteContents" aria-modal="true" role="dialog">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title h4" id="divNoteContents">쪽지 발송</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="card d-md-block">
+                                                <div class="card-body">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-12 col-md-12">
+                                                            <label for="Exam_Week" class="form-label">받는사람 <strong
+                                                                    class="text-danger">*</strong></label>
+                                                            <div class="input-group">
+                                                                <input class="form-control" name="Exam.StartDay" id=""
+                                                                    title="" readonly="" type="text" value="">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-12">
+                                                            <label for="Exam_Week" class="form-label">제목 <strong
+                                                                    class="text-danger">*</strong></label>
+                                                            <input class="form-control" name="Exam.StartDay" id=""
+                                                                title="">
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label for="Exam_ExamContents" class="form-label">내용 <strong
+                                                                    class="text-danger">*</strong></label>
+                                                            <textarea id="Exam_ExamContents" name="Exam.ExamContents"
+                                                                rows="5" class="form-control" title=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-6">
+                                                            <p class="font-size-14 text-danger font-weight-bold mb-0"><i
+                                                                    class="bi bi-info-circle-fill"></i>* 필수입력 항목</p>
+                                                        </div>
+                                                        <div class="col-6 text-right">
+                                                            <button type="button" class="btn btn-primary">발송</button>
+                                                            <button type="button" class="btn btn-outline-primary"
+                                                                data-dismiss="modal" title="닫기">닫기</button>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 관심 modal -->
+                            <div class="modal fade show" id="divModalPocket" tabindex="-1" aria-labelledby="divPocket"
+                                aria-modal="true" role="dialog">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title h4" id="divPocket">나의 OCW 저장</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="card d-md-block">
+                                                <div class="card-body">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-12">
+                                                            <label for="CatCode" class="form-label">나의 폴더</label>
+                                                            <select id="CatCode" name="CatCode" class="form-control">
+
+                                                                <option value="0">기본</option>
+
+                                                                <option value="2">원격수업-하이테크지식경영DD</option>
+
+                                                                <option value="3">원격수업-소셜미디어마케팅</option>
+
+                                                                <option value="4">ㅁㅁㅁ1</option>
+
+                                                                <option value="9">test폴더수정</option>
+
+                                                                <option value="10">새폴더</option>
+
+                                                                <option value="11">123</option>
+
+                                                            </select>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-6">
+                                                            <p class="font-size-14 text-danger font-weight-bold mb-0"><i
+                                                                    class="bi bi-info-circle-fill"></i>* 선택한 폴더에 OCW를
+                                                                저장합니다.</p>
+                                                        </div>
+                                                        <div class="col-6 text-right">
+                                                            <button type="button" class="btn btn-primary"
+                                                                onclick="fnAddPocket(2879, $('#CatCode').val());">저장</button>
+                                                            <button type="button" class="btn btn-outline-primary"
+                                                                data-dismiss="modal" title="닫기">닫기</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 강의자료 적용 modal -->
+                            <div class="modal fade show" id="divModalCourse" tabindex="-1"
+                                aria-labelledby="divModalCourse" aria-modal="true" role="dialog">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title h4">강의 적용</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="alert alert-light border-light d-none">
+                                                현재 학기에 배정받은 교과목 및 주차를 선택합니다. <br>( 강좌가 조회되지 않을 경우, 관리자에게 문의바랍니다. )
+                                            </div>
+
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-3">
+                                                            <label for="term" class="form-label">학기 <strong
+                                                                    class="text-danger">*</strong></label>
+                                                            <select id="term" onchange="fnGetCourse();"
+                                                                class="form-control">
+                                                                <option value="termBlock">학기를 선택하세요</option>
+
+                                                                <option value="35">2029년도 1학기</option>
+
+                                                                <option value="11">2021년도 1학기</option>
+
+                                                                <option value="36">2021년도 2학기</option>
+
+                                                                <option value="9">2020년도 1학기</option>
+
+                                                                <option value="6">2019년도 1학기</option>
+
+                                                                <option value="7">2019년도 하계학기</option>
+
+                                                                <option value="8">2019년도 2학기</option>
+
+                                                                <option value="2">2018년도 1학기</option>
+
+                                                                <option value="3">2018년도 하계학기</option>
+
+                                                                <option value="4">2018년도 2학기</option>
+
+                                                                <option value="5">2018년도 동계학기</option>
+
+                                                                <option value="1">2017년도 2학기</option>
+
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group col-4">
+                                                            <label for="course" class="form-label">교과목/분반 <strong
+                                                                    class="text-danger">*</strong></label>
+                                                            <select id="course" onchange="fnGetWeek();"
+                                                                class="form-control">
+                                                                <option value="courseBlock">교과목을 선택하세요</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group col-3">
+                                                            <label for="week" class="form-label">적용주차 <strong
+                                                                    class="text-danger">*</strong></label>
+                                                            <select id="week" class="form-control">
+                                                                <option value="weekBlock">주차를 선택하세요</option>
+
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group col-2">
+                                                            <label for="impt" class="form-label">중요도 <strong
+                                                                    class="text-danger">*</strong></label>
+                                                            <select id="impt" class="form-control">
+
+                                                                <option value="IMPT001">필수</option>
+
+                                                                <option value="IMPT002">보조</option>
+
+
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="text-right">
+                                                <button type="button" class="btn btn-primary"
+                                                    onclick="fnAddCourse();">저장</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                                    title="닫기">닫기</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-right mt-2">
+
+                                <button type="button" class="btn btn-secondary"
+                                    onclick="javascript:document.location.href='/Ocw/Index/0';">목록</button>
+                            </div>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div><!-- sub-container -->
+
+    <div id="footer"></div>
+
+    <script src="/common/js/jquery-3.3.1.min.js"></script>
+    <script src="/common/js/popper.js"></script>
+    <script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+    <script src="/site/resource/www/js/script.js"></script>
+    <script>
+        $.ajax({
+            method: 'GET',
+            url: 'header.html',
+            async: false,
+            dataType: 'html'
+        }).done(function (html) {
+            $('#header').append(html);
+        });
+        $.ajax({
+            method: 'GET',
+            url: 'footer.html',
+            async: false,
+            dataType: 'html'
+        }).done(function (html) {
+            $('#footer').append(html);
+        });
+
+        $(document).ready(function () {
+            $(".dropdown-toggle").dropdown();
+        });
+    </script>
+</body>
+
+</html>

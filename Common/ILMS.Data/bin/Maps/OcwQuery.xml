@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="ocwCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+	<!-- SELECT -->
+	<select id="ocw.OCW_SELECT_L" parameterClass="Hashtable" resultClass="ocw">
+		EXEC USP_OCW_SELECT		'L', #AssignNo#, #ThemeNos#, #IsAuth#, #UserType#, #SearchText#, #IsOpen#
+		, #FirstIndex#, #LastIndex#, #CatCode#, #OcwUserNo#, #SortValue#, #OcwNo#, #ViewUserNo#, #KWord#
+	</select>
+
+	<select id="ocw.OCW_SELECT_S" parameterClass="Hashtable" resultClass="ocw">
+		EXEC USP_OCW_SELECT		'S', #AssignNo#, #ThemeNos#, #IsAuth#, #UserType#, #SearchText#, #IsOpen#
+		, #FirstIndex#, #LastIndex#, #CatCode#, #OcwUserNo#, #SortValue#, #OcwNo#, #ViewUserNo#, #KWord#
+	</select>
+
+	<select id="ocw.OCW_SELECT_A" parameterClass="Hashtable" resultClass="ocw">
+		EXEC USP_OCW_SELECT		'A', #AssignNo#, #ThemeNos#, #IsAuth#, #UserType#, #SearchText#, #IsOpen#
+		, #FirstIndex#, #LastIndex#, #CatCode#, #OcwUserNo#, #SortValue#, #OcwNo#, #ViewUserNo#, #KWord#
+	</select>
+
+	<select id="ocw.OCW_SELECT_B" parameterClass="Hashtable" resultClass="ocw">
+		EXEC USP_OCW_SELECT		'B', #AssignNo#, #ThemeNos#, #IsAuth#, #UserType#, #SearchText#, #IsOpen#
+		, #FirstIndex#, #LastIndex#, #CatCode#, #OcwUserNo#, #SortValue#, #OcwNo#, #ViewUserNo#, #KWord#
+	</select>
+
+	<select id="ocw.OCW_SELECT_D" parameterClass="Hashtable" resultClass="ocw">
+		EXEC USP_OCW_SELECT		'D', #AssignNo#, #ThemeNos#, #IsAuth#, #UserType#, #SearchText#, #IsOpen#
+		, #FirstIndex#, #LastIndex#, #CatCode#, #OcwUserNo#, #SortValue#, #OcwNo#, #ViewUserNo#, #KWord#
+	</select>
+
+	<select id="ocw.OCW_SELECT_E" parameterClass="Hashtable" resultClass="ocwCourse">
+		EXEC USP_OCW_SELECT		'E', #AssignNo#, #ThemeNos#, #IsAuth#, #UserType#, #SearchText#, #IsOpen#
+		, #FirstIndex#, #LastIndex#, #CatCode#, #OcwUserNo#, #SortValue#, #OcwNo#, #ViewUserNo#, #KWord#, #CourseNo#
+	</select>
+		
+	<select id="ocw.OCW_OPINION_SELECT_L" parameterClass="Hashtable" resultClass="ocwOpinion">
+		EXEC USP_OCW_OPINION_SELECT		'L', #OcwNo#, #FirstIndex#, #LastIndex#, #UserNo#, #CourseNo#, #Week#
+	</select>
+
+	<select id="ocw.OCW_OPINION_SELECT_S" parameterClass="Hashtable" resultClass="ocwOpinion">
+		EXEC USP_OCW_OPINION_SELECT		'S', #OcwNo#, #FirstIndex#, #LastIndex#, #UserNo#, #CourseNo#, #Week#
+	</select>
+
+
+	<select id="ocw.OCW_THEME_SELECT_L" parameterClass="ocwTheme" resultClass="ocwTheme">
+		EXEC USP_OCW_THEME_SELECT		'L', #ThemeNo#, #IsAdmin#, #IsOpen#
+	</select>
+
+	<select id="ocw.OCW_THEME_SELECT_S" parameterClass="ocwTheme" resultClass="ocwTheme">
+		EXEC USP_OCW_THEME_SELECT		'S', #ThemeNo#, #IsAdmin#, #IsOpen#
+	</select>
+
+
+	<select id="ocw.OCW_USERCAT_SELECT_L" parameterClass="ocwUserCategory" resultClass="ocwUserCategory">
+		EXEC USP_OCW_USERCAT_SELECT		'L', #UserNo#
+	</select>
+
+	<select id="ocw.OCW_USERCAT_SELECT_A" parameterClass="ocwUserCategory" resultClass="ocwUserCategory">
+		EXEC USP_OCW_USERCAT_SELECT		'A', #UserNo#
+	</select>
+
+	<select id="ocw.OCW_USERCAT_SELECT_B" parameterClass="ocwUserCategory" resultClass="ocwUserCategory">
+		EXEC USP_OCW_USERCAT_SELECT		'B', #UserNo#
+	</select>
+
+
+	<select id="ocw.OCW_LIKE_SELECT_A" parameterClass="ocwLike" resultClass="ocwLike">
+		EXEC USP_OCW_LIKE_SELECT		'A', #OcwNo#, #UserNo#
+	</select>
+
+
+	<select id="ocw.OCW_POCKET_SELECT_A" parameterClass="ocwPocket" resultClass="ocwPocket">
+		EXEC USP_OCW_POCKET_SELECT		'A', #OcwNo#, #UserNo#
+	</select>
+
+
+	<select id="ocw.OCW_COURSE_SELECT_L" parameterClass="ocwCourse" resultClass="ocwCourse">
+		EXEC USP_OCW_COURSE_SELECT		'L', #OcwNo#
+	</select>
+
+
+	<select id="ocw.OCW_SAVE_C" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_SAVE		'C', #OcwName#, #OcwType#, #OcwSourceType#, #OcwData#, #XID#, #OcwFileGroupNo#, #OcwWidth#
+		, #OcwHeight#, #AssignNo#, #AuthAssignNo#, #ThemeNos#, #UserNo#, #CatCode#, #IsOpen#, #IsAuth#
+		, #DescText#, #KWord#, #ThumFileGroupNo#, #UpdateUserNo#, #DeleteYesNo#, #LikeCount#, #OcwNo#, #AuthDate#
+	</select>
+
+
+	<select id="ocw.OCW_DELETE_YN_SELECT_A" parameterClass="Hashtable" resultClass="string">
+		EXEC USP_OCW_DELETE_YN_SELECT		'A', #OcwNo#
+	</select>
+
+
+	<select id="ocw.OCW_LINK_SELECT_S" parameterClass="Hashtable" resultClass="linkOcw">
+		EXEC USP_OCW_LINK_SELECT		'S', #OcwNo#
+	</select>
+
+
+	<select id="ocw.OCW_COURSE_SELECT_A" parameterClass="Hashtable" resultClass="ocwCourse">
+		EXEC USP_OCW_COURSE_SELECT		'A', #OcwNo#, #TermNo#
+	</select>
+
+	<select id="ocw.OCW_COURSE_WEEK_SELECT_A" parameterClass="Hashtable" resultClass="ocwCourse">
+		EXEC USP_OCW_COURSE_WEEK_SELECT			'A', #CourseNo#, #Week#
+	</select>
+
+	<select id="ocw.OCW_COURSE_WEEK_SELECT_B" parameterClass="Hashtable" resultClass="ocwCourse">
+		EXEC USP_OCW_COURSE_WEEK_SELECT			'B', #CourseNo#, #Week#, #CreateUserType#, #CCStatus#, #NotCCStatus#
+	</select>
+
+	<select id="ocw.OCW_OPINION_SELECT_A" parameterClass="Hashtable" resultClass="ocwOpinion">
+		EXEC USP_OCW_OPINION_SELECT			'A', #OcwNo#, #FirstIndex#, #LastIndex#, #UserNo#, #CourseNo#, #Week#
+	</select>
+
+
+
+	<!-- UPDATE -->
+	<update id="ocw.OCW_LIKE_SAVE_C" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_LIKE_SAVE			'C', #OcwNo#, #UserNo#
+	</update>
+
+	<update id="ocw.OCW_LIKE_SAVE_D" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_LIKE_SAVE			'D', #OcwNo#, #UserNo#
+	</update>
+
+
+	<update id="ocw.OCW_OPINION_SAVE_C" parameterClass="ocwOpinion" resultClass="int">
+		EXEC USP_OCW_OPINION_SAVE		'C', #ParentOpinionNo#, #TopOpinionNo#, #OcwNo#, #OPLevel#, #UserNo#, #OpinionText#, #UpdateUserNo#, #OpinionNo#
+	</update>
+
+	<update id="ocw.OCW_OPINION_SAVE_D" parameterClass="ocwOpinion" resultClass="int">
+		EXEC USP_OCW_OPINION_SAVE		'D', #ParentOpinionNo#, #TopOpinionNo#, #OcwNo#, #OPLevel#, #UserNo#, #OpinionText#, #UpdateUserNo#, #OpinionNo#
+	</update>
+
+	<update id="ocw.OCW_OPINION_SAVE_U" parameterClass="ocwOpinion" resultClass="int">
+		EXEC USP_OCW_OPINION_SAVE		'U', #ParentOpinionNo#, #TopOpinionNo#, #OcwNo#, #OPLevel#, #UserNo#, #OpinionText#, #UpdateUserNo#, #OpinionNo#
+	</update>
+
+
+	<update id="ocw.OCW_POCKET_SAVE_C" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_POCKET_SAVE		'C', #OcwNo#, #CatCode#, #UserNo#
+	</update>
+
+	<update id="ocw.OCW_POCKET_SAVE_U" parameterClass="ocwPocket" resultClass="int">
+		EXEC USP_OCW_POCKET_SAVE		'U', #OcwNo#, #CatCode#, #UserNo#
+	</update>
+
+	<update id="ocw.OCW_POCKET_SAVE_D" parameterClass="ocwPocket" resultClass="int">
+		EXEC USP_OCW_POCKET_SAVE		'D', #OcwNo#, #CatCode#, #UserNo#
+	</update>
+
+
+	<update id="ocw.OCW_USERCAT_SAVE_C" parameterClass="ocwUserCategory" resultClass="int">
+		EXEC USP_OCW_USERCAT_SAVE		'C', #UserNo#, #CatName#, #CatCode#
+	</update>
+
+	<update id="ocw.OCW_USERCAT_SAVE_U" parameterClass="ocwUserCategory" resultClass="int">
+		EXEC USP_OCW_USERCAT_SAVE		'U', #UserNo#, #CatName#, #CatCode#
+	</update>
+
+	<update id="ocw.OCW_USERCAT_SAVE_D" parameterClass="ocwUserCategory" resultClass="int">
+		EXEC USP_OCW_USERCAT_SAVE		'D', #UserNo#, #CatName#, #CatCode#
+	</update>
+
+
+	<update id="ocw.OCW_COURSE_SAVE_C" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_COURSE_SAVE		'C', #UpdateUserNo#, #OcwReName#, #IsImportant#, #OcwNo#, #CourseNo#, #Week#, #OrgWeek#, #IsAuth#, #NotCCStatus#
+	</update>
+
+	<update id="ocw.OCW_COURSE_SAVE_D" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_COURSE_SAVE		'D', #UpdateUserNo#, #OcwReName#, #IsImportant#, #OcwNo#, #CourseNo#, #Week#, #OrgWeek#, #IsAuth#, #NotCCStatus#
+	</update>
+
+	<update id="ocw.OCW_COURSE_SAVE_A" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_COURSE_SAVE		'A', #UpdateUserNo#, #OcwReName#, #IsImportant#, #OcwNo#, #CourseNo#, #Week#, #OrgWeek#, #IsAuth#, #NotCCStatus#
+	</update>
+
+	<update id="ocw.OCW_COURSE_SAVE_B" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_COURSE_SAVE		'B', #UpdateUserNo#, #OcwReName#, #IsImportant#, #OcwNo#, #CourseNo#, #Week#, #OrgWeek#, #IsAuth#, #NotCCStatus#, #PreCourseNo#
+	</update>
+
+
+	<update id="ocw.OCW_SAVE_U" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_SAVE			'U', #OcwName#, #OcwType#, #OcwSourceType#, #OcwData#, #XID#, #OcwFileGroupNo#, #OcwWidth#
+		, #OcwHeight#, #AssignNo#, #AuthAssignNo#, #ThemeNos#, #UserNo#, #CatCode#, #IsOpen#, #IsAuth#
+		, #DescText#, #KWord#, #ThumFileGroupNo#, #UpdateUserNo#, #DeleteYesNo#, #LikeCount#, #OcwNo#, #AuthDate#
+	</update>
+
+
+	<update id="ocw.OCW_LINK_SAVE_C" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_LINK_SAVE		'C', #OcwNo#, #LinkOcwNo#, #UpdateUserNo#
+	</update>
+
+	<delete id="ocw.OCW_LINK_SAVE_D" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_LINK_SAVE		'D', #OcwNo#, #LinkOcwNo#, #UpdateUserNo#
+	</delete>
+
+
+	<update id="ocw.OCW_SAVE_D" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_SAVE		'D', #OcwName#, #OcwType#, #OcwSourceType#, #OcwData#, #XID#, #OcwFileGroupNo#, #OcwWidth#
+		, #OcwHeight#, #AssignNo#, #AuthAssignNo#, #ThemeNos#, #UserNo#, #CatCode#, #IsOpen#, #IsAuth#
+		, #DescText#, #KWord#, #ThumFileGroupNo#, #UpdateUserNo#, #DeleteYesNo#, #LikeCount#, #OcwNo#, #AuthDate#
+	</update>
+
+	<update id="ocw.OCW_SAVE_A" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_SAVE		'A', #OcwName#, #OcwType#, #OcwSourceType#, #OcwData#, #XID#, #OcwFileGroupNo#, #OcwWidth#
+		, #OcwHeight#, #AssignNo#, #AuthAssignNo#, #ThemeNos#, #UserNo#, #CatCode#, #IsOpen#, #IsAuth#
+		, #DescText#, #KWord#, #ThumFileGroupNo#, #UpdateUserNo#, #DeleteYesNo#, #LikeCount#, #OcwNo#, #AuthDate#, #OcwNos#
+	</update>
+
+
+	<update id="ocw.OCW_COURSE_OPINION_SAVE_C" parameterClass="ocwOpinion" resultClass="int">
+		EXEC USP_OCW_COURSE_OPINION_SAVE	'C', #ParentOpinionNo#, #TopOpinionNo#, #CourseNo#, #Week#, #OPLevel#, #UserNo#, #OpinionText#, #UpdateUserNo#, #OpinionNo#
+	</update>
+
+	<update id="ocw.OCW_COURSE_OPINION_SAVE_D" parameterClass="ocwOpinion" resultClass="int">
+		EXEC USP_OCW_COURSE_OPINION_SAVE	'D', #ParentOpinionNo#, #TopOpinionNo#, #CourseNo#, #Week#, #OPLevel#, #UserNo#, #OpinionText#, #UpdateUserNo#, #OpinionNo#
+	</update>
+
+	<update id="ocw.OCW_COURSE_OPINION_SAVE_U" parameterClass="ocwOpinion" resultClass="int">
+		EXEC USP_OCW_COURSE_OPINION_SAVE	'U', #ParentOpinionNo#, #TopOpinionNo#, #CourseNo#, #Week#, #OPLevel#, #UserNo#, #OpinionText#, #UpdateUserNo#, #OpinionNo#
+	</update>
+
+
+	<update id="ocw.OCW_COURSE_SAVE_U" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_COURSE_SAVE	'U', #UpdateUserNo#, #OcwReName#, #IsImportant#, #OcwNo#, #CourseNo#, #Week#, #IsAuth#
+	</update>
+
+
+	<update id="ocw.OCW_THEME_SAVE_C" parameterClass="ocwTheme" resultClass="int">
+		EXEC USP_OCW_THEME_SAVE		'C', #ThemeName#, #SortNo#, #IsAdmin#, #IsOpen#, #UpdateUserNo#
+	</update>
+
+		
+		<update id="ocw.OCW_THEME_SAVE_D" parameterClass="ocwTheme" resultClass="int">
+		EXEC USP_OCW_THEME_SAVE		'D', #ThemeName#, #SortNo#, #IsAdmin#, #IsOpen#, #UpdateUserNo#, #ThemeNo#
+	</update>
+
+	<update id="ocw.OCW_THEME_SAVE_U" parameterClass="ocwTheme" resultClass="int">
+		EXEC USP_OCW_THEME_SAVE		'U', #ThemeName#, #SortNo#, #IsAdmin#, #IsOpen#, #UpdateUserNo#, #ThemeNo#
+	</update>
+
+
+	<update id="ocw.OCW_AUTH_SAVE_A" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_AUTH_SAVE		'A', #OcwNos#, #UpdateUserNo#
+	</update>
+
+	<update id="ocw.OCW_AUTH_SAVE_B" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_AUTH_SAVE		'B', #OcwNos#, #UpdateUserNo#
+	</update>
+
+	<!--<update id="ocw.OCW_COURSE_SAVE_E" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_COURSE_SAVE		'E', NULL, NULL, NULL, NULL, #CourseNo#, #Week#, NULL, NULL, NULL, NULL, #CreateUserNo#, #CopyCourseNo#
+	</update>-->
+		
+	<update id="ocw.OCW_COURSE_SAVE_E" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_COURSE_SAVE		'E', NULL, NULL, NULL, NULL, #CourseNo#, #Week#, NULL, NULL, NULL, NULL, #CreateUserNo#, #CopyCourseNo#
+	</update>
+		
+		
+	<update id="ocw.OCW_HISTORY_SAVE_C" parameterClass="Hashtable" resultClass="int">
+		EXEC USP_OCW_HISTORY_SAVE		'C', #UserNo#, #OcwNo#
+	</update>
+
+	</statements>
+</sqlMap>

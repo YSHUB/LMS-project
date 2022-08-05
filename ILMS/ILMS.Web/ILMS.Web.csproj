@@ -1,0 +1,1827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{78FC1D01-A48B-4B2B-90EC-9536DACD0218}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ILMS.Web</RootNamespace>
+    <AssemblyName>ILMS.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\OuterDLL\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.Common">
+      <HintPath>..\..\OuterDLL\IBatisNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataAccess">
+      <HintPath>..\..\OuterDLL\IBatisNet.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataMapper">
+      <HintPath>..\..\OuterDLL\IBatisNet.DataMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\OuterDLL\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Spring.Aop">
+      <HintPath>..\..\OuterDLL\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\..\OuterDLL\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data">
+      <HintPath>..\..\OuterDLL\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web">
+      <HintPath>..\..\OuterDLL\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web.Mvc3">
+      <HintPath>..\..\OuterDLL\Spring.Web.Mvc3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\FacilityController.cs" />
+    <Compile Include="Controllers\LectureRoomController.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\BoardController.cs" />
+    <Compile Include="Controllers\LectureController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
+    <Compile Include="Controllers\SubController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\TeamProjectController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\SystemController.cs" />
+    <Compile Include="Controllers\LecInfoController.cs" />
+    <Compile Include="Controllers\AdminBaseController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\LectureRoomBaseController.cs" />
+    <Compile Include="Controllers\QuizController.cs" />
+    <Compile Include="Controllers\QuestionBankController.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
+    <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Controllers\OcwController.cs" />
+    <Compile Include="Controllers\DiscussionController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\HomeworkController.cs" />
+    <Compile Include="Controllers\InfoController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MypageController.cs" />
+    <Compile Include="Controllers\WebBaseController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Message.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Message.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Message\master\General.Master.cs">
+      <DependentUpon>General.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Message\master\General.Master.designer.cs">
+      <DependentUpon>General.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Message\master\Message.Master.cs">
+      <DependentUpon>Message.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Message\master\Message.Master.designer.cs">
+      <DependentUpon>Message.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap-grid.css" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap-grid.min.css" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap-reboot.css" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap.css" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap.min.css" />
+    <Content Include="Common\bootstrap-4.6.0-dist\js\bootstrap.bundle.js" />
+    <Content Include="Common\bootstrap-4.6.0-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Common\bootstrap-4.6.0-dist\js\bootstrap.js" />
+    <Content Include="Common\bootstrap-4.6.0-dist\js\bootstrap.min.js" />
+    <Content Include="Common\css\bootstrap-icons.css" />
+    <Content Include="Common\css\iform.css" />
+    <Content Include="Common\css\sweetalert2.min.css" />
+    <Content Include="Common\css\table-responsive.css" />
+    <Content Include="Common\editor\css\CHXImage.css" />
+    <Content Include="Common\editor\css\default.css" />
+    <Content Include="Common\editor\css\dialog.css" />
+    <Content Include="Common\editor\css\editarea.css" />
+    <Content Include="Common\css\font-notokr.css" />
+    <Content Include="Common\css\icommon.css" />
+    <Content Include="Common\css\owl.carousel.min.css" />
+    <Content Include="Common\css\reset.css" />
+    <Content Include="Common\editor\css\imageUpload.css" />
+    <Content Include="Common\editor\css\imageurl.css" />
+    <Content Include="Common\editor\css\imageUtil.css" />
+    <Content Include="Common\editor\css\lightbox.css" />
+    <Content Include="Common\editor\css\p.css" />
+    <Content Include="Common\editor\css\ui.css" />
+    <Content Include="Common\editor\etc\crossdomain.xml" />
+    <Content Include="Common\editor\example\modify.html" />
+    <Content Include="Common\editor\example\multi.html" />
+    <Content Include="Common\editor\example\newpost.html" />
+    <Content Include="Common\editor\icons\add_cols_after.png" />
+    <Content Include="Common\editor\icons\add_cols_before.png" />
+    <Content Include="Common\editor\icons\add_col_after.png" />
+    <Content Include="Common\editor\icons\add_col_before.png" />
+    <Content Include="Common\editor\icons\add_rows_after.png" />
+    <Content Include="Common\editor\icons\add_rows_before.png" />
+    <Content Include="Common\editor\icons\add_row_after.png" />
+    <Content Include="Common\editor\icons\add_row_before.png" />
+    <Content Include="Common\editor\icons\button\cancel.gif" />
+    <Content Include="Common\editor\icons\button\color_picker.gif" />
+    <Content Include="Common\editor\icons\button\color_picker.png" />
+    <Content Include="Common\editor\icons\button\color_picker_disable.png" />
+    <Content Include="Common\editor\icons\button\delete.gif" />
+    <Content Include="Common\editor\icons\button\delete_cross.gif" />
+    <Content Include="Common\editor\icons\button\edit_cell.gif" />
+    <Content Include="Common\editor\icons\button\edit_image.gif" />
+    <Content Include="Common\editor\icons\button\imageUpload\cancel.gif" />
+    <Content Include="Common\editor\icons\button\imageUpload\submit.gif" />
+    <Content Include="Common\editor\icons\button\input.gif" />
+    <Content Include="Common\editor\icons\button\input_color.gif" />
+    <Content Include="Common\editor\icons\button\map_address.gif" />
+    <Content Include="Common\editor\icons\button\paste.gif" />
+    <Content Include="Common\editor\icons\button\play.gif" />
+    <Content Include="Common\editor\icons\button\preview.gif" />
+    <Content Include="Common\editor\icons\button\process.gif" />
+    <Content Include="Common\editor\icons\button\reset.gif" />
+    <Content Include="Common\editor\icons\button\submit.gif" />
+    <Content Include="Common\editor\icons\button\upload.gif" />
+    <Content Include="Common\editor\icons\checked.png" />
+    <Content Include="Common\editor\icons\color_picker.png" />
+    <Content Include="Common\editor\icons\color_picker_arrow.gif" />
+    <Content Include="Common\editor\icons\color_picker_cross.gif" />
+    <Content Include="Common\editor\icons\color_picker_hs.png" />
+    <Content Include="Common\editor\icons\color_picker_hv.png" />
+    <Content Include="Common\editor\icons\color_picker_reset.png" />
+    <Content Include="Common\editor\icons\color_picker_tick.png" />
+    <Content Include="Common\editor\icons\delete_element.png" />
+    <Content Include="Common\editor\icons\delete_table.png" />
+    <Content Include="Common\editor\icons\dot.gif" />
+    <Content Include="Common\editor\icons\edit_mode_code_a.png" />
+    <Content Include="Common\editor\icons\edit_mode_code_b.png" />
+    <Content Include="Common\editor\icons\edit_mode_rich_a.png" />
+    <Content Include="Common\editor\icons\edit_mode_rich_b.png" />
+    <Content Include="Common\editor\icons\edit_mode_view_a.png" />
+    <Content Include="Common\editor\icons\edit_mode_view_b.png" />
+    <Content Include="Common\editor\icons\em\1.gif" />
+    <Content Include="Common\editor\icons\em\10.gif" />
+    <Content Include="Common\editor\icons\em\11.gif" />
+    <Content Include="Common\editor\icons\em\12.gif" />
+    <Content Include="Common\editor\icons\em\13.gif" />
+    <Content Include="Common\editor\icons\em\14.gif" />
+    <Content Include="Common\editor\icons\em\15.gif" />
+    <Content Include="Common\editor\icons\em\16.gif" />
+    <Content Include="Common\editor\icons\em\17.gif" />
+    <Content Include="Common\editor\icons\em\18.gif" />
+    <Content Include="Common\editor\icons\em\19.gif" />
+    <Content Include="Common\editor\icons\em\2.gif" />
+    <Content Include="Common\editor\icons\em\20.gif" />
+    <Content Include="Common\editor\icons\em\21.gif" />
+    <Content Include="Common\editor\icons\em\22.gif" />
+    <Content Include="Common\editor\icons\em\23.gif" />
+    <Content Include="Common\editor\icons\em\24.gif" />
+    <Content Include="Common\editor\icons\em\25.gif" />
+    <Content Include="Common\editor\icons\em\26.gif" />
+    <Content Include="Common\editor\icons\em\27.gif" />
+    <Content Include="Common\editor\icons\em\28.gif" />
+    <Content Include="Common\editor\icons\em\29.gif" />
+    <Content Include="Common\editor\icons\em\3.gif" />
+    <Content Include="Common\editor\icons\em\30.gif" />
+    <Content Include="Common\editor\icons\em\31.gif" />
+    <Content Include="Common\editor\icons\em\32.gif" />
+    <Content Include="Common\editor\icons\em\33.gif" />
+    <Content Include="Common\editor\icons\em\34.gif" />
+    <Content Include="Common\editor\icons\em\35.gif" />
+    <Content Include="Common\editor\icons\em\36.gif" />
+    <Content Include="Common\editor\icons\em\37.gif" />
+    <Content Include="Common\editor\icons\em\38.gif" />
+    <Content Include="Common\editor\icons\em\39.gif" />
+    <Content Include="Common\editor\icons\em\4.gif" />
+    <Content Include="Common\editor\icons\em\40.gif" />
+    <Content Include="Common\editor\icons\em\41.gif" />
+    <Content Include="Common\editor\icons\em\42.gif" />
+    <Content Include="Common\editor\icons\em\43.gif" />
+    <Content Include="Common\editor\icons\em\44.gif" />
+    <Content Include="Common\editor\icons\em\45.gif" />
+    <Content Include="Common\editor\icons\em\46.gif" />
+    <Content Include="Common\editor\icons\em\47.gif" />
+    <Content Include="Common\editor\icons\em\48.gif" />
+    <Content Include="Common\editor\icons\em\49.gif" />
+    <Content Include="Common\editor\icons\em\5.gif" />
+    <Content Include="Common\editor\icons\em\50.gif" />
+    <Content Include="Common\editor\icons\em\51.gif" />
+    <Content Include="Common\editor\icons\em\52.gif" />
+    <Content Include="Common\editor\icons\em\53.gif" />
+    <Content Include="Common\editor\icons\em\54.gif" />
+    <Content Include="Common\editor\icons\em\55.gif" />
+    <Content Include="Common\editor\icons\em\56.gif" />
+    <Content Include="Common\editor\icons\em\57.gif" />
+    <Content Include="Common\editor\icons\em\58.gif" />
+    <Content Include="Common\editor\icons\em\59.gif" />
+    <Content Include="Common\editor\icons\em\6.gif" />
+    <Content Include="Common\editor\icons\em\60.gif" />
+    <Content Include="Common\editor\icons\em\61.gif" />
+    <Content Include="Common\editor\icons\em\62.gif" />
+    <Content Include="Common\editor\icons\em\63.gif" />
+    <Content Include="Common\editor\icons\em\64.gif" />
+    <Content Include="Common\editor\icons\em\65.gif" />
+    <Content Include="Common\editor\icons\em\66.gif" />
+    <Content Include="Common\editor\icons\em\67.gif" />
+    <Content Include="Common\editor\icons\em\68.gif" />
+    <Content Include="Common\editor\icons\em\69.gif" />
+    <Content Include="Common\editor\icons\em\7.gif" />
+    <Content Include="Common\editor\icons\em\70.gif" />
+    <Content Include="Common\editor\icons\em\71.gif" />
+    <Content Include="Common\editor\icons\em\72.gif" />
+    <Content Include="Common\editor\icons\em\73.gif" />
+    <Content Include="Common\editor\icons\em\74.gif" />
+    <Content Include="Common\editor\icons\em\75.gif" />
+    <Content Include="Common\editor\icons\em\76.gif" />
+    <Content Include="Common\editor\icons\em\77.gif" />
+    <Content Include="Common\editor\icons\em\78.gif" />
+    <Content Include="Common\editor\icons\em\79.gif" />
+    <Content Include="Common\editor\icons\em\8.gif" />
+    <Content Include="Common\editor\icons\em\80.gif" />
+    <Content Include="Common\editor\icons\em\9.gif" />
+    <Content Include="Common\editor\icons\fullscreen.png" />
+    <Content Include="Common\editor\icons\fullscreen_actual.png" />
+    <Content Include="Common\editor\icons\imageUpload\add.gif" />
+    <Content Include="Common\editor\icons\imageUpload\add_image_button.gif" />
+    <Content Include="Common\editor\icons\imageUpload\cross-small.png" />
+    <Content Include="Common\editor\icons\imageUpload\delete.png" />
+    <Content Include="Common\editor\icons\imageUpload\dot.gif" />
+    <Content Include="Common\editor\icons\imageUpload\loader.gif" />
+    <Content Include="Common\editor\icons\imageUpload\marker_bottom.gif" />
+    <Content Include="Common\editor\icons\imageUpload\marker_middle.gif" />
+    <Content Include="Common\editor\icons\imageUpload\marker_top.gif" />
+    <Content Include="Common\editor\icons\imageUpload\mouse_drag_img.gif" />
+    <Content Include="Common\editor\icons\imageUpload\remove_all.gif" />
+    <Content Include="Common\editor\icons\imageUpload\wait.gif" />
+    <Content Include="Common\editor\icons\image_align_center.png" />
+    <Content Include="Common\editor\icons\image_align_center_wt.png" />
+    <Content Include="Common\editor\icons\image_align_left.png" />
+    <Content Include="Common\editor\icons\image_align_left_wt.png" />
+    <Content Include="Common\editor\icons\image_align_right.png" />
+    <Content Include="Common\editor\icons\image_align_right_wt.png" />
+    <Content Include="Common\editor\icons\image_resize.png" />
+    <Content Include="Common\editor\icons\image_wrap_text.png" />
+    <Content Include="Common\editor\icons\magnifier-zoom.png" />
+    <Content Include="Common\editor\icons\readonlymode.png" />
+    <Content Include="Common\editor\icons\remove_col.png" />
+    <Content Include="Common\editor\icons\remove_cols.png" />
+    <Content Include="Common\editor\icons\remove_row.png" />
+    <Content Include="Common\editor\icons\remove_rows.png" />
+    <Content Include="Common\editor\icons\splitter.gif" />
+    <Content Include="Common\editor\icons\statusbar_bgline.gif" />
+    <Content Include="Common\editor\icons\table_delete_cell.png" />
+    <Content Include="Common\editor\icons\table_delete_column.png" />
+    <Content Include="Common\editor\icons\table_delete_row.png" />
+    <Content Include="Common\editor\icons\table_insert_cell.png" />
+    <Content Include="Common\editor\icons\table_insert_column.png" />
+    <Content Include="Common\editor\icons\table_insert_row.png" />
+    <Content Include="Common\editor\icons\table_join.png" />
+    <Content Include="Common\editor\icons\table_join_column.png" />
+    <Content Include="Common\editor\icons\table_join_row.png" />
+    <Content Include="Common\editor\icons\table_split_column.png" />
+    <Content Include="Common\editor\icons\table_split_row.png" />
+    <Content Include="Common\editor\icons\title_bar_bg.gif" />
+    <Content Include="Common\editor\icons\title_bar_bg2.gif" />
+    <Content Include="Common\editor\icons\toolbar-background.png" />
+    <Content Include="Common\editor\icons\toolbar-disable.png" />
+    <Content Include="Common\editor\icons\toolbar-wrapper-bg.png" />
+    <Content Include="Common\editor\icons\viewmode_code.png" />
+    <Content Include="Common\editor\icons\viewmode_preview.png" />
+    <Content Include="Common\editor\icons\watermark.png" />
+    <Content Include="Common\editor\imageUpload\delete.aspx" />
+    <Content Include="Common\editor\imageUpload\upload.aspx" />
+    <Content Include="Common\editor\lightbox\css\imageUtil.css" />
+    <Content Include="Common\editor\lightbox\demo.html" />
+    <Content Include="Common\editor\lightbox\images\1.png" />
+    <Content Include="Common\editor\lightbox\images\2.png" />
+    <Content Include="Common\editor\lightbox\images\3.png" />
+    <Content Include="Common\editor\lightbox\images\4.png" />
+    <Content Include="Common\editor\lightbox\images\5.png" />
+    <Content Include="Common\editor\lightbox\images\6.png" />
+    <Content Include="Common\editor\lightbox\images\7.png" />
+    <Content Include="Common\editor\lightbox\images\8.png" />
+    <Content Include="Common\editor\lightbox\images\fullexpand.gif" />
+    <Content Include="Common\editor\lightbox\images\loader.gif" />
+    <Content Include="Common\editor\lightbox\images\zoomin.cur" />
+    <Content Include="Common\editor\lightbox\images\zoomout.cur" />
+    <Content Include="Common\editor\lightbox\imageUtil.js" />
+    <Content Include="Common\editor\lightbox\lightbox.js" />
+    <Content Include="Common\editor\lightbox\sample.jpg" />
+    <Content Include="Common\editor\popup\color_picker.html" />
+    <Content Include="Common\editor\popup\flash.html" />
+    <Content Include="Common\editor\popup\flash\CHXImage.swf" />
+    <Content Include="Common\editor\popup\flash\ImagePreview.swf" />
+    <Content Include="Common\editor\popup\google_map.html" />
+    <Content Include="Common\editor\popup\icon.html" />
+    <Content Include="Common\editor\popup\image.html" />
+    <Content Include="Common\editor\popup\image.html5.html" />
+    <Content Include="Common\editor\popup\image_url.html" />
+    <Content Include="Common\editor\popup\js\AC_OETags.js" />
+    <Content Include="Common\editor\popup\js\color_picker.js" />
+    <Content Include="Common\editor\popup\js\dialog.js" />
+    <Content Include="Common\editor\popup\js\flash.js" />
+    <Content Include="Common\editor\popup\js\google_map.js" />
+    <Content Include="Common\editor\popup\js\icon.js" />
+    <Content Include="Common\editor\popup\js\image.html5.js" />
+    <Content Include="Common\editor\popup\js\image.js" />
+    <Content Include="Common\editor\popup\js\image_upload_flash.js" />
+    <Content Include="Common\editor\popup\js\image_url.js" />
+    <Content Include="Common\editor\popup\js\link.js" />
+    <Content Include="Common\editor\popup\js\media.js" />
+    <Content Include="Common\editor\popup\js\swfobject.js" />
+    <Content Include="Common\editor\popup\js\symbol.js" />
+    <Content Include="Common\editor\popup\js\table.js" />
+    <Content Include="Common\editor\popup\js\table_modify.js" />
+    <Content Include="Common\editor\popup\link.html" />
+    <Content Include="Common\editor\popup\media.html" />
+    <Content Include="Common\editor\popup\symbol.html" />
+    <Content Include="Common\editor\popup\table.html" />
+    <Content Include="Common\editor\popup\table_modify.html" />
+    <Content Include="Common\editor\utils\crossdomain.xml" />
+    <Content Include="Common\fonts\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Black.svg" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Bold.svg" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Light.svg" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Medium.svg" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Regular.svg" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Thin.svg" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Black.svg" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Bold.svg" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Light.svg" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Medium.svg" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Regular.svg" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Thin.svg" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR.css" />
+    <Content Include="Common\fonts\notosans\NotoSans.css" />
+    <Content Include="Common\fonts\titilliumweb\TitilliumWeb.css" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\background-events.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\daygrid-views.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\external-dragging-2cals.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\external-dragging-builtin.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\full-height.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\google-calendar.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\icalendar.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\json.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\js\theme-chooser.js" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\list-sticky-header.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\list-views.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\locales.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\month-view.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\natural-height.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\php\get-events.php" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\php\get-time-zones.php" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\php\utils.php" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\selectable.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\theming.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\time-zones.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\timegrid-sticky-header.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\timegrid-views-hscroll.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\timegrid-views.html" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\week-numbers.html" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales-all.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales-all.min.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\af.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ar-dz.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ar-kw.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ar-ly.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ar-ma.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ar-sa.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ar-tn.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ar.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\az.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\bg.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\bn.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\bs.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ca.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\cs.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\cy.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\da.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\de-at.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\de.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\el.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\en-au.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\en-gb.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\en-nz.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\eo.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\es-us.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\es.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\et.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\eu.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\fa.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\fi.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\fr-ca.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\fr-ch.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\fr.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\gl.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\he.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\hi.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\hr.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\hu.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\hy-am.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\id.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\is.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\it.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ja.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ka.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\kk.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\km.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ko.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ku.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\lb.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\lt.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\lv.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\mk.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ms.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\nb.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ne.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\nl.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\nn.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\pl.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\pt-br.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\pt.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ro.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ru.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\si-lk.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\sk.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\sl.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\sm.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\sq.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\sr-cyrl.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\sr.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\sv.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ta-in.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\th.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\tr.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\ug.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\uk.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\uz.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\vi.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\zh-cn.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\locales\zh-tw.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\main.css" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\main.js" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\main.min.css" />
+    <Content Include="Common\fullcalendar-5.10.2\lib\main.min.js" />
+    <Content Include="Common\fullcalendar-5.10.2\LICENSE.txt" />
+    <Content Include="Common\fullcalendar-5.10.2\moment\moment-with-locales.min.js" />
+    <Content Include="Common\fullcalendar-5.10.2\moment\moment.js" />
+    <Content Include="Common\fullpage-3.1.0\fullpage.css" />
+    <Content Include="Common\fullpage-3.1.0\fullpage.js" />
+    <Content Include="Common\fullpage-3.1.0\scrolloverflow.min.js" />
+    <Content Include="Common\images\box-line.gif" />
+    <Content Include="Common\images\bullet01.png" />
+    <Content Include="Common\images\bullet01.svg" />
+    <Content Include="Common\images\bullet01_new.png" />
+    <Content Include="Common\images\bullet02.png" />
+    <Content Include="Common\images\bullet03.png" />
+    <Content Include="Common\images\bullet04.png" />
+    <Content Include="Common\images\bullet05.png" />
+    <Content Include="Common\images\bullet06.png" />
+    <Content Include="Common\images\expand_less_black_24dp.svg" />
+    <Content Include="Common\images\expand_more_black_24dp.svg" />
+    <Content Include="Common\images\external-link.png" />
+    <Content Include="Common\images\icon-bell-light.svg" />
+    <Content Include="Common\images\icon-bell.svg" />
+    <Content Include="Common\images\icon-chevron-down.svg" />
+    <Content Include="Common\images\icon-file.gif" />
+    <Content Include="Common\images\icon-link.gif" />
+    <Content Include="Common\images\icon-new.gif" />
+    <Content Include="Common\images\icon-profile-light.svg" />
+    <Content Include="Common\images\icon-profile.svg" />
+    <Content Include="Common\images\icon-secret.gif" />
+    <Content Include="Common\images\icon-update.gif" />
+    <Content Include="Common\images\info_icon.png" />
+    <Content Include="Common\images\keyboard_arrow_down_black_24dp.svg" />
+    <Content Include="Common\editor\icons\toolbar.png" />
+    <Content Include="Common\images\kiria\KETI-logo.svg" />
+    <Content Include="Common\images\kiria\KIRIA2-logo.svg" />
+    <Content Include="Common\images\kiria\logo-symbol-w.svg" />
+    <Content Include="Common\images\kiria\logo-symbol.svg" />
+    <Content Include="Common\images\kiria\logo-w.svg" />
+    <Content Include="Common\images\kiria\logo.svg" />
+    <Content Include="Common\images\kiria\MI-logo.svg" />
+    <Content Include="Common\images\map-icon01.png" />
+    <Content Include="Common\images\map-icon02.svg" />
+    <Content Include="Common\images\map-icon03.svg" />
+    <Content Include="Common\images\map-icon04.svg" />
+    <Content Include="Common\images\map-icon05.svg" />
+    <Content Include="Common\images\map-icon06.svg" />
+    <Content Include="Common\images\plus-lg.svg" />
+    <Content Include="Common\images\sns\facebook-dark.svg" />
+    <Content Include="Common\images\sns\facebook-gray.svg" />
+    <Content Include="Common\images\sns\facebook-light.svg" />
+    <Content Include="Common\images\sns\facebook-white.svg" />
+    <Content Include="Common\images\sns\facebook.svg" />
+    <Content Include="Common\images\sns\instagram-dark.svg" />
+    <Content Include="Common\images\sns\instagram-gray.svg" />
+    <Content Include="Common\images\sns\instagram-light.svg" />
+    <Content Include="Common\images\sns\instagram-white.svg" />
+    <Content Include="Common\images\sns\instagram.svg" />
+    <Content Include="Common\images\sns\line-dark.svg" />
+    <Content Include="Common\images\sns\line-gray.svg" />
+    <Content Include="Common\images\sns\line-light.svg" />
+    <Content Include="Common\images\sns\line-white.svg" />
+    <Content Include="Common\images\sns\line.svg" />
+    <Content Include="Common\images\sns\linkedin-dark.svg" />
+    <Content Include="Common\images\sns\linkedin-gray.svg" />
+    <Content Include="Common\images\sns\linkedin-light.svg" />
+    <Content Include="Common\images\sns\linkedin-white.svg" />
+    <Content Include="Common\images\sns\linkedin.svg" />
+    <Content Include="Common\images\sns\naverblog-dark.svg" />
+    <Content Include="Common\images\sns\naverblog-gray.svg" />
+    <Content Include="Common\images\sns\naverblog-light.svg" />
+    <Content Include="Common\images\sns\naverblog-white.svg" />
+    <Content Include="Common\images\sns\naverblog.svg" />
+    <Content Include="Common\images\sns\pinterest-dark.svg" />
+    <Content Include="Common\images\sns\pinterest-gray.svg" />
+    <Content Include="Common\images\sns\pinterest-light.svg" />
+    <Content Include="Common\images\sns\pinterest-white.svg" />
+    <Content Include="Common\images\sns\pinterest.svg" />
+    <Content Include="Common\images\sns\twitter-dark.svg" />
+    <Content Include="Common\images\sns\twitter-gray.svg" />
+    <Content Include="Common\images\sns\twitter-light.svg" />
+    <Content Include="Common\images\sns\twitter-white.svg" />
+    <Content Include="Common\images\sns\twitter.svg" />
+    <Content Include="Common\images\sns\vimeo-dark.svg" />
+    <Content Include="Common\images\sns\vimeo-gray.svg" />
+    <Content Include="Common\images\sns\vimeo-light.svg" />
+    <Content Include="Common\images\sns\vimeo-white.svg" />
+    <Content Include="Common\images\sns\vimeo.svg" />
+    <Content Include="Common\images\sns\youtube-dark.svg" />
+    <Content Include="Common\images\sns\youtube-gray.svg" />
+    <Content Include="Common\images\sns\youtube-light.svg" />
+    <Content Include="Common\images\sns\youtube-white.svg" />
+    <Content Include="Common\images\sns\youtube.svg" />
+    <Content Include="Common\images\thumb-image-dark.png" />
+    <Content Include="Common\images\video-play.svg" />
+    <Content Include="Common\images\zoom-icon.png" />
+    <Content Include="Common\jquery.ui\jquery-1.12.4.js" />
+    <Content Include="Common\jquery.ui\ui\1.12.1\jquery-ui.js" />
+    <Content Include="Common\jquery.ui\ui\1.12.1\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Common\jquery.ui\ui\1.12.1\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Common\jquery.ui\ui\1.12.1\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Common\jquery.ui\ui\1.12.1\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Common\jquery.ui\ui\1.12.1\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Common\jquery.ui\ui\1.12.1\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Common\jquery.ui\ui\1.12.1\themes\base\jquery-ui.css" />
+    <Content Include="Common\editor\cheditor.js" />
+    <Content Include="Common\js\bootbox.js" />
+    <Content Include="Common\js\common.js" />
+    <Content Include="Common\js\file.js" />
+    <Content Include="Common\editor\template.xml" />
+    <Content Include="Common\js\highchartTable-min.js" />
+    <Content Include="Common\js\highcharts.js" />
+    <Content Include="Common\js\idino.cookie.js" />
+    <Content Include="Common\js\idino.popup.js" />
+    <Content Include="Common\js\promise.min.js" />
+    <Content Include="Common\js\sweetalert2.min.js" />
+    <Content Include="Common\js\util.js" />
+    <Content Include="Message\common\css\font-noto.css" />
+    <Content Include="Message\common\css\font-notokr.css" />
+    <Content Include="Message\common\css\ibootstrap.css" />
+    <Content Include="Message\common\css\icommon.css" />
+    <Content Include="Message\common\css\inline-dropdown.css" />
+    <Content Include="Message\common\css\owl.carousel.min.css" />
+    <Content Include="Message\common\fonts\notokr-DemiLight.svg" />
+    <Content Include="Message\common\fonts\notokr-Light.svg" />
+    <Content Include="Message\common\Images\bullet01.png" />
+    <Content Include="Message\common\Images\bullet02.png" />
+    <Content Include="Message\common\Images\bullet03.png" />
+    <Content Include="Message\common\Images\bullet04.png" />
+    <Content Include="Message\common\Images\bullet05.png" />
+    <Content Include="Message\common\Images\c-title01-bg.gif" />
+    <Content Include="Message\common\Images\icon-new.gif" />
+    <Content Include="Message\common\Images\icon_calendar.png" />
+    <Content Include="Message\common\Images\left-arrow-white.png" />
+    <Content Include="Message\common\Images\left-arrow.png" />
+    <Content Include="Message\common\Images\logo-w.png" />
+    <Content Include="Message\common\Images\logo.png" />
+    <Content Include="Message\common\Images\pause-white.png" />
+    <Content Include="Message\common\Images\pause.png" />
+    <Content Include="Message\common\Images\play-white.png" />
+    <Content Include="Message\common\Images\play.png" />
+    <Content Include="Message\common\Images\right-arrow-white.png" />
+    <Content Include="Message\common\Images\right-arrow.png" />
+    <Content Include="Message\common\Images\user.png" />
+    <Content Include="Message\common\Js\cms-common.js" />
+    <Content Include="Message\common\Js\ibootstrap.min.js" />
+    <Content Include="Message\common\Js\jquery-3.3.1.min.js" />
+    <Content Include="Message\common\Js\jquery-ui-1.12.1.min.js" />
+    <Content Include="Message\common\Js\lnb.js" />
+    <Content Include="Message\common\Js\nav-tabs.js" />
+    <Content Include="Message\common\Js\owl.carousel.min.js" />
+    <Content Include="Message\css\ibootstrap.css" />
+    <Content Include="Message\css\icommon.css" />
+    <Content Include="Message\css\inline-dropdown.css" />
+    <Content Include="Message\css\style.css" />
+    <Content Include="Message\images\bullet02.gif" />
+    <Content Include="Message\images\g2soft_location.png" />
+    <Content Include="Message\images\icon-new.gif" />
+    <Content Include="Message\images\image_kakao_friend.png" />
+    <Content Include="Message\images\image_kakao_noti.png" />
+    <Content Include="Message\images\image_mms.png" />
+    <Content Include="Message\images\image_sms.png" />
+    <Content Include="Message\images\message_write_bottom.png" />
+    <Content Include="Message\images\message_write_middle.png" />
+    <Content Include="Message\images\message_write_top.png" />
+    <Content Include="Message\css\common.css" />
+    <Content Include="Message\images\non-member.jpg" />
+    <Content Include="Message\images\tab_bg.gif" />
+    <Content Include="Message\images\tab_bg_nomad.gif" />
+    <Content Include="Message\lib\moment.js\locale\af.js" />
+    <Content Include="Message\lib\moment.js\locale\af.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-dz.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-dz.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-kw.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-kw.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-ly.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-ly.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-ma.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-ma.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-sa.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-sa.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-tn.js" />
+    <Content Include="Message\lib\moment.js\locale\ar-tn.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ar.js" />
+    <Content Include="Message\lib\moment.js\locale\ar.min.js" />
+    <Content Include="Message\lib\moment.js\locale\az.js" />
+    <Content Include="Message\lib\moment.js\locale\az.min.js" />
+    <Content Include="Message\lib\moment.js\locale\be.js" />
+    <Content Include="Message\lib\moment.js\locale\be.min.js" />
+    <Content Include="Message\lib\moment.js\locale\bg.js" />
+    <Content Include="Message\lib\moment.js\locale\bg.min.js" />
+    <Content Include="Message\lib\moment.js\locale\bm.js" />
+    <Content Include="Message\lib\moment.js\locale\bm.min.js" />
+    <Content Include="Message\lib\moment.js\locale\bn-bd.js" />
+    <Content Include="Message\lib\moment.js\locale\bn-bd.min.js" />
+    <Content Include="Message\lib\moment.js\locale\bn.js" />
+    <Content Include="Message\lib\moment.js\locale\bn.min.js" />
+    <Content Include="Message\lib\moment.js\locale\bo.js" />
+    <Content Include="Message\lib\moment.js\locale\bo.min.js" />
+    <Content Include="Message\lib\moment.js\locale\br.js" />
+    <Content Include="Message\lib\moment.js\locale\br.min.js" />
+    <Content Include="Message\lib\moment.js\locale\bs.js" />
+    <Content Include="Message\lib\moment.js\locale\bs.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ca.js" />
+    <Content Include="Message\lib\moment.js\locale\ca.min.js" />
+    <Content Include="Message\lib\moment.js\locale\cs.js" />
+    <Content Include="Message\lib\moment.js\locale\cs.min.js" />
+    <Content Include="Message\lib\moment.js\locale\cv.js" />
+    <Content Include="Message\lib\moment.js\locale\cv.min.js" />
+    <Content Include="Message\lib\moment.js\locale\cy.js" />
+    <Content Include="Message\lib\moment.js\locale\cy.min.js" />
+    <Content Include="Message\lib\moment.js\locale\da.js" />
+    <Content Include="Message\lib\moment.js\locale\da.min.js" />
+    <Content Include="Message\lib\moment.js\locale\de-at.js" />
+    <Content Include="Message\lib\moment.js\locale\de-at.min.js" />
+    <Content Include="Message\lib\moment.js\locale\de-ch.js" />
+    <Content Include="Message\lib\moment.js\locale\de-ch.min.js" />
+    <Content Include="Message\lib\moment.js\locale\de.js" />
+    <Content Include="Message\lib\moment.js\locale\de.min.js" />
+    <Content Include="Message\lib\moment.js\locale\dv.js" />
+    <Content Include="Message\lib\moment.js\locale\dv.min.js" />
+    <Content Include="Message\lib\moment.js\locale\el.js" />
+    <Content Include="Message\lib\moment.js\locale\el.min.js" />
+    <Content Include="Message\lib\moment.js\locale\en-au.js" />
+    <Content Include="Message\lib\moment.js\locale\en-au.min.js" />
+    <Content Include="Message\lib\moment.js\locale\en-ca.js" />
+    <Content Include="Message\lib\moment.js\locale\en-ca.min.js" />
+    <Content Include="Message\lib\moment.js\locale\en-gb.js" />
+    <Content Include="Message\lib\moment.js\locale\en-gb.min.js" />
+    <Content Include="Message\lib\moment.js\locale\en-ie.js" />
+    <Content Include="Message\lib\moment.js\locale\en-ie.min.js" />
+    <Content Include="Message\lib\moment.js\locale\en-il.js" />
+    <Content Include="Message\lib\moment.js\locale\en-il.min.js" />
+    <Content Include="Message\lib\moment.js\locale\en-in.js" />
+    <Content Include="Message\lib\moment.js\locale\en-in.min.js" />
+    <Content Include="Message\lib\moment.js\locale\en-nz.js" />
+    <Content Include="Message\lib\moment.js\locale\en-nz.min.js" />
+    <Content Include="Message\lib\moment.js\locale\en-sg.js" />
+    <Content Include="Message\lib\moment.js\locale\en-sg.min.js" />
+    <Content Include="Message\lib\moment.js\locale\eo.js" />
+    <Content Include="Message\lib\moment.js\locale\eo.min.js" />
+    <Content Include="Message\lib\moment.js\locale\es-do.js" />
+    <Content Include="Message\lib\moment.js\locale\es-do.min.js" />
+    <Content Include="Message\lib\moment.js\locale\es-mx.js" />
+    <Content Include="Message\lib\moment.js\locale\es-mx.min.js" />
+    <Content Include="Message\lib\moment.js\locale\es-us.js" />
+    <Content Include="Message\lib\moment.js\locale\es-us.min.js" />
+    <Content Include="Message\lib\moment.js\locale\es.js" />
+    <Content Include="Message\lib\moment.js\locale\es.min.js" />
+    <Content Include="Message\lib\moment.js\locale\et.js" />
+    <Content Include="Message\lib\moment.js\locale\et.min.js" />
+    <Content Include="Message\lib\moment.js\locale\eu.js" />
+    <Content Include="Message\lib\moment.js\locale\eu.min.js" />
+    <Content Include="Message\lib\moment.js\locale\fa.js" />
+    <Content Include="Message\lib\moment.js\locale\fa.min.js" />
+    <Content Include="Message\lib\moment.js\locale\fi.js" />
+    <Content Include="Message\lib\moment.js\locale\fi.min.js" />
+    <Content Include="Message\lib\moment.js\locale\fil.js" />
+    <Content Include="Message\lib\moment.js\locale\fil.min.js" />
+    <Content Include="Message\lib\moment.js\locale\fo.js" />
+    <Content Include="Message\lib\moment.js\locale\fo.min.js" />
+    <Content Include="Message\lib\moment.js\locale\fr-ca.js" />
+    <Content Include="Message\lib\moment.js\locale\fr-ca.min.js" />
+    <Content Include="Message\lib\moment.js\locale\fr-ch.js" />
+    <Content Include="Message\lib\moment.js\locale\fr-ch.min.js" />
+    <Content Include="Message\lib\moment.js\locale\fr.js" />
+    <Content Include="Message\lib\moment.js\locale\fr.min.js" />
+    <Content Include="Message\lib\moment.js\locale\fy.js" />
+    <Content Include="Message\lib\moment.js\locale\fy.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ga.js" />
+    <Content Include="Message\lib\moment.js\locale\ga.min.js" />
+    <Content Include="Message\lib\moment.js\locale\gd.js" />
+    <Content Include="Message\lib\moment.js\locale\gd.min.js" />
+    <Content Include="Message\lib\moment.js\locale\gl.js" />
+    <Content Include="Message\lib\moment.js\locale\gl.min.js" />
+    <Content Include="Message\lib\moment.js\locale\gom-deva.js" />
+    <Content Include="Message\lib\moment.js\locale\gom-deva.min.js" />
+    <Content Include="Message\lib\moment.js\locale\gom-latn.js" />
+    <Content Include="Message\lib\moment.js\locale\gom-latn.min.js" />
+    <Content Include="Message\lib\moment.js\locale\gu.js" />
+    <Content Include="Message\lib\moment.js\locale\gu.min.js" />
+    <Content Include="Message\lib\moment.js\locale\he.js" />
+    <Content Include="Message\lib\moment.js\locale\he.min.js" />
+    <Content Include="Message\lib\moment.js\locale\hi.js" />
+    <Content Include="Message\lib\moment.js\locale\hi.min.js" />
+    <Content Include="Message\lib\moment.js\locale\hr.js" />
+    <Content Include="Message\lib\moment.js\locale\hr.min.js" />
+    <Content Include="Message\lib\moment.js\locale\hu.js" />
+    <Content Include="Message\lib\moment.js\locale\hu.min.js" />
+    <Content Include="Message\lib\moment.js\locale\hy-am.js" />
+    <Content Include="Message\lib\moment.js\locale\hy-am.min.js" />
+    <Content Include="Message\lib\moment.js\locale\id.js" />
+    <Content Include="Message\lib\moment.js\locale\id.min.js" />
+    <Content Include="Message\lib\moment.js\locale\is.js" />
+    <Content Include="Message\lib\moment.js\locale\is.min.js" />
+    <Content Include="Message\lib\moment.js\locale\it-ch.js" />
+    <Content Include="Message\lib\moment.js\locale\it-ch.min.js" />
+    <Content Include="Message\lib\moment.js\locale\it.js" />
+    <Content Include="Message\lib\moment.js\locale\it.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ja.js" />
+    <Content Include="Message\lib\moment.js\locale\ja.min.js" />
+    <Content Include="Message\lib\moment.js\locale\jv.js" />
+    <Content Include="Message\lib\moment.js\locale\jv.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ka.js" />
+    <Content Include="Message\lib\moment.js\locale\ka.min.js" />
+    <Content Include="Message\lib\moment.js\locale\kk.js" />
+    <Content Include="Message\lib\moment.js\locale\kk.min.js" />
+    <Content Include="Message\lib\moment.js\locale\km.js" />
+    <Content Include="Message\lib\moment.js\locale\km.min.js" />
+    <Content Include="Message\lib\moment.js\locale\kn.js" />
+    <Content Include="Message\lib\moment.js\locale\kn.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ko.js" />
+    <Content Include="Message\lib\moment.js\locale\ko.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ku.js" />
+    <Content Include="Message\lib\moment.js\locale\ku.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ky.js" />
+    <Content Include="Message\lib\moment.js\locale\ky.min.js" />
+    <Content Include="Message\lib\moment.js\locale\lb.js" />
+    <Content Include="Message\lib\moment.js\locale\lb.min.js" />
+    <Content Include="Message\lib\moment.js\locale\lo.js" />
+    <Content Include="Message\lib\moment.js\locale\lo.min.js" />
+    <Content Include="Message\lib\moment.js\locale\lt.js" />
+    <Content Include="Message\lib\moment.js\locale\lt.min.js" />
+    <Content Include="Message\lib\moment.js\locale\lv.js" />
+    <Content Include="Message\lib\moment.js\locale\lv.min.js" />
+    <Content Include="Message\lib\moment.js\locale\me.js" />
+    <Content Include="Message\lib\moment.js\locale\me.min.js" />
+    <Content Include="Message\lib\moment.js\locale\mi.js" />
+    <Content Include="Message\lib\moment.js\locale\mi.min.js" />
+    <Content Include="Message\lib\moment.js\locale\mk.js" />
+    <Content Include="Message\lib\moment.js\locale\mk.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ml.js" />
+    <Content Include="Message\lib\moment.js\locale\ml.min.js" />
+    <Content Include="Message\lib\moment.js\locale\mn.js" />
+    <Content Include="Message\lib\moment.js\locale\mn.min.js" />
+    <Content Include="Message\lib\moment.js\locale\mr.js" />
+    <Content Include="Message\lib\moment.js\locale\mr.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ms-my.js" />
+    <Content Include="Message\lib\moment.js\locale\ms-my.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ms.js" />
+    <Content Include="Message\lib\moment.js\locale\ms.min.js" />
+    <Content Include="Message\lib\moment.js\locale\mt.js" />
+    <Content Include="Message\lib\moment.js\locale\mt.min.js" />
+    <Content Include="Message\lib\moment.js\locale\my.js" />
+    <Content Include="Message\lib\moment.js\locale\my.min.js" />
+    <Content Include="Message\lib\moment.js\locale\nb.js" />
+    <Content Include="Message\lib\moment.js\locale\nb.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ne.js" />
+    <Content Include="Message\lib\moment.js\locale\ne.min.js" />
+    <Content Include="Message\lib\moment.js\locale\nl-be.js" />
+    <Content Include="Message\lib\moment.js\locale\nl-be.min.js" />
+    <Content Include="Message\lib\moment.js\locale\nl.js" />
+    <Content Include="Message\lib\moment.js\locale\nl.min.js" />
+    <Content Include="Message\lib\moment.js\locale\nn.js" />
+    <Content Include="Message\lib\moment.js\locale\nn.min.js" />
+    <Content Include="Message\lib\moment.js\locale\oc-lnc.js" />
+    <Content Include="Message\lib\moment.js\locale\oc-lnc.min.js" />
+    <Content Include="Message\lib\moment.js\locale\pa-in.js" />
+    <Content Include="Message\lib\moment.js\locale\pa-in.min.js" />
+    <Content Include="Message\lib\moment.js\locale\pl.js" />
+    <Content Include="Message\lib\moment.js\locale\pl.min.js" />
+    <Content Include="Message\lib\moment.js\locale\pt-br.js" />
+    <Content Include="Message\lib\moment.js\locale\pt-br.min.js" />
+    <Content Include="Message\lib\moment.js\locale\pt.js" />
+    <Content Include="Message\lib\moment.js\locale\pt.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ro.js" />
+    <Content Include="Message\lib\moment.js\locale\ro.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ru.js" />
+    <Content Include="Message\lib\moment.js\locale\ru.min.js" />
+    <Content Include="Message\lib\moment.js\locale\sd.js" />
+    <Content Include="Message\lib\moment.js\locale\sd.min.js" />
+    <Content Include="Message\lib\moment.js\locale\se.js" />
+    <Content Include="Message\lib\moment.js\locale\se.min.js" />
+    <Content Include="Message\lib\moment.js\locale\si.js" />
+    <Content Include="Message\lib\moment.js\locale\si.min.js" />
+    <Content Include="Message\lib\moment.js\locale\sk.js" />
+    <Content Include="Message\lib\moment.js\locale\sk.min.js" />
+    <Content Include="Message\lib\moment.js\locale\sl.js" />
+    <Content Include="Message\lib\moment.js\locale\sl.min.js" />
+    <Content Include="Message\lib\moment.js\locale\sq.js" />
+    <Content Include="Message\lib\moment.js\locale\sq.min.js" />
+    <Content Include="Message\lib\moment.js\locale\sr-cyrl.js" />
+    <Content Include="Message\lib\moment.js\locale\sr-cyrl.min.js" />
+    <Content Include="Message\lib\moment.js\locale\sr.js" />
+    <Content Include="Message\lib\moment.js\locale\sr.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ss.js" />
+    <Content Include="Message\lib\moment.js\locale\ss.min.js" />
+    <Content Include="Message\lib\moment.js\locale\sv.js" />
+    <Content Include="Message\lib\moment.js\locale\sv.min.js" />
+    <Content Include="Message\lib\moment.js\locale\sw.js" />
+    <Content Include="Message\lib\moment.js\locale\sw.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ta.js" />
+    <Content Include="Message\lib\moment.js\locale\ta.min.js" />
+    <Content Include="Message\lib\moment.js\locale\te.js" />
+    <Content Include="Message\lib\moment.js\locale\te.min.js" />
+    <Content Include="Message\lib\moment.js\locale\tet.js" />
+    <Content Include="Message\lib\moment.js\locale\tet.min.js" />
+    <Content Include="Message\lib\moment.js\locale\tg.js" />
+    <Content Include="Message\lib\moment.js\locale\tg.min.js" />
+    <Content Include="Message\lib\moment.js\locale\th.js" />
+    <Content Include="Message\lib\moment.js\locale\th.min.js" />
+    <Content Include="Message\lib\moment.js\locale\tk.js" />
+    <Content Include="Message\lib\moment.js\locale\tk.min.js" />
+    <Content Include="Message\lib\moment.js\locale\tl-ph.js" />
+    <Content Include="Message\lib\moment.js\locale\tl-ph.min.js" />
+    <Content Include="Message\lib\moment.js\locale\tlh.js" />
+    <Content Include="Message\lib\moment.js\locale\tlh.min.js" />
+    <Content Include="Message\lib\moment.js\locale\tr.js" />
+    <Content Include="Message\lib\moment.js\locale\tr.min.js" />
+    <Content Include="Message\lib\moment.js\locale\tzl.js" />
+    <Content Include="Message\lib\moment.js\locale\tzl.min.js" />
+    <Content Include="Message\lib\moment.js\locale\tzm-latn.js" />
+    <Content Include="Message\lib\moment.js\locale\tzm-latn.min.js" />
+    <Content Include="Message\lib\moment.js\locale\tzm.js" />
+    <Content Include="Message\lib\moment.js\locale\tzm.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ug-cn.js" />
+    <Content Include="Message\lib\moment.js\locale\ug-cn.min.js" />
+    <Content Include="Message\lib\moment.js\locale\uk.js" />
+    <Content Include="Message\lib\moment.js\locale\uk.min.js" />
+    <Content Include="Message\lib\moment.js\locale\ur.js" />
+    <Content Include="Message\lib\moment.js\locale\ur.min.js" />
+    <Content Include="Message\lib\moment.js\locale\uz-latn.js" />
+    <Content Include="Message\lib\moment.js\locale\uz-latn.min.js" />
+    <Content Include="Message\lib\moment.js\locale\uz.js" />
+    <Content Include="Message\lib\moment.js\locale\uz.min.js" />
+    <Content Include="Message\lib\moment.js\locale\vi.js" />
+    <Content Include="Message\lib\moment.js\locale\vi.min.js" />
+    <Content Include="Message\lib\moment.js\locale\x-pseudo.js" />
+    <Content Include="Message\lib\moment.js\locale\x-pseudo.min.js" />
+    <Content Include="Message\lib\moment.js\locale\yo.js" />
+    <Content Include="Message\lib\moment.js\locale\yo.min.js" />
+    <Content Include="Message\lib\moment.js\locale\zh-cn.js" />
+    <Content Include="Message\lib\moment.js\locale\zh-cn.min.js" />
+    <Content Include="Message\lib\moment.js\locale\zh-hk.js" />
+    <Content Include="Message\lib\moment.js\locale\zh-hk.min.js" />
+    <Content Include="Message\lib\moment.js\locale\zh-mo.js" />
+    <Content Include="Message\lib\moment.js\locale\zh-mo.min.js" />
+    <Content Include="Message\lib\moment.js\locale\zh-tw.js" />
+    <Content Include="Message\lib\moment.js\locale\zh-tw.min.js" />
+    <Content Include="Message\lib\moment.js\moment-with-locales.js" />
+    <Content Include="Message\lib\moment.js\moment-with-locales.min.js" />
+    <Content Include="Message\lib\moment.js\moment.js" />
+    <Content Include="Message\lib\react-datepicker\es\index.js" />
+    <Content Include="Message\lib\react-datepicker\es\index.min.js" />
+    <Content Include="Message\lib\react-datepicker\index.js" />
+    <Content Include="Message\lib\react-datepicker\index.min.js" />
+    <Content Include="Message\lib\react-datepicker\react-datepicker-cssmodules.css" />
+    <Content Include="Message\lib\react-datepicker\react-datepicker-cssmodules.min.css" />
+    <Content Include="Message\lib\react-datepicker\react-datepicker-min.module.css" />
+    <Content Include="Message\lib\react-datepicker\react-datepicker-min.module.min.css" />
+    <Content Include="Message\lib\react-datepicker\react-datepicker.css" />
+    <Content Include="Message\lib\react-datepicker\react-datepicker.js" />
+    <Content Include="Message\lib\react-datepicker\react-datepicker.min.css" />
+    <Content Include="Message\lib\react-datepicker\react-datepicker.min.js" />
+    <Content Include="Message\lib\react-datepicker\react-datepicker.module.css" />
+    <Content Include="Message\lib\react-datepicker\react-datepicker.module.min.css" />
+    <Content Include="Message\lib\reactstrap\reactstrap.full.js" />
+    <Content Include="Message\lib\reactstrap\reactstrap.full.min.js" />
+    <Content Include="Message\lib\reactstrap\reactstrap.js" />
+    <Content Include="Message\lib\reactstrap\reactstrap.min.js" />
+    <Content Include="Message\lib\react\cjs\react-jsx-dev-runtime.development.js" />
+    <Content Include="Message\lib\react\cjs\react-jsx-dev-runtime.development.min.js" />
+    <Content Include="Message\lib\react\cjs\react-jsx-dev-runtime.production.min.js" />
+    <Content Include="Message\lib\react\cjs\react-jsx-dev-runtime.profiling.min.js" />
+    <Content Include="Message\lib\react\cjs\react-jsx-runtime.development.js" />
+    <Content Include="Message\lib\react\cjs\react-jsx-runtime.development.min.js" />
+    <Content Include="Message\lib\react\cjs\react-jsx-runtime.production.min.js" />
+    <Content Include="Message\lib\react\cjs\react-jsx-runtime.profiling.min.js" />
+    <Content Include="Message\lib\react\cjs\react.development.js" />
+    <Content Include="Message\lib\react\cjs\react.development.min.js" />
+    <Content Include="Message\lib\react\cjs\react.production.min.js" />
+    <Content Include="Message\lib\react\umd\react.development.js" />
+    <Content Include="Message\lib\react\umd\react.development.min.js" />
+    <Content Include="Message\lib\react\umd\react.production.min.js" />
+    <Content Include="Message\lib\react\umd\react.profiling.min.js" />
+    <Content Include="Message\scripts\bluebird.min.js" />
+    <Content Include="Message\scripts\bootstrap.bundle.js" />
+    <Content Include="Message\scripts\bootstrap.css" />
+    <Content Include="Message\scripts\bootstrap.min.css" />
+    <Content Include="Message\scripts\browsersupport.css" />
+    <Content Include="Message\scripts\common.css" />
+    <Content Include="Message\scripts\common.js" />
+    <Content Include="Message\scripts\common\css\font-noto.css" />
+    <Content Include="Message\scripts\common\css\font-notokr.css" />
+    <Content Include="Message\scripts\common\css\ibootstrap.css" />
+    <Content Include="Message\scripts\common\css\icommon.css" />
+    <Content Include="Message\scripts\common\css\inline-dropdown.css" />
+    <Content Include="Message\scripts\common\css\owl.carousel.min.css" />
+    <Content Include="Message\scripts\common\fonts\notokr-DemiLight.svg" />
+    <Content Include="Message\scripts\common\fonts\notokr-Light.svg" />
+    <Content Include="Message\scripts\common\images\bullet01.png" />
+    <Content Include="Message\scripts\common\images\bullet02.png" />
+    <Content Include="Message\scripts\common\images\bullet03.png" />
+    <Content Include="Message\scripts\common\images\bullet04.png" />
+    <Content Include="Message\scripts\common\images\bullet05.png" />
+    <Content Include="Message\scripts\common\images\c-title01-bg.gif" />
+    <Content Include="Message\scripts\common\images\icon-new.gif" />
+    <Content Include="Message\scripts\common\images\left-arrow-white.png" />
+    <Content Include="Message\scripts\common\images\left-arrow.png" />
+    <Content Include="Message\scripts\common\images\logo-w.png" />
+    <Content Include="Message\scripts\common\images\logo.png" />
+    <Content Include="Message\scripts\common\images\pause-white.png" />
+    <Content Include="Message\scripts\common\images\pause.png" />
+    <Content Include="Message\scripts\common\images\play-white.png" />
+    <Content Include="Message\scripts\common\images\play.png" />
+    <Content Include="Message\scripts\common\images\right-arrow-white.png" />
+    <Content Include="Message\scripts\common\images\right-arrow.png" />
+    <Content Include="Message\scripts\common\images\user.png" />
+    <Content Include="Message\scripts\common\js\cms-common.js" />
+    <Content Include="Message\scripts\common\js\ibootstrap.min.js" />
+    <Content Include="Message\scripts\common\js\jquery-3.3.1.min.js" />
+    <Content Include="Message\scripts\common\js\jquery-ui-1.12.1.min.js" />
+    <Content Include="Message\scripts\common\js\lnb.js" />
+    <Content Include="Message\scripts\common\js\nav-tabs.js" />
+    <Content Include="Message\scripts\common\js\owl.carousel.min.js" />
+    <Content Include="Message\scripts\es5\message.es5.global.js" />
+    <Content Include="Message\scripts\es5\message.es5.sendlog.js" />
+    <Content Include="Message\scripts\es5\message.es5.ui.event.js" />
+    <Content Include="Message\scripts\es5\polyfill\Array.prototype.find.js" />
+    <Content Include="Message\scripts\es5\polyfill\Array.prototype.findIndex.js" />
+    <Content Include="Message\scripts\es5\polyfill\Array.prototype.includes.js" />
+    <Content Include="Message\scripts\es5\polyfill\Object.assign.js" />
+    <Content Include="Message\scripts\es5\polyfill\Symbol-es6.js" />
+    <Content Include="Message\scripts\font-noto.css" />
+    <Content Include="Message\scripts\ibootstrap.min.js" />
+    <Content Include="Message\scripts\jquery-3.3.1.min.js" />
+    <Content Include="Message\scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Message\scripts\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Message\scripts\jquery.mCustomScrollbar.css" />
+    <Content Include="Message\scripts\jquery.min.js" />
+    <Content Include="Message\scripts\lnb.js" />
+    <Content Include="Message\scripts\es5\message.es5.api.js" />
+    <Content Include="Message\scripts\es5\message.es5.ui.js" />
+    <Content Include="Message\scripts\es5\message.es5.util.js" />
+    <Content Include="Message\scripts\master.js" />
+    <Content Include="Message\scripts\message.api.js" />
+    <Content Include="Message\scripts\message.global.js" />
+    <Content Include="Message\scripts\message.sendlog.js" />
+    <Content Include="Message\scripts\message.ui.event.js" />
+    <Content Include="Message\scripts\message.ui.js" />
+    <Content Include="Message\scripts\message.util.js" />
+    <Content Include="Message\scripts\moment.min.js" />
+    <Content Include="Message\scripts\owl.carousel.min.js" />
+    <Content Include="Message\scripts\popper.min.js" />
+    <Content Include="Message\scripts\react-datepicker.css" />
+    <Content Include="Message\scripts\script.js" />
+    <Content Include="Message\scripts\style.css" />
+    <Content Include="Message\scripts\workers\worker.init.receiver.js" />
+    <Content Include="Message\scripts\workers\worker.select.receiver.js" />
+    <Content Include="Message\scripts\www\css\style.css" />
+    <Content Include="Message\scripts\www\images\banner-01.jpg" />
+    <Content Include="Message\scripts\www\images\main-icon.png" />
+    <Content Include="Message\scripts\www\images\main-link01.jpg" />
+    <Content Include="Message\scripts\www\images\main-link02.jpg" />
+    <Content Include="Message\scripts\www\images\main-section3-bg.png" />
+    <Content Include="Message\scripts\www\images\main-visual01.jpg" />
+    <Content Include="Message\scripts\www\images\main-visual02.jpg" />
+    <Content Include="Message\scripts\www\images\sub-item-bg02.gif" />
+    <Content Include="Message\scripts\www\images\sub-kakao-img01.png" />
+    <Content Include="Message\scripts\www\images\sub-kakao-img02.png" />
+    <Content Include="Message\scripts\www\images\sub-kakao-img03.png" />
+    <Content Include="Message\scripts\www\images\sub-kakao-img04.png" />
+    <Content Include="Message\scripts\www\images\sub-mms.png" />
+    <Content Include="Message\scripts\www\images\sub-sms.png" />
+    <Content Include="Message\scripts\www\images\sub-top-visual01.jpg" />
+    <Content Include="Message\scripts\www\js\script.js" />
+    <Content Include="Script\QuestionBankFolder.js" />
+    <Content Include="Site\resource\www\css\print.css" />
+    <Content Include="Site\resource\www\discussion.html" />
+    <Content Include="Site\resource\www\error-204.html" />
+    <Content Include="Site\resource\www\error-404.html" />
+    <Content Include="Site\resource\www\images\base.jpg" />
+    <Content Include="Site\resource\www\images\biz-icon01.svg" />
+    <Content Include="Site\resource\www\images\biz-icon02.svg" />
+    <Content Include="Site\resource\www\images\biz-icon03.svg" />
+    <Content Include="Site\resource\www\images\biz-img01.png" />
+    <Content Include="Site\resource\www\images\biz-img02.png" />
+    <Content Include="Site\resource\www\images\curriculum-bg01.jpg" />
+    <Content Include="Site\resource\www\images\curriculum-bg02.jpg" />
+    <Content Include="Site\resource\www\images\curriculum-bg03.jpg" />
+    <Content Include="Site\resource\www\images\favicon.ico" />
+    <Content Include="Site\resource\www\images\icon-cal.png" />
+    <Content Include="Site\resource\www\images\icon-quote.svg" />
+    <Content Include="Site\resource\www\images\KakaoMap_img02.png" />
+    <Content Include="Site\resource\www\images\logo-w.svg" />
+    <Content Include="Site\resource\www\images\logo.svg" />
+    <Content Include="Common\images\non-board.png" />
+    <Content Include="Common\images\non-page.png" />
+    <Content Include="Common\images\non-person.jpg" />
+    <Content Include="Common\images\non-search.png" />
+    <Content Include="Common\images\pdf-img.png" />
+    <Content Include="Common\images\sub-tit-bg.jpg" />
+    <Content Include="Common\images\tab-shadow.png" />
+    <Content Include="Common\js\ibootstrap.min.js" />
+    <Content Include="Common\js\jquery-3.3.1.min.js" />
+    <Content Include="Common\js\nav-tabs.js" />
+    <Content Include="Common\js\owl.carousel.min.js" />
+    <Content Include="Common\js\popper.js" />
+    <Content Include="Common\js\script.js" />
+    <Content Include="Config\Controllers.xml" />
+    <Content Include="Config\Repositories.xml" />
+    <Content Include="Config\Services.xml" />
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="Site\resource\www\css\contents.css" />
+    <Content Include="Site\resource\www\css\login.css" />
+    <Content Include="Site\resource\www\css\style.css" />
+    <Content Include="Site\resource\www\discussion_detail.html" />
+    <Content Include="Site\resource\www\discussion_edit.html" />
+    <Content Include="Site\resource\www\discussion_opinion.html" />
+    <Content Include="Site\resource\www\exam.html" />
+    <Content Include="Site\resource\www\footer.html" />
+    <Content Include="Site\resource\www\group.html" />
+    <Content Include="Site\resource\www\header.html" />
+    <Content Include="Site\resource\www\homework.html" />
+    <Content Include="Site\resource\www\homework_detail.html" />
+    <Content Include="Site\resource\www\homework_feedback.html" />
+    <Content Include="Site\resource\www\homework_write.html" />
+    <Content Include="Site\resource\www\images\420by300-2.png" />
+    <Content Include="Site\resource\www\images\420by300-3.png" />
+    <Content Include="Site\resource\www\images\420by300-4.png" />
+    <Content Include="Site\resource\www\images\420by300.png" />
+    <Content Include="Site\resource\www\images\banner-img1.jpg" />
+    <Content Include="Site\resource\www\images\banner-img2.jpg" />
+    <Content Include="Site\resource\www\images\banner-img3.jpg" />
+    <Content Include="Site\resource\www\images\bullet01.svg" />
+    <Content Include="Site\resource\www\images\bullet03.png" />
+    <Content Include="Site\resource\www\images\bullet04.png" />
+    <Content Include="Site\resource\www\images\bullet05.png" />
+    <Content Include="Site\resource\www\images\bullet06.png" />
+    <Content Include="Site\resource\www\images\file-break-fill.svg" />
+    <Content Include="Site\resource\www\images\hand-thumbs-up.svg" />
+    <Content Include="Site\resource\www\images\icon-arrow.svg" />
+    <Content Include="Site\resource\www\images\icon-clock-fill.svg" />
+    <Content Include="Site\resource\www\images\icon-guide.svg" />
+    <Content Include="Site\resource\www\images\learning-icon1.png" />
+    <Content Include="Site\resource\www\images\learning-icon2.png" />
+    <Content Include="Site\resource\www\images\learning-icon3.png" />
+    <Content Include="Site\resource\www\images\learning-icon4.png" />
+    <Content Include="Site\resource\www\images\login-icon.png" />
+    <Content Include="Site\resource\www\images\login-img.png" />
+    <Content Include="Site\resource\www\images\login_bg.jpg" />
+    <Content Include="Site\resource\www\images\main-visual-0101-m.jpg" />
+    <Content Include="Site\resource\www\images\main-visual-0101.jpg" />
+    <Content Include="Site\resource\www\images\main-visual-0102-m.jpg" />
+    <Content Include="Site\resource\www\images\main-visual-0102.jpg" />
+    <Content Include="Site\resource\www\images\main-visual-02.jpg" />
+    <Content Include="Site\resource\www\images\main-visual-03.jpg" />
+    <Content Include="Site\resource\www\images\main-visual-04.jpg" />
+    <Content Include="Site\resource\www\images\main-visual-05.jpg" />
+    <Content Include="Site\resource\www\images\main-visual01.jpg" />
+    <Content Include="Site\resource\www\images\main-visual02.jpg" />
+    <Content Include="Site\resource\www\images\menu-bullet.png" />
+    <Content Include="Site\resource\www\images\print-bg.jpg" />
+    <Content Include="Site\resource\www\images\print-sign.jpg" />
+    <Content Include="Site\resource\www\images\q-sample01.jpg" />
+    <Content Include="Site\resource\www\images\q-sample02.jpg" />
+    <Content Include="Site\resource\www\images\q-sample03.jpg" />
+    <Content Include="Site\resource\www\images\q-sample04.jpg" />
+    <Content Include="Site\resource\www\images\question-circle.svg" />
+    <Content Include="Site\resource\www\images\robot-icon01.svg" />
+    <Content Include="Site\resource\www\images\robot-icon02.svg" />
+    <Content Include="Site\resource\www\images\robot-icon03.svg" />
+    <Content Include="Site\resource\www\images\robot-icon04.svg" />
+    <Content Include="Site\resource\www\images\robot-icon05.svg" />
+    <Content Include="Site\resource\www\images\rol-banner-next.png" />
+    <Content Include="Site\resource\www\images\rol-banner-play.png" />
+    <Content Include="Site\resource\www\images\rol-banner-prev.png" />
+    <Content Include="Site\resource\www\images\rol-banner-stop.png" />
+    <Content Include="Site\resource\www\images\rol-banner1.jpg" />
+    <Content Include="Site\resource\www\images\rol-banner2.jpg" />
+    <Content Include="Site\resource\www\images\sample-facility01.jpg" />
+    <Content Include="Site\resource\www\images\sample-facility02.jpg" />
+    <Content Include="Site\resource\www\images\sample-facility03.jpg" />
+    <Content Include="Site\resource\www\images\search.svg" />
+    <Content Include="Site\resource\www\images\sns-facebook-off.svg" />
+    <Content Include="Site\resource\www\images\sns-facebook.svg" />
+    <Content Include="Site\resource\www\images\sns-kakaostory-off.svg" />
+    <Content Include="Site\resource\www\images\sns-kakaostory.svg" />
+    <Content Include="Site\resource\www\images\sns-naverblog-off.svg" />
+    <Content Include="Site\resource\www\images\sns-naverblog.svg" />
+    <Content Include="Site\resource\www\images\sns-share-fill-off.svg" />
+    <Content Include="Site\resource\www\images\sns-share-fill.svg" />
+    <Content Include="Site\resource\www\images\sns-twitter-off.svg" />
+    <Content Include="Site\resource\www\images\sns-twitter.svg" />
+    <Content Include="Site\resource\www\images\sub-top-visual01.jpg" />
+    <Content Include="Site\resource\www\images\sub-top-visual01_old.jpg" />
+    <Content Include="Site\resource\www\images\value-icon01.svg" />
+    <Content Include="Site\resource\www\images\value-icon02.svg" />
+    <Content Include="Site\resource\www\images\value-icon03.svg" />
+    <Content Include="Site\resource\www\images\value-icon04.svg" />
+    <Content Include="Site\resource\www\images\value-icon05.svg" />
+    <Content Include="Site\resource\www\images\value-icon06.svg" />
+    <Content Include="Site\resource\www\images\value-icon07.svg" />
+    <Content Include="Site\resource\www\images\video-img.jpg" />
+    <Content Include="Site\resource\www\images\video-img02.jpg" />
+    <Content Include="Site\resource\www\images\video-play.svg" />
+    <Content Include="Site\resource\www\images_kiria\favicon.ico" />
+    <Content Include="Site\resource\www\images_dongju\favicon.ico" />
+    <Content Include="Site\resource\www\images_dongju\logo-w.svg" />
+    <Content Include="Site\resource\www\images_dongju\logo.svg" />
+    <Content Include="Site\resource\www\images_gimhae\favicon.ico" />
+    <Content Include="Site\resource\www\images_gimhae\logo-w.svg" />
+    <Content Include="Site\resource\www\images_gimhae\logo.svg" />
+    <Content Include="Site\resource\www\images_hanyeong\favicon.ico" />
+    <Content Include="Site\resource\www\images_hanyeong\logo-w.svg" />
+    <Content Include="Site\resource\www\images_hanyeong\logo.svg" />
+    <Content Include="Site\resource\www\indexall.html" />
+    <Content Include="Site\resource\www\indexocw.html" />
+    <Content Include="Site\resource\www\js\bootstrap%405.0.1\bootstrap.min.js" />
+    <Content Include="Site\resource\www\js\dropdown\popper.js" />
+    <Content Include="Site\resource\www\js\dropdown\popper.min.js" />
+    <Content Include="Site\resource\www\js\kiria.calendar.js" />
+    <Content Include="Site\resource\www\js\script.js" />
+    <Content Include="Site\resource\www\login-join.html" />
+    <Content Include="Site\resource\www\login-password.html" />
+    <Content Include="Site\resource\www\login.html" />
+    <Content Include="Site\resource\www\main.html" />
+    <Content Include="Site\resource\www\mooc.html" />
+    <Content Include="Site\resource\www\my-page.html" />
+    <Content Include="Site\resource\www\myocw.html" />
+    <Content Include="Site\resource\www\ocwweeks.html" />
+    <Content Include="Site\resource\www\ocwweeks_detail.html" />
+    <Content Include="Site\resource\www\plan.html" />
+    <Content Include="Site\resource\www\popup.html" />
+    <Content Include="Site\resource\www\popup_myocw.html" />
+    <Content Include="Site\resource\www\progress.html" />
+    <Content Include="Site\resource\www\project.html" />
+    <Content Include="Site\resource\www\project_detail.html" />
+    <Content Include="Site\resource\www\project_write.html" />
+    <Content Include="Site\resource\www\quiz-write.html" />
+    <Content Include="Site\resource\www\quiz.html" />
+    <Content Include="Site\resource\www\sub-aboutus-01.html" />
+    <Content Include="Site\resource\www\sub-aboutus-02.html" />
+    <Content Include="Site\resource\www\sub-aboutus-03.html" />
+    <Content Include="Site\resource\www\sub-aboutus-04.html" />
+    <Content Include="Site\resource\www\sub-assess-list.html" />
+    <Content Include="Site\resource\www\sub-assess-mark.html" />
+    <Content Include="Site\resource\www\sub-assess-offpop.html" />
+    <Content Include="Site\resource\www\sub-business.html" />
+    <Content Include="Site\resource\www\sub-course-list.html" />
+    <Content Include="Site\resource\www\sub-course-roadmap.html" />
+    <Content Include="Site\resource\www\sub-course.html" />
+    <Content Include="Site\resource\www\sub-guide %282%29.html" />
+    <Content Include="Site\resource\www\sub-guide.html" />
+    <Content Include="Site\resource\www\sub-lecture-detail.html" />
+    <Content Include="Site\resource\www\sub-lecture-info-plan.html" />
+    <Content Include="Site\resource\www\sub-lecture-list.html" />
+    <Content Include="Site\resource\www\sub-lecture-view.html" />
+    <Content Include="Site\resource\www\sub-note.html" />
+    <Content Include="Site\resource\www\sub-notice-list-new.html" />
+    <Content Include="Site\resource\www\sub-ocw-detail.html" />
+    <Content Include="Site\resource\www\sub-ocw-list.html" />
+    <Content Include="Site\resource\www\sub-qna-edit.html" />
+    <Content Include="Site\resource\www\sub-qna-list.html" />
+    <Content Include="Site\resource\www\sub-qna-view.html" />
+    <Content Include="Site\resource\www\sub-qna-write.html" />
+    <Content Include="Site\resource\www\sub-quiz-add %282%29.html" />
+    <Content Include="Site\resource\www\sub-quiz-add.html" />
+    <Content Include="Site\resource\www\sub-quiz-list.html" />
+    <Content Include="Site\resource\www\sub-quiz-pop-preview.html" />
+    <Content Include="Site\resource\www\sub-quiz-pop-qbank.html" />
+    <Content Include="Site\resource\www\sub-quiz-view.html" />
+    <Content Include="Site\resource\www\sub-reservation-list.html" />
+    <Content Include="Site\resource\www\sub-reservation-set-day.html" />
+    <Content Include="Site\resource\www\sub-reservation-set-time.html" />
+    <Content Include="Site\resource\www\sub-sol1.html" />
+    <Content Include="Site\resource\www\sub.html" />
+    <Content Include="Views\Account\DetailStudent.aspx" />
+    <Content Include="Views\Account\DetailStaff.aspx" />
+    <Content Include="Views\Account\ListStaff.aspx" />
+    <Content Include="Views\Account\ListStudent.aspx" />
+    <Content Include="Views\Account\ListManager.aspx" />
+    <Content Include="Views\Account\IDPWSearch.aspx" />
+    <Content Include="Views\Account\JoinGeneral.aspx" />
+    <Content Include="Views\Account\AccessListMonth.aspx" />
+    <Content Include="Views\Account\AccessListDay.aspx" />
+    <Content Include="Views\Account\AccessListTime.aspx" />
+    <Content Include="Views\Account\Index.aspx" />
+    <Content Include="Views\Account\ImportGeneral.aspx" />
+    <Content Include="Views\Account\WriteGeneral.aspx" />
+    <Content Include="Views\Account\ListGeneral.aspx" />
+    <Content Include="Views\Board\Detail.aspx" />
+    <Content Include="Views\Board\ListAdmin.aspx" />
+    <Content Include="Views\Content\QuickLinkList.aspx" />
+    <Content Include="Views\Content\QuickLinkWrite.aspx" />
+    <Content Include="Views\Course\OcwOutAdmin.aspx" />
+    <Content Include="Views\Course\ListOutAdmin.aspx" />
+    <Content Include="Views\Course\EstimationOutWriteAdmin.aspx" />
+    <Content Include="Views\Course\ListWeekOutAdmin.aspx" />
+    <Content Include="Views\Course\Statistics.aspx" />
+    <Content Include="Views\Course\WriteOutAdmin.aspx" />
+    <Content Include="Views\Exam\AnswerAdmin.aspx" />
+    <Content Include="Views\Exam\DetailTeacher.aspx" />
+    <Content Include="Views\Exam\EstimationStudent.aspx" />
+    <Content Include="Views\Exam\EstimationWrite.aspx" />
+    <Content Include="Views\Facility\DetailEquipment.aspx" />
+    <Content Include="Views\Facility\DetailFacility.aspx" />
+    <Content Include="Views\Facility\ListChargedAdmin.aspx" />
+    <Content Include="Views\Facility\ListReserve.aspx" />
+    <Content Include="Views\Facility\ListEquipment.aspx" />
+    <Content Include="Views\Facility\ListEquipmentAdmin.aspx" />
+    <Content Include="Views\Facility\DetailAdmin.aspx" />
+    <Content Include="Views\Facility\ListFacilityAdmin.aspx" />
+    <Content Include="Views\Facility\ListFacility.aspx" />
+    <Content Include="Views\Facility\ListBannedAdmin.aspx" />
+    <Content Include="Views\Facility\WriteAdmin.aspx" />
+    <Content Include="Views\Homework\Certification.aspx" />
+    <Content Include="Views\LecInfo\AbsoluteEvaluation.ascx" />
+    <Content Include="Views\LecInfo\AttendanceGrade.ascx" />
+    <Content Include="Views\LecInfo\FinalExamGrade.ascx" />
+    <Content Include="Views\LecInfo\GradeList.aspx" />
+    <Content Include="Views\LecInfo\HomeWorkGrade.ascx" />
+    <Content Include="Views\LecInfo\ListStudentOcw.aspx" />
+    <Content Include="Views\LecInfo\MidtermExamGrade.ascx" />
+    <Content Include="Views\LecInfo\QuizGrade.ascx" />
+    <Content Include="Views\LecInfo\StudentStatusOcwUserDetail.aspx" />
+    <Content Include="Views\LecInfo\StudyTimePopup.aspx" />
+    <Content Include="Views\Lecture\CertificationPopup.aspx" />
+    <Content Include="Views\Lecture\CourseDetailExcelUploadAdmin.aspx" />
+    <Content Include="Views\Lecture\ProgressUser.aspx" />
+    <Content Include="Views\Lecture\StudyTimePopup.aspx" />
+    <Content Include="Views\Lecture\StudyPagePopup.aspx" />
+    <Content Include="Views\Message\SMSWrite.aspx" />
+    <Content Include="Views\Mypage\CompletionPopup.aspx" />
+    <Content Include="Views\Mypage\Withdrawal.aspx" />
+    <Content Include="Views\Mypage\MyCompletion.aspx" />
+    <Content Include="Views\Mypage\WriteInfo.aspx" />
+    <Content Include="Views\Note\LayerNoteWrite.aspx" />
+    <Content Include="Views\Ocw\OcwView.aspx" />
+    <Content Include="Views\Ocw\OcwCourse.aspx" />
+    <Content Include="Views\Ocw\ProfOcwAuth.aspx" />
+    <Content Include="Views\Ocw\OcwReg.aspx" />
+    <Content Include="Views\Ocw\OcwPopup.aspx" />
+    <Content Include="Views\Ocw\WeekListSub.aspx" />
+    <Content Include="Views\Quiz\EstimationStudent.aspx" />
+    <Content Include="Views\Quiz\EstimationWrite.aspx" />
+    <Content Include="Views\Shared\Exam\CandidatesEstimationAdmin.ascx" />
+    <Content Include="Views\Shared\Exam\CandidatesEstimationStudent.ascx" />
+    <Content Include="Views\Shared\Exam\CandidatesListAdmin.ascx" />
+    <Content Include="Views\Shared\Exam\CandidatesStatistics.ascx" />
+    <Content Include="Views\Shared\Exam\CandidatesEstimation.ascx" />
+    <Content Include="Views\Shared\Exam\CandidatesOffline.ascx" />
+    <Content Include="Views\Shared\Exam\CandidatesList.ascx" />
+    <Content Include="Views\Shared\Exam\QuestionRun.ascx" />
+    <Content Include="Views\Shared\Lecture\LectureIndexStud.ascx" />
+    <Content Include="Views\Shared\Lecture\LectureIndexProf.ascx" />
+    <Content Include="Views\Shared\Lecture\LectureStudentList_Ocw.ascx" />
+    <Content Include="Views\Shared\Lecture\LectureStudentList_Progress.ascx" />
+    <Content Include="Views\Shared\Lecture\LectureStudentList_Part.ascx" />
+    <Content Include="Views\Shared\OCW\WeekListData.ascx" />
+    <Content Include="Views\Sub\RoadMap.aspx" />
+    <Content Include="Views\Sub\Business.aspx" />
+    <Content Include="Views\Sub\Introduce.aspx" />
+    <Content Include="Views\Sub\Map.aspx" />
+    <Content Include="Views\Sub\Vision.aspx" />
+    <Content Include="Views\Sub\History.aspx" />
+    <Content Include="Views\Sub\Greetings.aspx" />
+    <Content Include="Views\System\BoardMaster.aspx" />
+    <Content Include="Views\Board\Write.aspx" />
+    <Content Include="Views\Board\List.aspx" />
+    <Content Include="Views\Common\SearchUser.aspx" />
+    <Content Include="Views\Common\UserList.aspx" />
+    <Content Include="Views\Course\Category.aspx" />
+    <Content Include="Views\Course\Detail.aspx" />
+    <Content Include="Views\Course\OcwAdmin.aspx" />
+    <Content Include="Views\Course\List.aspx" />
+    <Content Include="Views\Course\DetailAdmin.aspx" />
+    <Content Include="Views\Course\EstimationWriteAdmin.aspx" />
+    <Content Include="Views\Course\WriteWeekAdmin.aspx" />
+    <Content Include="Views\Course\ListWeekAdmin.aspx" />
+    <Content Include="Views\Course\ListAdmin.aspx" />
+    <Content Include="Views\Discussion\Detail.aspx" />
+    <Content Include="Views\Discussion\DetailAdmin.aspx" />
+    <Content Include="Views\Discussion\ListAdmin.aspx" />
+    <Content Include="Views\Discussion\OpinionView.aspx" />
+    <Content Include="Views\Discussion\Write.aspx" />
+    <Content Include="Views\Discussion\List.aspx" />
+    <Content Include="Views\Exam\DetailStudent.aspx" />
+    <Content Include="Views\Exam\DetailAdmin.aspx" />
+    <Content Include="Views\Exam\ListAdmin.aspx" />
+    <Content Include="Views\Exam\ListStudent.aspx" />
+    <Content Include="Views\Exam\Statistics.aspx" />
+    <Content Include="Views\Exam\EstimationOffline.aspx" />
+    <Content Include="Views\Exam\EstimationList.aspx" />
+    <Content Include="Views\Exam\Write.aspx" />
+    <Content Include="Views\Exam\Run.aspx" />
+    <Content Include="Views\Exam\ListTeacher.aspx" />
+    <Content Include="Views\Homework\Detail.aspx" />
+    <Content Include="Views\Homework\Copy.aspx" />
+    <Content Include="Views\Homework\Feedback.aspx" />
+    <Content Include="Views\Homework\DetailAdmin.aspx" />
+    <Content Include="Views\Homework\ListAdmin.aspx" />
+    <Content Include="Views\Homework\RegisterLicense.aspx" />
+    <Content Include="Views\Homework\Submit.aspx" />
+    <Content Include="Views\Homework\ListStudent.aspx" />
+    <Content Include="Views\Homework\MemberList.aspx" />
+    <Content Include="Views\Homework\Write.aspx" />
+    <Content Include="Views\Homework\ListTeacher.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Info\Restriction.aspx" />
+    <Content Include="Views\Info\Error.aspx" />
+    <Content Include="Views\LecInfo\CoursePlan.aspx" />
+    <Content Include="Views\LecInfo\Attendance.aspx" />
+    <Content Include="Views\LecInfo\ListStudent.aspx" />
+    <Content Include="Views\LecInfo\StudentTimeDetail.aspx" />
+    <Content Include="Views\LecInfo\StudentStatusDetail.aspx" />
+    <Content Include="Views\LecInfo\StudentStatusList.aspx" />
+    <Content Include="Views\LecInfo\Plan.aspx" />
+    <Content Include="Views\LecInfo\Index.aspx" />
+    <Content Include="Views\LectureRoom\Index.aspx" />
+    <Content Include="Views\Lecture\GradeList.aspx" />
+    <Content Include="Views\Lecture\Certification.aspx" />
+    <Content Include="Views\Lecture\License.aspx" />
+    <Content Include="Views\Lecture\OcwUser.aspx" />
+    <Content Include="Views\Lecture\LogUser.aspx" />
+    <Content Include="Views\Lecture\ProgressDetailAdmin.aspx" />
+    <Content Include="Views\Lecture\ProgressListAdmin.aspx" />
+    <Content Include="Views\Lecture\CourseDetailAdmin.aspx" />
+    <Content Include="Views\Lecture\AttendanceListAdmin.aspx" />
+    <Content Include="Views\Lecture\LectureListAdmin.aspx" />
+    <Content Include="Views\Lecture\CourseListAdmin.aspx" />
+    <Content Include="Views\Lecture\StatisticsOutAdmin.aspx" />
+    <Content Include="Views\Lecture\StatisticsListAdmin.aspx" />
+    <Content Include="Views\Message\HistoryDetail.aspx" />
+    <Content Include="Views\Message\List.aspx" />
+    <Content Include="Views\Message\HistoryList.aspx" />
+    <Content Include="Views\Message\Write.aspx" />
+    <Content Include="Views\Mypage\LectureRoom.aspx" />
+    <Content Include="Views\Mypage\MyInfo.aspx" />
+    <Content Include="Views\Note\Write.aspx" />
+    <Content Include="Views\Note\Detail.aspx" />
+    <Content Include="Views\Note\SendList.aspx" />
+    <Content Include="Views\Note\ReceiveList.aspx" />
+    <Content Include="Views\Ocw\Member.aspx" />
+    <Content Include="Views\Ocw\StatisticsPart.aspx" />
+    <Content Include="Views\Ocw\StatisticsUser.aspx" />
+    <Content Include="Views\Ocw\Statistics.aspx" />
+    <Content Include="Views\Ocw\ThemeWrite.aspx" />
+    <Content Include="Views\Ocw\ThemeList.aspx" />
+    <Content Include="Views\Ocw\ListAcceptAdmin.aspx" />
+    <Content Include="Views\Ocw\CommonList.aspx" />
+    <Content Include="Views\Ocw\CourseListAdmin.aspx" />
+    <Content Include="Views\Ocw\WriteAdmin.aspx" />
+    <Content Include="Views\Ocw\MyOcw.aspx" />
+    <Content Include="Views\Ocw\MyOpinion.aspx" />
+    <Content Include="Views\Ocw\WeekDetail.aspx" />
+    <Content Include="Views\Ocw\LectureRoom.aspx" />
+    <Content Include="Views\Ocw\Copy.aspx" />
+    <Content Include="Views\Ocw\Select.aspx" />
+    <Content Include="Views\Ocw\ListAdmin.aspx" />
+    <Content Include="Views\Ocw\WeekList.aspx" />
+    <Content Include="Views\Ocw\UserCategory.aspx" />
+    <Content Include="Views\Ocw\Like.aspx" />
+    <Content Include="Views\Ocw\Detail.aspx" />
+    <Content Include="Views\Ocw\Index.aspx" />
+    <Content Include="Views\QuestionBank\List.aspx" />
+    <Content Include="Views\QuestionBank\PrintQuestion.aspx" />
+    <Content Include="Views\QuestionBank\Update.aspx" />
+    <Content Include="Views\QuestionBank\Write.aspx" />
+    <Content Include="Views\QuestionBank\Index.aspx" />
+    <Content Include="Views\Quiz\AnswerAdmin.aspx" />
+    <Content Include="Views\Quiz\DetailAdmin.aspx" />
+    <Content Include="Views\Quiz\ListAdmin.aspx" />
+    <Content Include="Views\Quiz\Run.aspx" />
+    <Content Include="Views\Quiz\DetailStudent.aspx" />
+    <Content Include="Views\Quiz\ListStudent.aspx" />
+    <Content Include="Views\Quiz\Statistics.aspx" />
+    <Content Include="Views\Quiz\EstimationOffline.aspx" />
+    <Content Include="Views\Quiz\EstimationList.aspx" />
+    <Content Include="Views\Quiz\Copy.aspx" />
+    <Content Include="Views\Quiz\DetailTeacher.aspx" />
+    <Content Include="Views\Quiz\Write.aspx" />
+    <Content Include="Views\Quiz\ListTeacher.aspx" />
+    <Content Include="Views\Report\Detail.aspx" />
+    <Content Include="Views\Report\Submit.aspx" />
+    <Content Include="Views\Report\List.aspx" />
+    <Content Include="Views\Report\Write.aspx" />
+    <Content Include="Views\Shared\Common\Editor.ascx" />
+    <Content Include="Views\Shared\Common\File.ascx" />
+    <Content Include="Views\Shared\Exam\DetailQuestionList.ascx" />
+    <Content Include="Views\Shared\Exam\DetailQuestionScore.ascx" />
+    <Content Include="Views\Shared\Exam\QuestionList.ascx" />
+    <Content Include="Views\Shared\Exam\QuestionScore.ascx" />
+    <Content Include="Views\Shared\Header.ascx" />
+    <Content Include="Views\Shared\Footer.ascx" />
+    <Content Include="Views\Shared\QuestionBank\FolderList.ascx" />
+    <Content Include="Views\Shared\QuestionBank\Template.ascx" />
+    <Content Include="Views\Shared\Team\GroupTeamMemberList.ascx" />
+    <Content Include="Views\System\PermissionMenuWrite.aspx" />
+    <Content Include="Views\System\PermissionMenuList.aspx" />
+    <Content Include="Views\System\PermissionList.aspx" />
+    <Content Include="Views\System\CodeList.aspx" />
+    <Content Include="Views\System\MenuList.aspx" />
+    <Content Include="Views\System\MenuAccessList.aspx" />
+    <Content Include="Views\System\MailList.aspx" />
+    <Content Include="Views\Content\FamilySiteList.aspx" />
+    <Content Include="Views\Content\FamilySiteWrite.aspx" />
+    <Content Include="Views\Content\BannerWrite.aspx" />
+    <Content Include="Views\Import\ImportLecture.aspx" />
+    <Content Include="Views\Import\ImportCourse.aspx" />
+    <Content Include="Views\Content\BannerList.aspx" />
+    <Content Include="Views\Content\PopupWrite.aspx" />
+    <Content Include="Views\Content\PopupList.aspx" />
+    <Content Include="Views\Import\ImportLogList.aspx" />
+    <Content Include="Views\Import\ImportSubject.aspx" />
+    <Content Include="Views\Import\ImportMember.aspx" />
+    <Content Include="Views\Import\ImportAssign.aspx" />
+    <Content Include="Views\System\BoardAuthority.aspx" />
+    <Content Include="Views\System\TermList.aspx" />
+    <Content Include="Views\System\TermWrite.aspx" />
+    <Content Include="Views\TeamProject\ListAdmin.aspx" />
+    <Content Include="Views\TeamProject\DetailAdmin.aspx" />
+    <Content Include="Views\TeamProject\ListStudent.aspx" />
+    <Content Include="Views\TeamProject\ListTeacher.aspx" />
+    <Content Include="Views\Team\Write.aspx" />
+    <Content Include="Views\Team\List.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Shared\Account\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\fonts\MaterialIcons-Regular.eot" />
+    <Content Include="Common\fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="Common\fonts\MaterialIcons-Regular.woff" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Black.eot" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Black.ttf" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Black.woff" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Black.woff2" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Bold.eot" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Bold.ttf" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Bold.woff" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Bold.woff2" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Light.eot" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Light.ttf" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Light.woff" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Light.woff2" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Medium.eot" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Medium.ttf" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Medium.woff" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Medium.woff2" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Regular.eot" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Regular.ttf" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Regular.woff" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Regular.woff2" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Thin.eot" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Thin.ttf" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Thin.woff" />
+    <Content Include="Common\fonts\notokr\NotoSansKR-Thin.woff2" />
+    <Content Include="Common\css\bootstrap-icons.json" />
+    <Content Include="Common\fonts\bootstrap-icons.woff" />
+    <Content Include="Common\fonts\bootstrap-icons.woff2" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap-grid.css.map" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap.css.map" />
+    <Content Include="Common\bootstrap-4.6.0-dist\css\bootstrap.min.css.map" />
+    <Content Include="Common\bootstrap-4.6.0-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Common\bootstrap-4.6.0-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Common\bootstrap-4.6.0-dist\js\bootstrap.js.map" />
+    <Content Include="Common\bootstrap-4.6.0-dist\js\bootstrap.min.js.map" />
+    <Content Include="Common\js\popper.js.map" />
+    <Content Include="Common\editor\css\SourceCodePro.eot" />
+    <Content Include="Common\editor\css\SourceCodePro.woff" />
+    <Content Include="Common\editor\imageUpload\web.config" />
+    <Content Include="Download\QuestionUploadExcel.xls" />
+    <Content Include="Download\TeamMemberUploadExcel.xls" />
+    <Content Include="Download\GeneralUploadExcel.xls" />
+    <Content Include="Message\scripts\common\css\_notes\ibootstrap.css.mno" />
+    <Content Include="Message\scripts\common\fonts\MaterialIcons-Regular.eot" />
+    <Content Include="Message\scripts\common\fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="Message\scripts\common\fonts\MaterialIcons-Regular.woff" />
+    <Content Include="Message\scripts\common\fonts\notokr-Bold.otf" />
+    <Content Include="Message\scripts\common\fonts\notokr-Bold.woff" />
+    <Content Include="Message\scripts\common\fonts\notokr-Bold.woff2" />
+    <Content Include="Message\scripts\common\fonts\notokr-DemiLight.eot" />
+    <Content Include="Message\scripts\common\fonts\notokr-DemiLight.ttf" />
+    <Content Include="Message\scripts\common\fonts\notokr-DemiLight.woff" />
+    <Content Include="Message\scripts\common\fonts\notokr-DemiLight.woff2" />
+    <Content Include="Message\scripts\common\fonts\notokr-Light.ttf" />
+    <Content Include="Message\scripts\common\fonts\notokr-Light.woff" />
+    <Content Include="Message\scripts\common\fonts\notokr-Light.woff2" />
+    <Content Include="Message\scripts\common\fonts\notokr-Medium.otf" />
+    <Content Include="Message\scripts\common\fonts\notokr-Medium.woff" />
+    <Content Include="Message\scripts\common\fonts\notokr-Medium.woff2" />
+    <Content Include="Message\scripts\common\fonts\notokr-Regular.otf" />
+    <Content Include="Message\scripts\common\fonts\notokr-Regular.woff" />
+    <Content Include="Message\scripts\common\fonts\notokr-Regular.woff2" />
+    <Content Include="Message\scripts\common\fonts\notokr-Thin.otf" />
+    <Content Include="Message\scripts\common\fonts\notokr-Thin.woff" />
+    <Content Include="Message\scripts\common\fonts\notokr-Thin.woff2" />
+    <Content Include="Message\scripts\moment.min.js.map" />
+    <Content Include="Message\common\css\_notes\ibootstrap.css.mno" />
+    <Content Include="Message\common\fonts\MaterialIcons-Regular.eot" />
+    <Content Include="Message\common\fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="Message\common\fonts\MaterialIcons-Regular.woff" />
+    <Content Include="Message\common\fonts\notokr-Bold.otf" />
+    <Content Include="Message\common\fonts\notokr-Bold.woff" />
+    <Content Include="Message\common\fonts\notokr-Bold.woff2" />
+    <Content Include="Message\common\fonts\notokr-DemiLight.eot" />
+    <Content Include="Message\common\fonts\notokr-DemiLight.ttf" />
+    <Content Include="Message\common\fonts\notokr-DemiLight.woff" />
+    <Content Include="Message\common\fonts\notokr-DemiLight.woff2" />
+    <Content Include="Message\common\fonts\notokr-Light.ttf" />
+    <Content Include="Message\common\fonts\notokr-Light.woff" />
+    <Content Include="Message\common\fonts\notokr-Light.woff2" />
+    <Content Include="Message\common\fonts\notokr-Medium.otf" />
+    <Content Include="Message\common\fonts\notokr-Medium.woff" />
+    <Content Include="Message\common\fonts\notokr-Medium.woff2" />
+    <Content Include="Message\common\fonts\notokr-Regular.otf" />
+    <Content Include="Message\common\fonts\notokr-Regular.woff" />
+    <Content Include="Message\common\fonts\notokr-Regular.woff2" />
+    <Content Include="Message\common\fonts\notokr-Thin.otf" />
+    <Content Include="Message\common\fonts\notokr-Thin.woff" />
+    <Content Include="Message\common\fonts\notokr-Thin.woff2" />
+    <Content Include="Message\lib\moment.js\moment-with-locales.min.js.map" />
+    <Content Include="Message\lib\reactstrap\reactstrap.full.js.map" />
+    <Content Include="Message\lib\reactstrap\reactstrap.full.min.js.map" />
+    <Content Include="Message\lib\reactstrap\reactstrap.js.map" />
+    <Content Include="Message\lib\reactstrap\reactstrap.min.js.map" />
+    <Content Include="Message\master\General.Master" />
+    <Content Include="Message\master\Message.Master" />
+    <Content Include="Common\fonts\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="Common\fonts\bootstrap-icons\bootstrap-icons.woff" />
+    <Content Include="Common\fonts\bootstrap-icons\bootstrap-icons.woff2" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Black.eot" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Black.ttf" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Black.woff" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Black.woff2" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Bold.eot" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Bold.ttf" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Bold.woff" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Bold.woff2" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Light.eot" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Light.ttf" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Light.woff" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Light.woff2" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Medium.eot" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Medium.ttf" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Medium.woff" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Medium.woff2" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Regular.eot" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Regular.ttf" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Regular.woff" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Regular.woff2" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Thin.eot" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Thin.ttf" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Thin.woff" />
+    <Content Include="Common\fonts\notosanskr\NotoSansKR-Thin.woff2" />
+    <Content Include="Common\fonts\notosans\NotoSans-Bold.woff2" />
+    <Content Include="Common\fonts\notosans\NotoSans-Regular.woff2" />
+    <Content Include="Common\fullcalendar-5.10.2\examples\json\events.json" />
+    <Content Include="Common\fullcalendar-5.10.2\README.md" />
+    <Content Include="Download\StudentUploadExcel.xls" />
+    <Content Include="Download\TeamMemberUploadExcel_N.xls" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\Sub.Master" />
+    <Content Include="Views\Shared\Main.Master" />
+    <Content Include="Views\Shared\None.Master" />
+    <Content Include="Site\resource\www\js\bootstrap%405.0.1\bootstrap.min.js.map" />
+    <Content Include="Site\resource\www\js\dropdown\popper.js.map" />
+    <Content Include="Site\resource\www\js\dropdown\popper.min.js.map" />
+    <Content Include="Views\Shared\LectureRoom.Master" />
+    <Content Include="Views\Shared\Popup.Master" />
+    <Content Include="Views\Shared\Admin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\ILMS.Core\ILMS.Core.csproj">
+      <Project>{46bda7d8-3cc6-42ef-b8a6-d6da0278ae0d}</Project>
+      <Name>ILMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\ILMS.Data\ILMS.Data.csproj">
+      <Project>{baa43f31-5c27-43bd-82d0-1b050c90a4db}</Project>
+      <Name>ILMS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\ILMS.Design\ILMS.Design.csproj">
+      <Project>{8a3503d1-6021-4b0b-bca3-a4eb41eb6384}</Project>
+      <Name>ILMS.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\ILMS.Service\ILMS.Service.csproj">
+      <Project>{3511a6df-58c1-48ed-aaeb-a6c436f48c22}</Project>
+      <Name>ILMS.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Message.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Message.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62072</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61892/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

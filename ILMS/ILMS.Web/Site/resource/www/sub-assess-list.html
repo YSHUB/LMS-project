@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+	<div class="container">
+		<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+	</div>
+</div>
+	
+<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">menu A-1</a>
+								<a class="dropdown-item active" href="#">menu A-2</a>
+								<a class="dropdown-item" href="#">menu A-3</a>
+								<a class="dropdown-item" href="#">menu A-4</a>
+							</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+</div>
+	
+<div class="sub-container container">
+	<div class="row">
+		<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>LMS</span></div>
+					<ul class="snb-list">
+						<li class="active"><a href="#">menu A</a>
+							<ul>
+									<li class="active"><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu B</a>
+							<ul>
+									<li><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu C</a></li>
+						<li><a href="#">menu D</a></li>
+					</ul>
+				</div>
+		</div>
+		<div class="col-xl-9">
+			<h2 class="title02">퀴즈 평가</h2>
+      
+			<div id="content">
+        <div class="row no-gutters align-items-center mt-4">
+					<div class="col">
+						<span class="text-muted font-size-14 d-block d-md-inline"><strong class="w-6rem d-sm-inline-block d-md-inline"><i class="bi bi-dot"></i>최근 접속일</strong> : 2021-08-20</span>
+						<span class="text-muted font-size-14 "><strong class="w-6rem d-sm-inline-block d-md-inline"><i class="bi bi-dot"></i>접속 IP </strong> :  192.168.20.119</span>
+					</div>
+					<div class="col-auto text-right">
+						<a href="#" class="btn btn-dark">강의실 나가기</a>
+					</div>
+				</div>
+        
+        <div class="row align-items-center mt-4">
+          <div class="col">
+            <h3 class="title03">강좌 바로가기</h3>
+          </div>
+          <div class="col-auto text-right d-md-none">
+            <button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+              <span class="sr-only">더 보기</span>
+            </button>
+          </div>
+        </div>
+        <div class="card collapse d-md-block" id="collapseExample1">
+          <div class="card-body pb-1">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="" class="form-label">학기 선택 <strong class="text-danger">*</strong></label>
+                <select id="tno" class="form-control">
+                    <option value="10">2022년도 1학기</option>
+                </select>
+              </div>
+              <div class="form-group col-md-8">
+                <label for="" class="form-label">교과목 선택 <strong class="text-danger">*</strong></label>
+                <select class="form-control" id="roommastercourseselect" onchange="javascript:goRoomWithPage(this);">
+                  <option value="">강의실을 선택해주세요.</option>
+                  <option value="">지도교수세미나Ⅲ-Ⅰ(103)</option>
+                  <option value="">하이테크지식경영(001)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="title03 mt-4 d-flex align-items-center">10주차 2차시 퀴즈 <small class="badge border border-info text-info ml-2">10주차</small></h3>
+        <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+					<li class="nav-item" role="presentation">
+						<a class="nav-link active show" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">개인별 평가현황</a>
+					</li>
+					<li class="nav-item" role="presentation">
+						<a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">문항별 통계</a>
+					</li>
+				</ul>
+        <div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade active show" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+            <h3 class="title03 sr-only">개인별 평가현황</h3>
+
+            <div class="mt-4 alert bg-light rounded">
+              <p class="font-size-14 text-danger font-weight-bold"><i class="bi bi-info-circle-fill"></i> 자동 채점 기능 사용 시 아래사항에 대하여 검토가 필요합니다.</p>
+              <ul class="list-style03 mb-0">
+                <li>
+                  단답형 자동 채점은 기호 또는 생각하지 못한 유사답안으로 인해 학생에게 오답으로 처리될 수 있으므로 반드시 단답형의 점수를 확인하시고 점수가 맞지 않는 경우 올바른 점수로 수정하시기 바랍니다.
+                </li>
+                <li>
+                  단답형의 자동 채점은 띄어쓰기 구분이 없으며, 영문자의 경우 대소문자 구분없이 사용자 답안과 비교됩니다.
+                </li>
+                <li class="mb-0">
+                  비공개 상태 시 학습자들에게 해당 퀴즈목록이 노출되지 않습니다.
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-body pb-1">
+                <div class="form-row align-items-end">
+                  <div class="form-group col-md-4">
+                    <label for="" class="form-label">응시상태</label>
+                    <select id="optionView" name="Search_Option" class="form-control">
+                      <option value="ALL" selected="selected">전체</option>
+                      <option value="Y">응시완료</option>
+                      <option value="P">시험중</option>
+                      <option value="N">미응시</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md">
+                    <label for="" class="form-label">검색어 입력</label>
+                    <input id="Search_Text" title="학번 또는 이름으로 검색" type="text" class="form-control" value="" placeholder="학번 또는 이름으로 검색">
+                  </div>
+                  <div class="form-group col-sm-auto text-right">
+                    <button type="button" id="btn_search" class="btn btn-secondary">
+                      <span class="icon search">검색</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card-style01 mt-2">
+              <div class="card-header">
+                <div class="row justify-content-between">
+                  <div class="col-auto">
+                    <input type="hidden" class="form-control" id="SortType" name="SortType" value="">
+                    <button type="button" class="btn btn-sm btn-secondary" id="btnSort">
+                    학번순
+                    </button>
+                    <a class="btn btn-sm btn-secondary" role="button" href="/LMS/Exam/ExcelDownLoad/27215?ExamNo=558">엑셀 다운로드</a>
+                  </div>
+                  <div class="col-auto text-right">
+                    <div class="dropdown d-inline-block">
+                      <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        메세지발송
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdown1">
+                        <li><button class="dropdown-item" type="button" onclick="javascript:LayerPopup('LayerMail');">메일발송</button></li>
+                        <li><button class="dropdown-item" type="button" onclick="javascript:LayerPopup('LayerMessage');">쪽지발송</button></li>
+                        <li><button class="dropdown-item" type="button" onclick="javascript:LayerPopup('LayerSMS');">SMS발송</button></li>
+                      </ul>
+                    </div>
+                    <div class="dropdown d-inline-block">
+                      <button type="button" class="btn btn-sm btn-point dropdown-toggle" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        퀴즈설정
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdown2">
+                        <li><a href="#" class="dropdown-item" onclick="javascript:void(0);">퀴즈종료</a></li>
+                        <li><a class="dropdown-item" data-toggle="modal" data-target="#pop_msg_info" href="javascript:AutomatedScoring('558')">자동 채점</a></li>
+                        <li><a class="dropdown-item" data-toggle="modal" data-target="#pop_msg_alert" href="javascript:ToggleOpenYesNo('558', 'N')">비공개로 변경</a></li>
+                        <li><button class="dropdown-item" type="button" id="btn_no_open" style="display:none">평가비공개로 변경</button></li>
+                        <li><button class="dropdown-item" type="button" id="btn_open">평가공개로 변경</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="table-responsive">
+                  <table class="table table-hover" id="personalTable">
+                    <caption>개인별 평가 현황 리스트</caption>
+                    <colgroup>
+                      <col><col><col><col><col>
+                      <col><col><col><col><col>
+                      <col><col>
+                    </colgroup>
+                    <thead>
+                      <tr>
+                          <th scope="row"><input type="checkbox" class="checkbox" id="check_select_all" onclick="selectAll(this)"></th>
+                          <th scope="row">번호</th>
+                          <th scope="row">이름/학번</th>
+                          <th scope="row">학적</th>
+                          <th scope="row">응시일자</th>
+                          <th scope="row">제출일자</th>              
+                          <th scope="row" class="text-nowrap">경과 시간</th>
+                          <th scope="row" class="text-nowrap">상태</th>
+                          <th scope="row" class="text-nowrap">재응시</th>
+                          <th scope="row" class="text-nowrap">개별 평가</th>
+                          <th scope="row" class="text-nowrap">오프 등록</th>
+                          <th scope="row" class="text-nowrap">총점</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="data NView">
+                        <th scope="row">
+                            <!--  문자 관련 소스  학생선택 -->
+                            <input type="checkbox" name="ck_userid" id="ck_userid" value="26146" class="checkbox">
+                            <input type="hidden" value="26146">
+                            <input type="hidden" value="강민*(20181233)">
+                            <input type="hidden" value="20181233">
+                        </th>
+                        <td>1</td>
+                        <td>
+                          <span class="text-nowrap text-dark d-block">강민*</span>
+                          <span class="text-nowrap text-secondary font-size-15">20181233</span>
+                        </td>
+                        <td>재학</td>
+                        <td>
+                          <span class="text-nowrap text-dark d-block">2021-03-22</span>
+                          <span class="text-nowrap text-secondary font-size-15">09:09:00</span>
+                        </td>
+                        <td>
+                          <span class="text-nowrap text-dark d-block">2021-03-22</span>
+                          <span class="text-nowrap text-secondary font-size-15">09:09:12</span>
+                        </td>
+                        <td>0분</td>
+                        <td>
+                          <span class="text-danger">미응시</span>
+                        </td>
+                        <td>
+                          <a class="btn btn-sm btn-outline-primary" href="javascript:void(0);">재응시</a>
+                        </td>
+                        <td>
+                          <a class="btn btn-sm btn-outline-primary" href="sub-assess-mark.html">수정</a>
+                        </td>
+                        <td>
+                          <a class="btn btn-sm btn-outline-primary" href="javascript:void(0);" onclick="window.open('sub-assess-offpop.html', 'offpop', 'width=800 height=700');">오프등록</a>
+                        </td>
+                        <td class="text-right ">0</td>
+                      </tr>
+                      <tr class="data NView">
+                        <th scope="row">
+                            <!--  문자 관련 소스  학생선택 -->
+                            <input type="checkbox" name="ck_userid" id="ck_userid" value="26146" class="checkbox">
+                            <input type="hidden" value="26146">
+                            <input type="hidden" value="강민*(20181233)">
+                            <input type="hidden" value="20181233">
+                        </th>
+                        <td>2</td>
+                        <td>
+                          <span class="text-nowrap text-dark d-block">강민*</span>
+                          <span class="text-nowrap text-secondary font-size-15">20181233</span>
+                        </td>
+                        <td>재학</td>
+                        <td>
+                          <span class="text-nowrap text-dark d-block">2021-03-22</span>
+                          <span class="text-nowrap text-secondary font-size-15">09:09:12</span>
+                        </td>
+                        <td>
+                          <a class="btn btn-sm btn-outline-primary" href="javascript:void(0);">마감처리</a>
+                        </td>
+                        <td>10분</td>
+                        <td>
+                          <span class="text-point">시험중</span>
+                        </td>
+                        <td>
+                          <a class="btn btn-sm btn-outline-primary" href="javascript:void(0);">재응시</a>
+                        </td>
+                        <td>
+                          <a class="btn btn-sm btn-outline-primary" href="javascript:void(0);">수정</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-outline-primary" href="javascript:void(0);">오프등록</a>
+                        </td>
+                        <td class="text-right ">100</td>
+                      </tr>
+                      <tr class="data NView">
+                        <th scope="row">
+                            <!--  문자 관련 소스  학생선택 -->
+                            <input type="checkbox" name="ck_userid" id="ck_userid" value="26146" class="checkbox">
+                            <input type="hidden" value="26146">
+                            <input type="hidden" value="강민*(20181233)">
+                            <input type="hidden" value="20181233">
+                        </th>
+                        <td>3</td>
+                        <td>
+                          <span class="text-nowrap text-dark d-block">강민*</span>
+                          <span class="text-nowrap text-secondary font-size-15">20181233</span>
+                        </td>
+                        <td>재학</td>
+                        <td>
+                          <span class="text-nowrap text-dark d-block">2021-03-22</span>
+                          <span class="text-nowrap text-secondary font-size-15">09:09:12</span>
+                        </td>
+                        <td>
+                          <a class="btn btn-sm btn-outline-primary" href="javascript:void(0);">마감처리</a>
+                        </td>
+                        <td>20분</td>
+                        <td>
+                          <span class="text-secondary">응시완료</span>
+                        </td>
+                        <td>
+                          <a class="btn btn-sm btn-outline-primary" href="javascript:void(0);">재응시</a>
+                        </td>
+                        <td>
+                          <a class="btn btn-sm btn-primary" href="javascript:void(0);">평가</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-outline-primary" href="javascript:void(0);">오프등록</a>
+                        </td>
+                        <td class="text-right ">0</td>
+                      </tr>   
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div><!-- card -->
+
+          </div><!-- tab -->
+
+					<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+            <h3 class="title03 sr-only">문항별 통계</h3>
+
+            <div class="card card-style01 mt-4">
+              <div class="card-header">
+                <div class="row align-items-center">
+                  <div class="col-md">
+                    <p class="card-title02"><strong class="badge badge-primary mr-2">문제1</strong>웨비나의 설명으로 잘못된 것을 고르시오</p>
+                  </div>
+                  <div class="col-md-auto text-right">												
+                    <dl class="row dl-style01">
+                      <dt class="col-auto text-dark">참여</dt>
+                      <dd class="col-auto mb-0">28명</dd>
+                      <dt class="col-auto text-primary">정답률</dt>
+                      <dd class="col-auto mb-0">75%</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <ol class="list-style01 marking">
+                  <li>
+                    60분에서 120분 가량 진행된다.
+                  </li>
+                  <li>
+                    로그인 후 발표자 목소리와 발표자료 슬라이드를 보는 온라인 프리젠테이션이다
+                  </li>
+                  <li class="text-primary font-weight-bold">
+                    웨비나 진행은 기업 내부 전문가가 진행한다
+                  </li>
+                  <li>
+                    웨비나는 웹에서 진행하는 세미나를 의미한다
+                  </li>
+                </ol>
+              </div>
+            </div><!-- card -->
+            <div class="card card-style01 mt-4">
+              <div class="card-header">
+                <div class="row align-items-center">
+                  <div class="col-md">
+                    <p class="card-title02"><strong class="badge badge-primary mr-2">문제2</strong>다음중 코로나와 관련된 이미지가 아닌것을 고르시오.</p>
+                  </div>
+                  <div class="col-md-auto text-right">												
+                    <dl class="row dl-style01">
+                      <dt class="col-auto text-dark">참여</dt>
+                      <dd class="col-auto mb-0">96명</dd>
+                      <dt class="col-auto text-primary">정답률</dt>
+                      <dd class="col-auto mb-0">95%</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <ol class="row list-style01 marking">
+                  <li class="col-6 col-md-3">
+                    <div class="">
+                      <img src="./images/q-sample01.jpg" class="img-fluid w-100" alt="방호복을 입은 2명의 남녀가 왼팔을 들고 있는 사진">
+                    </div>
+                  </li>
+                  <li class="col-6 col-md-3">
+                    <div class="">
+                      <img src="./images/q-sample02.jpg" class="img-fluid w-100" alt="방호복을 입은 캐릭터 사진">
+                    </div>
+                  </li>
+                  <li class="col-6 col-md-3">
+                    <div class="">
+                      <img src="./images/q-sample03.jpg" class="img-fluid w-100" alt="파란 장갑을 끼고 백신을 잡고 있는 손가락 사진">
+                    </div>
+                  </li>
+                  <li class="col-6 col-md-3 text-primary font-weight-bold">
+                    <div class="border border-primary">
+                      <img src="./images/q-sample04.jpg" class="img-fluid w-100" alt="과일이 바구니에 담긴 사진">
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div><!-- card -->
+
+          </div><!-- tab -->
+        </div><!-- tab-content -->
+        
+			</div>
+		</div>
+	</div>
+</div><!-- sub-container -->
+
+<div class="modal" style="display: none;" id="pop_msg_info" role="dialog" aria-labelledby="pop_msg_infoLabel">
+  <div class="modal-dialog modal-md">
+      <div class="modal-content">
+          <!--layer content -->
+          <div class="modal-header">
+              <h5 class="modal-title">알림</h5>
+          </div>
+          <div class="modal-body">
+              <div id="msg_info">모달팝업 내용이 들어갑니다.</div>
+          </div>
+          <div id="pop_footer" class="modal-footer">
+              <button id="btninfoclose" class="btn btn-primary" onclick="return closeMsgLayer('pop_msg_info');" data-dismiss="modal">확인</button>
+          </div>
+      </div>
+  </div>
+</div><!-- modal -->
+
+<div class="modal" style="display: none;" id="pop_msg_alert" role="dialog" aria-labelledby="pop_msg_alertLabel">
+  <div class="modal-dialog modal-lg">
+      <div id="pop_content2" class="modal-content">
+          <!--layer content -->
+          <div class="modal-header">
+              <h5 class="modal-title">평가공개 설정</h5>
+          </div>
+          <div class="modal-body">
+              <p id="msg_alert">평가내용이 비공개 되었습니다.</p>
+          </div>
+          <div id="pop_footer2" class="modal-footer">
+              <button id="btnalertclose" class="btn btn-primary" type="button" onclick="return closeMsgLayer('pop_msg_alert');">확인</button>
+              <a href="#" class="btn btn-outline-primary" onclick="return closeMsgLayer('pop_msg_alert');" data-dismiss="modal">닫기</a>
+          </div>
+          
+          <!--//layer content -->
+      </div>
+  </div>
+</div><!-- modal -->
+
+<div id="footer"></div>
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+<script>
+	$.ajax({
+		method: 'GET',
+		url: 'header.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#header').append(html);
+	});
+	$.ajax({
+		method: 'GET',
+		url: 'footer.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#footer').append(html);
+	});
+
+	$(document).ready(function() {
+			$(".dropdown-toggle").dropdown();
+	});
+</script>
+</body>
+</html>

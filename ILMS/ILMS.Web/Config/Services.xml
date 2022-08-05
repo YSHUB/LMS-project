@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<objects xmlns="http://www.springframework.net">
+
+	<!-- 세션관리자 -->
+	<object name="objSessionManager" singleton="true" type="ILMS.Core.System.SessionManager, ILMS.Core">
+	</object>
+
+	<!-- Base Service -->
+	<object name="objBaseService" singleton="true" type="ILMS.Service.BaseService, ILMS.Service">
+		<property name="baseDao" ref="objBaseDao"></property>
+	</object>
+	
+	<!-- 공통 Service -->
+	<object name="objCommonService" singleton="true" type="ILMS.Service.CommonService, ILMS.Service">
+		<property name="commonDao" ref="objCommonDao"></property>
+	</object>
+
+	<!-- 시스템 Service -->
+	<object name="objSystemService" singleton="true" type="ILMS.Service.SystemService, ILMS.Service">
+		<property name="baseDao" ref="objBaseDao"></property>
+		<property name="systemDao" ref="objSystemDao"></property>
+	</object>
+
+	<!-- 계정 Service -->
+	<object name="objAccountService" singleton="true" type="ILMS.Service.AccountService, ILMS.Service">
+		<property name="accountDao" ref="objAccountDao"></property>
+	</object>
+
+	<!-- 쪽지 Service -->
+	<object name="objNoteService" singleton="true" type="ILMS.Service.NoteService, ILMS.Service">
+		<property name="noteDao" ref="objNoteDao"></property>
+	</object>
+
+	<!-- 게시판 Service -->
+	<object name="objBoardService" singleton="true" type="ILMS.Service.BoardService, ILMS.Service">
+		<property name="boardDao" ref="objBoardDao"></property>
+	</object>
+	
+	<!-- 강좌 Service -->
+	<object name="objCourseService" singleton="true" type="ILMS.Service.CourseService, ILMS.Service">
+		<property name="baseDao" ref="objBaseDao"></property>
+		<property name="courseDao" ref="objCourseDao"></property>
+    
+	</object>
+
+	<!-- 토론 Service -->
+	<object name="objDiscussionService" singleton="true" type="ILMS.Service.DiscussionService, ILMS.Service">
+		<property name="discussionDao" ref="objDiscussionDao"></property>
+	</object>
+
+	<!-- 과제 Service -->
+	<object name="objHomeworkService" singleton="true" type="ILMS.Service.HomeworkService, ILMS.Service">
+		<property name="homeworkDao" ref="objHomeworkDao"></property>
+	</object>
+
+	<!-- Ocw Service -->
+	<object name="objOcwService" singleton="true" type="ILMS.Service.OcwService, ILMS.Service">
+		<property name="ocwDao" ref="objOcwDao"></property>
+	</object>
+
+	<!-- 퀴즈 Service -->
+	<object name="objExamService" singleton="true" type="ILMS.Service.ExamService, ILMS.Service">
+		<property name="baseDao" ref="objBaseDao"></property>
+		<property name="examDao" ref="objExamDao"></property>
+	</object>
+
+	<!-- 팀프로젝트 Service -->
+	<object name="objTeamProjectService" singleton="true" type="ILMS.Service.TeamProjectService, ILMS.Service">
+		<property name="teamProjectDao" ref="objTeamProjectDao"></property>
+	</object>
+
+	<!-- 팀편성관리 Service -->
+	<object name="objTeamService" singleton="true" type="ILMS.Service.TeamService, ILMS.Service">
+		<property name="teamDao" ref="objTeamDao"></property>
+	</object>
+
+	<!-- 출결관리 Service -->
+	<object name="objStudyService" singleton="true" type="ILMS.Service.StudyService, ILMS.Service">
+		<property name="studyDao" ref="objStudyDao"></property>
+	</object>
+
+	<!-- 강좌정보 Service -->
+	<object name="objLecInfoService" singleton="true" type="ILMS.Service.LecInfoService, ILMS.Service">
+		<property name="lecInfoDao" ref="objLecInfoDao"></property>
+	</object>
+
+	<!-- 메세지 Service -->
+	<object name="objMessageService" singleton="true" type="ILMS.Service.MessageService, ILMS.Service">
+		<property name="messageDao" ref="objMessageDao"></property>
+	</object>
+	
+</objects>

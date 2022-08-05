@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="teamProjectCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+	
+	<statements>
+		<!-- 팀프로젝트 리스트 조회(교수) -->
+		<select id="teamProject.TEAMPROJECT_SELECT_L" parameterClass="Hashtable" resultClass="teamProject">
+			EXEC USP_TEAMPROJECT_SELECT "L", #CourseNo#, #ProjectNo#, #UserNo#
+		</select>
+
+		<!-- 팀프로젝트 상세 조회 -->
+		<select id="teamProject.TEAMPROJECT_SELECT_S" parameterClass="teamProject" resultClass="teamProject">
+			EXEC USP_TEAMPROJECT_SELECT "S", #CourseNo#, #ProjectNo#, #UserNo#
+		</select>
+
+		<!-- 팀프로젝트 리스트 조회(학생) -->
+		<select id="teamProject.TEAMPROJECT_SELECT_A" parameterClass="Hashtable" resultClass="teamProject">
+			EXEC USP_TEAMPROJECT_SELECT "A", #CourseNo#, #ProjectNo#, #UserNo#
+		</select>
+
+		<!-- 팀프로젝트 제출 학생 조회 -->
+		<select id="teamProject.TEAMPROJECT_SUBMIT_SELECT_L" parameterClass="teamProjectSubmit" resultClass="teamProjectSubmit">
+			EXEC USP_TEAMPROJECT_SUBMIT_SELECT "L", #CourseNo#, #ProjectNo#, NULL
+		</select>
+
+		<!-- 팀프로젝트 제출 과제 상세 조회 -->
+		<select id="teamProject.TEAMPROJECT_SUBMIT_SELECT_S" parameterClass="teamProjectSubmit" resultClass="teamProjectSubmit">
+			EXEC USP_TEAMPROJECT_SUBMIT_SELECT "S", #CourseNo#, #ProjectNo#, #UserNo#
+		</select>
+
+		<!-- 그룹 조회 -->
+		<select id="teamProject.GROUP_TEAM_SELECT_A" parameterClass="Hashtable" resultClass="groupTeam">
+			EXEC USP_GROUP_TEAM_SELECT "A", #GroupNo#, #CourseNo#
+		</select>
+
+		<!-- 팀프로젝트 팀 조회 -->
+		<select id="teamProject.GROUP_TEAM_SELECT_B" parameterClass="Hashtable" resultClass="teamProject">
+			EXEC USP_GROUP_TEAM_SELECT "B", #GroupNo#, #CourseNo#
+		</select>
+
+		<!-- 팀프로젝트 팀원 조회 -->
+		<select id="teamProject.GROUP_TEAM_MEMBER_SELECT_B" parameterClass="Hashtable" resultClass="teamProject">
+			EXEC USP_GROUP_TEAM_MEMBER_SELECT "B", #TeamNo#, #GroupNo#, #CourseNo#
+		</select>
+		
+		<!-- 팀프로젝트 저장 -->
+		<select id="teamProject.TEAMPROJECT_SAVE_C" parameterClass="teamProject" resultClass="int">
+			EXEC USP_TEAMPROJECT_SAVE "C", #ProjectNo#, #CourseNo#, #GroupNo#, #SubmitStartDay#, #SubmitEndDay#, #ProjectTitle#, #ProjectContents#, #LeaderYesNo#, #EstimationOpenYesNo#
+			, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#, #IsOutput#, #SubmitType#
+		</select>
+
+		<!-- 팀프로젝트 수정 -->
+		<update id="teamProject.TEAMPROJECT_SAVE_U" parameterClass="teamProject" resultClass="int">
+			EXEC USP_TEAMPROJECT_SAVE "U", #ProjectNo#, #CourseNo#, #GroupNo#, #SubmitStartDay#, #SubmitEndDay#, #ProjectTitle#, #ProjectContents#, #LeaderYesNo#, #EstimationOpenYesNo#
+			, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#, #IsOutput#, #SubmitType#
+		</update>
+
+		<!-- 팀프로젝트 과제 저장 -->
+		<update id="teamProject.TEAMPROJECT_SUBMIT_SAVE_C" parameterClass="teamProjectSubmit" resultClass="teamProjectSubmit">
+			EXEC USP_TEAMPROJECT_SUBMIT_SAVE "C", #ProjectNo#, #CourseNo#, #TeamNo#, #SubmitUserNo#, #SubmitContents#, #Feedback#, #Score#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 팀프로젝트 과제 수정 -->
+		<update id="teamProject.TEAMPROJECT_SUBMIT_SAVE_U" parameterClass="teamProjectSubmit" resultClass="teamProjectSubmit">
+			EXEC USP_TEAMPROJECT_SUBMIT_SAVE "U", #ProjectNo#, #CourseNo#, #TeamNo#, #SubmitUserNo#, #SubmitContents#, #Feedback#, #Score#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 팀프로젝트 과제 일괄 평가 저장 -->
+		<update id="teamProject.TEAMPROJECT_SUBMIT_SAVE_A" parameterClass="HashTable" resultClass="int">
+			EXEC USP_TEAMPROJECT_SUBMIT_SAVE "A", #ProjectNo#, #CourseNo#, #TeamNo#, #SubmitUserNo#, #SubmitContents#, #Feedback#, #Score#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 팀프로젝트 과제 개별 평가 저장 -->
+		<update id="teamProject.TEAMPROJECT_SUBMIT_SAVE_B" parameterClass="HashTable" resultClass="int">
+			EXEC USP_TEAMPROJECT_SUBMIT_SAVE "B", #ProjectNo#, #CourseNo#, #TeamNo#, #SubmitUserNo#, #SubmitContents#, #Feedback#, #Score#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+		
+		<!-- 팀프로젝트 그룹 저장 -->
+		<select id="teamProject.GROUP_SAVE_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_SAVE "B", #GroupNo#, #CourseNo#, #GroupName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#, #GroupType#
+		</select>
+
+		<!-- 팀프로젝트 팀 저장 -->
+		<select id="teamProject.GROUP_TEAM_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_GROUP_TEAM_SAVE "A", #TeamNo#, #GroupNo#, #CourseNo#, #TeamName#, #DeleteYesNo#, #CreateDateTime#, #CreateUserNo#, #UpdateDateTime#, #UpdateUserNo#
+		</select>
+
+		<!-- 팀프로젝트 멤버 저장 -->
+		<update id="teamProject.GROUP_TEAM_MEMBER_SAVE_B" parameterClass="Hashtable">
+			EXEC USP_GROUP_TEAM_MEMBER_SAVE "B", #TeamMemberNo#, #TeamMemberUserNo#, #TeamNo#, #GroupNo#, #CourseNo#, #TeamLeaderYesNo#
+		</update>
+
+		<!-- 팀프로젝트 삭제 -->
+		<update id="teamProject.TEAMPROJECT_SAVE_D" parameterClass="teamProject" resultClass="int">
+			EXEC USP_TEAMPROJECT_SAVE "D", #ProjectNo#, #CourseNo#, #GroupNo#, #SubmitStartDay#, #SubmitEndDay#, #ProjectTitle#, #ProjectContents#, #LeaderYesNo#, #EstimationOpenYesNo#
+									, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#, #IsOutput#, #SubmitType#
+		</update>
+
+		<!-- 팀프로젝트 평가 공개 여부 수정 -->
+		<update id="teamProject.TEAMPROJECT_SAVE_A" parameterClass="teamProject" resultClass="int">
+			EXEC USP_TEAMPROJECT_SAVE "A", #ProjectNo#, #CourseNo#, #GroupNo#, #SubmitStartDay#, #SubmitEndDay#, #ProjectTitle#, #ProjectContents#, #LeaderYesNo#, #EstimationOpenYesNo#
+									, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#, #IsOutput#, #SubmitType#
+		</update>
+
+		<!-- 관리자 프로그램 과정 조회 -->
+		<select id="teamProject.PROGRAM_SELECT_L" parameterClass="Hashtable" resultClass="teamProject">
+			EXEC USP_PROGRAM_SELECT "L"
+		</select>
+
+		<!-- 관리자 강좌 리스트 조회 -->
+		<select id="teamProject.TEAMPROJECT_SELECT_B" parameterClass="Hashtable" resultClass="teamProject">
+			EXEC USP_TEAMPROJECT_SELECT "B", #CourseNo#, #ProjectNo#, #UserNo#, #TermNo#, #ProgramNo#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<!-- 관리자 강좌 리스트 엑셀다운로드 -->
+		<select id="teamProject.TEAMPROJECT_SELECT_C" parameterClass="Hashtable" resultClass="Hashtable">
+			EXEC USP_TEAMPROJECT_SELECT "C", #CourseNo#, #ProjectNo#, #UserNo#, #TermNo#, #ProgramNo#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<!-- 관리자 팀프로젝트 리스트 엑셀다운로드 -->
+		<select id="teamProject.TEAMPROJECT_SELECT_D" parameterClass="Hashtable" resultClass="Hashtable">
+			EXEC USP_TEAMPROJECT_SELECT "D", #CourseNo#, #ProjectNo#, #UserNo#, #TermNo#, #ProgramNo#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+	
+	</statements>
+</sqlMap>

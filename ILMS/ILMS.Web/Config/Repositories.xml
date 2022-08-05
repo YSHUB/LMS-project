@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<objects xmlns="http://www.springframework.net">
+
+	<!-- 공통 -->
+	<object name="objBaseDao" singleton="true" type="ILMS.Data.Dao.BaseDao, ILMS.Data"></object>
+	
+	<!-- 공통 -->
+	<object name="objCommonDao" singleton="true" type="ILMS.Data.Dao.CommonDao, ILMS.Data"></object>
+	
+	<!-- 시스템 -->
+	<object name="objSystemDao" singleton="true" type="ILMS.Data.Dao.SystemDao, ILMS.Data"></object>
+
+	<!-- 계정 -->
+	<object name="objAccountDao" singleton="true" type="ILMS.Data.Dao.AccountDao, ILMS.Data"></object>
+
+	<!-- 쪽지 -->
+	<object name="objNoteDao" singleton="true" type="ILMS.Data.Dao.NoteDao, ILMS.Data"></object>
+
+	<!-- 게시판 -->
+	<object name="objBoardDao" singleton="true" type="ILMS.Data.Dao.BoardDao, ILMS.Data"></object>
+	
+	<!-- 강좌 -->
+	<object name="objCourseDao" singleton="true" type="ILMS.Data.Dao.CourseDao, ILMS.Data"></object>
+
+	<!-- 토론 -->
+	<object name="objDiscussionDao" singleton="true" type="ILMS.Data.Dao.DiscussionDao, ILMS.Data"></object>
+
+	<!-- 과제 -->
+	<object name="objHomeworkDao" singleton="true" type="ILMS.Data.Dao.HomeworkDao, ILMS.Data"></object>
+
+	<!-- Ocw -->
+	<object name="objOcwDao" singleton="true" type="ILMS.Data.Dao.OcwDao, ILMS.Data"></object>
+
+	<!-- 퀴즈 -->
+	<object name="objExamDao" singleton="true" type="ILMS.Data.Dao.ExamDao, ILMS.Data"></object>
+
+	<!-- 팀프로젝트 -->
+	<object name="objTeamProjectDao" singleton="true" type="ILMS.Data.Dao.TeamProjectDao, ILMS.Data"></object>
+
+	<!-- 팀편성관리 -->
+	<object name="objTeamDao" singleton="true" type="ILMS.Data.Dao.TeamDao, ILMS.Data"></object>
+
+	<!-- 출결관리 -->
+	<object name="objStudyDao" singleton="true" type="ILMS.Data.Dao.StudyDao, ILMS.Data"></object>
+
+	<!-- 강좌정보 -->
+	<object name="objLecInfoDao" singleton="true" type="ILMS.Data.Dao.LecInfoDao, ILMS.Data"></object>
+	
+	<!-- 메세지 -->
+	<object name="objMessageDao" singleton="true" type="ILMS.Data.Dao.MessageDao, ILMS.Data"></object>
+
+</objects>

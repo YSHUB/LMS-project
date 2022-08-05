@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="FacilityCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+		<select id="facility.FACILITY_SELECT_L" parameterClass="facility" resultClass="facility">
+			EXEC USP_FACILITY_SELECT 'L', #FacilityNo#, #FacilityType#, #SearchText#, #FirstIndex#, #LastIndex#, #Category#
+		</select>
+
+		<select id="facility.FACILITY_SELECT_S" parameterClass="facility" resultClass="facility">
+			EXEC USP_FACILITY_SELECT 'S', #FacilityNo#, #FacilityType#, #SearchText#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<select id="facility.FACILITY_SELECT_R" parameterClass="facilityReservation" resultClass="facilityReservation">
+			EXEC USP_FACILITY_SELECT 'R', #FacilityNo#, #FacilityType#, #SearchText#, #FirstIndex#, #LastIndex#, #Category#, #UserNo#, #ReservedDate#
+		</select>
+
+		<select id="facility.FACILITY_SELECT_A" parameterClass="facilityBan" resultClass="facilityBan">
+			EXEC USP_FACILITY_SELECT 'A', #FacilityNo#, #FacilityType#, #SearchText#, #FirstIndex#, #LastIndex#, #Category#, #UserNo#, #ReservedDate#
+		</select>
+
+		<select id="facility.FACILITY_SELECT_B" parameterClass="facilityReservation" resultClass="facilityReservation">
+			EXEC USP_FACILITY_SELECT 'B', #FacilityNo#, #FacilityType#, #SearchText#, #FirstIndex#, #LastIndex#, #Category#, #UserNo#, #ReservedDate#
+		</select>
+
+		<select id="facility.FACILITY_SELECT_C" parameterClass="facilityReservation" resultClass="facilityReservation">
+			EXEC USP_FACILITY_SELECT 'C', #FacilityNo#, #FacilityType#, #SearchText#, #FirstIndex#, #LastIndex#, #Category#, #UserNo#, #ReservedDate#, #SearchStartDay#, #SearchEndDay#
+		</select>
+
+		<select id="facility.FACILITY_SELECT_D" parameterClass="facilityBan" resultClass="facilityBan">
+			EXEC USP_FACILITY_SELECT 'D', #FacilityNo#, #FacilityType#, #SearchText#, #FirstIndex#, #LastIndex#, #Category#, #UserNo#, #ReservedDate#
+		</select>
+
+		<select id="facility.FACILITY_SELECT_E" parameterClass="facilityReservation" resultClass="facilityReservation">
+			EXEC USP_FACILITY_SELECT 'E', #FacilityNo#, #FacilityType#, #SearchText#, #FirstIndex#, #LastIndex#, #Category#, #UserNo#, #ReservedDate#
+		</select>
+
+		<select id="facility.FACILITY_SELECT_F" parameterClass="facilityReservation" resultClass="facilityReservation">
+			EXEC USP_FACILITY_SELECT 'F', #FacilityNo#, #FacilityType#, #SearchText#, #FirstIndex#, #LastIndex#, #Category#, #UserNo#, #ReservedDate#, #SearchStartDay#, #SearchEndDay#, #ReservationNoList#
+		</select>
+
+		<select id="facility.FACILITY_SAVE_C" parameterClass="facility" resultClass="int">
+			EXEC USP_FACILITY_SAVE 'C', #FacilityNo#, #FacilityName#, #FacilityType#, #FacilityText#, #Category#, #MaxUserCount#, #FileGroupNo#, #UserNo#, #IsFree#, #FacilityExpense#
+		</select>
+
+		<update id="facility.FACILITY_SAVE_U" parameterClass="facility">
+			EXEC USP_FACILITY_SAVE 'U', #FacilityNo#, #FacilityName#, #FacilityType#, #FacilityText#, #Category#, #MaxUserCount#, #FileGroupNo#, #UserNo#, #IsFree#, #FacilityExpense#
+		</update>
+
+		<update id="facility.FACILITY_SAVE_D" parameterClass="facility">
+			EXEC USP_FACILITY_SAVE 'D', #FacilityNo#, #FacilityName#, #FacilityType#, #FacilityText#, #Category#, #MaxUserCount#, #FileGroupNo#, #UserNo#, #IsFree#, #FacilityExpense#
+		</update>
+
+		<update id="facility.FACILITY_SAVE_R" parameterClass="facilityReservation">
+			EXEC USP_FACILITY_SAVE 'R', #FacilityNo#, #FacilityName#, #FacilityType#, #FacilityText#, #Category#, #MaxUserCount#, #FileGroupNo#, #UserNo#, #IsFree#, #FacilityExpense#, #ReservedDate#, #ReservedHourList#, #UserCountList#
+		</update>
+
+		<update id="facility.FACILITY_SAVE_A" parameterClass="facilityReservation">
+			EXEC USP_FACILITY_SAVE 'A', #FacilityNo#, #FacilityName#, #FacilityType#, #FacilityText#, #Category#, #MaxUserCount#, #FileGroupNo#, #UserNo#, #IsFree#, #FacilityExpense#, #ReservedDate#, #ReservedHourList#, #UserCountList#, #ReservationNo#
+		</update>
+
+		<update id="facility.FACILITY_SAVE_B" parameterClass="facilityBan">
+			EXEC USP_FACILITY_SAVE 'B', #FacilityNo#, #FacilityName#, #FacilityType#, #FacilityText#, #Category#, #MaxUserCount#, #FileGroupNo#, #UserNo#, #IsFree#, #FacilityExpense#, #ReservedDate#, #ReservedHourList#, #UserCountList#, #ReservationNo#, #BanNo#
+		</update>
+
+		<update id="facility.FACILITY_SAVE_E" parameterClass="facilityBan">
+			EXEC USP_FACILITY_SAVE 'E', #FacilityNo#, #FacilityName#, #FacilityType#, #FacilityText#, #Category#, #MaxUserCount#, #FileGroupNo#, #UserNo#, #IsFree#, #FacilityExpense#, #ReservedDate#, #ReservedHourList#, #UserCountList#, #ReservationNo#, #BanNo#, #BannedUserNo#, #BannedDate#, #BannedReason#
+		</update>
+
+		<update id="facility.FACILITY_SAVE_F" parameterClass="facilityReservation">
+			EXEC USP_FACILITY_SAVE 'F', #FacilityNo#, #FacilityName#, #FacilityType#, #FacilityText#, #Category#, #MaxUserCount#, #FileGroupNo#, #UserNo#, #IsFree#, #FacilityExpense#, #ReservedDate#, #ReservedHourList#, #UserCountList#, #ReservationNo#, NULL, NULL, NULL,NULL, #ReservationNoList#
+		</update>
+
+		<update id="facility.FACILITY_SAVE_G" parameterClass="facilityReservation">
+			EXEC USP_FACILITY_SAVE 'G', #FacilityNo#, #FacilityName#, #FacilityType#, #FacilityText#, #Category#, #MaxUserCount#, #FileGroupNo#, #UserNo#, #IsFree#, #FacilityExpense#, #ReservedDate#, #ReservedHourList#, #UserCountList#, #ReservationNo#, NULL, NULL, NULL,NULL, #ReservationNoList#
+		</update>
+	</statements>
+
+</sqlMap>

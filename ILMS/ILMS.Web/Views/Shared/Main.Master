@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title><%:ConfigurationManager.AppSettings["SystemName"].ToString() %></title>
+	<link rel="shortcut icon" href="/site/resource/www/images/favicon.ico">
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/common/css/owl.carousel.min.css" rel="stylesheet">
+	<link href="/common/fullpage-3.1.0/fullpage.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="CssBlock" runat="server" />
+</head>
+
+<body>
+	<div id="accessibility"> 
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#top-menu">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+			</ul>
+	</div>
+
+	<div id="header">
+		<% Html.RenderPartial("./Header"); %>
+	</div>
+
+	<asp:ContentPlaceHolder ID="ContentBlock" runat="server" />
+       
+    <script src="/common/js/jquery-3.3.1.min.js"></script>
+    <script src="/common/js/popper.js"></script>
+    <script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+	<script src="/common/js/bootbox.js"></script>
+    <script src="/common/js/owl.carousel.min.js"></script>
+    <script src="/site/resource/www/js/script.js"></script>
+
+	<script src="/common/js/util.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			if ('<%=ViewBag.InfoMessage.ToString() %>' != "" && performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+				bootAlert('<%=ViewBag.InfoMessage.ToString() %>');
+			}
+
+			$("#liLecMenu").html("");
+			<%
+				if (!ViewBag.IsAdmin)
+				{
+			%>
+			$("#liAdmMenu").html("");
+			<%
+				}
+			%>
+		});
+	</script>
+
+	<!-- fullpage -->
+	<script type="text/javascript" src="/common/fullpage-3.1.0/fullpage.js"></script>
+
+    <asp:ContentPlaceHolder ID="ScriptBlock" runat="server" />
+</body>
+</html>

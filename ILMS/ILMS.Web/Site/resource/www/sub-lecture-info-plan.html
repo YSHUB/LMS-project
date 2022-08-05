@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+	<div class="container">
+		<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+	</div>
+</div>
+	
+<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">menu A-1</a>
+								<a class="dropdown-item active" href="#">menu A-2</a>
+								<a class="dropdown-item" href="#">menu A-3</a>
+								<a class="dropdown-item" href="#">menu A-4</a>
+							</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+</div>
+	
+<div class="sub-container container">
+	<div class="row">
+		<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>LMS</span></div>
+					<ul class="snb-list">
+						<li class="active"><a href="#">menu A</a>
+							<ul>
+									<li class="active"><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu B</a>
+							<ul>
+									<li><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu C</a></li>
+						<li><a href="#">menu D</a></li>
+					</ul>
+				</div>
+		</div>
+		<div class="col-xl-9">
+			<h2 class="title02">
+        <div class="row no-gutters">
+          <div class="col">
+            수업계획서
+          </div>
+          <div class="col-auto">
+            <a href="/MyPage/LectureRoom" class="btn btn-dark"><i class="bi bi-door-open"></i> 강의실 나가기</a>
+          </div>
+        </div>
+      </h2>
+			
+			<div id="content">
+        <div class="card d-md-block collapse show" id="collapseCourse" style="">
+          <div class="card-body bg-light pb-1">
+            <div class="form-row align-items-end">
+              <div class="form-group col-12 col-md-3 d-none d-md-block">
+                <label for="ddlTermNo" class="form-label sr-only">학기 선택 <strong class="text-danger">*</strong></label>
+                <select id="ddlTermNo" class="form-control" onchange="javascript:fnChangeCourse(this);">
+                  
+                  <option value="35">2029년도 1학기</option>
+                  
+                  <option value="36">2021년도 2학기</option>
+                  
+                  <option value="11">2021년도 1학기</option>
+                  
+                  <option value="9">2020년도 1학기</option>
+                  
+                  <option value="8" selected="">2019년도 2학기</option>
+                  
+                  <option value="7">2019년도 하계학기</option>
+                  
+                  <option value="6">2019년도 1학기</option>
+                  
+                  <option value="5">2018년도 동계학기</option>
+                  
+                  <option value="4">2018년도 2학기</option>
+                  
+                  <option value="3">2018년도 하계학기</option>
+                  
+                  <option value="2">2018년도 1학기</option>
+                  
+                  <option value="1">2017년도 2학기</option>
+                  
+                </select>
+              </div>
+              <div class="form-group col">
+                <label for="ddlCourseNo" class="form-label sr-only">교과목 선택 <strong class="text-danger">*</strong></label>
+                <select class="form-control" id="ddlCourseNo">
+                  
+                  <option value="26981" selected="">[정규과정] 외식사업 사례연구(001) - 외식산업컨설팅학 전공 </option>
+                  
+                  <option value="26971">[정규과정] 외식산업마케팅연구Ⅰ(001) - 호텔·관광·외식경영학과 </option>
+                  
+                  <option value="28303">[정규과정] 외식산업소비자행동론(001) - 외식산업경영학 2학년</option>
+                  
+                  <option value="28304">[정규과정] 외식산업프랜차이즈경영(001) - 외식산업경영학 4학년</option>
+                  
+                  <option value="25596">[정규과정] 전공탐색과생애설계Ⅰ-Ⅱ(027) - 호텔관광외식경영학부 1학년</option>
+                  
+                  <option value="25748">[정규과정] 전공탐색과진로설계Ⅱ-Ⅱ(111) - 외식산업경영학 2학년</option>
+                  
+                  <option value="26072">[정규과정] 지도교수세미나Ⅲ-Ⅱ(111) - 외식산업경영학 3학년</option>
+                  
+                  <option value="26392">[정규과정] 지도교수세미나Ⅳ-Ⅱ(105) - 외식산업경영학 4학년</option>
+                  
+                </select>
+              </div>
+              <div class="form-group col-auto text-right">
+                <button type="button" id="btnMove" class="btn btn-secondary" onclick="javascript:fnChangeLectureRoomWithPage();">
+                  <span class="icon search">이동</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn btn-secondary mt-3" onclick="courselinkdbupdate(26981);">학사정보 동기화</button>
+        </div>
+        <div class="card card-style02">
+          <div class="card-header">
+            <div class="sr-only">
+              <span class="badge badge-1"></span>
+            </div>
+            <a href="#" class="card-title01 text-dark mt-0">외식사업 사례연구</a>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <dl class="row dl-style02">
+                  <dt class="col-auto w-7rem text-dark"><i class="bi bi-dot"></i>주관학과</dt>
+                  <dd class="col">외식산업컨설팅학 전공</dd>
+                </dl>
+              </div>
+              <div class="col-lg-6">
+                <dl class="row dl-style02">
+                  <dt class="col-auto w-7rem text-dark"><i class="bi bi-dot"></i>학점/시간</dt>
+                  <dd class="col">2.00 / 2</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <dl class="row dl-style02">
+                  <dt class="col-auto w-7rem text-dark"><i class="bi bi-dot"></i>대상학년</dt>
+                  <dd class="col">기타</dd>
+                </dl>
+              </div>
+              <div class="col-lg-6">
+                <dl class="row dl-style02">
+                  <dt class="col-auto w-7rem text-dark"><i class="bi bi-dot"></i>개설년도/학기</dt>
+                  <dd class="col">2019년도 2학기</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <dl class="row dl-style02">
+                  <dt class="col-auto w-7rem text-dark"><i class="bi bi-dot"></i>담당교원</dt>
+                  <dd class="col">박기*</dd>
+                </dl>
+              </div>
+              <div class="col-lg-6">
+                <dl class="row dl-style02">
+                  <dt class="col-auto w-7rem text-dark"><i class="bi bi-dot"></i>연락처</dt>
+                  <dd class="col">051-1600-6937</dd>
+                </dl>
+              </div>
+            </div>
+            <dl class="row dl-style02">
+              <dt class="col-auto w-7rem text-dark"><i class="bi bi-dot"></i>이메일</dt>
+              <dd class="col">A202102@ABC.AC.KR</dd>
+            </dl>
+            <!-- 
+            <div class="row">
+              <div class="col-lg-6">
+              </div>
+              <div class="col-lg-6">
+              </div>
+            </div>
+             -->
+            <dl class="row dl-style02">
+              <dt class="col-md-auto w-7rem text-dark"><i class="bi bi-dot"></i>교과목개요</dt>
+              <dd class="col-md pl-3 pl-md-0">외식산업은 타산업과 다른 고유의 특징을 가지고 있는 독자적인 산업이다. <br>따라서 외식산업이 가지는 고유의 특성을 정확하게 이해하지 못하면 그 어떤 전략도 실패할 수 밖에 없다.<br>국내외 외식산업 관련 기업들의 실패 및 성공사례를 분석하여 미래 외식산업 경영의 성공 및 실패를 요소를 도출함으로써 <br>효과적인 외식기업운영에 도움을 주고자 한다.<br></dd>
+            </dl>
+            <dl class="row dl-style02">
+              <dt class="col-md-auto w-7rem text-dark"><i class="bi bi-dot"></i>교과 교육목표</dt>
+              <dd class="col-md pl-3 pl-md-0">1. 외식산업을 거시적으로 접근하여 경제와 산업적 측면에서 분석한다.<br>2. 국내외 업종별 실패 및 성공사례를 학습한다.<br>3. 국내외 외식기업의 성공 및 실패 요인을 도출하여 전략 프레임을 제시한다.</dd>
+            </dl>
+            <dl class="row dl-style02">
+              <dt class="col-auto w-7rem text-dark"><i class="bi bi-dot"></i>강의실(시간)</dt>
+              <dd class="col"> 국제305[화13-14]</dd>
+            </dl>
+            <dl class="row dl-style02">
+              <dt class="col-auto w-7rem text-dark"><i class="bi bi-dot"></i>주교재</dt>
+              <dd class="col">외식산업경영학</dd>
+            </dl>
+            <dl class="row dl-style02">
+              <dt class="col-auto w-13rem text-dark"><i class="bi bi-dot"></i>참고문헌 및 관련 인터넷사이트</dt>
+              <dd class="col"></dd>
+            </dl>
+          </div>
+          <!-- card-body -->
+        </div>
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+	
+<div id="footer"></div>
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+<script>
+	$.ajax({
+		method: 'GET',
+		url: 'header.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#header').append(html);
+	});
+	$.ajax({
+		method: 'GET',
+		url: 'footer.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#footer').append(html);
+	});
+
+	$(document).ready(function() {
+			$(".dropdown-toggle").dropdown();
+	});
+</script>
+</body>
+</html>

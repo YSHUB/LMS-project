@@ -1,0 +1,118 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{5BCB5590-5C46-495D-B9D5-2B0A408660BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OuterDLL", "OuterDLL", "{764D05E7-2C33-4BA4-8B79-1477C80F74C2}"
+	ProjectSection(SolutionItems) = preProject
+		OuterDLL\Common.Logging.dll = OuterDLL\Common.Logging.dll
+		OuterDLL\IBatisNet.Common.dll = OuterDLL\IBatisNet.Common.dll
+		OuterDLL\IBatisNet.Common.xml = OuterDLL\IBatisNet.Common.xml
+		OuterDLL\IBatisNet.DataAccess.dll = OuterDLL\IBatisNet.DataAccess.dll
+		OuterDLL\IBatisNet.DataAccess.xml = OuterDLL\IBatisNet.DataAccess.xml
+		OuterDLL\IBatisNet.DataMapper.dll = OuterDLL\IBatisNet.DataMapper.dll
+		OuterDLL\IBatisNet.DataMapper.xml = OuterDLL\IBatisNet.DataMapper.xml
+		OuterDLL\ICSharpCode.SharpZipLib.dll = OuterDLL\ICSharpCode.SharpZipLib.dll
+		OuterDLL\ILMS.Core.dll = OuterDLL\ILMS.Core.dll
+		OuterDLL\ILMS.Core.pdb = OuterDLL\ILMS.Core.pdb
+		OuterDLL\ILMS.Data.dll = OuterDLL\ILMS.Data.dll
+		OuterDLL\ILMS.Data.pdb = OuterDLL\ILMS.Data.pdb
+		OuterDLL\ILMS.Design.dll = OuterDLL\ILMS.Design.dll
+		OuterDLL\ILMS.Design.pdb = OuterDLL\ILMS.Design.pdb
+		OuterDLL\ILMS.Service.dll = OuterDLL\ILMS.Service.dll
+		OuterDLL\ILMS.Service.pdb = OuterDLL\ILMS.Service.pdb
+		OuterDLL\Spring.Aop.dll = OuterDLL\Spring.Aop.dll
+		OuterDLL\Spring.Aop.xml = OuterDLL\Spring.Aop.xml
+		OuterDLL\Spring.Core.dll = OuterDLL\Spring.Core.dll
+		OuterDLL\Spring.Core.xml = OuterDLL\Spring.Core.xml
+		OuterDLL\Spring.Data.dll = OuterDLL\Spring.Data.dll
+		OuterDLL\Spring.Data.xml = OuterDLL\Spring.Data.xml
+		OuterDLL\Spring.Web.dll = OuterDLL\Spring.Web.dll
+		OuterDLL\Spring.Web.Mvc3.dll = OuterDLL\Spring.Web.Mvc3.dll
+		OuterDLL\Spring.Web.Mvc3.xml = OuterDLL\Spring.Web.Mvc3.xml
+		OuterDLL\Spring.Web.xml = OuterDLL\Spring.Web.xml
+		OuterDLL\System.Web.dll = OuterDLL\System.Web.dll
+		OuterDLL\System.Web.Mvc.dll = OuterDLL\System.Web.Mvc.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ILMS", "ILMS", "{C5987369-814C-492D-9E1C-11724BE029CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILMS.Data", "Common\ILMS.Data\ILMS.Data.csproj", "{BAA43F31-5C27-43BD-82D0-1B050C90A4DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILMS.Core", "Common\ILMS.Core\ILMS.Core.csproj", "{46BDA7D8-3CC6-42EF-B8A6-D6DA0278AE0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILMS.Web", "ILMS\ILMS.Web\ILMS.Web.csproj", "{78FC1D01-A48B-4B2B-90EC-9536DACD0218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILMS.Design", "Common\ILMS.Design\ILMS.Design.csproj", "{8A3503D1-6021-4B0B-BCA3-A4EB41EB6384}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILMS.Service", "Common\ILMS.Service\ILMS.Service.csproj", "{3511A6DF-58C1-48ED-AAEB-A6C436F48C22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAA43F31-5C27-43BD-82D0-1B050C90A4DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA43F31-5C27-43BD-82D0-1B050C90A4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA43F31-5C27-43BD-82D0-1B050C90A4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA43F31-5C27-43BD-82D0-1B050C90A4DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46BDA7D8-3CC6-42EF-B8A6-D6DA0278AE0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46BDA7D8-3CC6-42EF-B8A6-D6DA0278AE0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46BDA7D8-3CC6-42EF-B8A6-D6DA0278AE0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46BDA7D8-3CC6-42EF-B8A6-D6DA0278AE0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78FC1D01-A48B-4B2B-90EC-9536DACD0218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78FC1D01-A48B-4B2B-90EC-9536DACD0218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78FC1D01-A48B-4B2B-90EC-9536DACD0218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78FC1D01-A48B-4B2B-90EC-9536DACD0218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A3503D1-6021-4B0B-BCA3-A4EB41EB6384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A3503D1-6021-4B0B-BCA3-A4EB41EB6384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A3503D1-6021-4B0B-BCA3-A4EB41EB6384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A3503D1-6021-4B0B-BCA3-A4EB41EB6384}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3511A6DF-58C1-48ED-AAEB-A6C436F48C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3511A6DF-58C1-48ED-AAEB-A6C436F48C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3511A6DF-58C1-48ED-AAEB-A6C436F48C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3511A6DF-58C1-48ED-AAEB-A6C436F48C22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BAA43F31-5C27-43BD-82D0-1B050C90A4DB} = {5BCB5590-5C46-495D-B9D5-2B0A408660BB}
+		{46BDA7D8-3CC6-42EF-B8A6-D6DA0278AE0D} = {5BCB5590-5C46-495D-B9D5-2B0A408660BB}
+		{78FC1D01-A48B-4B2B-90EC-9536DACD0218} = {C5987369-814C-492D-9E1C-11724BE029CA}
+		{8A3503D1-6021-4B0B-BCA3-A4EB41EB6384} = {5BCB5590-5C46-495D-B9D5-2B0A408660BB}
+		{3511A6DF-58C1-48ED-AAEB-A6C436F48C22} = {5BCB5590-5C46-495D-B9D5-2B0A408660BB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8D6B727-37DE-4390-A62A-69AC8177B827}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://idino.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Common\\ILMS.Data\\ILMS.Data.csproj
+		SccProjectTopLevelParentUniqueName1 = ILMS.sln
+		SccProjectName1 = Common/ILMS.Data
+		SccLocalPath1 = Common\\ILMS.Data
+		SccProjectUniqueName2 = Common\\ILMS.Core\\ILMS.Core.csproj
+		SccProjectTopLevelParentUniqueName2 = ILMS.sln
+		SccProjectName2 = Common/ILMS.Core
+		SccLocalPath2 = Common\\ILMS.Core
+		SccProjectUniqueName3 = ILMS\\ILMS.Web\\ILMS.Web.csproj
+		SccProjectTopLevelParentUniqueName3 = ILMS.sln
+		SccProjectName3 = ILMS/ILMS.Web
+		SccLocalPath3 = ILMS\\ILMS.Web
+		SccProjectUniqueName4 = Common\\ILMS.Design\\ILMS.Design.csproj
+		SccProjectTopLevelParentUniqueName4 = ILMS.sln
+		SccProjectName4 = Common/ILMS.Design
+		SccLocalPath4 = Common\\ILMS.Design
+		SccProjectUniqueName5 = Common\\ILMS.Service\\ILMS.Service.csproj
+		SccProjectTopLevelParentUniqueName5 = ILMS.sln
+		SccProjectName5 = Common/ILMS.Service
+		SccLocalPath5 = Common\\ILMS.Service
+	EndGlobalSection
+EndGlobal

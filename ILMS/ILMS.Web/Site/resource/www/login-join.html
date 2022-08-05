@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+	<div class="container">
+		<div class="sub-ment">온 &middot; 오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+	</div>
+</div>
+	
+<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">menu A-1</a>
+								<a class="dropdown-item active" href="#">menu A-2</a>
+								<a class="dropdown-item" href="#">menu A-3</a>
+								<a class="dropdown-item" href="#">menu A-4</a>
+							</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+</div>
+	
+<div class="sub-container container">
+	<div class="row">
+		<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>회원가입</span></div>
+					<ul class="snb-list">
+						<li class="active"><a href="#">회원가입</a>
+							<ul class="d-none">
+									<li class="active"><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+		</div>
+		<div class="col-xl-9">
+      <h2 class="title02">일반사용자 회원가입</h2>
+			
+			<div id="content">					
+        <form action="/Account/JoinGeneral" name="mainForm" id="mainForm" method="post">
+          <div id="divJoinForm">
+            <div class="card card-style01">
+              <div class="card-header">
+                <p class="mb-0"><i class="bi bi-info-circle-fill"></i> 모든 항목은 <strong class="text-danger">필수입력</strong> 항목입니다.</p>
+              </div>
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="txtUserId" class="form-label">아이디<strong class="text-danger">*</strong></label>
+                    <input class="form-control" id="txtUserId" name="UserID" type="text" maxlength="16" placeholder="첫 글자 반드시 영문자 입력, 6글자 이상">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="txtEmail" class="form-label">이메일주소<strong class="text-danger">*</strong></label>
+                    <input class="form-control" id="txtEmail" name="Email" type="text" placeholder="ex)abc123@abc.com">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="txtMobile" class="form-label">핸드폰번호<strong class="text-danger">*</strong></label>
+                    <input class="form-control" id="txtMobile" name="Mobile" type="text" maxlength="11" placeholder="[-]없이 숫자만 입력">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="txtHangulname" class="form-label">이름<strong class="text-danger">*</strong></label>
+                    <input class="form-control" id="txtHangulname" name="HangulName" type="text">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="txtResidentno" class="form-label">생년월일<strong class="text-danger">*</strong></label>
+                    <input class="form-control" id="txtResidentno" name="ResidentNo" type="text" placeholder="ex)20001010">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="rdoSexGubunM" class="form-label">성별<strong class="text-danger">*</strong></label>
+                    <div class="form-control-plaintext">
+                      <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="SexGubun" id="rdoSexGubunM" value="M">
+                        <label class="form-check-label" for="rdoSexGubunM">남자</label>
+                      </div>
+                      <div class="form-check form-check-inline ml-md-4">
+                        <input type="radio" class="form-check-input" name="SexGubun" id="rdoSexGubunF" value="F">
+                        <label class="form-check-label" for="rdoSexGubunF">여자</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row align-items-end">
+                  <div class="form-group col-md-4">
+                    <label for="btnZipCode" class="form-label">주소<strong class="text-danger">*</strong></label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="txtHousezipcode" name="HouseZipCode" maxlength="5" placeholder="우편번호" readonly="readonly">
+                      <div class="input-group-append">
+                        <button type="button" id="btnZipCode" class="input-group-text" onclick="openSearchPopup($('#txtHousezipcode'), $('#txtHouseaddress1'), $('#txtHouseaddress2'));"><i class="bi bi-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-8">
+                    <input type="text" class="form-control" id="txtHouseaddress1" name="HouseAddress1" placeholder="주소" readonly="readonly">
+                  </div>
+                  <div class="form-group col-md-12">
+                    <input type="text" class="form-control" id="txtHouseaddress2" name="HouseAddress2" placeholder="상세주소">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="txtPassword" class="form-label">비밀번호<strong class="text-danger">*</strong></label>
+                    <input class="form-control" id="txtPassword" name="Password" maxlength="20" type="password" placeholder="영문자/숫자/특수기호 조합, 8자리 이상">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="txtPasswordCheck" class="form-label">비밀번호 재입력<strong class="text-danger">*</strong></label>
+                    <input class="form-control" id="txtPasswordCheck" type="password" maxlength="20" placeholder="영문자/숫자/특수기호 조합, 8자리 이상">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="rdoGeneral1" class="form-label">구분<strong class="text-danger">*</strong></label>
+                    <div class="form-control-plaintext">
+                      <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="GeneralUserCode" id="rdoGeneral1" value="GUCD001">
+                        <label class="form-check-label" for="rdoGeneral1">재직자</label>
+                      </div>
+                      <div class="form-check form-check-inline ml-md-4">
+                        <input type="radio" class="form-check-input" name="GeneralUserCode" id="rdoGeneral2" value="GUCD002">
+                        <label class="form-check-label" for="rdoGeneral2">퇴직자</label>
+                      </div>
+                      <div class="form-check form-check-inline ml-md-4">
+                        <input type="radio" class="form-check-input" name="GeneralUserCode" id="rdoGeneral3" value="GUCD003">
+                        <label class="form-check-label" for="rdoGeneral3">미취업자</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="" class="form-label">개인정보 활용동의 여부<strong class="text-danger">*</strong></label>
+                    <div class="col-md form-check form-check-inline">
+                      <input type="checkbox" class="form-check-input" id="chkPrivate">
+                      <label class="form-check-label" for="chkPrivate">동의합니다.</label>
+                      <button type="button" class="btn btn-sm btn-outline-primary ml-2 ml-md-4" data-toggle="modal" data-target="#divAgreementModal"><i class="bi bi-clipboard-check-fill"></i> 열람하기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="text-right">
+                    <button class="btn btn-primary" href="#" onclick="javascript:save();">확인</button>
+                    <a class="btn btn-secondary" href="/">취소</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="modal fade" id="divAgreementModal" tabindex="-1" style="display: none;" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">개인정보 활용 동의</h5>
+                  </div>
+                  <div class="modal-body pb-0">
+                    <ol class="list-style01">
+                      <li>
+                        고용안정 선제대응 패키지 지원사업 참여에 있어 개인을 고유하게 구별하기 위해 부여된 식별정보(주민등록번호 등)를 포함한 개인정보를 다음과 같이 전산망 등에 수집 &middot; 관리하고 있습니다.
+                        <div class="alert bg-light mt-2">
+                          <dl class="mb-0">
+                            <dt>개인정보의 수집·이용 목적 : </dt>
+                            <dd>참여자 선정 &middot; 관리, 개인별 참여이력 관리 및 교육지원, 정부재정지원 활동 지원사업 중복참여 여부, 고용보험 이력 조회, 고용안정 선제대응 패키지 지원사업 실적 &middot; 성과 평가 등에 활용</dd>
+                            <dt>수집하는 개인정보 항목 : </dt>
+                            <dd>성명, 성별, 주민등록번호, 연락처(E-mail포함)</dd>
+                            <dt>개인정보의 보유 및 이용기간 : </dt>
+                            <dd>전산망에서 수집 및 계속 관리</dd>
+                            <dt>개인정보의 제공 : </dt>
+                            <dd class="mb-0">타법령 등에 의하여 실시되는 복지 및 일자리 사업의 적절한 대상자 선정과 관리의 목적으로 제공</dd>
+                          </dl>
+                        </dl>
+                      </li>
+                      <li>
+                        고용안정 선제대응 패키지 지원사업에 참여하기 위해서는 개인을 고유하게 구별하기 위해 부여된 식별정보(주민등록번호 등)를 포함한 개인정보가 필요하며, <strong>고용노동부, 부산지방고용노동청(동부지청, 북부지청 포함), 해당 지자체(부산시, 부산 강서구, 부산 사하구, 부산 사상구) 및 서부산권 고용안정 추진단. 수행기관(부산산학융합원)</strong>은 「개인정보보호법」에 따라 참여자로부터 제공받는 개인정보를 보호합니다.
+                      </li>
+                      <li>
+                        개인정보를 처리 목적에 필요한 범위에서 적합하게 처리하고 그 목적 외의 용도로 사용하지 않으며 개인정보를 제공한 참여자는 언제나 자신이 입력한 개인정보의 열람 &middot; 수정을 신청할 수 있습니다.
+                      </li>
+                      <li>
+                        고용안정 선제대응 패키지 지원사업 참여결과로 인한 수혜사항(이력)이 타법령 등에 의하여 실시되는 복지 및 활동 지원 사업의 적절한 대상자 선정과 관리의 목적으로 제공될 수 있음에 동의합니다.
+                      </li>
+                      <li>
+                        본인은 위 1~4의 내용에 따른 고용안정 선제대응 패키지 지원사업 참여 &middot; 운영을 위해 개인식별정보(주민등록번호 등)를 제공할 것을 동의합니다.
+                      </li>
+                    </ol>
+                    <p class="text-center mt-4">
+                        <span>2022 년</span>
+                        <span class="ml-2">3 월</span>
+                        <span class="ml-2">17 일</span>
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                      <div class="text-right">
+                          <div class="tAlignC bot-fix" style="text-align: right;">
+                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#divAgreementModal" aria-label="Close">닫기</button>
+  
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        
+      </div>
+		</div>
+	</div>
+</div>
+	
+	
+<div id="footer"></div>
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+<script>
+	$.ajax({
+		method: 'GET',
+		url: 'header.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#header').append(html);
+	});
+	$.ajax({
+		method: 'GET',
+		url: 'footer.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#footer').append(html);
+	});
+
+	$(document).ready(function() {
+			$(".dropdown-toggle").dropdown();
+	});
+</script>
+
+<!-- find address -->
+<script>
+  $(document).ready(function () {
+    fnHideInfoLayer();
+
+    if ('' != "" && performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+      bootAlert('');
+    }
+
+    $("#liLecMenu").html("");
+    
+    $("#liAdmMenu").html("");
+    
+  });
+</script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+  var ajaxHelper = new AjaxHelper();
+
+function val(id) {
+    if ($("#" + id).length < 1) {
+        return "";
+    }
+    return $.trim($("#" + id).val());
+}
+
+function fnRemoveSpace(id) {
+    if ($("#" + id).length > 0) {
+
+        var temp = $("#" + id).val().trim();
+        temp = temp.replace(/ /gi, '').replace(/	/gi, '');
+        $("#" + id).val(temp);
+    }
+}
+
+function save() {
+    var idReg = /^[a-zA-Z]+[a-zA-Z0-9]/g;
+    var idReg2 = /[ㄱ-ㅎ]/g;
+    var idReg3 = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+    var pwReg = /[a-zA-Z]/g;
+    var pwReg2 = /[0-9]/g;
+    var pwReg3 = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+    var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    var regTel = /^(01[016789]{1}|070|02|0[3-9]{1}[0-9]{1})[0-9]{3,4}[0-9]{4}$/;
+
+    fnRemoveSpace("txtUserId");
+    fnRemoveSpace("txtpassword");
+    fnRemoveSpace("txtpassword2");
+
+    v = val("txtUserId");
+
+    if (v == "") { $("#txtUserId").focus(); alert("아이디를 입력해주세요."); }
+    else if (v.length < 6 || !idReg.test(v) || idReg2.test(v) || idReg3.test(v)) { $("#txtUserId").focus(); alert("영문자로 시작하는 [영문/숫자 6자리이상]의 아이디를 입력해주세요."); }
+    else if (val("txtHangulname").length < 2) { $("#txtHangulname").focus(); alert("2자리 이상의 이름을 입력해주세요."); }
+    else if (val("txtPassword").length < 8) { $("#txtPassword").focus(); alert("8자리 이상의 비밀번호를 입력해주세요."); }
+    else if (val("txtPassword").length < 8 || !pwReg.test(val("txtPassword")) || !pwReg2.test(val("txtPassword")) || !pwReg3.test(val("txtPassword"))) { $("#txtPassword").focus(); alert("8자리 이상의 [영문/숫자/특수문자]로 조합된 비밀번호를 입력해주세요."); }
+    else if (val("txtPassword") != val("txtPasswordCheck")) { $("#txtPasswordCheck").focus(); alert("비밀번호가 일치하지 않습니다."); }
+    else if ($("#txtResidentno").val().length != 8 || !isValidDate($("#txtResidentno").val())) { $("#residentno").focus(); alert("생년월일을 확인해주세요."); }
+    else if ($(':radio[name="SexGubun"]:checked').length < 1) { $(':radio[name="SexGubun"]').focus(); alert("성별을 선택해주세요."); }
+    else if (!regExp.test(val("txtEmail"))) { $("#txtEmail").focus(); alert("올바른 이메일주소를 입력해주세요."); }
+    else if ((val("txtMobile").length > 0 && (val("txtMobile").search(/[0-9]/g) < 0) || !regTel.test(val("txtMobile")))) { $("#txtMobile").focus(); alert("핸드폰번호를 올바르게 입력해주세요."); }
+    else if (val("txtHousezipcode").length < 1) { $("#btnZipCode").focus(); alert("주소를 입력해 주세요."); }
+    else if (val("txtHouseaddress1").length < 1) { $("#btnZipCode").focus(); alert("주소를 입력해 주세요."); }
+    else if (val("txtHouseaddress2").length < 1) { $("#txtHouseaddress2").focus(); alert("상세주소를 입력해 주세요."); }
+    else if ($(':radio[name="GeneralUserCode"]:checked').length < 1) { $(':radio[name="GeneralUserCode"]').focus(); alert("구분을 선택해주세요."); }
+    else if ($("#chkPrivate:checked").length < 1) { $("#chkPrivate").focus(); alert("개인정보활용동의에 동의해주세요."); }
+    else {
+
+        ajaxHelper.CallAjaxPost("/Account/CheckIdEmail", { id: val("txtUserId"), email: val("txtEmail") }, "fnCbcheckIdEmail");
+
+    }
+
+}
+
+function isValidDate(dateStr) {
+    var year = Number(dateStr.substr(0, 4));
+    var month = Number(dateStr.substr(4, 2));
+    var day = Number(dateStr.substr(6, 2));
+    var today = new Date(); // 날자 변수 선언
+    var yearNow = today.getFullYear();
+    var adultYear = yearNow - 20;
+
+    if (month < 1 || month > 12) {
+        alert("달은 1월부터 12월까지 입력 가능합니다.");
+        return false;
+    }
+    if (day < 1 || day > 31) {
+        alert("일은 1일부터 31일까지 입력가능합니다.");
+        return false;
+    }
+    if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) {
+        alert(month + "월은 31일이 존재하지 않습니다.");
+        return false;
+    }
+    if (month == 2) {
+        var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+        if (day > 29 || (day == 29 && !isleap)) {
+            alert(year + "년 2월은  " + day + "일이 없습니다.");
+            return false;
+        }
+    }
+    return true;
+}
+
+function fnCbcheckIdEmail() {
+    var data = ajaxHelper.CallAjaxResult();
+    console.log(data);
+
+    if (data["id"].Data > 0 && data["email"].Data > 0) {
+        $("#txtUserId").focus();
+        alert("이미 사용중인 아이디와 이메일입니다.");
+    }
+    else if (data["id"].Data > 0) {
+        $("#txtUserId").focus();
+        alert("이미 사용중인 아이디입니다. 다른 아이디를 입력해주세요.");
+    }
+    else if (data["email"].Data > 0) {
+        $("#txtEmail").focus();
+        alert("이미 사용중인 이메일입니다.");
+    }
+    else {
+        if (confirm("회원가입하시겠습니까?")) {
+            /*capf("/account/joinokgeneral", "mainForm", "fnCallBackJoin");*/
+            var form = $("#mainForm").serialize();
+            ajaxHelper.CallAjaxPost("/Account/JoinGeneralJoin", form, fnCallBackJoin);
+
+
+        }
+    }
+}
+
+function fnCallBackJoin() {
+    bootAlert('가입되었습니다.', function () {
+        location.href = "/Account";
+    });
+
+}
+
+function openSearchPopup(우편번호, 주소, 상세주소) {
+
+    new daum.Postcode({
+        oncomplete: function (data) {
+
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var fullAddr = ''; // 최종 주소 변수
+            var extraAddr = ''; // 조합형 주소 변수
+
+            // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                fullAddr = data.roadAddress;
+
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                fullAddr = data.jibunAddress;
+            }
+
+            // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+            if (data.userSelectedType === 'R') {
+                //법정동명이 있을 경우 추가한다.
+                if (data.bname !== '') {
+                    extraAddr += data.bname;
+                }
+                // 건물명이 있을 경우 추가한다.
+                if (data.buildingName !== '') {
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
+            }
+
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            우편번호.val(data.zonecode); //5자리 새우편번호 사용
+            주소.val(fullAddr);
+
+            //// 커서를 상세주소 필드로 이동한다.
+            상세주소.focus();
+        }
+    }).open();
+    return false;
+}
+
+</script>
+</body>
+</html>

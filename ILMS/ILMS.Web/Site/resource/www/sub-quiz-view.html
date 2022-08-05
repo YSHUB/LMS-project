@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalabel=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link rel="shortcut icon" href="/common/images/favicon.ico">
+	<link rel="stylesheet" href="/common/css/icommon.css">
+	<link rel="stylesheet" href="/common/jquery.ui/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+	<div class="container">
+		<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+	</div>
+</div>
+	
+<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">menu A-1</a>
+								<a class="dropdown-item active" href="#">menu A-2</a>
+								<a class="dropdown-item" href="#">menu A-3</a>
+								<a class="dropdown-item" href="#">menu A-4</a>
+							</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+</div>
+	
+<div class="sub-container container">
+	<div class="row">
+		<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>LMS</span></div>
+					<ul class="snb-list">
+						<li class="active"><a href="#">menu A</a>
+							<ul>
+									<li class="active"><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu B</a>
+							<ul>
+									<li><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu C</a></li>
+						<li><a href="#">menu D</a></li>
+					</ul>
+				</div>
+		</div>
+		<div class="col-xl-9">
+			<h2 class="title02">퀴즈</h2>
+
+			<div id="content">
+        <div class="row no-gutters align-items-center mt-4">
+					<div class="col">
+						<span class="text-muted font-size-14 d-block d-md-inline"><strong class="w-6rem d-sm-inline-block d-md-inline"><i class="bi bi-dot"></i>최근 접속일</strong> : 2021-08-20</span>
+						<span class="text-muted font-size-14 "><strong class="w-6rem d-sm-inline-block d-md-inline"><i class="bi bi-dot"></i>접속 IP </strong> :  192.168.20.119</span>
+					</div>
+					<div class="col-auto text-right">
+						<a href="#" class="btn btn-dark">강의실 나가기</a>
+					</div>
+				</div>
+
+        <div class="row align-items-center mt-4">
+					<div class="col">
+						<h3 class="title03">강좌 바로가기</h3>
+					</div>
+					<div class="col-auto text-right d-md-none">
+						<button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+							<span class="sr-only">더 보기</span>
+						</button>
+					</div>
+				</div>
+				<div class="card collapse d-md-block" id="collapseExample1">
+					<div class="card-body pb-1">
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								<label for="" class="form-label">학기 선택 <strong class="text-danger">*</strong></label>
+								<select id="tno" class="form-control">
+										<option value="10">2022년도 1학기</option>
+								</select>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="" class="form-label">교과목 선택 <strong class="text-danger">*</strong></label>
+								<select class="form-control" id="roommastercourseselect" onchange="javascript:goRoomWithPage(this);">
+									<option value="">강의실을 선택해주세요.</option>
+									<option value="">지도교수세미나Ⅲ-Ⅰ(103)</option>
+									<option value="">하이테크지식경영(001)</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<form action="/LMS/Exam/StaffQuizComplete" id="mainForm" method="post">
+					<h3 class="title03 mt-4">퀴즈 기본정보</h3>
+					<div class="card card-style01">
+						<div class="card-header">
+							<div class="row no-gutters align-items-center">
+								<div class="col">
+									<div class="row">
+										<div class="col-md">
+											<div class="text-primary font-size-14">
+												<strong class="bar-vertical">2주차</strong>
+												<strong>1차시</strong>
+											</div>
+										</div>
+										<div class="col-md-auto text-right">												
+											<dl class="row dl-style01">
+												<dt class="col-auto">응시 인원</dt>
+												<dd class="col-auto">28명</dd>
+												<dt class="col-auto">평가 인원</dt>
+												<dd class="col-auto">3/5</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							
+								<div class="col-auto text-right d-md-none">
+									<button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+										<span class="sr-only">더 보기</span>
+								</button></div>
+							</div>
+
+							<a href="#" class="card-title01 text-dark">고객 여정 관리의 미래, Adobe Journey Optimizer를 소개합니다!</a>
+						</div>
+
+						<div class="card-body collapse d-md-block" id="collapseExample2">
+							<ul class="list-inline list-inline-style01">
+								<li class="list-inline-item text-danger">성적반영</li>
+								<li class="list-inline-item">공개 </li>
+								<li class="list-inline-item">기간방식</li>
+								<li class="list-inline-item">문제섞기</li>
+								<li class="list-inline-item">60분</li>
+							</ul>
+
+							<div class="row mt-2 align-items-end">
+								<div class="col-md">
+									<dl class="row dl-style02">
+										<dt class="col-auto w-7rem"><i class="bi bi-dot"></i> 응시제한유형</dt>
+										<dd class="col">해당 없음</dd>
+									</dl>
+									<dl class="row dl-style02">
+										<dt class="col-auto w-7rem"><i class="bi bi-dot"></i> 응시기간</dt>
+										<dd class="col">2021-08-09 ~ 2021-08-13</dd>
+									</dl>
+								</div>
+
+								<div class="col-md-auto mt-2 mt-md-0 text-right">
+									<a class="btn btn-lg btn-point w-100 w-md-auto" href="/LMS/Exam/StaffEstimationList/29565?ExamNo=543">평가하기</a>
+								</div>
+							</div>
+						</div>
+
+					</div><!-- card -->
+
+					<div class="row align-items-center mt-2">
+						<div class="col-md">
+							<p class="mb-0 font-size-14 text-danger font-weight-bold"><i class="bi bi-info-circle-fill"></i> 퀴즈 미리보기는 출제한 퀴즈 확인용이며, 저장 후에는 수정이 불가능합니다.</p>
+						</div>
+						<div class="col-md-auto mt-2 mt-md-0 text-right">
+							<div class="dropdown d-inline-block">
+								<button type="button" class="btn btn-point dropdown-toggle" id="quiz-setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									퀴즈설정
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="quiz-setting">
+									<li><a class="dropdown-item" role="button" href="#" data-toggle="modal" data-target="#chgEndDTMsg">종료일시 변경</a></li>
+									<li><a class="dropdown-item" role="button" href="#" data-toggle="modal" data-target="#completeMsg">출제완료</a></li>
+									<li><a class="dropdown-item" role="button" href="#" data-toggle="modal" data-target="#completeMsg2">출제완료2</a></li>
+									<li><a class="dropdown-item" role="button" href="#" data-toggle="modal" data-target="#incompleteMsg">출제완료 해제</a></li>
+									<li><button type="button" class="dropdown-item" onclick="javascript:void(0);">수정</button></li>
+									<li><button type="button" class="dropdown-item" onclick="javascript:void(0);">삭제</button></li>
+								</ul>
+							</div>
+							<button type="button" class="btn btn-secondary" onclick="window.open('sub-quiz-pop-preview.html', 'offpop', 'width=1200, height=648, scrollbars=yes');">미리보기</button>
+						</div>
+					</div>					
+					
+					<h3 class="title03 mt-4">주차별 문항수/배점</h3>
+					<div class="card">
+						<div class="card-body py-0">
+							<div class="table-responsive">
+								<table class="table table-hover" cellspacing="0" summary="">
+									<colgroup>
+										<col width="10%">
+										<col width="30%">
+										<col width="30%">
+										<col width="30%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">주차</th>
+											<th scope="col">문항수</th>
+											<th scope="col" class="text-nowrap">문항당 배점</th>
+											<th scope="col" class="text-nowrap">배점소계</th>
+										</tr>
+									</thead>
+										
+									<tbody>
+										<tr>
+											<th scope="row">4주차</th>
+											<td>10</td>
+											<td>10</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<th scope="row">4주차</th>
+											<td>10</td>
+											<td>5</td>
+											<td>50</td>
+										</tr>
+										<tr>
+											<th scope="row">4주차</th>
+											<td>5</td>
+											<td>20</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<th scope="row">4주차</th>
+											<td>5</td>
+											<td>10</td>
+											<td>50</td>
+										</tr>
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div><!-- card -->
+
+					<div class="row align-items-center mt-4">
+						<div class="col-md">
+							<h3 class="title03">문제 리스트 <small>(등록된 문제: 총 <strong class="text-danger">6</strong>건)</small></h3>
+						</div>
+						<div class="col-md-auto mt-2 mt-md-0 text-right">
+							<button type="button" class="btn btn-primary">평가</button>
+							<button type="button" class="btn btn-secondary">목록</button>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-body py-0">
+							<div class="table-responsive-lg">
+								<table class="table table-hover" cellspacing="0" summary="">
+									<colgroup>
+										<col width="10%">
+										<col width="15%">
+										<col width="">
+										<col width="10%">
+										<col width="10%" style=" display: none;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">번호</th>
+											<th scope="col">문제유형</th>
+											<th scope="col">문제</th>
+											<th scope="col">주차</th>
+											<th scope="col" style="text-align: left; display: none;">배점</th>
+										</tr>
+									</thead>
+										
+									<tbody>
+										<tr>
+											<th scope="row">1</th>
+											<td>단일선택</td>
+											<td class="text-left"><p class="mb-0">웨비나의 설명으로 잘못된 것을 고르시오&nbsp;</p></td>
+											<td>6주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0"></td>
+										</tr>
+										
+										<tr>
+											<th scope="row">2</th>
+											<td>단일선택</td>
+											<td class="text-left"><p class="mb-0">웨비나의 주목도를 높이기 위한 5단계 전략에 해당되지 않는 것을 고르시오&nbsp;</p></td>
+											<td>6주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0"></td>
+										</tr>
+										
+										<tr>
+											<th scope="row">3</th>
+											<td>단일선택</td>
+											<td class="text-left"><p class="mb-0">훌륭한 이북을 만드는 10단계 청사진에 해당되지 않은 것은 무엇인가?&nbsp;</p></td>
+											<td>6주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0"></td>
+										</tr>
+										
+										<tr>
+											<th scope="row">4</th>
+											<td>단일선택</td>
+											<td class="text-left"><p class="mb-0">다음 중 슈퍼스타덤으로 가는 B2B 링크드인 3단계에 해당되지 않는 것은?&nbsp;</p></td>
+											<td>12주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0"></td>
+										</tr>
+										
+										<tr>
+											<th scope="row">5</th>
+											<td>단일선택</td>
+											<td class="text-left">전공 관련 분야의 학습 경험이 있습니까?</td>
+											<td>1주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0"></td>
+										</tr>
+										
+										<tr>
+											<th scope="row">6</th>
+											<td>서술형</td>
+											<td class="text-left">지난 2주간 퀴즈에서 작성하신 내용을 토대로 고민해봅시다. 여러분이 불편을 겪는 문제를 4주차에서 학습하신 6대 디지털 트랜스폼 기술 (IoT, LBS, IoB, SNS, 빅데이터, 클라우드)을 적용하여 해결할 수 있는 아이디어를 간단하게 만들어보세요. 반드시 한 가지 기술을 사용해야 하며, 두 가지 이상의 기술을 함께 써도 좋습니다. 앞서 제시한 불편함을 주는 문제를 바꾸지 마시고, 이 문제가 해결되면 사회에 미칠 긍정적인 영향을 감안해서 작성해보세요. 공백 포함 100자 이상 작성하세요.  </td>
+											<td>1주차</td>
+											<td style="display: none;">
+												<input type="text" class="form-control" name="questionScores" style="width: 20px;" value="0"></td>
+										</tr>
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div><!-- card -->
+					
+					<div class="mt-4 text-right">
+						<button type="button" class="btn btn-primary">평가</button>
+						<button type="button" class="btn btn-secondary">목록</button>
+					</div>
+					
+
+				</form><!-- form -->
+
+				<div class="modal fade layerbox" role="dialog" aria-labelledby="completeMsgLabel" style="display: none;" id="completeMsg">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">출제완료 확인</h4>
+							</div>
+							<div class="modal-body">
+								<p>출제완료를 하시면 더 이상 문제를 수정하실 수 없으며, 학생들이 시험에 응시할 수 있도록 공개로 설정됩니다. </p>
+								<p>지금 출제완료를 하시겠습니까?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" id="confirmYes">확인</button>
+								<button type="button" class="btn btn-secondary confirmNo" data-dismiss="modal">취소</button>
+							</div>
+						</div>
+					</div>
+				</div><!-- modal -->
+
+				<div class="modal fade layerbox" role="dialog" aria-labelledby="completeMsg2Label" style="display: none;" id="completeMsg2">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">확인</h4>
+							</div>
+							<div class="modal-body">
+								<p>출제 완료 상태에서 수정시 미완료 상태로 변경되오니, 수정 완료 후 출제 완료를 다시 진행 해주십시오.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" id="confirmYes">확인</button>
+								<button type="button" class="btn btn-secondary confirmNo" data-dismiss="modal">취소</button>
+							</div>
+						</div>
+					</div>
+				</div><!-- modal -->
+
+				<div class="modal fade layerbox" role="dialog" aria-labelledby="incompleteMsgLabel" style="display: none;" id="incompleteMsg">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">확인</h4>
+							</div>
+							<div class="modal-body">
+								<p>출제완료 해제를 하시면 미완료 상태로 변경되오니, 수정 완료 후 출제 완료를 다시 진행 해주십시오.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" id="confirmYes">확인</button>
+								<button type="button" class="btn btn-secondary confirmNo" data-dismiss="modal">취소</button>
+							</div>
+						</div>
+					</div>
+				</div><!-- modal -->
+				
+				<div class="modal fade layerbox" role="dialog" aria-labelledby="chgEndDTMsgLabel" style="display: none;" id="chgEndDTMsg">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">종료일시 변경</h4>
+							</div>
+							<div class="modal-body">
+								<p class="font-size-14 font-weight-bold text-danger"><i class="bi bi-info-circle-fill"></i> 응시기간의 종료일시만 변경가능합니다.</span>
+
+								<div class="row align-items-end">
+									<div class="col-md-4">
+										<div class="form-group">
+											<label class="form-label">응시 시작일</label>
+											<input class="form-control-plaintext text-secondary" readonly type="text" value="2020-09-30 12:00:00">
+										</div>
+									</div>
+									
+									<div class="col-md-8">
+										<div class="form-row align-items-end">
+											<div class="form-group col-md-5">
+												<label for="datepicker" class="form-label">응시종료일시 <strong class="text-danger">*</strong></label>
+												<div class="input-group">
+													<input class="form-control" name="datepicker" id="datepicker" type="text">
+													<div class="input-group-append">
+														<span class="input-group-text">
+															<i class="bi bi-calendar4-event"></i>
+														</span>
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-md">
+												<label for="Exam_EndHour" class="sr-only">종료시간 <strong class="text-danger">*</strong></label>
+												<div class="input-group">
+													<select name="Exam.EndHour" id="Exam_EndHour" class="form-control">
+														<option value="00" selected="'selected'">00</option>
+														<option value="01">01</option>
+														<option value="02">02</option>
+														<option value="03">03</option>
+														<option value="04">04</option>
+														<option value="05">05</option>
+														<option value="06">06</option>
+														<option value="07">07</option>
+														<option value="08">08</option>
+														<option value="09">09</option>
+														<option value="10">10</option>
+													</select>
+													<div class="input-group-append">
+														<span class="input-group-text"> 시</span>
+													</div>
+												</div>
+											</div>
+											<div class="form-group col-md">
+												<label for="Exam_EndMinute" class="sr-only">분 <strong class="text-danger">*</strong></label>
+												<div class="input-group">
+													<select name="Exam.EndMinute" id="Exam_EndMinute" class="form-control">
+														<option value="00" selected="'selected'">00</option>
+														<option value="10">10</option>
+														<option value="20">20</option>
+														<option value="30">30</option>
+														<option value="40">40</option>
+														<option value="50">50</option>
+													</select>
+													<div class="input-group-append">
+														<span class="input-group-text"> 분</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- row -->
+
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" id="chgEndDTMsg_confirmYes">확인</button>
+								<button type="button" class="btn btn-secondary confirmNo" data-dismiss="modal">취소</button>
+							</div>
+						</div>
+					</div>
+				</div><!-- modal -->
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+<div id="footer"></div>
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+
+<!-- datepicker -->
+<script src="/common/jquery.ui/jquery-1.12.4.js"></script>
+<script src="/common/jquery.ui/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$.ajax({
+		method: 'GET',
+		url: 'header.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#header').append(html);
+	});
+	$.ajax({
+		method: 'GET',
+		url: 'footer.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#footer').append(html);
+	});
+
+	$(document).ready(function() {
+		//날짜 선택 - input을 datepicker로 선언
+		$("#datepicker").datepicker({
+			dateFormat: 'yy-mm-dd' //달력 날짜 형태
+			,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+			,showMonthAfterYear:true // 월- 년 순서가아닌 년도 - 월 순서
+			,changeYear: true //option값 년 선택 가능
+			,changeMonth: true //option값  월 선택 가능
+			,yearSuffix: "년" //달력의 년도 부분 뒤 텍스트
+			,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+			,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip
+			,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 텍스트
+			,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 Tooltip
+		});   
+		
+	});
+</script>
+</body>
+</html>

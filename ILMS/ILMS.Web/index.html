@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<title>LMS</title>
+		<script>
+			var d = new Date();
+			var curr_date = d.getFullYear() + "" + ("0" + (1 + d.getMonth())).slice(-2) + "" + ("0" + d.getDate()).slice(-2);
+			var curr_time = ("0" + d.getHours()).slice(-2) + "" + ("0" + d.getMinutes()).slice(-2);
+			var curr = curr_date + "" + curr_time;
+	
+			var close_start = "202011121330";
+			var close_end = "202011121430";
+
+			if (curr >= close_start && curr <= close_end) {
+				location.href = "/ready/close.html";
+			} else {
+				location.href = "/Home/Index";
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

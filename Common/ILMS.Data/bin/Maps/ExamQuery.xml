@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="examCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+		<!-- 퀴즈 또는 시험 리스트 조회 -->
+		<select id="exam.EXAM_SELECT_L" parameterClass="exam" resultClass="exam">
+			EXEC USP_EXAM_SELECT #RowState#, #CourseNo#, #ExamNo#, #TermNo#, #ExamItem#, #InningNo#, #Gubun#, #UserNo#, #ProgramNo#, #SearchText#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<!-- 퀴즈 또는 시험 상세 조회 -->
+		<select id="exam.EXAM_SELECT_S" parameterClass="exam" resultClass="exam">
+			EXEC USP_EXAM_SELECT #RowState#, #CourseNo#, #ExamNo#, #TermNo#, #ExamItem#, #InningNo#, #Gubun#
+		</select>
+
+		<!-- 퀴즈 가져오기 조회 -->
+		<select id="exam.EXAM_SELECT_A" parameterClass="exam" resultClass="exam">
+			EXEC USP_EXAM_SELECT #RowState#, #CourseNo#, #ExamNo#, #TermNo#, #ExamItem#, #InningNo#, #Gubun#
+		</select>
+
+		<!-- 퀴즈 또는 시험 시작/종료방식 조회 -->
+		<select id="exam.EXAM_SELECT_B" parameterClass="exam" resultClass="exam">
+			EXEC USP_EXAM_SELECT #RowState#, #CourseNo#, #ExamNo#, #TermNo#, #ExamItem#, #InningNo#, #Gubun#
+		</select>
+
+		<!-- 주차별 문항수 및 배점 설정 조회 -->
+		<select id="exam.EXAM_RANDOM_SELECT_L" parameterClass="examRandom" resultClass="examRandom">
+			EXEC USP_EXAM_RANDOM_SELECT #RowState#, #ExamNo#, #Gubun#
+		</select>
+
+		<!-- 주차별 문항수 및 배점 설정 상세조회 -->
+		<select id="exam.EXAM_RANDOM_SELECT_S" parameterClass="examRandom" resultClass="examRandom">
+			EXEC USP_EXAM_RANDOM_SELECT #RowState#, #ExamNo#, #Gubun#
+		</select>
+
+		<!-- 문제설정 조회 -->
+		<select id="exam.EXAM_QUESTION_SELECT_L" parameterClass="examQuestion" resultClass="examQuestion">
+			EXEC USP_EXAM_QUESTION_SELECT #RowState#, #ExamNo#, #Gubun#
+		</select>
+
+		<!-- 퀴즈 또는 시험 응시대상자 조회 -->
+		<select id="exam.EXAMINEE_SELECT_L" parameterClass="examinee" resultClass="examinee">
+			EXEC USP_EXAMINEE_SELECT #RowState#, #CourseNo#, #ExamNo#, #Gubun#, #IsResultYesNo#, #IsEstiamtionYesNo#, #UserNo#, #ExamineeNo#, #ExamStatus#, #SearchGubun#, #SearchText#, #SortGubun#
+		</select>
+
+		<!-- 추가시험 응시대상자 조회(UserNo) -->
+		<select id="exam.EXAMINEE_SELECT_A" parameterClass="examinee" resultClass="user">
+			EXEC USP_EXAMINEE_SELECT #RowState#, #CourseNo#, #ExamNo#, #Gubun#, #IsResultYesNo#, #IsEstiamtionYesNo#, #UserNo#
+		</select>
+
+		<!-- 퀴즈 또는 시험 신규 -->
+		<select id="exam.EXAM_SAVE_C" parameterClass="exam" resultClass="exam">
+			EXEC USP_EXAM_SAVE #RowState#, #CourseNo#, #ExamNo#, #Gubun#, #ExamTitle#, #ExamContents#, #LimitTime#, #StartDayFormat#, #EndDayFormat#, #EstimationGubun#, #SubmitType#, #DeleteYesNo#, #CreateUserNo#
+							 , #UpdateUserNo#, #Week#, #TakeType#, #CompleteYesNo#, #ExamItem#, #ReExamYesNo#, #UseMixYesNo#, #AddExamYesNo#, #IsGrading#, #OpenYesNo#, #SEType#, #InningNo#, #RestrictionType#
+							 , #ExampleMixYesNo#, #SE0State#
+		</select>
+
+		<!-- 종료일시 변경 -->
+		<update id="exam.EXAM_SAVE_B" parameterClass="exam" resultClass="int">
+			EXEC USP_EXAM_SAVE #RowState#, #CourseNo#, #ExamNo#, #Gubun#, #ExamTitle#, #ExamContents#, #LimitTime#, #StartDayFormat#, #EndDayFormat#, #EstimationGubun#, #SubmitType#, #DeleteYesNo#, #CreateUserNo#
+							 , #UpdateUserNo#, #Week#, #TakeType#, #CompleteYesNo#, #ExamItem#, #ReExamYesNo#, #UseMixYesNo#, #AddExamYesNo#, #IsGrading#, #OpenYesNo#, #SEType#, #InningNo#, #RestrictionType#
+							 , #ExampleMixYesNo#, #SE0State#
+		</update>
+
+		<!-- 퀴즈 가져오기 저장 -->
+		<update id="exam.EXAM_SAVE_A" parameterClass="exam" resultClass="int">
+			EXEC USP_EXAM_SAVE #RowState#, #CourseNo#, #ExamNo#, #Gubun#, #ExamTitle#, #ExamContents#, #LimitTime#, #StartDayFormat#, #EndDayFormat#, #EstimationGubun#, #SubmitType#, #DeleteYesNo#, #CreateUserNo#
+							 , #UpdateUserNo#, #Week#, #TakeType#, #CompleteYesNo#, #ExamItem#, #ReExamYesNo#, #UseMixYesNo#, #AddExamYesNo#, #IsGrading#, #OpenYesNo#, #SEType#, #InningNo#, #RestrictionType#
+							 , #ExampleMixYesNo#, #SE0State#
+		</update>
+
+		<!-- 퀴즈 또는 시험 답안지 삭제 -->
+		<update id="exam.EXAMINEE_REPLY_SAVE_D" parameterClass="examineeReply" resultClass="int">
+			EXEC USP_EXAMINEE_REPLY_SAVE #RowState#, #ReplyNo#, #ExamineeNo#, #QuestionNo#, #ExamNo#
+		</update>
+
+		<!-- 퀴즈 또는 시험 응시자 삭제 -->
+		<update id="exam.EXAMINEE_SAVE_D" parameterClass="examinee" resultClass="int">
+			EXEC USP_EXAMINEE_SAVE #RowState#, #CourseNo#, #ExamNo#, #ExamineeUserNo#, #Week#, #InningNo#, #SubmitType#, #ExamItem#, #CreateUserNo#, #ExamineeNo#
+		</update>
+
+		<!-- 퀴즈 또는 시험 문제 저장 -->
+		<update id="exam.EXAM_QUESTION_SAVE_C" parameterClass="examQuestion" resultClass="int">
+			EXEC USP_EXAM_QUESTION_SAVE #RowState#, #ExamNo#, #QuestionBankNo#, #EachScore#, #CreateUserNo#
+		</update>
+
+		<!-- 퀴즈 또는 시험 문제 삭제 -->
+		<update id="exam.EXAM_QUESTION_SAVE_D" parameterClass="examQuestion" resultClass="int">
+			EXEC USP_EXAM_QUESTION_SAVE #RowState#, #ExamNo#
+		</update>
+
+		<!-- 퀴즈 또는 시험 주차별 문항수 및 배점 저장 -->
+		<update id="exam.EXAM_RANDOM_SAVE_C" parameterClass="examRandom" resultClass="int">
+			EXEC USP_EXAM_RANDOM_SAVE #RowState#, #ExamNo#, #Difficulty#, #RowNum#, #EachPoint#, #EachPointDec#
+		</update>
+
+		<!-- 퀴즈 또는 시험 출제완료 처리시 주차별 문항수 및 배점 미생성시 생성하는 용도 -->
+		<update id="exam.EXAM_RANDOM_SAVE_A" parameterClass="examRandom" resultClass="int">
+			EXEC USP_EXAM_RANDOM_SAVE #RowState#, #ExamNo#, #Difficulty#, #RowNum#, #EachPoint#, #EachPointDec#, #Gubun#
+		</update>
+
+		<!-- 퀴즈 또는 시험 주차별 문항수 및 배점 삭제 -->
+		<update id="exam.EXAM_RANDOM_SAVE_D" parameterClass="examRandom" resultClass="int">
+			EXEC USP_EXAM_RANDOM_SAVE #RowState#, #ExamNo#
+		</update>
+
+		<!-- 퀴즈 또는 시험 수정 -->
+		<update id="exam.EXAM_SAVE_U" parameterClass="exam" resultClass="int">
+			EXEC USP_EXAM_SAVE #RowState#, #CourseNo#, #ExamNo#, #Gubun#, #ExamTitle#, #ExamContents#, #LimitTime#, #StartDayFormat#, #EndDayFormat#, #EstimationGubun#, #SubmitType#, #DeleteYesNo#, #CreateUserNo#
+							 , #UpdateUserNo#, #Week#, #TakeType#, #CompleteYesNo#, #ExamItem#, #ReExamYesNo#, #UseMixYesNo#, #AddExamYesNo#, #IsGrading#, #OpenYesNo#, #SEType#, #InningNo#, #RestrictionType#
+							 , #ExampleMixYesNo#, #SE0State#
+		</update>
+
+		<!-- 퀴즈 또는 시험 응시자 생성 -->
+		<select id="exam.EXAMINEE_SAVE_C" parameterClass="examinee" resultClass="examinee">
+			EXEC USP_EXAMINEE_SAVE #RowState#, #CourseNo#, #ExamNo#, #ExamineeUserNo#, #Week#, #InningNo#, #SubmitType#, #ExamItem#, #CreateUserNo#
+		</select>
+
+		<!-- 퀴즈 또는 시험 답안지 생성 -->
+		<update id="exam.EXAMINEE_REPLY_SAVE_C" parameterClass="examineeReply" resultClass="int">
+			EXEC USP_EXAMINEE_REPLY_SAVE #RowState#, #ReplyNo#, #ExamineeNo#, #QuestionNo#, #ExamNo#
+		</update>
+
+		<!-- 퀴즈 또는 시험 삭제 -->
+		<update id="exam.EXAM_SAVE_D" parameterClass="exam" resultClass="int">
+			EXEC USP_EXAM_SAVE #RowState#, #CourseNo#, #ExamNo#, #Gubun#
+		</update>
+
+		<!-- 출제상태 변경 -->
+		<update id="exam.EXAM_SAVE_E" parameterClass="exam" resultClass="int">
+			EXEC USP_EXAM_SAVE #RowState#, #CourseNo#, #ExamNo#, #Gubun#, #ExamTitle#, #ExamContents#, #LimitTime#, #StartDayFormat#, #EndDayFormat#, #EstimationGubun#, #SubmitType#, #DeleteYesNo#, #CreateUserNo#
+							 , #UpdateUserNo#, #Week#, #TakeType#, #CompleteYesNo#, #ExamItem#, #ReExamYesNo#, #UseMixYesNo#, #AddExamYesNo#, #IsGrading#, #OpenYesNo#, #SEType#, #InningNo#, #RestrictionType#
+							 , #ExampleMixYesNo#, #SE0State#
+		</update>
+
+		<!-- 퀴즈 또는 시험 답안 저장 -->
+		<update id="exam.EXAMINEE_REPLY_SAVE_U" parameterClass="examineeReply" resultClass="int">
+			EXEC USP_EXAMINEE_REPLY_SAVE #RowState#, #ReplyNo#, #ExamineeNo#, #QuestionNo#, #ExamNo#, #ExamineeAnswer#
+		</update>
+
+		<!-- 문제설정 응시자별 조회 -->
+		<select id="exam.EXAM_QUESTION_SELECT_S" parameterClass="examQuestion" resultClass="examQuestion">
+			EXEC USP_EXAM_QUESTION_SELECT #RowState#, #ExamNo#, #Gubun#, #ExamineeNo#
+		</select>
+
+		<!-- 퀴즈 또는 시험 응시자 답안 포함된 보기 조회 -->
+		<select id="exam.EXAMINEE_REPLY_SELECT_L" parameterClass="examineeReply" resultClass="examineeReply">
+			EXEC USP_EXAMINEE_REPLY_SELECT #RowState#, #ExamNo#, #QuestionBankNo#, #ExamineeNo#
+		</select>
+
+		<!-- 퀴즈 또는 시험 응시자 IP, 응시일시, 남은시간, 최종제출 저장 -->
+		<update id="exam.EXAMINEE_SAVE_U" parameterClass="examinee" resultClass="int">
+			EXEC USP_EXAMINEE_SAVE #RowState#, #CourseNo#, #ExamNo#, #ExamineeUserNo#, #Week#, #InningNo#, #SubmitType#, #ExamItem#, #CreateUserNo#, #ExamineeNo#, #ExamUserIpAddr#, #RemainTime#, #RemainSecond#, #IsResultYesNo#
+		</update>
+
+		<!-- 시작/종료상태 변경 -->
+		<update id="exam.EXAM_SAVE_F" parameterClass="exam" resultClass="int">
+			EXEC USP_EXAM_SAVE #RowState#, #CourseNo#, #ExamNo#, #Gubun#, #ExamTitle#, #ExamContents#, #LimitTime#, #StartDayFormat#, #EndDayFormat#, #EstimationGubun#, #SubmitType#, #DeleteYesNo#, #CreateUserNo#
+							 , #UpdateUserNo#, #Week#, #TakeType#, #CompleteYesNo#, #ExamItem#, #ReExamYesNo#, #UseMixYesNo#, #AddExamYesNo#, #IsGrading#, #OpenYesNo#, #SEType#, #InningNo#, #RestrictionType#
+							 , #ExampleMixYesNo#, #SE0State#
+		</update>
+
+		<!-- 공개/비공개상태 변경 -->
+		<update id="exam.EXAM_SAVE_G" parameterClass="exam" resultClass="int">
+			EXEC USP_EXAM_SAVE #RowState#, #CourseNo#, #ExamNo#, #Gubun#, #ExamTitle#, #ExamContents#, #LimitTime#, #StartDayFormat#, #EndDayFormat#, #EstimationGubun#, #SubmitType#, #DeleteYesNo#, #CreateUserNo#
+							 , #UpdateUserNo#, #Week#, #TakeType#, #CompleteYesNo#, #ExamItem#, #ReExamYesNo#, #UseMixYesNo#, #AddExamYesNo#, #IsGrading#, #OpenYesNo#, #SEType#, #InningNo#, #RestrictionType#
+							 , #ExampleMixYesNo#, #SE0State#
+		</update>
+
+		<!-- 자동채점 -->
+		<update id="exam.EXAMINEE_SAVE_A" parameterClass="examinee" resultClass="int">
+			EXEC USP_EXAMINEE_SAVE #RowState#, #CourseNo#, #ExamNo#
+		</update>
+
+		<!-- 마감처리 -->
+		<update id="exam.EXAMINEE_SAVE_B" parameterClass="examinee" resultClass="int">
+			EXEC USP_EXAMINEE_SAVE #RowState#, #CourseNo#, #ExamNo#, #ExamineeUserNo#, #Week#, #InningNo#, #SubmitType#, #ExamItem#, #CreateUserNo#, #ExamineeNo#, #ExamUserIpAddr#, #RemainTime#, #RemainSecond#
+								 , #IsResultYesNo#, #UpdateUserNo#, #RetestGubun#
+		</update>
+
+		<!-- 퀴즈 또는 시험 응시대상자 엑셀다운로드 -->
+		<select id="exam.EXAMINEE_SELECT_C" parameterClass="examinee" resultClass="examinee">
+			EXEC USP_EXAMINEE_SELECT #RowState#, #CourseNo#, #ExamNo#, #Gubun#, #IsResultYesNo#, #IsEstiamtionYesNo#, #UserNo#, #ExamineeNo#, #ExamStatus#, #SearchGubun#, #SearchText#, #SortGubun#
+		</select>
+
+		<!-- 오프등록 / 오프등록해제 -->
+		<update id="exam.EXAMINEE_SAVE_E" parameterClass="examinee" resultClass="int">
+			EXEC USP_EXAMINEE_SAVE #RowState#, #CourseNo#, #ExamNo#, #ExamineeUserNo#, #Week#, #InningNo#, #SubmitType#, #ExamItem#, #CreateUserNo#, #ExamineeNo#, #ExamUserIpAddr#, #RemainTime#, #RemainSecond#
+								 , #IsResultYesNo#, #UpdateUserNo#, #RetestGubun#, #ExamTotalScore#, #OFFMEMO#, #OFFFile#, #OFFYesNo#
+		</update>
+
+		<!-- 퀴즈 또는 시험 응시자 객관식, 주관식 점수 조회 -->
+		<select id="exam.EXAMINEE_REPLY_SELECT_S" parameterClass="examineeReply" resultClass="examineeReply">
+			EXEC USP_EXAMINEE_REPLY_SELECT #RowState#, #ExamNo#, #QuestionBankNo#, #ExamineeNo#, #Gubun#
+		</select>
+
+		<!-- 평가 저장 -->
+		<update id="exam.EXAMINEE_SAVE_F" parameterClass="examinee" resultClass="int">
+			EXEC USP_EXAMINEE_SAVE #RowState#, #CourseNo#, #ExamNo#, #ExamineeUserNo#, #Week#, #InningNo#, #SubmitType#, #ExamItem#, #CreateUserNo#, #ExamineeNo#, #ExamUserIpAddr#, #RemainTime#, #RemainSecond#
+								 , #IsResultYesNo#, #UpdateUserNo#, #RetestGubun#, #ExamTotalScore#, #OFFMEMO#, #OFFFile#, #OFFYesNo#, #Feedback#, #FeedbackUserNo#, #IsEstiamtionYesNo#
+		</update>
+
+		<!-- 평가 상세점수 저장 -->
+		<update id="exam.EXAMINEE_REPLY_SAVE_A" parameterClass="examineeReply" resultClass="int">
+			EXEC USP_EXAMINEE_REPLY_SAVE #RowState#, #ReplyNo#, #ExamineeNo#, #QuestionNo#, #ExamNo#, #ExamineeAnswer#, #Score#, #ScoreDec#
+		</update>
+
+		<!-- 문제설정 조회 -->
+		<select id="exam.EXAM_QUESTION_SELECT_A" parameterClass="examQuestion" resultClass="examQuestion">
+			EXEC USP_EXAM_QUESTION_SELECT #RowState#, #ExamNo#, #Gubun#
+		</select>
+
+		<!-- 퀴즈 또는 시험 응시자 조회 -->
+		<select id="exam.EXAM_SELECT_C" parameterClass="exam" resultClass="exam">
+			EXEC USP_EXAM_SELECT #RowState#, #CourseNo#, #ExamNo#, #TermNo#, #ExamItem#, #InningNo#, #Gubun#, #UserNo#
+		</select>
+
+		<!-- 추가시험 응시대상자 정보 조회 -->
+		<select id="exam.EXAMINEE_SELECT_B" parameterClass="examinee" resultClass="examinee">
+			EXEC USP_EXAMINEE_SELECT #RowState#, #CourseNo#, #ExamNo#
+		</select>
+
+		<!-- 시험 추가응시자 삭제 -->
+		<update id="exam.EXAMINEE_SAVE_H" parameterClass="examinee" resultClass="int">
+			EXEC USP_EXAMINEE_SAVE #RowState#, #CourseNo#, #ExamNo#
+		</update>
+
+		<!-- 시험 추가응시자 저장 -->
+		<update id="exam.EXAMINEE_SAVE_I" parameterClass="examinee" resultClass="int">
+			EXEC USP_EXAMINEE_SAVE #RowState#, #CourseNo#, #ExamNo#, #ExamineeUserNo#, #Week#, #InningNo#, #SubmitType#, #ExamItem#, #CreateUserNo#, #ExamineeNo#, #ExamUserIpAddr#, #RemainTime#, #RemainSecond#
+								 , #IsResultYesNo#, #UpdateUserNo#, #RetestGubun#, #ExamTotalScore#, #OFFMEMO#, #OFFFile#, #OFFYesNo#, #Feedback#, #FeedbackUserNo#, #IsEstiamtionYesNo#
+		</update>
+
+		<!-- 퀴즈 또는 시험 관리자 조회 -->
+		<select id="exam.EXAM_SELECT_D" parameterClass="exam" resultClass="exam">
+			EXEC USP_EXAM_SELECT #RowState#, #CourseNo#, #ExamNo#, #TermNo#, #ExamItem#, #InningNo#, #Gubun#, #UserNo#, #ProgramNo#, #SearchText#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<!-- 퀴즈 또는 시험 관리자 엑셀다운로드 -->
+		<select id="exam.EXAM_SELECT_E" parameterClass="exam" resultClass="exam">
+			EXEC USP_EXAM_SELECT #RowState#, #CourseNo#, #ExamNo#, #TermNo#, #ExamItem#, #InningNo#, #Gubun#, #UserNo#, #ProgramNo#, #SearchText#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<!-- 과제시험 응시자 생성 -->
+		<update id="exam.EXAMINEE_SAVE_G" parameterClass="examinee">
+			EXEC USP_EXAMINEE_SAVE #RowState#, #CourseNo#, #ExamNo#, #ExamineeUserNo#, #Week#, #InningNo#, #SubmitType#, #ExamItem#, #CreateUserNo#
+		</update>
+		
+	</statements>
+</sqlMap>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+</head>
+<body class="popup">
+<div class="bg-primary p-3">
+  <h1 class="title01 mb-0">퀴즈 - 문제 선택</h1>
+</div>
+
+<form action="/LMS/Exam/SubmitExam" method="post" id="mainForm">
+  <div class="row no-gutters">
+    <div class="col-xl-8 p-4 position-relative">
+      <h2 class="title03">학생 정보</h2>
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-inline-style03">
+            <li class="list-inline-item">
+              <strong class="pr-2">학번</strong>
+              <span>20181221</span>
+            </li>
+            <li class="list-inline-item bar-vertical"></li>
+            <li class="list-inline-item">
+              <strong class="pr-2">이름</strong>
+              <span>홍길*</span>
+            </li>
+            <li class="list-inline-item bar-vertical"></li>
+            <li class="list-inline-item">
+              <strong class="pr-2">학년</strong>
+              <span>2학년</span>
+            </li>
+            <li class="list-inline-item bar-vertical"></li>
+            <li class="list-inline-item">
+              <strong class="pr-2">소속</strong>
+              <span>e비즈니스학</span>
+            </li>
+          </ul>
+        </div>
+      </div><!-- card -->
+
+      <h2 class="title03 mt-4">퀴즈 정보</h2>
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-inline-style03">
+            <li class="list-inline-item text-center">
+              <strong class="d-block">남은시간</strong>
+              <span class="text-primary font-size-20"><i class="bi bi-clock-history mx-2"></i> <strong>15분 10초</strong></span>
+            </li>
+            <li class="list-inline-item bar-vertical height2"></li>
+            <li class="list-inline-item text-center">
+              <strong class="d-block">현재문항</strong>
+              <span class="text-point font-size-20"><i class="bi bi-list-check mx-2"></i> <strong>2</strong>/20</span>
+            </li>
+          </ul>
+        </div>
+      </div><!-- card -->
+      <p class="font-size-15 text-danger font-weight-bold mb-0"><i class="bi bi-info-circle-fill"></i> 남은 시간이 정확히 표시되는지 확인하고 문제를 풀어주십시오.</p>
+  
+      <!-- <div class="card mt-4">  --> 
+      <div class="card card-style01 mt-4">
+        <div class="card-header">
+          <p class="card-title02"><strong class="badge badge-primary mr-2">문제1</strong>웨비나의 설명으로 잘못된 것을 고르시오</p>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="form-group col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" onclick="setAnswer(this)">
+                <label class="form-check-label" for="exampleRadios1">
+                  60분에서 120분 가량 진행된다
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" onclick="setAnswer(this)">
+                <label class="form-check-label" for="exampleRadios2">
+                  로그인 후 발표자 목소리와 발표자료 슬라이드를 보는 온라인 프리젠테이션이다
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" onclick="setAnswer(this)">
+                <label class="form-check-label" for="exampleRadios3">
+                  웨비나 진행은 기업 내부 전문가가 진행한다
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4" onclick="setAnswer(this)">
+                <label class="form-check-label" for="exampleRadios4">
+                  웨비나는 웹에서 진행하는 세미나를 의미한다
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-style01 mt-4">
+        <div class="card-header">
+          <p class="card-title02"><strong class="badge badge-primary mr-2">문제2</strong>다음중 코로나와 관련된 이미지가 아닌것을 고르시오.</p>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6 col-md-3 mt-2 mt-md-0">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="option1" onclick="setAnswer(this)">
+                <label class="form-check-label" for="exampleRadios5">
+                  <img src="./images/q-sample01.jpg" class="img-fluid w-100" alt="방호복을 입은 2명의 남녀가 왼팔을 들고 있는 사진">
+                </label>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 mt-2 mt-md-0">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios6" value="option2" onclick="setAnswer(this)">
+                <label class="form-check-label" for="exampleRadios6">
+                  <img src="./images/q-sample02.jpg" class="img-fluid w-100" alt="방호복을 입은 캐릭터 사진">
+                </label>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 mt-2 mt-md-0">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios7" value="option3" onclick="setAnswer(this)">
+                <label class="form-check-label" for="exampleRadios7">
+                  <img src="./images/q-sample03.jpg" class="img-fluid w-100" alt="파란 장갑을 끼고 백신을 잡고 있는 손가락 사진">
+                </label>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 mt-2 mt-md-0">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios8" value="option4" onclick="setAnswer(this)">
+                <label class="form-check-label" for="exampleRadios8">
+                  <img src="./images/q-sample04.jpg" class="img-fluid w-100" alt="과일이 바구니에 담긴 사진">
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- card -->
+
+      <div class="text-left mt-4">
+        <button type="button" class="btn btn-secondary" onclick="javascript:void(0);">이전</button>
+        <button type="button" class="btn btn-secondary" onclick="javascript:void(0);" data-toggle="modal" data-target="#layer_next">다음</button>
+      </div>
+  
+      <!-- </div> --><!-- card -->
+    </div>
+    <div class="col-xl-4 bg-point-light p-4 position-relative">
+      <h3 class="title03">답변현황 <small class="total">(미답변: 총 <strong class="text-danger">1</strong>건)</small></h3>
+
+      <div class="card">
+
+        <div class="card-body">
+          <div class="overflow-auto bg-white overflow-xs overflow-sm overflow-md overflow-xl">
+            <div class="table-responsive">
+              <table class="table table-hover sticky-header" cellspacing="0" summary="">
+                <colgroup>
+                  <col style="width: 20%">
+                  <col style="width: 40%">
+                  <col style="width: 40%">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">문제유형</th>
+                    <th scope="col">답안체크</th>
+                  </tr>
+                </thead>
+                  
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>단일선택</td>
+                    <td class="text-primary"><i class="bi bi-check-circle-fill"><span class="sr-only">선택</span></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>단일선택</td>
+                    <td class="text-primary"><i class="bi bi-check-circle-fill"><span class="sr-only">선택</span></i></td>
+                  </tr>
+                  <tr class="bg-danger-light">
+                    <th scope="row">3</th>
+                    <td>단일선택</td>
+                    <td class="text-primary"><i class="bi bi-circle"><span class="sr-only">선택안함</span></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>단일선택</td>
+                    <td class="text-primary"><i class="bi bi-check-circle-fill"><span class="sr-only">선택</span></i></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>단일선택</td>
+                    <td class="text-primary"><i class="bi bi-check-circle-fill"><span class="sr-only">선택</span></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>단일선택</td>
+                    <td class="text-primary"><i class="bi bi-check-circle-fill"><span class="sr-only">선택</span></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>단일선택</td>
+                    <td class="text-primary"><i class="bi bi-check-circle-fill"><span class="sr-only">선택</span></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>단일선택</td>
+                    <td class="text-primary"><i class="bi bi-check-circle-fill"><span class="sr-only">선택</span></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>단일선택</td>
+                    <td class="text-primary"><i class="bi bi-check-circle-fill"><span class="sr-only">선택</span></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>단일선택</td>
+                    <td class="text-primary"><i class="bi bi-check-circle-fill"><span class="sr-only">선택</span></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- card -->
+  
+      <div class="text-right mt-4">
+        <button type="button" class="btn btn-secondary" onclick="javascript:void(0);">임시저장</button>
+        <button type="button" class="btn btn-primary" onclick="javascript:void(0);" data-toggle="modal" data-target="#layer_Last">최종저장(응시완료)</button>
+      </div>
+    </div>
+  </div>
+
+</form><!-- form -->
+
+<div id="layer_next" style="display: none;" class="modal fade" role="dialog" aria-labelledby="layer_nextLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">확인</h5>
+      </div>
+      <div class="modal-body text-left">
+        <p>답을 입력하지않으셨습니다. 계속 진행 하시겠습니까?</p>
+      </div>
+      <div class="modal-footer">
+        <input type="button" class="btn btn-primary" onclick="nextQuestionMove()" value="확인">
+        <input type="button" class="btn btn-secondary" id="btn_Clsenext" value="취소">
+      </div>
+    </div>
+  </div>
+</div><!-- modal -->
+
+<div id="layer_Last" style="display: none;" class="modal fade" role="dialog" aria-labelledby="layer_LastLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">확인</h5>
+      </div>
+      <div class="modal-body text-left">
+        <p>시험 내용을 전송합니다.</p>
+      </div>
+      <div class="modal-footer">
+        <input type="button" class="btn btn-primary" onclick="btn_Last()" value="확인">
+        <input type="button" class="btn btn-secondary" id="btn_ClseLast" value="취소">
+      </div>
+    </div>
+  </div>
+</div><!-- modal -->
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+<script>
+	$(document).ready(function() {
+    $(".dropdown-toggle").dropdown();
+	});
+</script>
+</body>
+</html>

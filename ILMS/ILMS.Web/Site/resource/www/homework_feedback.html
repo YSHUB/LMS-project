@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+	<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+		<div class="container">
+			<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+		</div>
+	</div>
+
+	<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu A-1</a>
+							<a class="dropdown-item active" href="#">menu A-2</a>
+							<a class="dropdown-item" href="#">menu A-3</a>
+							<a class="dropdown-item" href="#">menu A-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<div class="sub-container container">
+		<div class="row">
+			<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>LMS</span></div>
+					<ul class="snb-list">
+						<li class="active">
+							<a href="#">menu A</a>
+							<ul>
+								<li class="active"><a href="#">menu A-1</a></li>
+								<li><a href="#">menu A-2</a></li>
+								<li><a href="#">menu A-3</a></li>
+								<li><a href="#">menu A-4</a></li>
+								<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">menu B</a>
+							<ul>
+								<li><a href="#">menu A-1</a></li>
+								<li><a href="#">menu A-2</a></li>
+								<li><a href="#">menu A-3</a></li>
+								<li><a href="#">menu A-4</a></li>
+								<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu C</a></li>
+						<li><a href="#">menu D</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xl-9">
+				<h2 class="title02">과제</h2>
+
+				<div id="content">
+					<div class="row align-items-center mt-4">
+						<div class="col">
+							<h3 class="title03">강좌 바로가기</h3>
+						</div>
+						<div class="col-auto text-right d-md-none">
+							<button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+								<span class="sr-only">더 보기</span>
+							</button>
+						</div>
+					</div>
+					<div class="card collapse d-md-block" id="collapseExample1">
+						<div class="card-body pb-1">
+							<div class="form-row">
+								<div class="form-group col-md-4">
+									<label for="" class="form-label">학기 선택 <strong class="text-danger">*</strong></label>
+									<select id="tno" class="form-control">
+										<option value="10">2022년도 1학기</option>
+									</select>
+								</div>
+								<div class="form-group col-md-8">
+									<label for="" class="form-label">교과목 선택 <strong class="text-danger">*</strong></label>
+									<select class="form-control" id="roommastercourseselect" onchange="javascript:goRoomWithPage(this);">
+										<option value="">강의실을 선택해주세요.</option>
+										<option value="">지도교수세미나Ⅲ-Ⅰ(103)</option>
+										<option value="">하이테크지식경영(001)</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h3 class="title04">과제 정보</h3>
+					<div class="card card-style01">
+						<div class="card-header">
+							<div class="row no-gutters align-items-center">
+								<div class="col">
+									<div class="row">
+										<div class="col-md">
+											<div class="text-primary font-size-14">
+												<strong class="text-danger bar-vertical">16주 5차시</strong>
+												<strong class="text-success bar-vertical">온라인</strong>
+												<strong class="text-danger">공개</strong>
+											</div>
+										</div>
+										<div class="col-md-auto text-right">
+											<dl class="row dl-style01">
+												<dt class="col-auto">제출인원</dt>
+												<dd class="col-auto">2명</dd>
+												<dt class="col-auto">평가인원</dt>
+												<dd class="col-auto">52명/52명</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+								<div class="col-auto text-right d-md-none">
+									<button class="btn btn-sm btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+										<span class="sr-only">더 보기</span>
+									</button>
+								</div>
+							</div>
+							<a href="homework_detail.html" class="card-title01 text-dark">과제제목은 유동적으로 입력됩니다.   </a>
+						</div>
+						<div class="card-body collapse d-md-block" id="collapseExample2">
+							<div class="row mt-2 align-items-end">
+								<div class="col-md">
+									<dl class="row dl-style02">
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 과제유형</dt>
+										<dd class="col-8 col-md">개인과제</dd>
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 평가공개여부</dt>
+										<dd class="col-8 col-md">비공개 <input type="button" class="btn btn-sm btn-outline-primary" value="공개로 변경" /></dd>
+									</dl>
+									<dl class="row dl-style02">
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 제출기간</dt>
+										<dd class="col-8 col-md">2021-09-01 00:00 ~ 2021-10-15 23:59</dd>
+									</dl>
+									<dl class="row dl-style02">
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 추가제출기간</dt>
+										<dd class="col-8 col-md">2021-09-01 00:00 ~ 2021-10-15 23:59</dd>
+									</dl>
+									<dl class="row dl-style02">
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 내용</dt>
+										<dd class="col">
+											신청까지 단 1분이면 돼요.
+											기본적인 정보만 입력해주세요.
+											세부등급을 몰라도 OK! 엔카가 찾아드립니다.
+											최고가를 위해 48시간 경쟁해요.
+											신청 후 48시간 내에 전국의 제휴 딜러들이
+											차량을 매입하기 위해 치열하게 경쟁합니다.
+											실시간 최고가 판매!
+											언제든 고객이 최고가 딜러를 선택하시면 직접 찾아갑니다.
+											몇개의 서류만 작성하면 끝! 내 차 팔기, 참 쉽죠?
+										</dd>
+									</dl>
+									<dl class="row dl-style02">
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 만점기준</dt>
+										<dd class="col-8 col-md">2점</dd>
+										<dt class="col-4 col-md-auto w-7rem"><i class="bi bi-dot"></i> 평균점수</dt>
+										<dd class="col-8 col-md">0.38점</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--학생 리스트-->
+					<div class="row">
+						<div class="col-12 mt-2">
+							<h3 class="title04">제출자 정보</h3>
+							<div class="card">
+								<div class="card-body">
+									<ul class="list-inline-style03">
+										<li class="list-inline-item">
+											<strong class="pr-2">학번</strong>
+											<span>20181221</span>
+										</li>
+										<li class="list-inline-item bar-vertical"></li>
+										<li class="list-inline-item">
+											<strong class="pr-2">이름</strong>
+											<span>홍길*</span>
+										</li>
+										<li class="list-inline-item bar-vertical"></li>
+										<li class="list-inline-item">
+											<strong class="pr-2">학년</strong>
+											<span>2학년</span>
+										</li>
+										<li class="list-inline-item bar-vertical"></li>
+										<li class="list-inline-item">
+											<strong class="pr-2">소속</strong>
+											<span>e비즈니스학</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<h3 class="title04">제출과제 정보</h3>
+							<div class="card card-style01">
+								<div class="card-header">
+									<div class="row align-items-center">
+										<div class="col-12 col-lg">
+											<p class="card-title02">
+
+											</p>
+										</div>
+										<div class="col-auto text-right">
+											<dl class="row dl-style01">
+												<dt class="col-auto text-dark">첨부파일</dt>
+												<dd class="col-auto mb-0">없음</dd>
+												<dt class="col-auto text-dark">제출일시</dt>
+												<dd class="col-auto mb-0">2021-10-15 23:59</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+								<div class="card-body">
+									<p>
+										제출 시 입력한 내용이 표시됩니다. <br />제출내용입니다.
+									</p>
+									<div class="row align-items-center">
+										<div class="col-md">
+											<dl class="row dl-style01">
+												<dt class="col-auto text-dark">제출파일</dt>
+												<dd class="col-auto mb-0"><a href="#">제출파일.gif</a></dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+								<div class="card-footer">
+									<div class="row">
+										<div class="col-12">
+											<div class="form-row">
+												<div class="form-group col-8 col-md-3">
+													<label for="Exam_Week" class="form-label">평가점수 <strong class="text-danger">*</strong></label>
+													<div class="input-group">
+														<input type="text" class="form-control text-right" />
+														<div class="input-group-append">
+															<div class="input-group-text">점/2점</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group col-12">
+													<label for="Exam_Week" class="form-label">코멘트 <strong class="text-danger">*</strong></label>
+													<div class="input-group">
+														<textarea class="form-control" rows="5"></textarea>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="dropdown d-inline-block">
+								<button type="button" class="btn btn-secondary dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									저장옵션 선택
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdown1">
+									<li><button class="dropdown-item" type="button" onclick="javascript:LayerPopup('LayerMail');">저장하기</button></li>
+									<li><button class="dropdown-item" type="button" onclick="javascript:LayerPopup('LayerMessage');">저장하고 이전 학생</button></li>
+									<li><button class="dropdown-item" type="button" onclick="javascript:LayerPopup('LayerSMS');">저장하고 다음 학생</button></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="text-right">
+								<a href="homework.html" class="btn btn-primary">목록</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+
+	<script src="/common/js/jquery-3.3.1.min.js"></script>
+	<script src="/common/js/popper.js"></script>
+	<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+	<script src="/site/resource/www/js/script.js"></script>
+	<script>
+		$.ajax({
+			method: 'GET',
+			url: 'header.html',
+			async: false,
+			dataType: 'html'
+		}).done(function (html) {
+			$('#header').append(html);
+		});
+		$.ajax({
+			method: 'GET',
+			url: 'footer.html',
+			async: false,
+			dataType: 'html'
+		}).done(function (html) {
+			$('#footer').append(html);
+		});
+
+		$(document).ready(function () {
+			$(".dropdown-toggle").dropdown();
+		});
+	</script>
+</body>
+</html>

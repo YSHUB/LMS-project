@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<title>LMS학습관리시스템</title>
+	<link href="/common/css/icommon.css" rel="stylesheet">
+	<link href="/site/resource/www/css/style.css" rel="stylesheet">
+	<link href="/site/resource/www/css/contents.css" rel="stylesheet">
+
+</head>
+<body>
+	<div id="accessibility">
+		<h1 class="sr-only">Skip Menu</h1>
+		<ul>
+			<li><a href="#lnb">주메뉴 바로가기</a></li>
+			<li><a href="#content">본문 바로가기</a></li>
+		</ul>
+	</div>
+	<!-- header -->
+	<div id="header"></div>
+	<!-- //header -->
+
+<div class="sub-top" style="background-image: url('/site/resource/www/images/sub-top-visual01.jpg')">
+	<div class="container">
+		<div class="sub-ment">온&middot;오프라인 수업의 상호작용 학습 및<br> 강력한 학습분석을 통합지원합니다!</div>
+	</div>
+</div>
+	
+<div class="page-navi">
+		<div class="container">
+			<nav class="navbar flex-row-reverse">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link home" href="#"><i class="material-icons notranslate">home</i><span class="sr-only">메인</span></a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu A</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">menu A-1</a>
+								<a class="dropdown-item active" href="#">menu A-2</a>
+								<a class="dropdown-item" href="#">menu A-3</a>
+								<a class="dropdown-item" href="#">menu A-4</a>
+							</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu B</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu B-1</a>
+							<a class="dropdown-item" href="#">menu B-2</a>
+							<a class="dropdown-item" href="#">menu B-3</a>
+							<a class="dropdown-item" href="#">menu B-4</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu C</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">menu C-1</a>
+							<a class="dropdown-item" href="#">menu C-2</a>
+							<a class="dropdown-item" href="#">menu C-3</a>
+							<a class="dropdown-item" href="#">menu C-4</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+</div>
+	
+<div class="sub-container container">
+	<div class="row">
+		<div class="col-xl-3 d-none d-xl-block">
+				<div class="snb">
+					<div class="snb-title"><span>LMS</span></div>
+					<ul class="snb-list">
+						<li class="active"><a href="#">menu A</a>
+							<ul>
+									<li class="active"><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu B</a>
+							<ul>
+									<li><a href="#">menu A-1</a></li>
+									<li><a href="#">menu A-2</a></li>
+									<li><a href="#">menu A-3</a></li>
+									<li><a href="#">menu A-4</a></li>
+									<li><a href="#">menu A-5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">menu C</a></li>
+						<li><a href="#">menu D</a></li>
+					</ul>
+				</div>
+		</div>
+		<div class="col-xl-9">
+			<h2 class="title02">통합검색</h2>
+      
+			<div id="content">
+        <div class="card mt-4">
+          <div class="card-body pb-1">
+            <div class="form-row align-items-end">
+              <div class="form-group col-md">
+                <label for="Search_Text" class="sr-only"></label>
+                <input id="Search_Text" title="작성자/테마/전공/제목으로 검색" type="text" class="form-control" value="" placeholder="작성자/테마/전공/제목으로 검색">
+              </div>
+              <div class="form-group col-sm-auto text-right">
+                <button type="button" id="btn_search" class="btn btn-secondary">
+                  <span class="icon search">검색</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+					<li class="nav-item" role="presentation">
+						<a class="nav-link active show" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">테마별 검색결과</a>
+					</li>
+					<li class="nav-item" role="presentation">
+						<a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">전공별 검색결과</a>
+					</li>
+				</ul>
+        <div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade active show" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+            <h3 class="title03 sr-only">테마별 검색결과</h3>
+
+            <div class="card mt-4">
+							<div class="card-body">
+								<ul class="list-inline list-inline-style02 mb-0 font-size-16 font-weight-normal">
+									<li class="list-inline-item bar-vertical">전체<span class="ml-1 badge badge-secondary">968</span></li>
+									<li class="list-inline-item bar-vertical">인문<span class="ml-1 badge badge-secondary">106</span></li>
+									<li class="list-inline-item bar-vertical">사회<span class="ml-1 badge badge-primary">86</span></li>
+									<li class="list-inline-item bar-vertical">이학<span class="ml-1 badge badge-secondary">96</span></li>
+									<li class="list-inline-item bar-vertical">예체능<span class="ml-1 badge badge-secondary">16</span></li>
+									<li class="list-inline-item bar-vertical">기타<span class="ml-1 badge badge-secondary">26</span></li>
+									<li class="list-inline-item">경제<span class="ml-1 badge badge-secondary">8</span></li>
+								</ul>
+							</div>
+						</div>
+
+            <div class="card card-style05 mt-4">
+              <div class="card-header">
+                <div class="text-right font-size-14">
+                  <a href="#" onclick="javascript:goTab(1, -1);" class="text-primary bar-vertical">
+                    <i class="bi bi-funnel-fill"></i>
+                    <strong>최신순</strong>
+                  </a>
+                  <a href="#" onclick="javascript:goTab(1, 1);" class="text-secondary bar-vertical">
+                    <strong>조회순</strong>
+                  </a>
+                  <a href="#" onclick="javascript:goTab(1, 2);" class="text-secondary">
+                    <strong>인기순</strong>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="card-item01">
+                  <div class="row no-gutters align-items-md-stretch">
+                    <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                      <!-- icon type -->
+                      <div class="thumb-wrap icon">
+                        <div class="thumb">
+                          <i class="bi bi-folder-fill"></i>
+                        </div>
+                      </div>                      
+                      <!--
+                        <i class="bi bi-folder-fill"></i>
+                        <i class="bi bi-collection-play-fill"></i>
+                        <i class="bi bi-file-word-fill"></i>
+                        <i class="bi bi-file-pdf-fill"></i>
+                        <i class="bi bi-file-excel-fill"></i>
+                        <i class="bi bi-file-text-fill"></i>
+                        <i class="bi bi-file-zip-fill"></i>
+                      -->
+                    </div>
+                    <div class="col-md-8 col-lg-9 pl-md-4">
+                      <div class="text-secondary d-flex flex-wrap align-items-center">
+                        <strong class="font-size-14 bar-vertical">공학</strong>
+                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                        <span class="font-size-20 bar-vertical">
+                          <i class="bi bi-cloud-arrow-up-fill" title="최근 업데이트"></i>
+                        </span>
+                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                          <i class="bi bi-eye-fill"></i>
+                        </a>
+                      </div>
+                      <div class="my-1 text-truncate">
+                        <a href="#" class="text-dark">
+                          <strong class="font-size-22">딥 러닝 강의 - 2주차 4차시</strong>
+                        </a>
+                      </div>
+                      <div class="text-secondary text-truncate">
+                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                      </div>
+                      <div class="mt-2">
+                        <i class="bi bi-tags text-dark mr-2"></i>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- card-item01 -->
+                
+                <div class="card-item01">
+                  <div class="row no-gutters align-items-md-stretch">
+                    <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                      <!-- image type -->
+                      <div class="thumb-wrap">
+                        <div class="thumb">
+                          <img src="./images/420by300.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-lg-9 pl-md-4">
+                      <div class="text-secondary d-flex flex-wrap align-items-center">
+                        <strong class="font-size-14 bar-vertical">공학</strong>
+                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                        <span class="font-size-20 bar-vertical">
+                          <i class="bi bi-cloud-arrow-up-fill" title="최근 업데이트"></i>
+                        </span>
+                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                          <i class="bi bi-eye-fill"></i>
+                        </a>
+                      </div>
+                      <div class="my-1 text-truncate">
+                        <a href="#" class="text-dark">
+                          <strong class="font-size-22">딥 러닝 강의 - 2주차 4차시</strong>
+                        </a>
+                      </div>
+                      <div class="text-secondary text-truncate">
+                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                      </div>
+                      <div class="mt-2">
+                        <i class="bi bi-tags text-dark mr-2"></i>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- card-item01 -->
+
+                <div class="card-item01">
+                  <div class="row no-gutters align-items-md-stretch">
+                    <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                      <!-- image type -->
+                      <div class="thumb-wrap">
+                        <div class="thumb">
+                          <img src="./images/420by300-2.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-lg-9 pl-md-4">
+                      <div class="text-secondary d-flex flex-wrap align-items-center">
+                        <strong class="font-size-14 bar-vertical">공학</strong>
+                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                        <span class="font-size-20 bar-vertical">
+                          <i class="bi bi-cloud-arrow-up-fill" title="최근 업데이트"></i>
+                        </span>
+                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                          <i class="bi bi-eye-fill"></i>
+                        </a>
+                      </div>
+                      <div class="my-1 text-truncate">
+                        <a href="#" class="text-dark">
+                          <strong class="font-size-22">인공지능(人工知能) 또는 A.I.(Artificial Intelligence) - 2주차 4차시</strong>
+                        </a>
+                      </div>
+                      <div class="text-secondary text-truncate">
+                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                      </div>
+                      <div class="mt-2">
+                        <i class="bi bi-tags text-dark mr-2"></i>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- card-item01 -->
+
+                <div class="card-item01">
+                  <div class="row no-gutters align-items-md-stretch">
+                    <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                      <!-- image type -->
+                      <div class="thumb-wrap">
+                        <div class="thumb">
+                          <img src="./images/420by300-3.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-lg-9 pl-md-4">
+                      <div class="text-secondary d-flex flex-wrap align-items-center">
+                        <strong class="font-size-14 bar-vertical">공학</strong>
+                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                        <span class="font-size-20 bar-vertical">
+                          <i class="bi bi-cloud-arrow-up-fill" title="최근 업데이트"></i>
+                        </span>
+                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                          <i class="bi bi-eye-fill"></i>
+                        </a>
+                      </div>
+                      <div class="my-1 text-truncate">
+                        <a href="#" class="text-dark">
+                          <strong class="font-size-22">인공지능(人工知能) 또는 A.I.(Artificial Intelligence) - 2주차 4차시</strong>
+                        </a>
+                      </div>
+                      <div class="text-secondary text-truncate">
+                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                      </div>
+                      <div class="mt-2">
+                        <i class="bi bi-tags text-dark mr-2"></i>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- card-item01 -->
+
+                <div class="card-item01">
+                  <div class="row no-gutters align-items-md-stretch">
+                    <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                      <!-- image type -->
+                      <div class="thumb-wrap">
+                        <div class="thumb">
+                          <img src="./images/420by300-4.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-lg-9 pl-md-4">
+                      <div class="text-secondary d-flex flex-wrap align-items-center">
+                        <strong class="font-size-14 bar-vertical">공학</strong>
+                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                        <span class="font-size-20 bar-vertical">
+                          <i class="bi bi-cloud-arrow-up-fill" title="최근 업데이트"></i>
+                        </span>
+                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                          <i class="bi bi-eye-fill"></i>
+                        </a>
+                      </div>
+                      <div class="my-1 text-truncate">
+                        <a href="#" class="text-dark">
+                          <strong class="font-size-22">인공지능(人工知能) 또는 A.I.(Artificial Intelligence) - 2주차 4차시</strong>
+                        </a>
+                      </div>
+                      <div class="text-secondary text-truncate">
+                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                      </div>
+                      <div class="mt-2">
+                        <i class="bi bi-tags text-dark mr-2"></i>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- card-item01 -->
+                
+              </div>
+            </div><!-- card -->
+
+            <div class="mt-4">
+              <ul class="pagination justify-content-center">
+                <li class="page-item prev">
+                  <a class="page-link" href="#"><i class="bi bi-chevron-double-left"></i></a>
+                </li>
+                <li class="page-item prev">
+                  <a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item active">
+                  <a href="#" onclick="javascript:Prevent();" class="page-link">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item next">
+                  <a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a>
+                </li>
+                <li class="page-item next">
+                  <a class="page-link" href="#"><i class="bi bi-chevron-double-right"></i></a>
+                </li>
+              </ul>
+            </div>
+
+          </div><!-- tab -->
+
+					<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+            <h3 class="title03 sr-only">전공별 검색결과</h3>
+
+            <div class="card mt-4">
+              <div class="card-body pb-1">
+                <div class="form">
+                  <div class="form-group">
+                    <label for="selectExample1" class="form-label pr-4">전공별 분류기준 선택</label>
+                    <select id="selectExample1" class="form-control">
+                        <option value="10">디지털미디어학부</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div><!-- card -->            
+
+            <div class="card card-style05 mt-4">
+              <div class="card-header">
+                <div class="text-right font-size-14">
+                  <a href="#" onclick="javascript:goTab(1, -1);" class="text-secondary bar-vertical">
+                    <strong>최신순</strong>
+                  </a>
+                  <a href="#" onclick="javascript:goTab(1, 1);" class="text-primary bar-vertical">
+                    <i class="bi bi-funnel-fill"></i>
+                    <strong>조회순</strong>
+                  </a>
+                  <a href="#" onclick="javascript:goTab(1, 2);" class="text-secondary">
+                    <strong>인기순</strong>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="card-item01">
+                  <div class="row no-gutters align-items-md-stretch">
+                    <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                      <!-- icon type -->
+                      <div class="thumb-wrap icon">
+                        <div class="thumb">
+                          <i class="bi bi-collection-play-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-lg-9 pl-md-4">
+                      <div class="text-secondary d-flex flex-wrap align-items-center">
+                        <strong class="font-size-14 bar-vertical">공학</strong>
+                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                        <span class="font-size-20 bar-vertical">
+                          <i class="bi bi-cloud-arrow-up-fill" title="최근 업데이트"></i>
+                        </span>
+                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                          <i class="bi bi-eye-fill"></i>
+                        </a>
+                      </div>
+                      <div class="my-1 text-truncate">
+                        <a href="#" class="text-dark">
+                          <strong class="font-size-22">딥 러닝 강의 - 2주차 4차시</strong>
+                        </a>
+                      </div>
+                      <div class="text-secondary text-truncate">
+                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                      </div>
+                      <div class="mt-2">
+                        <i class="bi bi-tags text-dark mr-2"></i>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- card-item01 -->
+
+                <div class="card-item01">
+                  <div class="row no-gutters align-items-md-stretch">
+                    <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                      <!-- icon type -->
+                      <div class="thumb-wrap icon">
+                        <div class="thumb">
+                          <i class="bi bi-file-word-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-lg-9 pl-md-4">
+                      <div class="text-secondary d-flex flex-wrap align-items-center">
+                        <strong class="font-size-14 bar-vertical">공학</strong>
+                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                        <span class="font-size-20 bar-vertical">
+                          <i class="bi bi-cloud-arrow-up-fill" title="최근 업데이트"></i>
+                        </span>
+                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                          <i class="bi bi-eye-fill"></i>
+                        </a>
+                      </div>
+                      <div class="my-1 text-truncate">
+                        <a href="#" class="text-dark">
+                          <strong class="font-size-22">딥 러닝 강의 - 2주차 4차시</strong>
+                        </a>
+                      </div>
+                      <div class="text-secondary text-truncate">
+                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                      </div>
+                      <div class="mt-2">
+                        <i class="bi bi-tags text-dark mr-2"></i>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- card-item01 -->
+                
+                <div class="card-item01">
+                  <div class="row no-gutters align-items-md-stretch">
+                    <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                      <!-- icon type -->
+                      <div class="thumb-wrap full-height icon">
+                        <div class="thumb">
+                          <i class="bi bi-file-pdf-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-lg-9 pl-md-4">
+                      <div class="text-secondary d-flex flex-wrap align-items-center">
+                        <strong class="font-size-14 bar-vertical">공학</strong>
+                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                        <span class="font-size-20 bar-vertical">
+                          <i class="bi bi-cloud-arrow-up-fill" title="최근 업데이트"></i>
+                        </span>
+                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                          <i class="bi bi-eye-fill"></i>
+                        </a>
+                      </div>
+                      <div class="my-1 text-truncate">
+                        <a href="#" class="text-dark">
+                          <strong class="font-size-22">딥 러닝 강의 - 2주차 4차시</strong>
+                        </a>
+                      </div>
+                      <div class="text-secondary text-truncate">
+                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                      </div>
+                      <div class="mt-2">
+                        <i class="bi bi-tags text-dark mr-2"></i>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- card-item01 -->
+                
+                <div class="card-item01">
+                  <div class="row no-gutters align-items-md-stretch">
+                    <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                      <!-- icon type -->
+                      <div class="thumb-wrap full-height icon">
+                        <div class="thumb">
+                          <i class="bi bi-file-excel-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-lg-9 pl-md-4">
+                      <div class="text-secondary d-flex flex-wrap align-items-center">
+                        <strong class="font-size-14 bar-vertical">공학</strong>
+                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                        <span class="font-size-20 bar-vertical">
+                          <i class="bi bi-cloud-arrow-up-fill" title="최근 업데이트"></i>
+                        </span>
+                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                          <i class="bi bi-eye-fill"></i>
+                        </a>
+                      </div>
+                      <div class="my-1 text-truncate">
+                        <a href="#" class="text-dark">
+                          <strong class="font-size-22">딥 러닝 강의 - 2주차 4차시</strong>
+                        </a>
+                      </div>
+                      <div class="text-secondary text-truncate">
+                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                      </div>
+                      <div class="mt-2">
+                        <i class="bi bi-tags text-dark mr-2"></i>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- card-item01 -->
+                
+                <div class="card-item01">
+                  <div class="row no-gutters align-items-md-stretch">
+                    <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                      <!-- icon type -->
+                      <div class="thumb-wrap full-height icon">
+                        <div class="thumb">
+                          <i class="bi bi-file-zip-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 col-lg-9 pl-md-4">
+                      <div class="text-secondary d-flex flex-wrap align-items-center">
+                        <strong class="font-size-14 bar-vertical">공학</strong>
+                        <strong class="font-size-14 bar-vertical">2021-10-26</strong>
+                        <strong class="font-size-14 bar-vertical">조회(30)</strong>
+                        <span class="font-size-20 bar-vertical">
+                          <i class="bi bi-cloud-arrow-up-fill" title="최근 업데이트"></i>
+                        </span>
+                        <a href="#" onclick="viewOcw(2840, 1, 5, '/20211008/Contents/20211008142029096.png', 262569, 560, 315, 'frmpop');" title="강의 바로보기" class="font-size-20 text-point">
+                          <i class="bi bi-eye-fill"></i>
+                        </a>
+                      </div>
+                      <div class="my-1 text-truncate">
+                        <a href="#" class="text-dark">
+                          <strong class="font-size-22">인공지능(人工知能) 강의 - 2주차 4차시</strong>
+                        </a>
+                      </div>
+                      <div class="text-secondary text-truncate">
+                        인공지능(人工知能) 또는 A.I.(Artificial Intelligence)는 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것을 말한다.
+                      </div>
+                      <div class="mt-2">
+                        <i class="bi bi-tags text-dark mr-2"></i>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge badge-1-light">온라인</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">교육영상</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="mr-1 badge badge-1-light">ERP 회계원리</a>
+                        <a href="javascript: void();" onclick="javascript:setTag(this);" class="badge badge-1-light">미래경영</a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- card-item01 -->
+
+              </div>
+            </div><!-- card -->
+            
+            <div class="mt-4">
+              <ul class="pagination justify-content-center">
+                <li class="page-item prev">
+                  <a class="page-link" href="#"><i class="bi bi-chevron-double-left"></i></a>
+                </li>
+                <li class="page-item prev">
+                  <a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item active">
+                  <a href="#" onclick="javascript:Prevent();" class="page-link">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item next">
+                  <a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a>
+                </li>
+                <li class="page-item next">
+                  <a class="page-link" href="#"><i class="bi bi-chevron-double-right"></i></a>
+                </li>
+              </ul>
+            </div>
+
+          </div><!-- tab -->
+        </div><!-- tab-content -->
+        
+			</div>
+		</div>
+	</div>
+</div><!-- sub-container -->
+
+<div id="footer"></div>
+
+<script src="/common/js/jquery-3.3.1.min.js"></script>
+<script src="/common/js/popper.js" ></script>
+<script src="/common/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
+<script src="/site/resource/www/js/script.js"></script>
+<script>
+	$.ajax({
+		method: 'GET',
+		url: 'header.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#header').append(html);
+	});
+	$.ajax({
+		method: 'GET',
+		url: 'footer.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		$('#footer').append(html);
+	});
+
+	$(document).ready(function() {
+			$(".dropdown-toggle").dropdown();
+	});
+</script>
+</body>
+</html>

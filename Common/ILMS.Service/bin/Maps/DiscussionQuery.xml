@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cacheModels>
+		<cacheModel id="discussionCache" implementation="LRU">
+			<flushInterval hours="1" />
+			<property name="CacheSize" value="1000" />
+		</cacheModel>
+	</cacheModels>
+
+	<statements>
+		<!-- 토론 리스트 조회 -->
+		<select id="discussion.DISCUSSION_SELECT_L" parameterClass="Hashtable" resultClass="discussion">
+			EXEC USP_DISCUSSION_SELECT "L", #DiscussionNo#, #CourseNo#
+		</select>
+
+		<!-- 토론 상세조회 -->
+		<select id="discussion.DISCUSSION_SELECT_S" parameterClass="discussion" resultClass="discussion">
+			EXEC USP_DISCUSSION_SELECT "S", #DiscussionNo#, #CourseNo#
+		</select>
+
+		<!-- 토론 의견 리스트 조회 -->
+		<select id="discussion.DISCUSSION_OPINION_SELECT_L" parameterClass="Hashtable" resultClass="discussionOpinion">
+			EXEC USP_DISCUSSION_OPINION_SELECT "L", #DiscussionNo#, #CourseNo#, #TeamNo#, #GroupNo#, #UserNo#, #OpinionNo#
+		</select>
+
+		<!-- 토론 의견 상세조회 -->
+		<select id="discussion.DISCUSSION_OPINION_SELECT_S" parameterClass="Hashtable" resultClass="discussionOpinion">
+			EXEC USP_DISCUSSION_OPINION_SELECT "S", #DiscussionNo#, #CourseNo#, #TeamNo#, #GroupNo#, #UserNo#, #OpinionNo#
+		</select>
+
+		<!-- 토론 참여자 조회 -->
+		<select id="discussion.DISCUSSION_OPINION_SELECT_A" parameterClass="discussionOpinion" resultClass="discussionOpinion">
+			EXEC USP_DISCUSSION_OPINION_SELECT "A", #DiscussionNo#, #CourseNo#, #TeamNo#, #GroupNo#, #UserNo#, #OpinionNo#
+		</select>
+
+		<!-- 조별토론 팀 리스트 및 의견 수 조회 -->
+		<select id="discussion.DISCUSSION_OPINION_SELECT_B" parameterClass="Hashtable" resultClass="discussionGroup">
+			EXEC USP_DISCUSSION_OPINION_SELECT "B", #DiscussionNo#, #CourseNo#, #TeamNo#, #GroupNo#, #UserNo#, #OpinionNo#
+		</select>
+
+		<!-- 조별토론 팀원 조회 -->
+		<select id="discussion.DISCUSSION_OPINION_SELECT_C" parameterClass="Hashtable" resultClass="discussionGroup">
+			EXEC USP_DISCUSSION_OPINION_SELECT "C", #DiscussionNo#, #CourseNo#, #TeamNo#, #GroupNo#, #UserNo#, #OpinionNo#
+		</select>
+
+		<!-- 토론 의견 이전글/다음글 조회 -->
+		<select id="discussion.DISCUSSION_OPINION_SELECT_D" parameterClass="Hashtable" resultClass="discussionGroup">
+			EXEC USP_DISCUSSION_OPINION_SELECT "D", #DiscussionNo#, #CourseNo#, #TeamNo#, #GroupNo#, #UserNo#, #OpinionNo#
+		</select>
+
+		<!-- 토론 한줄의견 리스트 조회 -->
+		<select id="discussion.DISCUSSION_OPINION_REPLY_SELECT_L" parameterClass="Hashtable" resultClass="discussionReply">
+			EXEC USP_DISCUSSION_OPINION_REPLY_SELECT "L", #ReplyNo#, #OpinionNo#
+		</select>
+
+		<!-- 토론 한줄의견 상세조회 -->
+		<select id="discussion.DISCUSSION_OPINION_REPLY_SELECT_S" parameterClass="Hashtable" resultClass="discussionReply">
+			EXEC USP_DISCUSSION_OPINION_REPLY_SELECT "S", #ReplyNo#, #OpinionNo#
+		</select>
+		
+		<!-- 토론 저장 -->
+		<update id="discussion.DISCUSSION_SAVE_C" parameterClass="discussion"  resultClass="discussion">
+			EXEC USP_DISCUSSION_SAVE "C", #DiscussionNo#, #CourseNo#, #GroupNo#, #DiscussionAttribute#, #OpenYesNo#, #DiscussionStartDay#, #DiscussionEndDay#
+			, #DiscussionSubject#, #DiscussionSummary#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 토론 수정 -->
+		<update id="discussion.DISCUSSION_SAVE_U" parameterClass="discussion" resultClass="discussion">
+			EXEC USP_DISCUSSION_SAVE "U", #DiscussionNo#, #CourseNo#, #GroupNo#, #DiscussionAttribute#, #OpenYesNo#, #DiscussionStartDay#, #DiscussionEndDay#
+			, #DiscussionSubject#, #DiscussionSummary#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 토론 삭제 -->
+		<update id="discussion.DISCUSSION_SAVE_D" parameterClass="discussion" resultClass="int">
+			EXEC USP_DISCUSSION_SAVE "D", #DiscussionNo#, #CourseNo#, #GroupNo#, #DiscussionAttribute#, #OpenYesNo#, #DiscussionStartDay#, #DiscussionEndDay#
+								   , #DiscussionSubject#, #DiscussionSummary#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 토론 의견 저장 -->
+		<update id="discussion.DISCUSSION_OPINION_SAVE_C" parameterClass="Hashtable" resultClass="discussionOpinion">
+			EXEC USP_DISCUSSION_OPINION_SAVE "C", #OpinionNo#, #DiscussionNo#, #CourseNo#, #TeamNo#, #OpinionTitle#, #OpinionContents#, #ReadCount#, #ParticipationYesNo#
+										   , #TopOpinionYesNo#, #OpinionUserNo#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 토론 의견 수정 -->
+		<update id="discussion.DISCUSSION_OPINION_SAVE_U" parameterClass="Hashtable" resultClass="discussionOpinion">
+			EXEC USP_DISCUSSION_OPINION_SAVE "U", #OpinionNo#, #DiscussionNo#, #CourseNo#, #TeamNo#, #OpinionTitle#, #OpinionContents#, #ReadCount#, #ParticipationYesNo#
+			, #TopOpinionYesNo#, #OpinionUserNo#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 토론 의견 삭제 -->
+		<update id="discussion.DISCUSSION_OPINION_SAVE_D" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_DISCUSSION_OPINION_SAVE "D", #OpinionNo#, #DiscussionNo#, #CourseNo#, #TeamNo#, #OpinionTitle#, #OpinionContents#, #ReadCount#, #ParticipationYesNo#
+			, #TopOpinionYesNo#, #OpinionUserNo#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 토론 참여도 인정/취소 -->
+		<update id="discussion.DISCUSSION_OPINION_SAVE_A" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_DISCUSSION_OPINION_SAVE "A", #OpinionNo#, #DiscussionNo#, #CourseNo#, #TeamNo#, #OpinionTitle#, #OpinionContents#, #ReadCount#, #ParticipationYesNo#
+										   , #TopOpinionYesNo#, #OpinionUserNo#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 토론 의견 공지사항 처리/취소 -->
+		<update id="discussion.DISCUSSION_OPINION_SAVE_B" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_DISCUSSION_OPINION_SAVE "B", #OpinionNo#, #DiscussionNo#, #CourseNo#, #TeamNo#, #OpinionTitle#, #OpinionContents#, #ReadCount#, #ParticipationYesNo#
+			, #TopOpinionYesNo#, #OpinionUserNo#, #DeleteYesNo#, #CreateUserNo#, #UpdateUserNo#, #FileGroupNo#
+		</update>
+
+		<!-- 토론 한줄의견 저장 -->
+		<update id="discussion.DISCUSSION_OPINION_REPLY_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_DISCUSSION_OPINION_REPLY_SAVE "C", #ReplyNo#, #OpinionNo#, #ReplyUserNo#, #ReplyContents#, #DeleteYesNo#
+												 , #CreateDateTime#, #CreateUserNo#, #UpdateDateTime# , #UpdateUserNo#
+		</update>
+
+		<!-- 토론 한줄의견 수정 -->
+		<update id="discussion.DISCUSSION_OPINION_REPLY_SAVE_U" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_DISCUSSION_OPINION_REPLY_SAVE "U", #ReplyNo#, #OpinionNo#, #ReplyUserNo#, #ReplyContents#, #DeleteYesNo#
+												 , #CreateDateTime#, #CreateUserNo#, #UpdateDateTime# , #UpdateUserNo#
+		</update>
+
+		<!-- 토론 한줄의견 삭제 -->
+		<update id="discussion.DISCUSSION_OPINION_REPLY_SAVE_D" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_DISCUSSION_OPINION_REPLY_SAVE "D", #ReplyNo#, #OpinionNo#, #ReplyUserNo#, #ReplyContents#, #DeleteYesNo#
+												 , #CreateDateTime#, #CreateUserNo#, #UpdateDateTime# , #UpdateUserNo#
+		</update>
+
+		<!-- 토론 좋아요/싫어요 -->
+		<select id="discussion.DISCUSSION_OPINION_YESNO_SAVE_C" parameterClass="Hashtable" resultClass="string">
+			EXEC USP_DISCUSSION_OPINION_YESNO_SAVE "C", #YesNoNo#, #YesNoCode#, #YesNoUserNo#, #OpinionNo#
+		</select>
+
+		<!-- 토론 그룹 저장 -->
+		<select id="discussion.DISCUSSION_GROUP_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_DISCUSSION_GROUP_SAVE "C", #CourseGroupNo#, #CreateUserNo#
+		</select>
+
+		<!-- 토론 팀 저장 -->
+		<select id="discussion.DISCUSSION_GROUP_TEAM_SAVE_C" parameterClass="Hashtable" resultClass="int">
+			EXEC USP_DISCUSSION_GROUP_TEAM_SAVE "C", #TeamNo#, #GroupNo#, #CourseGroupNo#
+		</select>
+
+		<!-- 토론 멤버 저장 -->
+		<update id="discussion.DISCUSSION_GROUP_TEAM_MEMBER_SAVE_C" parameterClass="Hashtable">
+			EXEC USP_DISCUSSION_GROUP_TEAM_MEMBER_SAVE "C", #TeamNo#, #DiscussionTeamNo#, #CourseGroupNo#
+		</update>
+
+		<!-- 관리자 프로그램 과정 조회 -->
+		<select id="discussion.PROGRAM_SELECT_L" parameterClass="Hashtable" resultClass="discussion">
+			EXEC USP_PROGRAM_SELECT "L"
+		</select>
+
+		<!-- 관리자 강좌 리스트 엑셀다운로드 -->
+		<select id="discussion.DISCUSSION_SELECT_B" parameterClass="Hashtable" resultClass="Hashtable">
+			EXEC USP_DISCUSSION_SELECT "B", #DiscussionNo#, #CourseNo#, #TermNo#, #ProgramNo#, #SubjectName#, #FirstIndex#, #LastIndex# 
+		</select>
+		
+		<!-- 관리자 토론 리스트 조회 -->
+		<select id="discussion.DISCUSSION_SELECT_A" parameterClass="discussion" resultClass="discussion">
+			EXEC USP_DISCUSSION_SELECT "A", #DiscussionNo#, #CourseNo#, #TermNo#, #ProgramNo#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+
+		<!-- 관리자 토론 리스트 엑셀다운로드 -->
+		<select id="discussion.DISCUSSION_SELECT_C" parameterClass="Hashtable" resultClass="Hashtable">
+			EXEC USP_DISCUSSION_SELECT "C", #DiscussionNo#, #CourseNo#, #TermNo#, #ProgramNo#, #SubjectName#, #FirstIndex#, #LastIndex#
+		</select>
+		
+	</statements>
+</sqlMap>
